@@ -93,7 +93,7 @@
 		<description lang="en">Animated Busy Spinners Pack - Titan</description>
 		<platform>all</platform>
 	</extension>
-</addon><addon id="resource.images.skinbackgrounds.titanium2" name="Skin Backgrounds - Titanium" version="1.0.1" provider-name="marcelveldt">
+</addon><addon id="resource.images.skinbackgrounds.titanium2" name="Skin Backgrounds - Titanium 2" version="1.0.1" provider-name="marcelveldt">
 	<extension point="kodi.resource.images" compile="false" type="skinbackgrounds" />
 	<requires>
 		<import addon="kodi.resource" version="1.0.0" />
@@ -103,7 +103,7 @@
 		<description lang="en">Skin Backgrounds Pack - Titanium</description>
 		<platform>all</platform>
 	</extension>
-</addon><addon id="resource.images.skinicons.wide2" name="Skin Icons - Wide" version="1.0.4" provider-name="marcelveldt">
+</addon><addon id="resource.images.skinicons.wide2" name="Skin Icons - Wide 2" version="1.0.4" provider-name="marcelveldt">
 	<extension point="kodi.resource.images" compile="false" type="skinicons" />
 	<requires>
 		<import addon="kodi.resource" version="1.0.0" />

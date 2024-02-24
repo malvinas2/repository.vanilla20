@@ -3,24 +3,24 @@
 		<defaultID>livetv</defaultID>
 		<label>32022</label>
 		<label2>TV</label2>
-		<icon>resource://resource.images.skinicons.wide/livetv.png</icon>
-		<thumb>special://home/addons/resource.images.skinicons.wide/resources/tvrecordings.png</thumb>
+		<icon>resource://resource.images.skinicons.wide2/livetv.png</icon>
+		<thumb>special://home/addons/resource.images.skinicons.wide2/resources/tvrecordings.png</thumb>
 		<action>ActivateWindow(TVGuide)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID>mediathek</defaultID>
 		<label>Mediathek</label>
 		<label2>Benutzerdefinierte Einträge</label2>
-		<icon>special://home/addons/resource.images.skinicons.wide/resources/videoaddons.png</icon>
-		<thumb>special://home/addons/resource.images.skinicons.wide/resources/videoaddons.png</thumb>
+		<icon>special://home/addons/resource.images.skinicons.wide2/resources/videoaddons.png</icon>
+		<thumb>special://home/addons/resource.images.skinicons.wide2/resources/videoaddons.png</thumb>
 		<action>ActivateWindow(1108)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID>movies</defaultID>
 		<label>342</label>
 		<label2>Filme</label2>
-		<icon>resource://resource.images.skinicons.wide/titan.png</icon>
-		<thumb>special://home/addons/resource.images.skinicons.wide/resources/movies.png</thumb>
+		<icon>resource://resource.images.skinicons.wide2/titan.png</icon>
+		<thumb>special://home/addons/resource.images.skinicons.wide2/resources/movies.png</thumb>
 		<action>ActivateWindow(10025,videodb://movies/titles/,return)</action>
 		</shortcut>
 	<shortcut>
@@ -28,22 +28,22 @@
 		<label>20343</label>
 		<label2>Serien</label2>
 		<icon>DefaultFolder.png</icon>
-		<thumb>special://home/addons/resource.images.skinicons.wide/resources/tvseries.png</thumb>
+		<thumb>special://home/addons/resource.images.skinicons.wide2/resources/tvseries.png</thumb>
 		<action>ActivateWindow(10025,videodb://tvshows/titles/,return)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID>music</defaultID>
 		<label>10005</label>
 		<label2>Musik</label2>
-		<icon>resource://resource.images.skinicons.wide/music.png</icon>
-		<thumb>special://home/addons/resource.images.skinicons.wide/resources/music.png</thumb>
+		<icon>resource://resource.images.skinicons.wide2/music.png</icon>
+		<thumb>special://home/addons/resource.images.skinicons.wide2/resources/music.png</thumb>
 		<action>ActivateWindow(10502,return)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID>musicvideos</defaultID>
 		<label>20389</label>
 		<label2>Benutzerdefinierte Einträge</label2>
-		<icon>resource://resource.images.skinbackgrounds.titanium/hover_my music.jpg</icon>
+		<icon>resource://resource.images.skinbackgrounds.titanium2/hover_my music.jpg</icon>
 		<thumb>$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground)]</thumb>
 		<action>ActivateWindow(10025,videodb://musicvideos/titles/,return)</action>
 		</shortcut>
@@ -51,7 +51,7 @@
 		<defaultID>radio</defaultID>
 		<label>19021</label>
 		<label2 />
-		<icon>resource://resource.images.skinicons.wide/radio.png</icon>
+		<icon>resource://resource.images.skinicons.wide2/radio.png</icon>
 		<thumb />
 		<action>ActivateWindow(radiochannels,return)</action>
 		</shortcut>
@@ -59,24 +59,24 @@
 		<defaultID>script.globalsearch</defaultID>
 		<label>Search</label>
 		<label2>Benutzerdefinierte Einträge</label2>
-		<icon>special://home/addons/resource.images.skinicons.wide/resources/programs.png</icon>
-		<thumb>special://home/addons/resource.images.skinicons.wide/resources/programs.png</thumb>
+		<icon>special://home/addons/resource.images.skinicons.wide2/resources/programs.png</icon>
+		<thumb>special://home/addons/resource.images.skinicons.wide2/resources/programs.png</thumb>
 		<action>ActivateWindow(1107)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID>weather</defaultID>
 		<label>12600</label>
 		<label2>Wetter</label2>
-		<icon>resource://resource.images.skinicons.wide/weather.png</icon>
-		<thumb>special://home/addons/resource.images.skinicons.wide/resources/weather.png</thumb>
+		<icon>resource://resource.images.skinicons.wide2/weather.png</icon>
+		<thumb>special://home/addons/resource.images.skinicons.wide2/resources/weather.png</thumb>
 		<action>ActivateWindow(Weather)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID>pictures</defaultID>
 		<label>10002</label>
 		<label2>Bilder</label2>
-		<icon>resource://resource.images.skinicons.wide/pictures.png</icon>
-		<thumb>special://home/addons/resource.images.skinicons.wide/resources/pictures.png</thumb>
+		<icon>resource://resource.images.skinicons.wide2/pictures.png</icon>
+		<thumb>special://home/addons/resource.images.skinicons.wide2/resources/pictures.png</thumb>
 		<action>ActivateWindow(pictures,return)</action>
 		<visible>!Skin.HasSetting(HomeMenuUsePlexforPictures)</visible>
 		</shortcut>
@@ -84,7 +84,7 @@
 		<defaultID>videos</defaultID>
 		<label>Videos</label>
 		<label2 />
-		<icon>resource://resource.images.skinicons.wide/pictures.png</icon>
+		<icon>resource://resource.images.skinicons.wide2/pictures.png</icon>
 		<thumb />
 		<action>ActivateWindow(Videos,return)</action>
 		</shortcut>
@@ -92,15 +92,15 @@
 		<defaultID>games</defaultID>
 		<label>Games</label>
 		<label2>Games</label2>
-		<icon>resource://resource.images.skinicons.wide/livetv.png</icon>
-		<thumb>resource://resource.images.skinicons.wide/livetv.png</thumb>
+		<icon>resource://resource.images.skinicons.wide2/livetv.png</icon>
+		<thumb>resource://resource.images.skinicons.wide2/livetv.png</thumb>
 		<action>ActivateWindow(Games,return)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID>addons</defaultID>
 		<label>10040</label>
 		<label2>Addon-Browser</label2>
-		<icon>resource://resource.images.skinicons.wide/addons.png</icon>
+		<icon>resource://resource.images.skinicons.wide2/addons.png</icon>
 		<thumb />
 		<action>ActivateWindow(Programs,Addons,return)</action>
 		</shortcut>
@@ -108,23 +108,23 @@
 		<defaultID>favorites</defaultID>
 		<label>Favorites</label>
 		<label2 />
-		<icon>special://home/addons/resource.images.skinicons.wide/resources/favourites.png</icon>
-		<thumb>special://home/addons/resource.images.skinicons.wide/resources/favourites.png</thumb>
+		<icon>special://home/addons/resource.images.skinicons.wide2/resources/favourites.png</icon>
+		<thumb>special://home/addons/resource.images.skinicons.wide2/resources/favourites.png</thumb>
 		<action>ActivateWindow(favouritesbrowser)</action>
 		</shortcut>
 	<shortcut>
 		<defaultID>dvd</defaultID>
 		<label>32032</label>
 		<label2>playdvd</label2>
-		<icon>special://home/addons/resource.images.skinicons.wide/resources/videos.png</icon>
-		<thumb>special://home/addons/resource.images.skinicons.wide/resources/videos.png</thumb>
+		<icon>special://home/addons/resource.images.skinicons.wide2/resources/videos.png</icon>
+		<thumb>special://home/addons/resource.images.skinicons.wide2/resources/videos.png</thumb>
 		<action>PlayDVD()</action>
 		</shortcut>
 	<shortcut>
 		<defaultID>settings</defaultID>
 		<label>10004</label>
 		<label2>Einstellungen</label2>
-		<icon>resource://resource.images.skinicons.wide/settings.png</icon>
+		<icon>resource://resource.images.skinicons.wide2/settings.png</icon>
 		<thumb />
 		<action>ActivateWindow(Settings)</action>
 		</shortcut>

@@ -4,7 +4,7 @@
 		<defaultID>dvd</defaultID>
 		<label>32032</label>
 		<label2>playdvd</label2>
-		<icon>resource://resource.images.skinicons.wide/videos.png</icon>
+		<icon>resource://resource.images.skinicons.wide2/videos.png</icon>
 		<thumb />
 		<action>XBMC.PlayDVD()</action>
 	</shortcut>
