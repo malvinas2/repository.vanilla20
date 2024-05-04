@@ -3,7 +3,6 @@
 <includes>
 
 	<include name="HomeMenuSubMenuHorizontal">
-		
         <control type="image">
             <!--Panel Shadow-->
             <posx>-120</posx>
@@ -65,7 +64,6 @@
 					</control>
 				</control>
 			</itemlayout>
-			
 			<focusedlayout width="368" height="185">
 				<control type="group">
 					<posy>120</posy>
@@ -112,8 +110,9 @@
                     </control>
 				</control>
 			</focusedlayout>
-
-			<content><include>skinshortcuts-submenu</include></content>
+			<content>
+				<include>skinshortcuts-submenu</include>
+			</content>
 		</control>
 	</include>
 
@@ -125,11 +124,9 @@
 			<animation type="Conditional" condition="![String.Contains(Window(Home).Property(submenu),show) | Control.HasFocus(4444)]">
                 <effect type="fade" start="100" end="0" time="250" />
             </animation>
-			
 			<animation type="Conditional" condition="[Control.IsVisible(77551) | String.IsEqual(Window(Home).Property(ShowWidget),show)]">
                 <effect type="slide" start="0,-0" end="0,800" time="400" tween="cubic" easing="inout" delay="0" />
             </animation>
-			
 		
 			<posy>65</posy>
 			<posx>-4</posx>
@@ -168,7 +165,6 @@
 				<bottom>110</bottom>
 				<height>325</height>
 				<visible>[Skin.String(HomeLayout,1) + String.Contains(Window(Home).Property(submenupos),2)]</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -183,7 +179,6 @@
 				<bottom>370</bottom>
 				<height>325</height>
 				<visible>Skin.String(HomeLayout,2) + String.Contains(Window(Home).Property(submenupos),0)</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -192,14 +187,12 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
-			
 			<!--submenu right 3-row pos 3-->
 			<control type="group">
 				<posx>599</posx>
 				<bottom>345</bottom>
 				<height>325</height>
 				<visible>Skin.String(HomeLayout,3) + String.Contains(Window(Home).Property(submenupos),3)</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -208,7 +201,6 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
-			
 			<!--submenu right 3-row pos 0-->
 			<control type="group">
 				<posx>599</posx>
@@ -222,14 +214,12 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
-			
 			<!--submenu right 2-row pos 1-->
 			<control type="group">
 				<posx>599</posx>
 				<bottom>80</bottom>
 				<height>325</height>
 				<visible>Skin.String(HomeLayout,2) + String.Contains(Window(Home).Property(submenupos),1)</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -238,14 +228,12 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
-			
 			<!--submenu right 3-row pos 6-->
 			<control type="group">
 				<posx>599</posx>
 				<bottom>55</bottom>
 				<height>325</height>
 				<visible>Skin.String(HomeLayout,3) + String.Contains(Window(Home).Property(submenupos),6)</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -254,7 +242,6 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
-			
 			
 			<!--submenu right 2-row pos 2-->
 			<control type="group">
@@ -262,7 +249,6 @@
 				<bottom>370</bottom>
 				<height>325</height>
 				<visible>Skin.String(HomeLayout,2) + String.Contains(Window(Home).Property(submenupos),2)</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -271,14 +257,12 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
-			
 			<!--submenu right 3-row pos 4-->
 			<control type="group">
 				<posx>1210</posx>
 				<bottom>345</bottom>
 				<height>325</height>
 				<visible>Skin.String(HomeLayout,3) + String.Contains(Window(Home).Property(submenupos),4)</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -287,13 +271,11 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
-			
 			<!--submenu right 3-row pos 1-->
 			<control type="group">
 				<posx>1210</posx>
 				<posy>55</posy>
 				<visible>[Skin.String(HomeLayout,3) + String.Contains(Window(Home).Property(submenupos),1)]</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -302,15 +284,12 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
-			
-			
 			<!--submenu right 2-row pos 3-->
 			<control type="group">
 				<posx>1210</posx>
 				<bottom>80</bottom>
 				<height>325</height>
 				<visible>Skin.String(HomeLayout,2) + String.Contains(Window(Home).Property(submenupos),3)</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -319,14 +298,12 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
-			
 			<!--submenu right 3-row pos 7-->
 			<control type="group">
 				<posx>1210</posx>
 				<bottom>55</bottom>
 				<height>325</height>
 				<visible>Skin.String(HomeLayout,3) + String.Contains(Window(Home).Property(submenupos),7)</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -335,8 +312,6 @@
 				</control>
 				 <include>HomeMenuFocusButtonLeft</include>
 			</control>
-			
-			
 			<!--submenu left 2 row pos 4-->
 			<control type="group">
 				<posx>625</posx>
@@ -351,7 +326,6 @@
 				</control>
 				<include>HomeMenuFocusButtonRight</include>
 			</control>
-			
 			<!--submenu left 3 row pos 5-->
 			<control type="group">
 				<posx>625</posx>
@@ -366,13 +340,11 @@
 				</control>
 				<include>HomeMenuFocusButtonRight</include>
 			</control>
-			
 			<!--submenu left 3 row pos 2-->
 			<control type="group">
 				<posx>625</posx>
 				<posy>55</posy>
 				<visible>[Skin.String(HomeLayout,3) + String.Contains(Window(Home).Property(submenupos),2)]</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -380,16 +352,13 @@
 					 <include>SubMenuLayoutVertical</include>
 				</control>
 				<include>HomeMenuFocusButtonRight</include>
-				
 			</control>
-			
 			<!--submenu left 2 row pos 5-->
 			<control type="group">
 				<posx>625</posx>
 				<bottom>80</bottom>
 				<height>325</height>
 				<visible>Skin.String(HomeLayout,2) + String.Contains(Window(Home).Property(submenupos),5)</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -398,14 +367,12 @@
 				</control>
 				 <include>HomeMenuFocusButtonRight</include>
 			</control>
-		
 			<!--submenu left 3 row pos 8-->
 			<control type="group">
 				<posx>625</posx>
 				<bottom>55</bottom>
 				<height>325</height>
 				<visible>Skin.String(HomeLayout,3) + String.Contains(Window(Home).Property(submenupos),8)</visible>
-				
 				<!-- movies submenu -->
 				<control type="group">
 					<posx>0</posx>
@@ -414,85 +381,81 @@
 				</control>
 				 <include>HomeMenuFocusButtonRight</include>
 			</control>
-		
-		
 		</control>
 	</include>
 	
 	
 	<include name="HomeMenuSubMenuSmallTiles">
 		<control type="list" id="4444">
-				<posx>60</posx>
-				<posy>1090</posy>
-				<width>1825</width>
-				<height>205</height>
-				<orientation>horizontal</orientation>
-				<onleft>4444</onleft>
-				<onright>4444</onright>
-				<itemgap>0</itemgap>
-				<onback>SetFocus(300)</onback>
-				<onup>SetFocus(300)</onup>
-				<onfocus>SetProperty(submenu,show,home)</onfocus>
-				<onback condition="!Skin.HasSetting(AutoShowSubmenu)">ClearProperty(submenu,home)</onback>
-				<onup condition="!Skin.HasSetting(AutoShowSubmenu)">ClearProperty(submenu,home)</onup>
-				<ondown condition="!Skin.HasSetting(DisablePowerMenu)">ActivateWindow(111)</ondown>
-				<visible allowhiddenfocus="true">[String.Contains(Window(Home).Property(submenu),show) | Control.HasFocus(4444)] + !Control.IsVisible(77551) + !Control.HasFocus(2)</visible>    
-				<animation effect="slide" start="0,0" end="0,-200" time="150">VisibleChange</animation>
-				
-				<itemlayout width="365" height="205">
+			<posx>60</posx>
+			<posy>1090</posy>
+			<width>1825</width>
+			<height>205</height>
+			<orientation>horizontal</orientation>
+			<onleft>4444</onleft>
+			<onright>4444</onright>
+			<itemgap>0</itemgap>
+			<onback>SetFocus(300)</onback>
+			<onup>SetFocus(300)</onup>
+			<onfocus>SetProperty(submenu,show,home)</onfocus>
+			<onback condition="!Skin.HasSetting(AutoShowSubmenu)">ClearProperty(submenu,home)</onback>
+			<onup condition="!Skin.HasSetting(AutoShowSubmenu)">ClearProperty(submenu,home)</onup>
+			<ondown condition="!Skin.HasSetting(DisablePowerMenu)">ActivateWindow(111)</ondown>
+			<visible allowhiddenfocus="true">[String.Contains(Window(Home).Property(submenu),show) | Control.HasFocus(4444)] + !Control.IsVisible(77551) + !Control.HasFocus(2)</visible>    
+			<animation effect="slide" start="0,0" end="0,-200" time="150">VisibleChange</animation>
+			<itemlayout width="365" height="205">
+				<control type="group">
+					<width>337</width>
+					<height>175</height>
+					<include>ThumbsViewLayout</include>
 					<control type="group">
-                        <width>337</width>
-                        <height>175</height>
-                        <include>ThumbsViewLayout</include>
-                        <control type="group">
-                            <description>label overlay</description>
-                            <include>ThumbsTagOverlay</include>
-                            <include>LandscapeTagOverlayVisibility</include>
-                        </control>
-                    </control>
-				</itemlayout>
-				<focusedlayout width="365" height="205">
-                    <control type="group">
-                        <width>337</width>
-                        <height>175</height>
-                        <include>ThumbsViewLayoutFocus</include>
-                        <control type="group">
-                            <description>label overlay</description>
-                            <include>ThumbsTagOverlay</include>
-                            <include>LandscapeTagOverlayVisibility</include>
-                        </control>
-                        <visible>Control.HasFocus(4444)</visible>
-                    </control>
-                    <control type="group">
-                        <width>337</width>
-                        <height>175</height>
-                        <include>ThumbsViewLayout</include>
-                        <control type="group">
-                            <description>label overlay</description>
-                            <include>ThumbsTagOverlay</include>
-                            <include>LandscapeTagOverlayVisibility</include>
-                        </control>
-                        <visible>!Control.HasFocus(4444)</visible>
-                    </control>
-                    <control type="button">
-                        <label></label>
-                        <visible>false</visible>
-                        <onfocus>SetProperty(submenu,show,home)</onfocus>
-                    </control>
-				</focusedlayout>
-				<content><include>skinshortcuts-submenu</include></content>
-			</control>
-		
+						<description>label overlay</description>
+						<include>ThumbsTagOverlay</include>
+						<include>LandscapeTagOverlayVisibility</include>
+					</control>
+				</control>
+			</itemlayout>
+			<focusedlayout width="365" height="205">
+				<control type="group">
+					<width>337</width>
+					<height>175</height>
+					<include>ThumbsViewLayoutFocus</include>
+					<control type="group">
+						<description>label overlay</description>
+						<include>ThumbsTagOverlay</include>
+						<include>LandscapeTagOverlayVisibility</include>
+					</control>
+					<visible>Control.HasFocus(4444)</visible>
+				</control>
+				<control type="group">
+					<width>337</width>
+					<height>175</height>
+					<include>ThumbsViewLayout</include>
+					<control type="group">
+						<description>label overlay</description>
+						<include>ThumbsTagOverlay</include>
+						<include>LandscapeTagOverlayVisibility</include>
+					</control>
+					<visible>!Control.HasFocus(4444)</visible>
+				</control>
+				<control type="button">
+					<label></label>
+					<visible>false</visible>
+					<onfocus>SetProperty(submenu,show,home)</onfocus>
+				</control>
+			</focusedlayout>
+			<content>
+				<include>skinshortcuts-submenu</include>
+			</content>
+		</control>
 	</include>
 
 	<include name="HomeMenuSubMenuPage">
-	
 		<control type="group">
 			<posy>-1000</posy>
 			<animation type="Conditional" condition="[String.Contains(Window(Home).Property(submenu),show) | Control.HasFocus(4444)] + Skin.String(SubmenuLayout, subpage)">
 				<effect type="slide" start="0,0" end="0,1000" time="0" delay="0" />
 			</animation>
-			
 			
 			<!-- extra Header -->
 			<control type="group">
@@ -508,7 +471,6 @@
 					<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
 				</control>
 			</control>		
-	
 			<!--submenu panel -->
 			<control type="panel" id="4444">
 				<orientation>vertical</orientation>
@@ -554,70 +516,68 @@
 				</focusedlayout>		
 				<content><include>skinshortcuts-submenu</include></content>
 			</control>
-			
-
 		</control>
 	</include>
 	
 	<include name="SubMenuLayoutVertical">
-	<control type="list" id="4444">
-		<posx>50</posx>
-		<posy>30</posy>
-		<width>560</width>
-		<height>215</height>
-		<onfocus>SetProperty(submenu,show,home)</onfocus>
-		<visible allowhiddenfocus="true">[String.Contains(Window(Home).Property(submenu),show) | Control.HasFocus(4444)] + !Control.IsVisible(77551) + !Control.HasFocus(2)</visible>    
-		<animation effect="fade" start="0" end="100" time="250">VisibleChange</animation>
-		<onleft>SetProperty(submenuloading,loading,home)</onleft>
-		<onright>SetProperty(submenuloading,loading,home)</onright>
-		<onback>SetProperty(submenuloading,loading,home)</onback>
-		<onup>SetProperty(submenuloading,loading,home)</onup>
-		<ondown>SetProperty(submenuloading,loading,home)</ondown>
-		
-		<onleft>SetProperty(submenu,hide,home)</onleft>
-		<onright>SetProperty(submenu,hide,home)</onright>
-		<onback>SetProperty(submenu,hide,home)</onback>
-		<onup>SetProperty(submenu,hide,home)</onup>
-		<ondown>SetProperty(submenu,hide,home)</ondown>
+		<control type="list" id="4444">
+			<posx>50</posx>
+			<posy>30</posy>
+			<width>560</width>
+			<height>215</height>
+			<onfocus>SetProperty(submenu,show,home)</onfocus>
+			<visible allowhiddenfocus="true">[String.Contains(Window(Home).Property(submenu),show) | Control.HasFocus(4444)] + !Control.IsVisible(77551) + !Control.HasFocus(2)</visible>    
+			<animation effect="fade" start="0" end="100" time="250">VisibleChange</animation>
+			<onleft>SetProperty(submenuloading,loading,home)</onleft>
+			<onright>SetProperty(submenuloading,loading,home)</onright>
+			<onback>SetProperty(submenuloading,loading,home)</onback>
+			<onup>SetProperty(submenuloading,loading,home)</onup>
+			<ondown>SetProperty(submenuloading,loading,home)</ondown>
 			
-		<onleft>300</onleft>
-		<onright>300</onright>
-		<onup>300</onup>
-		<ondown>300</ondown>
-		<onback>300</onback>
-		<itemlayout height="40">
-			<control type="label">
-				<posx>50</posx>
-				<width>600</width>
-				<height>60</height>
-				<textcolor>black</textcolor>
-				<selectedcolor>black</selectedcolor>
-				<disabledcolor>black</disabledcolor>
-				<info>ListItem.Label</info>
-				<font>Reg28</font>
-			</control>
-		</itemlayout>
-		<focusedlayout height="40">
-			<control type="label">
-				<posx>50</posx>
-				<width>600</width>
-				<height>60</height>
-				<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-				<selectedcolor>white</selectedcolor>
-				<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
-				<label>[B]$INFO[ListItem.Label][/B]</label>
-				<font>Reg28</font>
-			</control>
-			<control type="button">
-				<label></label>
-				<visible>false</visible>
-				<onfocus>SetProperty(submenu,show,home)</onfocus>
-			</control>
-		</focusedlayout>
-		<content>
-		<include>skinshortcuts-submenu</include>
-		</content>
-	 </control>
+			<onleft>SetProperty(submenu,hide,home)</onleft>
+			<onright>SetProperty(submenu,hide,home)</onright>
+			<onback>SetProperty(submenu,hide,home)</onback>
+			<onup>SetProperty(submenu,hide,home)</onup>
+			<ondown>SetProperty(submenu,hide,home)</ondown>
+				
+			<onleft>300</onleft>
+			<onright>300</onright>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onback>300</onback>
+			<itemlayout height="40">
+				<control type="label">
+					<posx>50</posx>
+					<width>600</width>
+					<height>60</height>
+					<textcolor>black</textcolor>
+					<selectedcolor>black</selectedcolor>
+					<disabledcolor>black</disabledcolor>
+					<info>ListItem.Label</info>
+					<font>Reg28</font>
+				</control>
+			</itemlayout>
+			<focusedlayout height="40">
+				<control type="label">
+					<posx>50</posx>
+					<width>600</width>
+					<height>60</height>
+					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					<selectedcolor>white</selectedcolor>
+					<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+					<font>Reg28</font>
+				</control>
+				<control type="button">
+					<label></label>
+					<visible>false</visible>
+					<onfocus>SetProperty(submenu,show,home)</onfocus>
+				</control>
+			</focusedlayout>
+			<content>
+				<include>skinshortcuts-submenu</include>
+			</content>
+		 </control>
 	</include>
 	
 	<include name="HomeMenuSubMenuRight">
@@ -681,11 +641,11 @@
     </include>
 		
     <include name="HomeMenuFocusButtonLeft">
-            <control type="group">
-                <posy>13</posy>
-                <posx>-550</posx>
-                <include>HomeMenuFocusButtonLayout</include>
-            </control>
+		<control type="group">
+			<posy>13</posy>
+			<posx>-550</posx>
+			<include>HomeMenuFocusButtonLayout</include>
+		</control>
     </include>
     
     <include name="HomeMenuFocusButtonRight">
@@ -711,8 +671,5 @@
             <content><include>skinshortcuts-submenu</include></content>
         </control>
     </include>
-		
-		
-		
 		
 </includes>

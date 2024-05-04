@@ -6,11 +6,9 @@
         <!--Dialog Overlay-->
         <include>DialogOverlayExtra</include>
 		<include condition="Skin.HasSetting(EnableTouchSupport)">Footer</include>
-		
         <!--Dialog Tex Viewer-->
         <control type="group">
             <include>animation_window_open_close</include>
-			
 			<control type="image">
                 <!--Panel-->
                 <posx>445</posx>
@@ -30,7 +28,6 @@
 				<bordersize>10</bordersize>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
             </control>
-			
 			<control type="label" id="1">
                 <description>Heading</description>
                 <posx>473</posx>
@@ -40,7 +37,6 @@
                 <include>DialogHeader</include>
                 <align>center</align>
             </control>
-			
             <control type="image">
                 <posx>479</posx>
                 <posy>265</posy>
@@ -48,7 +44,6 @@
                 <height>548</height>
                 <texture border="5">dialogs/default/inner.png</texture>
             </control>
-			
             <control type="textbox" id="5">
                 <description>textarea</description>
                 <posx>495</posx>

@@ -4,7 +4,6 @@
     <defaultcontrol always="true">200</defaultcontrol>
     <onload>SetFocus($INFO[Skin.String(defaultosdbutton_music)])</onload>
     <controls>
-	
 					
 		<control type="button">
 			<description>background close area</description>

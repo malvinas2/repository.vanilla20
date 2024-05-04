@@ -25,7 +25,6 @@
                 <width>1340</width>
                 <height>100%</height>
 				<texture border="15">diffuse/bgpanel.png</texture>
-				
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
             </control>
 			
@@ -67,7 +66,6 @@
 				<height>100</height>
 				<label>$ADDON[service.openelec.settings 600]</label>
             </control>
-
 						
 			<control type="image">
 				<posx>680</posx>
@@ -86,8 +84,7 @@
                 <font>Reg20</font>
                 <label>$INFO[Container(5533).Property(InfoText)]</label>
                 <align>left</align>
-                     </control>
-			
+            </control>			
 		
             <!-- Other Content (right)-->
             <control type="group">
@@ -196,7 +193,8 @@
                         <align>left</align>
                         <label>$ADDON[service.openelec.settings 611]</label>
                     </control>
-                </control>                                 <!-- simple list content -->
+                </control>
+				<!-- simple list content -->
                 <control type="list" id="1100">
                     <left>0</left>
                     <top>20</top>
@@ -407,7 +405,9 @@
                                 <texture>common/settings1.png</texture>
                             </control>
                         </control>						
-                    </focusedlayout>                                                    </control>                                                          <!-- Network Menu Content -->
+                    </focusedlayout>
+				</control>
+				<!-- Network Menu Content -->
                 <control type="list" id="1200">
                     <left>0</left>
                     <top>20</top>
@@ -426,7 +426,7 @@
                             <top>2</top>
                             <width>1200</width>
                             <height>98</height>
-                            								<texture border="5" colordiffuse="$INFO[Skin.String(ButtonColor)]">diffuse/panel.png</texture>
+							<texture border="5" colordiffuse="$INFO[Skin.String(ButtonColor)]">diffuse/panel.png</texture>
                         </control>
 						<!-- Icon ethernet -->
                         <control type="image">
@@ -632,14 +632,14 @@
                             <visible>String.IsEqual(ListItem.Property(netType), wifi)</visible>
                         </control>
 						</control>
-                					    <control type="group">
+                		<control type="group">
 							<visible>!Control.HasFocus(1200)</visible>
 							<control type="image">
                             <left>0</left>
                             <top>2</top>
                             <width>1200</width>
                             <height>98</height>
-                            								<texture border="5" colordiffuse="$INFO[Skin.String(ButtonColor)]">diffuse/panel.png</texture>
+                            <texture border="5" colordiffuse="$INFO[Skin.String(ButtonColor)]">diffuse/panel.png</texture>
                         </control>
 						<!-- Icon ethernet -->
                         <control type="image">
@@ -1123,7 +1123,7 @@
 								<texture>special://skin/extras/openelec/Key.png</texture>
 							</control>
 						</control>
-                					    <control type="group">
+                		<control type="group">
 							<visible>!Control.HasFocus(1300)</visible>
 							<control type="image">
                             <left>0</left>
@@ -1251,7 +1251,8 @@
                             <aspectratio>keep</aspectratio>
                             <visible>String.IsEqual(ListItem.Property(Icon), computer)</visible> 
                             <texture>special://skin/extras/openelec/bt-computer.png</texture>
-                        </control>                                                                 <!-- Connection Name -->
+                        </control>
+						<!-- Connection Name -->
                         <control type="label">
                             <left>120</left>
                             <top>10</top>
@@ -1352,8 +1353,6 @@
 					<visible>!String.IsEmpty(Control.GetLabel(1500))</visible>
 				</control>
 			</control>
- 			
-			
 			
 			<!-- Main Menu (left) -->
             <control type="list" id="1000">

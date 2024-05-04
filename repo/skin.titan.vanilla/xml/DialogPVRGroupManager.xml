@@ -2,7 +2,6 @@
 <!--Titan-->
 <window>
     <defaultcontrol always="true">29</defaultcontrol>
-	
     <controls>
        <!--Dialog Overlay-->
 		<include>DialogOverlayExtra</include>
@@ -11,7 +10,6 @@
             <include>animation_window_open_close</include>
             <control type="group">
                 <visible>!Window.IsVisible(virtualkeyboard) + !Window.IsVisible(FileBrowser) + !Window.IsVisible(yesnodialog) + !Window.IsVisible(okdialog)</visible>
-				
 				<control type="image">
 					<!--Panel-->
 					<posx>100</posx>
@@ -31,7 +29,6 @@
 					<texture border="15">diffuse/bgpanel.png</texture>
 					<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
 				</control>
-
                 <!-- Header-->
                 <control type="label">
                     <posx>473</posx>
@@ -41,7 +38,6 @@
                     <label>$VAR[value_header]$INFO[Container(13).NumItems, (,)]</label>
                     <align>center</align>
                 </control>
-				
 				<!-- SENDERGRUPPE id 13 -->
                 <control type="group">
                     <!--LEFT: Group List -->
@@ -164,24 +160,17 @@
                         <animation effect="fade" start="75" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(61)">Conditional</animation>
                     </control>
                 </control>
-                
-				
-				
 				<control type="group">
 				<!-- VERSTECKTE SENDER id 11 -->
-				
                     <!--MIDDLE: Channels List -->
                     <posx>955</posx>
                     <posy>220</posy>
-					
 					<control type="grouplist">
 						<orientation>horizontal</orientation>
 						<left>0</left>
 						<align>left</align>
 					    <control type="label" id="21">
 							<description>Name label</description>
-							<!-- <posx>0</posx>
-							<posy>0</posy>   -->
 							<width>320</width>
 							<height>34</height>
 							<align>left</align>
@@ -190,8 +179,6 @@
 						</control>
 						<control type="label">
 							<description>Name label</description>
-							<!--  <posx>0</posx>
-							<posy>0</posy>    -->
 							<width>20</width>
 							<height>34</height>
 							<align>left</align>
@@ -200,7 +187,6 @@
 						<include>DialogButton</include>
 						</control>
 					</control>
-					
                     <control type="image">
                         <posx>0</posx>
                         <posy>40</posy>
@@ -328,23 +314,18 @@
                         <animation effect="fade" start="75" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(71)">Conditional</animation>
                     </control>
                 </control>
-				
                 <control type="group">
 				<!-- sichtbare Sender id 12 -->
                     <!--RIGHT: Grouped Channels List -->
                     <posx>1370</posx>
                     <posy>220</posy>
-                    
 					<control type="grouplist">
 						<orientation>horizontal</orientation>
 						<left>0</left>
 						<align>left</align>
 						<width>510</width>
-					
 						<control type="label" id="22">
 							<description>Name label</description>
-							<!-- <posx>0</posx>
-							<posy>0</posy>  -->
 							<width>300</width>
 							<height>34</height>
 							<align>left</align>
@@ -353,8 +334,6 @@
 						</control>
 						<control type="label">
 							<description>Name label</description>
-							<!--  <posx>0</posx>
-							<posy>0</posy>    -->
 							<width>20</width>
 							<height>34</height>
 							<align>left</align>
@@ -363,7 +342,6 @@
 						<include>DialogButton</include>
 						</control>
 					</control>
-
                     <control type="image">
                         <posx>0</posx>
                         <posy>40</posy>
@@ -552,7 +530,6 @@
 						<label>$LOCALIZE[186]</label>
 						<include>DialogButtonOther</include>
 					</control>
-
                 </control>
                 <control type="label" id="20">
                     <!--Fake Label used to pass on name label-->

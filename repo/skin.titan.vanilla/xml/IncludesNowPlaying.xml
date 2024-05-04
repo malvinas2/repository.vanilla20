@@ -1,175 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Titan-->
 <includes>
-    <!--NowPlayingMusic-->
-    <include name="NowPlayingMusicClassic">
-        <control type="group" id="9999">
-            <!--Panel-->
-            <visible>!Skin.HasSetting(DisableNowPlayingInfoBar)</visible>
-            <visible>Player.HasAudio</visible>
-            <visible>!Window.IsActive(settings) + !Window.IsActive(SettingsCategory.xml) + !Window.IsActive(systeminfo) + !Window.IsActive(skinsettings) + !Control.IsVisible(57)</visible>
-            <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog) + !Window.IsActive(movieinformation)</visible>
-			<visible>String.IsEmpty(Window(Home).Property(ThemeMediaMB3IsAlive))</visible>
-			<!-- <visible>String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + String.IsEmpty(Window(Home).Property(TrailerPlaying))</visible>  -->
-			<visible>String.IsEmpty(Window(Home).Property(TrailerPlaying))</visible>
-			<visible>String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) | VideoPlayer.Content(livetv) | VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | MusicPlayer.Content(livetv)</visible>
-            <posx>650</posx>
-            <posy>-30</posy>
-            <control type="image">
-                <!--Panel-->
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>633</width>
-                <height>238</height>
-                <texture>dialogs/nowplayingclassic/nowplaying_music.png</texture>
-            </control>
-            <control type="image">
-                <!--Cover-->
-                <posx>90</posx>
-                <posy>44</posy>
-                <width>133</width>
-                <height>133</height>
-                <fadetime>200</fadetime>
-                <texture background="true" fallback="colors/color_keyboard.png" diffuse="diffuse/music_cover.png">$VAR[AudioPlayerCoverImage]</texture>
-                <aspectratio align="center" aligny="top">stretch</aspectratio>
-            </control>
-            <control type="label">
-                <!--Now Playing-->
-                <posx>255</posx>
-                <posy>40</posy>
-                <width>285</width>
-                <align>left</align>
-                <font>Reg28</font>
-                <textcolor>darkgrey</textcolor>
-                <label>31040</label>
-            </control>
-            <control type="fadelabel">
-                <!--Title-->
-                <posx>255</posx>
-                <posy>75</posy>
-                <width>285</width>
-                <align>left</align>
-                <font>Reg30</font>
-                <textcolor>darkgrey</textcolor>
-                <label>$INFO[MusicPlayer.Artist] - $INFO[MusicPlayer.Title]</label>
-                <visible>!String.IsEmpty(MusicPlayer.Artist)</visible>
-            </control>
-            <control type="label">
-                <!--Play Time-->
-                <posx>255</posx>
-                <posy>125</posy>
-                <width>285</width>
-                <align>left</align>
-                <font>Reg28</font>
-                <textcolor>darkgrey</textcolor>
-                <label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
-                <visible>!String.IsEmpty(Player.Duration)</visible>
-            </control>
-            <control type="label">
-                <!--Play Time-->
-                <posx>255</posx>
-                <posy>125</posy>
-                <width>285</width>
-                <align>left</align>
-                <font>Reg28</font>
-                <textcolor>darkgrey</textcolor>
-                <label>$INFO[Player.Time]</label>
-                <visible>String.IsEmpty(Player.Duration)</visible>
-            </control>
-            <control type="progress">
-                <!--Process-->
-                <posx>255</posx>
-                <posy>124</posy>
-                <width>285</width>
-                <texturebg></texturebg>
-                <midtexture border="4">common/progress/ProgressMidSmall.png</midtexture>
-                <info>Player.Progress</info>
-                <visible>true</visible>
-            </control>
-        </control>
-    </include>
-    <!--NowPlayingVideo-->
-    <include name="NowPlayingVideoClassic">
-        <control type="group" id="9999">
-            <!--Panel-->
-            <visible>!Skin.HasSetting(DisableNowPlayingInfoBar)</visible>
-            <visible>Player.HasVideo</visible>
-            <visible>!Window.IsActive(settings) + !Window.IsActive(SettingsCategory.xml) + !Window.IsActive(systeminfo) + !Window.IsActive(skinsettings) + !Control.IsVisible(57)</visible>
-            <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog) + !Window.IsActive(movieinformation)</visible>
-			<!-- <visible>String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + String.IsEmpty(Window(Home).Property(TrailerPlaying))</visible> -->
-			<visible>String.IsEmpty(Window(Home).Property(TrailerPlaying))</visible>
-			<visible>String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) | VideoPlayer.Content(livetv) | VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | MusicPlayer.Content(livetv)</visible>
-			
-            <posx>590</posx>
-            <posy>-30</posy>
-            <control type="image">
-                <!--Panel-->
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>734</width>
-                <height>238</height>
-                <texture>dialogs/nowplayingclassic/nowplaying_video.png</texture>
-            </control>
-            <control type="image">
-                <!--Black Back-->
-                <posx>90</posx>
-                <posy>44</posy>
-                <width>240</width>
-                <!-- +8 -->
-                <height>131</height>
-                <!-- +2 -->
-                <texture>colors/color_black.png</texture>
-            </control>
-            <control type="label">
-                <!--Now Playing-->
-                <posx>355</posx>
-                <posy>40</posy>
-                <width>285</width>
-                <align>left</align>
-                <font>Reg28</font>
-                <textcolor>darkgrey</textcolor>
-                <label>31040</label>
-            </control>
-            <control type="fadelabel">
-                <!--Title-->
-                <posx>357</posx>
-                <posy>75</posy>
-                <width>285</width>
-                <align>left</align>
-                <font>Bold34</font>
-                <textcolor>darkgrey</textcolor>
-                <label>$INFO[VideoPlayer.Title]</label>
-                <scroll>false</scroll>
-            </control>
-            <control type="label">
-                <!--Play Time-->
-                <posx>355</posx>
-                <posy>125</posy>
-                <width>285</width>
-                <align>left</align>
-                <font>Reg28</font>
-                <textcolor>darkgrey</textcolor>
-                <label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
-            </control>
-            <control type="progress">
-                <!--Process-->
-                <posx>357</posx>
-                <posy>124</posy>
-                <width>285</width>
-                <texturebg></texturebg>
-                <midtexture border="4">common/progress/ProgressMidSmall.png</midtexture>
-                <info>Player.Progress</info>
-                <visible>true</visible>
-            </control>
-            <control type="videowindow">
-                <!--Video Window-->
-                <posx>94</posx>
-                <posy>45</posy>
-                <width>232</width>
-                <height>131</height>
-            </control>
-        </control>
-    </include>
 
 	<include name="NowPlayingModern">
 		<include condition="!Skin.HasSetting(DisableNowPlayingBackground)">NowPlayingBackground</include>
@@ -180,7 +11,7 @@
         <control type="group" id="88888">
             <!--Panel-->
             <visible>!Skin.HasSetting(DisableNowPlayingInfoBar)</visible>
-            <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog) + !ControlGroup(400).HasFocus() + !Control.IsVisible(77551)</visible>
+            <visible>!Window.IsActive(notification) + !Window.IsActive(pvrguidecontrols) + !Window.IsActive(extendedprogressdialog) + !ControlGroup(400).HasFocus() + !Control.IsVisible(77551)</visible>
 			<visible>[[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
 			<!-- <visible>String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + String.IsEmpty(Window(Home).Property(TrailerPlaying))</visible> -->
 			<visible>String.IsEmpty(Window(Home).Property(TrailerPlaying))</visible>
@@ -331,7 +162,7 @@
                 <animation type="Conditional" condition="Window.IsActive(volumebar)">
                     <effect type="slide" start="0,0" end="-120,0" time="400" tween="cubic" easing="inout" delay="0" />
                 </animation>
-                <visible>!Skin.HasSetting(EnableTouchSupport) + !Control.IsVisible(884455)</visible>
+                <visible>!Skin.HasSetting(EnableTouchSupport) + !Control.IsVisible(884455) + !Skin.HasSetting(DisableNowPlayingClock)</visible>
                 <control type="grouplist">
                     <!--Time Grouplist Line 1-->
                     <posx>1260</posx>
@@ -355,7 +186,7 @@
                         <visible>String.EndsWith(system.time,AM)</visible>
                         <width min="0" max="150">auto</width>
                         <height>100</height>
-                        <label>378</label>
+                        <label>$LOCALIZE[378]</label>
                         <font>Bold55</font>
                         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     </control>
@@ -364,7 +195,7 @@
                         <visible>String.EndsWith(system.time,PM)</visible>
                         <width min="0" max="150">auto</width>
                         <height>100</height>
-                        <label>379</label>
+                        <label>$LOCALIZE[379]</label>
                         <font>Bold55</font>
                         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     </control>
@@ -444,7 +275,7 @@
                     <include>animation_fade_visible_hidden</include>
                     <width>70</width>
                     <height>70</height>
-                    <label>210</label>
+                    <label>$LOCALIZE[210]</label>
                     <font></font>
                     <texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">osd/rounded/prevtrack.png</texturefocus>
                     <texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">osd/rounded/prevtrack.png</texturenofocus>
@@ -486,7 +317,7 @@
                     <include>animation_fade_visible_hidden</include>
                     <width>70</width>
                     <height>70</height>
-                    <label>209</label>
+                    <label>$LOCALIZE[209]</label>
                     <font></font>
                     <texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">osd/rounded/nexttrack.png</texturefocus>
                     <texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">osd/rounded/nexttrack.png</texturenofocus>
@@ -526,7 +357,6 @@
                 </control>
                 <include>DialogOverlay</include>
             </control>
-            
         </control>
     </include>
     
@@ -579,7 +409,8 @@
     
     <variable name="music_fanart">
         <value condition="Skin.String(MusicArtistFanart,slideshow) + !String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.ExtraFanArt))">$INFO[Window(Home).Property(SkinHelper.Player.Art.ExtraFanArt)]</value>
-        <value condition="!Skin.String(MusicArtistFanart,disabled) + !String.IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
+        <value condition="Skin.String(MusicArtistFanart,artistslideshow) + !String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))">$INFO[Window(Visualisation).Property(ArtistSlideshow.Image)]</value>
+		<value condition="!Skin.String(MusicArtistFanart,disabled) + !String.IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
         <value condition="!Skin.String(MusicArtistFanart,disabled) + !String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.FanArt))">$INFO[Window(Home).Property(SkinHelper.Player.Art.FanArt)]</value>
         <value condition="String.Contains(Skin.String(MusicBackground),VAR)">$VAR[MusicBackground]</value>
         <value condition="Skin.String(MusicBackground)">$INFO[Skin.String(MusicBackground)]</value>

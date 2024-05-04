@@ -210,7 +210,6 @@
 		<!--clear logo -->
 		<include condition="Skin.String(ClearLogoLocation)">ClearLogo</include>
 		
-		
 		<!--Sub Menu-->
         <control type="group">
             <include condition="Skin.HasSetting(smallContextMenu)">SideBladeClassic</include>
@@ -234,19 +233,17 @@
 				<control type="button" id="8">
                     <description>Settings</description>
 				    <include>SideBladeMenuButton</include>
-                    <label>5</label>
+                    <label>$LOCALIZE[5]</label>
                 </control>
 				<control type="radiobutton" id="1004">
                     <!--Show Fanart Background-->
                     <include>SideBladeMenuButton</include>
-                    <label>31141</label>
+                    <label>$LOCALIZE[31141]</label>
                     <onclick>Skin.ToggleSetting(ShowFanartBackground)</onclick>
                     <selected>Skin.HasSetting(ShowFanartBackground)</selected>
 					<visible>!Control.IsVisible(507)</visible>
                 </control>
             </control>
         </control>
-
-
 	</controls>
 </window>

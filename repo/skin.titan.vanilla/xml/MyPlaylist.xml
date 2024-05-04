@@ -17,7 +17,6 @@
 		<!-- all Views -->
         <include>allViews</include>
 		
-		
         <!--Sub Menu Tab Left-->
         <include condition="!Skin.HasSetting(DisableSideBladeIndicator)">SideBladeMenuTabLeft</include>
         <!--Sub Menu-->
@@ -49,36 +48,35 @@
                 </control>
                 <control type="togglebutton" id="4">
                     <!--Ascending-->
-                    <label>584</label>
-                    <altlabel>585</altlabel>
+                    <label>$LOCALIZE[584]</label>
+                    <altlabel>$LOCALIZE[585]</altlabel>
                     <include>SideBladeMenuButton</include>
                     <align>left</align>
                 </control>
                 <control type="radiobutton" id="20">
                     <!--Shuffle-->
-                    <label>191</label>
+                    <label>$LOCALIZE[191]</label>
                     <include>SideBladeMenuButton</include>
                     <align>left</align>
                 </control>
                 <control type="button" id="21">
                     <!--Save-->
-                    <label>190</label>
+                    <label>$LOCALIZE[190]</label>
                     <include>SideBladeMenuButton</include>
                     <align>left</align>
                 </control>
                 <control type="button" id="22">
                     <!--Clear-->
-                    <label>192</label>
+                    <label>$LOCALIZE[192]</label>
                     <include>SideBladeMenuButton</include>
                     <align>left</align>
                 </control>
                 <control type="button" id="23">
                     <!--Play-->
-                    <label>208</label>
+                    <label>$LOCALIZE[208]</label>
                     <include>SideBladeMenuButton</include>
                     <align>left</align>
                 </control>
-				
 				<control type="image" id="6201">
                     <!--Seperator-->
                     <width>458</width>

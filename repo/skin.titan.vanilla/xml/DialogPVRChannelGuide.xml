@@ -15,77 +15,86 @@
             <visible allowhiddenfocus="true">false</visible>
         </control>
 		<control type="group">
-			<posx>-660</posx>
+			<posx>-600</posx>
 			<posy>0</posy>
 			<animation type="WindowOpen">
-				<effect type="slide" start="0" end="660" time="250" tween="cubic" easing="inout" />
+				<effect type="slide" start="0" end="600" time="250" tween="cubic" easing="inout" />
 			</animation>
 			<animation type="WindowClose">
-				<effect type="slide" start="660" end="0" time="250" tween="cubic" easing="inout" />
+				<effect type="slide" start="600" end="0" time="250" tween="cubic" easing="inout" />
 			</animation>
 			<!--Panel-->
 			<control type="image">
-				<posy>-250</posy>
+				<posy>0</posy>
 				<posx>-20</posx>
-				<width>695</width>
-				<height>1750</height>
+				<width>595</width>
+				<height>100%</height>
 				<texture border="5">diffuse/panel.png</texture>
 				<colordiffuse>$INFO[Skin.String(OSDPanelColor)]</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
             <control type="image">
-				<posy>-250</posy>
+				<posy>0</posy>
 				<posx>-20</posx>
-				<width>690</width>
-				<height>1750</height>
+				<width>590</width>
+				<height>100%</height>
 				<texture border="5">diffuse/panel.png</texture>
 				<colordiffuse>$INFO[Skin.String(OSDPanelColor)]</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
-			
+			<!--Channel Icon-->
 			<control type="image">
-				<!--Channel Icon-->
-				<posx>10</posx>
-				<posy>25</posy>
-				<width>100</width>
-				<height>100</height>
-				<texture background="true">$INFO[VideoPlayer.Cover]</texture>
+				<posy>5</posy>
+				<width>150</width>
+				<height>150</height>
+				<texture background="true">$INFO[Player.Icon]</texture>
 				<aspectratio>keep</aspectratio>
+				<visible>!String.IsEmpty(Player.Icon)</visible>
+			</control>
+			<control type="label">
+				<!--Channel Number-->
+				<posx>0</posx>
+				<posy>20</posy>
+				<width>130</width>
+				<height>130</height>
+				<font>Reg40</font>
+				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+				<selectedcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</selectedcolor>
+				<align>center</align>
+				<info>ListItem.ChannelNumberLabel</info>
+				<visible>String.IsEmpty(Player.Icon)</visible>
 			</control>
 
-		
 			<!-- header -->
 			<control type="label">
 				<posx>300</posx>
 				<posy>10</posy>
-				<width min="80" max="524">auto</width>
+				<width min="80" max="400">auto</width>
 				<height>100</height>
 				<font>Bold45</font>
 				<align>left</align>
 				<textcolor>$INFO[Skin.String(OSDSecondaryTextColor)]</textcolor>
-				<label>$LOCALIZE[19222]$INFO[VideoPlayer.ChannelName, • ,]</label>
+				<label>$INFO[VideoPlayer.ChannelName]</label>
 				<visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog)</visible>
 				<animation effect="slide" start="0" end="-130" time="0" reversible="false" condition="String.IsEmpty(ListItem.Art(poster))">Conditional</animation>
 			</control>
-			
+			<!--Info Time Date-->
 			<control type="label">
-				<!--Info Time Date-->
 				<posx>300</posx>
 				<posy>80</posy>
-				<width>524</width>
+				<width>400</width>
 				<height>50</height>
 				<font>Reg28</font>
 				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 				<label>$INFO[Container(11).ListItem.StartDate]</label>
 				<animation effect="slide" start="0" end="-130" time="0" reversible="false" condition="String.IsEmpty(ListItem.Art(poster))">Conditional</animation>
 			</control>
-			
 			<!--Label Menu: -->
 			<control type="image">
 				<!--Seperator-->
 				<posx>-80</posx>
 				<posy>140</posy>
-				<width>790</width>
+				<width>700</width>
 				<height>20</height>
 				<align>left</align>
 				<texture>common/menu-separator.png</texture>
@@ -101,12 +110,11 @@
                 <onleft>50</onleft>
                 <animation effect="fade" start="100" end="0" time="10" condition="true">Conditional</animation>
             </control>
-			
 			<!--List ID=11-->
 			<control type="list" id="11">
 				<posx>0</posx>
 				<posy>150</posy>
-				<width>670</width>
+				<width>610</width>
 				<height>910</height>
 				<onleft></onleft>
 				<onright>dialog.close(all,true)</onright>
@@ -115,7 +123,7 @@
 				<viewtype label="535">list</viewtype>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<itemlayout height="62" width="667">
+				<itemlayout height="62" width="607">
 					<control type="label">
 						<!--Time-->
 						<posx>10</posx>
@@ -129,29 +137,29 @@
 					</control>
 					<control type="image">
 						<!--Rec-->
-						<posx>140</posx>
-						<posy>0</posy>
-						<width>55</width>
-						<height>55</height>
+						<posx>90</posx>
+						<posy>-5</posy>
+						<width>50</width>
+						<height>50</height>
 						<texture>pvr/icons/pvr_record.png</texture>
 						<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
 					</control>
 					<control type="image">
 						<!--Now Playing Icon-->
-						<posx>140</posx>
-						<posy>0</posy>
-						<width>55</width>
-						<height>55</height>
+						<posx>90</posx>
+						<posy>-5</posy>
+						<width>50</width>
+						<height>50</height>
 						<fadetime>600</fadetime>
 						<texture>pvr/icons/pvr_play.png</texture>
-						<visible>ListItem.IsPlaying + !ListItem.IsRecording + !ListItem.HasTimer</visible>
+						<visible>[String.IsEqual(VideoPlayer.Title,ListItem.Title) + String.IsEqual(VideoPlayer.EndTime,ListItem.EndTime)] + !ListItem.IsRecording + !ListItem.HasTimer + !ListItem.HasReminder</visible>
 					</control>
 					<control type="label">
 						<!--Channel Name-->
-						<animation effect="slide" start="0" end="50" time="0" reversible="false" condition="ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer">Conditional</animation>
+						<animation effect="slide" start="0" end="50" time="0" reversible="false" condition="ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer | ListItem.HasReminder">Conditional</animation>
 						<posx>140</posx>
 						<posy>10</posy>
-						<width>450</width>
+						<width>400</width>
 						<height>25</height>
 						<font>Reg28</font>
 						<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
@@ -163,18 +171,18 @@
 						<!--Separator-->
 						<posx>0</posx>
 						<posy>105</posy>
-						<width>530</width>
+						<width>550</width>
 						<height>20</height>
 						<fadetime>400</fadetime>
 						<colordiffuse>list_separator</colordiffuse>
 						<texture>common/separator.png</texture>
 					</control>
 				</itemlayout>
-				<focusedlayout height="185" width="667">
+				<focusedlayout height="185" width="590">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
-						<width>660</width>
+						<width>570</width>
 						<height>185</height>
 						<texture border="5">diffuse/panel.png</texture>
 						<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
@@ -192,31 +200,32 @@
 					</control>
 					<control type="image">
 						<!--Rec-->
-						<posx>140</posx>
-						<posy>0</posy>
-						<width>55</width>
-						<height>55</height>
+						<posx>90</posx>
+						<posy>-5</posy>
+						<width>50</width>
+						<height>50</height>
 						<texture>pvr/icons/pvr_record.png</texture>
 						<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
 					</control>
 					<control type="image">
 						<!--Now Playing Icon-->
-						<posx>140</posx>
-						<posy>0</posy>
-						<width>55</width>
-						<height>55</height>
+						<posx>90</posx>
+						<posy>-5</posy>
+						<width>50</width>
+						<height>50</height>
 						<fadetime>600</fadetime>
-						<texture>pvr/icons/pvr_play.png</texture>
-						<visible>ListItem.IsPlaying + !ListItem.IsRecording + !ListItem.HasTimer</visible>
+                        <texture>pvr/icons/pvr_play.png</texture>
+                        <visible>[String.IsEqual(VideoPlayer.Title,ListItem.Title) + String.IsEqual(VideoPlayer.EndTime,ListItem.EndTime)] + !ListItem.IsRecording + !ListItem.HasTimer + !ListItem.HasReminder</visible>
 					</control>
 					<control type="label">
 						<!--Channel Name-->
-						<animation effect="slide" start="0" end="50" time="0" reversible="false" condition="ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer">Conditional</animation>
+						<animation effect="slide" start="0" end="50" time="0" reversible="false" condition="ListItem.IsPlaying | ListItem.IsRecording | ListItem.HasTimer | ListItem.HasReminder">Conditional</animation>
 						<posx>140</posx>
 						<posy>10</posy>
-						<width>450</width>
+						<width>400</width>
 						<height>25</height>
 						<font>Reg28</font>
+						<scroll>true</scroll>
 						<textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -226,7 +235,7 @@
 						<!--Info Plot-->
 						<posx>10</posx>
 						<posy>38</posy>
-						<width>650</width>
+						<width>540</width>
 						<height>137</height>
 						<font>Reg24</font>
 						<align>left</align>

@@ -11,9 +11,7 @@
 			<visible>!Window.IsActive(DialogNumeric.xml)</visible>
 			<!--Dialog Overlay-->
 			<include>DialogOverlayExtra</include>
-			
 			<control type="group">
-				
 				<posx>400</posx>
 				<posy>410</posy>
 				<include>animation_window_open_close</include>
@@ -23,10 +21,8 @@
 					<width>2000</width>
 					<height>410</height>
 					<texture border="5">diffuse/panel.png</texture>
-					
 					<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
 				</control>
-				
 				<control type="multiimage">
 					<description>Busy animation</description>
 					<posx>0</posx>
@@ -38,7 +34,6 @@
 					<aspectratio>keep</aspectratio>
 					<timeperimage>250</timeperimage>
 				</control>
-				
 				<control type="label">
 					<posx>-5</posx>
 					<posy>-10</posy>
@@ -50,11 +45,9 @@
 					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 					<label>$INFO[System.Progressbar,,%]</label>
 				</control>
-
 				<control type="group">
 					<posx>250</posx>
 					<width>980</width>
-				
 					<control type="label" id="1">
 						<posx>15</posx>
 						<description>Heading</description>
@@ -62,7 +55,6 @@
 						<width>1000</width>
 						<font>Bold55</font>
 					</control>
-
 					<control type="textbox" id="9">
 						<description>Line 1</description>
 						<posx>15</posx>
@@ -72,7 +64,6 @@
 						<label></label>
 						<font>Reg30</font>
 					</control>
-					
 					<control type="grouplist">
 						<posx>15</posx>
 						<posy>220</posy>
@@ -82,30 +73,32 @@
 							<description>Yes button</description>
 							<width>300</width>
 							<height>90</height>
-							<label>107</label>
+							<label>$LOCALIZE[107]</label>
 							<font>Reg36</font>
 							<include>DialogButtonOther</include>
+							<textwidth>280</textwidth>
 						</control>
 						<control type="button" id="10">
 							<description>No button</description>
 							<width>300</width>
 							<height>90</height>
 							<font>Reg36</font>
-							<label>106</label>
+							<label>$LOCALIZE[106]</label>
 							<include>DialogButtonOther</include>
+							<textwidth>280</textwidth>
 						</control>
 						<control type="button" id="12">
 							<description>Custom button</description>
 							<width>300</width>
 							<height>90</height>
 							<font>Reg36</font>
-							<label>106</label>
+							<label>$LOCALIZE[106]</label>
 							<include>DialogButtonOther</include>
+							<textwidth>280</textwidth>
 						</control>
 					</control>
 				</control>
 			</control>	
 		</control>
 	</controls>
-
 </window>

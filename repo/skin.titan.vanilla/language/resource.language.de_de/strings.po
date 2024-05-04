@@ -16,6 +16,22 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgctxt "#10005"
+msgid "Music"
+msgstr "Musik"
+
+msgctxt "#30035"
+msgid "Continue watching in $INFO[Window.Property(remaining)] seconds"
+msgstr "Wiedergabe fortsetzen in $INFO[Window.Property(remaining)] Sekunden"
+
+msgctxt "#30036"
+msgid "Up next in $INFO[Window.Property(remaining)] seconds"
+msgstr "Als Nächstes in $INFO[Window.Property(remaining)] Sekunden"
+
+msgctxt "#30037"
+msgid "Next episode in $INFO[Window.Property(remaining)] seconds"
+msgstr "Nächste Episode in $INFO[Window.Property(remaining)] Sekunden"
+
 msgctxt "#31001"
 msgid "Other settings"
 msgstr "Weitere Einstellungen"
@@ -27,6 +43,10 @@ msgstr "Kacheln ein/ausschalten"
 msgctxt "#31003"
 msgid "Bordersize for unfocused thumbs/tiles"
 msgstr "Rahmengröße für nicht fokussierte Miniaturansichten / Kacheln"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "Modus ändern"
 
 msgctxt "#31005"
 msgid "General skin settings"
@@ -441,8 +461,8 @@ msgid "Auto show the submenu for the selected home tile"
 msgstr "Automatisch das Untermenü für die ausgewählte Hauptkachel anzeigen"
 
 msgctxt "#31114"
-msgid "Show large thumbnail"
-msgstr "Großes Vorschaubild anzeigen"
+msgid "Show large Fanart in Background"
+msgstr "Großes Poster im Hintergrund anzeigen"
 
 msgctxt "#31115"
 msgid "Homescreen layout"
@@ -2117,8 +2137,8 @@ msgid "Enable music wall background while playing music"
 msgstr "Aktiviere Musikwand Hintergrund während der Musikwiedergabe"
 
 msgctxt "#31616"
-msgid "Enable mini guide on fullscreen Live TV"
-msgstr "Aktiviere Mini-Programmführer bei Vollbild Live-TV"
+msgid "Show Program overview in left panel or as mini guide"
+msgstr "Zeige Programmübersicht im linken Panel oder als Mini-EPG"
 
 msgctxt "#31617"
 msgid "Animate music background"
@@ -2151,6 +2171,10 @@ msgstr "Wetter Symbole auswählen"
 msgctxt "#31624"
 msgid "Select Weather FanArt"
 msgstr "Wetter Fankunst auswählen"
+
+msgctxt "#31625"
+msgid "Select Studio Icons"
+msgstr "Studio-Symbole auswählen"
 
 msgctxt "#31626"
 msgid "Select Movie/TV Genre icons"
@@ -2204,6 +2228,10 @@ msgctxt "#31638"
 msgid "Allow transparent home tiles (alternate border)"
 msgstr "Erlaube durchsichtige Startbildschirmkacheln (alternativer Rahmen)"
 
+msgctxt "#31639"
+msgid "Disable Spotlight widget"
+msgstr "Spotlight-Widget deaktivieren"
+
 msgctxt "#31640"
 msgid "Show artist biography on OSD while playing music"
 msgstr "Interpreten-Biografie in OSD während der Musikwiedergabe anzeigen"
@@ -2235,6 +2263,10 @@ msgstr "Globaler Hintergrund"
 msgctxt "#31647"
 msgid "Allow override of global background on per-shortcut base"
 msgstr "Hintergrundbild pro Verknüpfung festlegen statt global"
+
+msgctxt "#31648"
+msgid "Display tags/labels for episodes on posters"
+msgstr "Zeige Tags/Labels für Episoden auf Poster"
 
 msgctxt "#31649"
 msgid "Titan tiles (1 row of small tiles)"
@@ -2488,6 +2520,10 @@ msgctxt "#31711"
 msgid "Select which buttons to show in musicinfo"
 msgstr "Wähle aus welche Schaltflächen in Musikinfo angezeigt werden"
 
+msgctxt "#31712"
+msgid "Auto-align widgets to the right"
+msgstr "Widgets automatisch rechts ausrichten"
+
 msgctxt "#31713"
 msgid "Swap poster"
 msgstr "Poster tauschen"
@@ -2696,6 +2732,10 @@ msgctxt "#31764"
 msgid "Disable all scroll bars (instead of hiding them)"
 msgstr "Alle Bildlaufleisten deaktivieren (anstatt auszublenden)"
 
+msgctxt "#31765"
+msgid "Enable Emby coverart plugin compatability"
+msgstr "Kompatibilität für Emby-Coverart Plugin aktivieren"
+
 msgctxt "#31766"
 msgid "Do not display the IMDB rating icon and studio logo"
 msgstr "Verberge IMDb Bewertung und Studio Logo"
@@ -2711,42 +2751,6 @@ msgstr "Wähle eine Standardfarbpalette für den Color Picker"
 msgctxt "#31769"
 msgid "You can select which palette is displayed by default when the color picker is called by the skin."
 msgstr "Du kannst die Standardfarbpalette auswählen die angezeigt wird, wenn der Color Picker verwendet wird."
-
-msgctxt "#31781"
-msgid "Video process information"
-msgstr "Information zur Videoverarbeitung"
-
-msgctxt "#31782"
-msgid "Hardware decoding"
-msgstr "Hardware Dekodierung"
-
-msgctxt "#31783"
-msgid "Inactive"
-msgstr "Inaktiv"
-
-msgctxt "#31784"
-msgid "Decoder"
-msgstr "Decoder"
-
-msgctxt "#31823"
-msgid "Use fixed focus"
-msgstr "Festen Fokus verwenden"
-
-msgctxt "#31824"
-msgid "Default music background (as fallback if no artist fanart or fanart disabled)"
-msgstr "Standard-Hintergrund fur Musik (falls Künster- oder Albumfanart deaktiviert)"
-
-msgctxt "#31825"
-msgid "Don't use rich artwork on the OSD at livetv playback"
-msgstr "Keine Illustrationen für Live-TV benutzen"
-
-msgctxt "#31826"
-msgid "Select country flags / icons"
-msgstr "Wähle Länderfahnen/-symbole"
-
-msgctxt "#31822"
-msgid "No widget assigned [click to configure]"
-msgstr "Kein Widget zugewiesen (klicken zum konfigurieren)"
 
 msgctxt "#31770"
 msgid "Height of the menu tiles in the mainmenu"
@@ -2792,6 +2796,194 @@ msgctxt "#31780"
 msgid "PVR Guide focused item textcolor"
 msgstr "Textfarbe im EPG-Guide (Fokus)"
 
+msgctxt "#31781"
+msgid "Video process information"
+msgstr "Information zur Videoverarbeitung"
+
+msgctxt "#31782"
+msgid "Hardware decoding"
+msgstr "Hardware Dekodierung"
+
+msgctxt "#31783"
+msgid "Inactive"
+msgstr "Inaktiv"
+
+msgctxt "#31784"
+msgid "Decoder"
+msgstr "Decoder"
+
+msgctxt "#31785"
+msgid "Audio Process Information"
+msgstr "Audio-Informationen"
+
+msgctxt "#31786"
+msgid "Player process info"
+msgstr "PVR- und Audio-/Video Informationen"
+
+msgctxt "#31787"
+msgid "Software"
+msgstr ""
+
+msgctxt "#31788"
+msgid "Focused/active color for radiobuttons and spin controls"
+msgstr "Fokus/aktive Farbe für Optionsschaltflächen und Schieberegler"
+
+msgctxt "#31789"
+msgid "Enable indicator if item is playing or is recording/timer (pvr)"
+msgstr "Symbol anzeigen, wenn Element abgespielt wird oder eine Aufnahme/Timer (PVR) läuft"
+
+msgctxt "#31790"
+msgid "Color for play icon"
+msgstr "Farbe für Wiedergabesymbol"
+
+msgctxt "#31791"
+msgid "Header panel color"
+msgstr "Farbe des Kopfzeilenfelds"
+
+msgctxt "#31792"
+msgid "Show PVR Channel overview in big format or in left panel"
+msgstr "Zeige Senderübersicht als großen Dialog oder im linken Panel"
+
+msgctxt "#31793"
+msgid "Auto show trailer"
+msgstr "Trailer automatisch abspielen"
+
+msgctxt "#31794"
+msgid "Prefer short plot outline in widget details"
+msgstr ""
+
+msgctxt "#31795"
+msgid "Show small seekpanel when video is paused"
+msgstr "Kleine Suchleiste anzeigen wenn Video pausiert"
+
+msgctxt "#31796"
+msgid "Allow youtube lookup for trailer if no trailer exists"
+msgstr "Trailer auf Youtube suchen, wenn nicht lokal vorhanden"
+
+msgctxt "#31797"
+msgid "Youtube Videos"
+msgstr ""
+
+msgctxt "#31798"
+msgid "Auto play trailer in Spotlight section"
+msgstr "Trailer automatisch in Spotlight abspielen"
+
+msgctxt "#31799"
+msgid "Default widgets"
+msgstr "Standard Widgets"
+
+msgctxt "#31800"
+msgid "Manage color themes"
+msgstr "Farbthemen verwalten"
+
+msgctxt "#31801"
+msgid "Manage skin backups"
+msgstr "Skin-Backups verwalten"
+
+msgctxt "#31802"
+msgid "Show animated art only in details/info (not in lists)"
+msgstr "Animierte Fanart nur in Details/Infos (nicht in Listen) anzeigen"
+
+msgctxt "#31803"
+msgid "Use animated fanart as background (if available)"
+msgstr "Animierte Fanart als Hintergrund verwenden (falls verfügbar)"
+
+msgctxt "#31804"
+msgid "Use fanart from widget as background"
+msgstr "Fanart vom Widget als Hintergrund verwenden"
+
+msgctxt "#31805"
+msgid "Use large mainmenu style"
+msgstr "Großen Hauptmenüstil benutzen"
+
+msgctxt "#31806"
+msgid "Jump to a specific time (hh:mm:ss)"
+msgstr "Zu einer bestimmten Zeit springen (hh:mm:ss)"
+
+msgctxt "#31807"
+msgid "Enable OSD of buffering progess during video playback"
+msgstr "OSD aktivieren für Puffer-Fortschritt während Videowiedergabe"
+
+msgctxt "#31808"
+msgid "Enable weather alert icon overlay (if supported by weather addon)"
+msgstr "Überlagertes Wetteralarmsymbol aktivieren (sofern vom Wetter-Add-on unterstützt)"
+
+msgctxt "#31809"
+msgid "Volume Display/Change Indicator Style"
+msgstr "Lautstärkeanzeige/Änderung des Anzeigestils"
+
+msgctxt "#31810"
+msgid "Don't use UPPERCASE font on the homemenu titles"
+msgstr "Keine Schriftart in GROSSBUCHSTABEN in Hauptmenü-Titel benutzen"
+
+msgctxt "#31811"
+msgid "Hide poster panel"
+msgstr "Poster-Panel verstecken"
+
+msgctxt "#31812"
+msgid "Enable automatic creation of wall backgrounds"
+msgstr "Automatische Erstellung von gekachelten Hintergründen aktivieren"
+
+msgctxt "#31813"
+msgid "Diffuse color for lyrics overlay"
+msgstr ""
+
+msgctxt "#31814"
+msgid "Textcolor for unfocused lyrics"
+msgstr "Textfarbe für nicht-fokussierte Liedtexte"
+
+msgctxt "#31815"
+msgid "Textcolor for focused lyrics"
+msgstr "Textfarbe für fokussierte Liedtexte"
+
+msgctxt "#31816"
+msgid "Shadowcolor for unfocused lyrics text"
+msgstr "Schattenfarbe für nicht fokussierte Liedtexte"
+
+msgctxt "#31817"
+msgid "Shadowcolor for focused lyrics text"
+msgstr "Schattenfarbe für fokussierte Liedtexte"
+
+msgctxt "#31818"
+msgid "Do not display clearlogo in Netflix views"
+msgstr "Clearlogo nicht in Netflix-Ansichten anzeigen"
+
+msgctxt "#31819"
+msgid "Hide default playback controls from the OSD"
+msgstr "Standard-Wiedergabesteuerung im OSD ausblenden"
+
+msgctxt "#31820"
+msgid "Show all widgets (detach from main menu focus)"
+msgstr "Alle Widgets anzeigen (vom Hauptmenü-Fokus losgelöst)"
+
+msgctxt "#31821"
+msgid "Pause rotating if widget is focused"
+msgstr "Rotieren unterbrechen, wenn das Widget fokussiert ist"
+
+msgctxt "#31822"
+msgid "No widget assigned [click to configure]"
+msgstr "Kein Widget zugewiesen [zum Konfigurieren klicken]"
+
+msgctxt "#31823"
+msgid "Use fixed focus"
+msgstr "Festen Fokus verwenden"
+
+msgctxt "#31824"
+msgid "Default music background (as fallback if no artist fanart or fanart disabled)"
+msgstr "Standard-Hintergrund fur Musik (falls Künster- oder Albumfanart deaktiviert)"
+
+msgctxt "#31825"
+msgid "Don't use rich artwork on the OSD at livetv playback"
+msgstr "Keine Illustrationen für Live-TV benutzen"
+
+msgctxt "#31826"
+msgid "Select country flags / icons"
+msgstr "Wähle Länderfahnen/-symbole"
+
+msgctxt "#31822"
+msgid "No widget assigned [click to configure]"
+msgstr "Kein Widget zugewiesen (klicken zum konfigurieren)"
+
 msgctxt "#31827"
 msgid "Internal Artwork Dialog"
 msgstr "Interner Artwork Dialog"
@@ -2800,24 +2992,31 @@ msgctxt "#31828"
 msgid "External Artwork Dialog"
 msgstr "Externer Artwork Dialog"
 
-
 # malvinas2
+
+msgctxt "#31829"
+msgid "Hide"
+msgstr "Ausblenden"
+
+msgctxt "#31830"
+msgid "by"
+msgstr "von"
+
+msgctxt "#31831"
+msgid "Origin"
+msgstr "Herkunft"
+
+msgctxt "#31954"
+msgid "Stop"
+msgstr "Stop"
 
 msgctxt "#61112"
 msgid "Toggle audio stream"
 msgstr "Tonspur wechseln"
 
-msgctxt "#31004"
-msgid "Change mode"
-msgstr "Modus ändern"
-
 msgctxt "#61005"
 msgid "Watch as 2D"
 msgstr "In 2D ansehen"
-
-msgctxt "#71026"
-msgid "Timeshift"
-msgstr "Timeshift"
 
 msgctxt "#70001"
 msgid "Search local library"
@@ -2854,10 +3053,6 @@ msgstr "Liedtexte-Addon-Einstellungen"
 msgctxt "#70009"
 msgid "Settings"
 msgstr "Einstellungen"
-
-msgctxt "#31954"
-msgid "Stop"
-msgstr "Stop"
 
 msgctxt "#70010"
 msgid "Select Program"
@@ -2935,10 +3130,6 @@ msgctxt "#70028"
 msgid "Next Channel"
 msgstr "Nächster Sender"
 
-msgctxt "#10005"
-msgid "Music"
-msgstr "Musik"
-
 msgctxt "#70029"
 msgid "Group"
 msgstr "Sendergruppe"
@@ -2951,42 +3142,6 @@ msgctxt "#70031"
 msgid "Order"
 msgstr "Reihenfolge"
 
-msgctxt "#31806"
-msgid "Jump to a specific time (hh:mm:ss)"
-msgstr "Springe zu bestimmte Stelle (hh:mm:ss)"
-
-msgctxt "#30035"
-msgid "Continue watching in $INFO[Window.Property(remaining)] seconds"
-msgstr "Wiedergabe fortsetzen in $INFO[Window.Property(remaining)] Sekunden"
-
-msgctxt "#30036"
-msgid "Up next in $INFO[Window.Property(remaining)] seconds"
-msgstr "Als Nächstes in $INFO[Window.Property(remaining)] Sekunden"
-
-msgctxt "#30037"
-msgid "Next episode in $INFO[Window.Property(remaining)] seconds"
-msgstr "Nächste Episode in $INFO[Window.Property(remaining)] Sekunden"
-
-msgctxt "#31829"
-msgid "Hide"
-msgstr "Ausblenden"
-
-msgctxt "#31830"
-msgid "by"
-msgstr "von"
-
-msgctxt "#31831"
-msgid "Origin"
-msgstr "Herkunft"
-
-msgctxt "#91831"
-msgid "Color"
-msgstr "Farbe"
-
-msgctxt "#91830"
-msgid "items"
-msgstr "Einträge"
-
 msgctxt "#70032"
 msgid "Search Wikipedia"
 msgstr "Wikipedia durchsuchen"
@@ -2994,3 +3149,103 @@ msgstr "Wikipedia durchsuchen"
 msgctxt "#70033"
 msgid "Toggle subtitle"
 msgstr "Untertitel umschalten"
+
+msgctxt "#70034"
+msgid "Show EDL (Edit decision list) Marker"
+msgstr "Zeige Schnittlistenmarker"
+
+msgctxt "#70035"
+msgid "Show Chapter Marker"
+msgstr "Zeige Kapitelmarker"
+
+msgctxt "#70036"
+msgid "Disable clock in Now Playing Info Bar"
+msgstr "Deaktiviere Uhrzeit in der Gerade läuft Infoleiste"
+
+msgctxt "#70037"
+msgid "Show SceneMarker"
+msgstr "Zeige Szenenmarkierungen"
+
+msgctxt "#70038"
+msgid "Show CutMarker"
+msgstr "Zeige Schnittmarker"
+
+msgctxt "#70039"
+msgid "EDL Marker Color"
+msgstr "Farbe für Schnittlistenmaker"
+
+msgctxt "#70040"
+msgid "Chapter Marker Color"
+msgstr "Farbe für Kapitelmarker"
+
+msgctxt "#70041"
+msgid "SceneMarker Color"
+msgstr "Farbe für Szenenmarker"
+
+msgctxt "#70042"
+msgid "CutMarker Color"
+msgstr "Farbe für Schnittmarker"
+
+msgctxt "#70043"
+msgid "Marker"
+msgstr "Markierungen"
+
+msgctxt "#70044"
+msgid "Catch-up TV"
+msgstr "Mediathek"
+
+msgctxt "#70045"
+msgid "Search"
+msgstr "Suche"
+
+msgctxt "#70046"
+msgid "Weather"
+msgstr "Wetter"
+
+msgctxt "#70047"
+msgid "Favorites"
+msgstr "Favoriten"
+
+msgctxt "#70048"
+msgid "Show detailed plot in video infopanel (optional)"
+msgstr "Handlung detailliert im Video-Infopanel anzeigen (optional)"
+
+msgctxt "#70049"
+msgid "Detailed Information"
+msgstr "Ausführliche Infos"
+
+msgctxt "#70050"
+msgid "Misc options"
+msgstr "Sonstige Einstellungen"
+
+msgctxt "#70051"
+msgid "Channel Settings"
+msgstr "Kanaleinstellungen"
+
+msgctxt "#70052"
+msgid "Same director"
+msgstr "Filme dieses Regisseurs"
+
+msgctxt "#70053"
+msgid "Play speed"
+msgstr "Wiedergabegeschwindigkeit"
+
+msgctxt "#70054"
+msgid "6 hours back"
+msgstr "6 Stunden zurück"
+
+msgctxt "#70055"
+msgid "6 hours forward"
+msgstr "6 Stunden vor"
+
+msgctxt "#71026"
+msgid "Timeshift"
+msgstr "Timeshift"
+
+msgctxt "#91830"
+msgid "items"
+msgstr "Einträge"
+
+msgctxt "#91831"
+msgid "Color"
+msgstr "Farbe"

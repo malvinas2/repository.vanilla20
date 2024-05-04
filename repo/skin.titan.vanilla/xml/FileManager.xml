@@ -5,10 +5,8 @@
     <controls>
         <!--Globalbackground-->
         <include>GlobalBackground</include>
-		
 		<!--NowPlaying-->
 		<include>NowPlayingModern</include>
-
         <!--Header-->
         <include>Header</include>
         <!-- footer bar -->
@@ -16,7 +14,6 @@
 			<visible>!Control.IsVisible(514)</visible>
 			<include condition="!Skin.HasSetting(nofooterbar)">Footer</include>
 		</control>
-		
 		<control type="group">
 			<include>animation_window_open_close</include>
 		
@@ -27,7 +24,6 @@
 				<width>1820</width>
 				<height>718</height>
 				<texture border="15">diffuse/bgpanel.png</texture>
-				
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
 			</control>
 			<control type="group">
@@ -189,7 +185,6 @@
 						</control>
 					</focusedlayout>
 				</control>
-				
 				<control type="label" id="12">
 					<label></label>
 					<!--Object Info RSS-->
@@ -348,7 +343,6 @@
 						</control>
 					</focusedlayout>
 				</control>
-				
                 <control type="scrollbar" id="70">
                     <right>60</right>
 					<posy>80</posy>
@@ -360,7 +354,6 @@
                     <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(70) | Skin.HasSetting(EnableTouchSupport) | Container(20).Scrolling | Skin.HasSetting(alwaysShowScrollbars)">Conditional</animation>
                     <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(70) | Skin.HasSetting(EnableTouchSupport) | Container(20).Scrolling | Skin.HasSetting(alwaysShowScrollbars)]">Conditional</animation>
                 </control>
-                
                 <control type="label" id="13">
 					<!--Object Info RSS-->
 					<description>Header Label</description>

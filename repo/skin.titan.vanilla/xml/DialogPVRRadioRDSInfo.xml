@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<!-- <<onunload>ClearProperty(ShowViewSubMenu,home)</onunload> -->
+	<!-- <onunload>ClearProperty(ShowViewSubMenu,home)</onunload> -->
 	<controls>
 		<control type="group">
 			<animation effect="fade" start="0" end="100" time="100">WindowOpen</animation>
@@ -15,21 +15,17 @@
 			<height>1000</height>
 			<centerleft>50%</centerleft>
 			<width>1280</width>
-
 			<control type="group">
                 <control type="image">
-					<!-- <height>800</height> -->
                     <texture border="15">diffuse/bgpanel.png</texture>
 					<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
                 </control>
 				<control type="image">
-					<!-- <height>800</height> -->
                     <texture border="15">diffuse/bgpanel.png</texture>
 					<bordersize>10</bordersize>
 					<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
                 </control>
 			</control>
-			
 			<!-- close dialog -->
             <control type="group">
                 <include>animation_fade_visible_hidden</include>
@@ -38,7 +34,6 @@
                 <posy>40</posy>
                 <include condition="Skin.HasSetting(EnableTouchSupport)">close_button</include>
             </control>
-			
 			<control type="image">
 				<left>30</left>
 				<top>120</top>
@@ -93,7 +88,6 @@
 					<param name="value" value="RDS.Comment" />
 				</include>
 			</control>
-
 			<control type="image">
 				<left>30</left>
 				<top>490</top>
@@ -131,7 +125,6 @@
 					<param name="value" value="RDS.SMSStudio" />
 				</include>
 			</control>
-
 			<control type="image">
 				<left>650</left>
 				<top>120</top>
@@ -186,7 +179,6 @@
 					<param name="value" value="RDS.ProgHomepage" />
 				</include>
 			</control>
-
 			<control type="image">
 				<left>650</left>
 				<top>490</top>
@@ -220,7 +212,6 @@
 					<param name="value" value="RDS.EmailHotline" />
 				</include>
 			</control>
-
 			<control type="image">
 				<left>30</left>
 				<top>690</top>
@@ -249,7 +240,6 @@
 					<autoscroll delay="5000" time="3000" repeat="10000">true</autoscroll>
 				</control>
 			</control>
-
 			<control type="image">
 				<left>650</left>
 				<top>690</top>
@@ -306,7 +296,6 @@
 					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 				</control>
 			</control>
-
 			<include content="InfoDialogTopBarInfo">
 				<param name="main_label" value="$LOCALIZE[29900]" />
 				<param name="sub_label" value="$VAR[RDSInfoSubTitle]" />

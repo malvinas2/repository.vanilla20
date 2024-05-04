@@ -19,6 +19,7 @@
 
 <window>
     <defaultcontrol always="true">10</defaultcontrol>
+	<!-- I don't know why, but this 'views=10' doesn't seem to refer to a real view, but to the epggrid id -->
 	<views>10</views>
     <menucontrol>9000</menucontrol>
     <onunload>ClearProperty(pvrGuideOnFullscreenVideo,home)</onunload>
@@ -633,13 +634,7 @@
 					<aspectratio>stretch</aspectratio>
                     <visible>skin.string(GuideRows, 5)</visible>
 				</control>
-
-				
 			</control>
-							
-				
-
-			
 	   </control>
     
 		<!--Sub Menu-->

@@ -1,5 +1,36 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="plugin.program.autocompletion" name="AutoCompletion for virtual keyboard" version="2.1.3" provider-name="phil65, sualfred, xulek, finkleandeinhorn, Ivar Brandt">
+<addons><addon id="plugin.audio.spotify" version="1.3.9" name="Spotify" provider-name="glk1001">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="xbmc.addon" version="18.9.701" />
+        <import addon="script.module.certifi" version="2023.5.7" />
+        <import addon="script.module.chardet" version="5.1.0" />
+        <import addon="script.module.idna" version="3.4.0" />
+        <import addon="script.module.requests" version="2.31.0" />
+        <import addon="script.module.six" version="1.15.0" />
+        <import addon="script.module.urllib3" version="1.26.16" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="plugin.py">
+        <provides>audio</provides>
+    </extension>
+    <extension library="service.py" point="xbmc.service" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en_GB">Unofficial Spotify music plugin for Kodi</summary>
+        <description lang="en_GB">Allows you to use your Spotify premium account to connect and play Spotify through Kodi. After installing, use 'Configure' to enter your Spotify username and password.</description>
+        <disclaimer lang="en_GB">This product uses the SPOTIFY WEB API but is not endorsed, certified or otherwise approved in any way by Spotify. Spotify is the registered trademark of Spotify AB.</disclaimer>
+        <source>https://github.com/glk1001/plugin.audio.spotify</source>
+        <website>https://github.com/glk1001/glk1001.github.io</website>
+        <news>v1.3.9 (2023-12-19)
+Added Spanish translations. (Thanks trihy.)
+1.3.8: Added setting to turn off Spotify normalization. Should make tracks play louder.
+        </news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon><addon id="plugin.program.autocompletion" name="AutoCompletion for virtual keyboard" version="2.1.3" provider-name="phil65, sualfred, xulek, finkleandeinhorn, Ivar Brandt">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.autocompletion" version="2.0.5" />
@@ -24,13 +55,13 @@
             <screenshot>resources/screenshot-03.jpg</screenshot>
         </assets>
     </extension>
-</addon><addon id="plugin.video.themoviedb.helper" version="5.1.42~nexus" name="TheMovieDb Helper" provider-name="jurialmunkey">
+</addon><addon id="plugin.video.themoviedb.helper" version="5.2.22~nexus" name="TheMovieDb Helper" provider-name="jurialmunkey">
 <requires>
   <import addon="xbmc.python" version="3.0.1" />
   <import addon="script.module.requests" version="2.9.1" />
   <import addon="script.module.pil" version="1.1.7" />
   <import addon="script.module.addon.signals" version="0.0.6" />
-  <import addon="script.module.jurialmunkey" version="0.1.7" />
+  <import addon="script.module.jurialmunkey" version="0.1.14" />
   <import addon="script.module.infotagger" version="0.0.5" />
   <import addon="script.module.beautifulsoup4" version="4.9.3" />
 </requires>
@@ -93,7 +124,7 @@
 		<description lang="en">Animated Busy Spinners Pack - Titan</description>
 		<platform>all</platform>
 	</extension>
-</addon><addon id="resource.images.skinbackgrounds.titanium2" name="Skin Backgrounds - Titanium 2" version="1.0.1" provider-name="marcelveldt">
+</addon><addon id="resource.images.skinbackgrounds.titanium" name="Skin Backgrounds - Titanium" version="1.0.1" provider-name="marcelveldt">
 	<extension point="kodi.resource.images" compile="false" type="skinbackgrounds" />
 	<requires>
 		<import addon="kodi.resource" version="1.0.0" />
@@ -103,7 +134,7 @@
 		<description lang="en">Skin Backgrounds Pack - Titanium</description>
 		<platform>all</platform>
 	</extension>
-</addon><addon id="resource.images.skinicons.wide2" name="Skin Icons - Wide 2" version="1.0.4" provider-name="marcelveldt">
+</addon><addon id="resource.images.skinicons.wide" name="Skin Icons - Wide" version="1.0.4" provider-name="marcelveldt">
 	<extension point="kodi.resource.images" compile="false" type="skinicons" />
 	<requires>
 		<import addon="kodi.resource" version="1.0.0" />
@@ -210,12 +241,15 @@
 			<logo>resources/logo.png</logo>
 		</assets>
 	</extension>
-</addon><addon id="script.extendedinfo" name="ExtendedInfo Script" version="5.6.2" provider-name="phil65, matke-84">
+</addon><addon id="script.extendedinfo" name="ExtendedInfo Script" version="6.0.7" provider-name="scott967">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
-		<import addon="resource.images.studios.white" version="0.0.28" />
-		<import addon="script.module.kodi65" version="1.2.1+matrix.3" />
+		<import addon="resource.images.studios.white" version="0.0.25" />
 		<import addon="script.module.routing" version="0.2.3+matrix.1" />
+        <import addon="script.module.pil" version="5.1.0" />
+		<import addon="plugin.program.autocompletion" version="2.1.2" />
+        <import addon="script.module.autocompletion" version="2.0.3" />
+        <import addon="script.module.requests" version="2.25.1+matrix.1" />
 	</requires>
 	<extension point="xbmc.python.script" library="default.py">
 		<provides>executable</provides>
@@ -225,18 +259,14 @@
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<language />
-		<summary lang="en">ExtendedInfo Script</summary>
-		<description lang="en">This script offers various possibilities to display online content inside skins as well as a complete MovieDB browser including info dialogs for various media types. Used services are themoviedb.org, theaudiodb.org, Trakt.TV, omdbapi.com and a lot more. Needs skin implementation for lot of functions.</description>
+		<summary lang="en_GB">ExtendedInfo Script</summary>
+		<description lang="en_GB">This script offers various possibilities to display online content inside skins as well as a complete MovieDB browser including info dialogs for various media types. Used services are themoviedb.org, theaudiodb.org, Trakt.TV, omdbapi.com and a lot more. Needs skin implementation for lot of functions.</description>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</license>
 		<forum>http://forum.kodi.tv/showthread.php?tid=160558</forum>
-		<source>https://github.com/matke-84/script.extendedinfo</source>
-		<news>
-Version 5.6.1
-* Added support for Kodi Matrix
-Version 5.6.2
-* Bug fixes
-		</news>
+		<source>https://github.com/scott967/script.extendedinfo</source>
+		<email>scott967@kodi.tv</email>
+		<news>Python 3 fixes and Omega/Nexus/Matrix updates by scott967.  Original addon for Leia and prior by phil65 (Philipp Temminghoff).</news>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
@@ -247,7 +277,28 @@ Version 5.6.2
 			<screenshot>resources/screenshot-05.jpg</screenshot>
 		</assets>
 	</extension>
-</addon><addon id="script.module.autocompletion" name="AutoCompletion library" version="2.1.1" provider-name="Philipp Temminghoff (phil65), bbaronSVK, finkleandeinhorn, berkhornet">
+</addon><addon id="script.globalsearch" name="Global Search+" provider-name="SlyGuy" version="99.0.12">
+	<requires>
+		<import addon="script.module.slyguy" />
+		<import addon="repository.slyguy.globalsearch" />
+	</requires>
+	<extension point="xbmc.python.script" library="default.py" />
+	<extension point="xbmc.addon.metadata">
+		<description lang="en">This addon can find any item in your video and music library.
+
+A fork of ronie's Global Search with search history and smarter result ordering
+
+Drop-in replacement as uses the same addon id and much higher version number to stop overwrite by original
+</description>
+		<platform>all</platform>
+		<license />
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+		<news />
+	</extension>
+</addon><addon id="script.module.autocompletion" name="AutoCompletion library" version="2.1.2" provider-name="Philipp Temminghoff (phil65), bbaronSVK, finkleandeinhorn, berkhornet">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" version="2.9.1" />
@@ -261,6 +312,60 @@ Version 5.6.2
         <source>https://github.com/finkleandeinhorn/script.module.autocompletion</source>
         <assets>
             <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon><addon id="script.module.kodi65" name="Kodi65 Library" version="1.2.1+matrix.1" provider-name="Philipp Temminghoff (phil65)">
+	<requires>
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.youtube.dl" version="14.519.1" />
+		<import addon="script.module.pil" version="1.1.7" />
+		<import addon="script.module.autocompletion" version="2.0.0" />
+		<import addon="script.module.requests" version="2.22.0.1" />
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Helper module</summary>
+		<description lang="en">Helper module for all kind of stuff</description>
+		<platform>all</platform>
+		<license>GPL-2.1</license>
+		<source>https://github.com/phil65/script.module.kodi65</source>
+		<news>Python3 ver Adjust to latest core changes, bugfixes, API extensions by scott967</news>
+	</extension>
+	<assets>
+		<icon>resources/icon.png</icon>
+	</assets>
+</addon><addon id="script.module.kutils" name="Utilities for Kodi" version="1.3.0" provider-name="Philipp Temminghoff (phil65), Frank Feuerbacher (fbacher)">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.youtube.dl" version="21.303.0+matrix.1" />
+        <import addon="script.module.pil" version="5.1.0" />
+        <import addon="script.module.autocompletion" version="2.0.3" />
+        <import addon="script.module.requests" version="2.25.1+matrix.1" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Helper module for Kodi add-ons</summary>
+        <description lang="en_GB">Helper module for commonly needed tasks</description>
+        <platform>all</platform>
+        <license>LGPL-2.1-only</license>
+        <source>https://github.com/fbacher/script.module.kutils</source>
+        <forum>https://forum.kodi.tv/showthread.php?tid=364435</forum>
+        <news>
+            08/18/2021 Forked from phil65 master prior to python3/future
+            changes. Renamed addon, updated dependencies, adjust to
+            latest kodi API changes. Updated version to 1.3.0 due to the
+            significant changes (particularly name changes).
+
+            Changed youtube.py to require YouTube api_key to be passed as
+            argument. Hard-coded key no longer used.
+
+            Resolved Kodi crash issue caused by a known limitation of numpy,
+            which was indirectly loaded by another library, PIL.
+            Forced numpy to NEVER be loaded. The use of numpy provided a
+            small performance improvement.
+        </news>
+        <assets>
+            <icon>resources/icon.png</icon>
         </assets>
     </extension>
 </addon><addon id="script.module.metadatautils" name="Metadata and Artwork module" version="1.20.1" provider-name="marcelveldt and others">
@@ -502,7 +607,7 @@ V0.1.0 (2021-07-17)
 			<fanart>resources/fanart.jpg</fanart>
 		</assets>
 	</extension>
-</addon><addon id="script.skin.helper.service" name="Skin Helper Service" version="1.20.1" provider-name="marcelveldt and others">
+</addon><addon id="script.skin.helper.service" name="Skin Helper Service" version="1.20.2" provider-name="marcelveldt and others">
     <requires>
 		<import addon="xbmc.python" version="3.0.0" />
         <import addon="xbmc.addon" version="12.0.0" />
@@ -560,28 +665,61 @@ v1.20.0
         <website />
         <source>https://github.com/kodi-community-addons/script.skin.helper.service</source>
     </extension>
-</addon><addon id="script.skin.helper.skinbackup" name="Skin Helper Service Skin Backup" version="1.0.21" provider-name="marcelveldt and others">
-	<requires>
-	    <import addon="xbmc.python" version="3.0.0" />
+</addon><addon id="script.skin.helper.skinbackup" name="Skin Helper Service Skin Backup" version="1.0.28+matrix.1" provider-name="marcelveldt, wuff">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
         <import addon="xbmc.addon" version="12.0.0" />
-	</requires>
+    </requires>
     <extension point="xbmc.python.script" library="default.py" />
-	<extension library="service.py" point="xbmc.service" start="login" />
+    <extension library="service.py" point="xbmc.service" start="login" />
 
-	<extension point="xbmc.addon.metadata">
-		<assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-		<summary lang="en">Helper service for Kodi skins</summary>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Helper service for Kodi skins</summary>
         <description>Helper service for Kodi skins</description>
-		<language />
-		<platform>all</platform>
-		<license>GPL v2.0</license>
-		<forum>http://forum.kodi.tv/showthread.php?tid=235676</forum>
-		<website />
-		<source>https://github.com/kodi-community-addons/script.skin.helper.skinbackup</source>
-	</extension>
+        <news>
+v1.0.28 (2020-10-10)
+- Change is not to != in colorthemes (Wanilton)
+
+v1.0.27 (2020-10-10)
+- Limit Android zipfile patch to Kodi 18 only
+
+v1.0.26 (2020-10-05)
+- Add Android zipfile patch (https://github.com/robweber/xbmcbackup/issues/158)
+
+v1.0.25 (2020-10-04)
+- remove duplicate slash in zip path preventing zip to be copied in backup
+- sort backups in descending order and only show backupdate
+
+v1.0.24 (2020-09-15)
+- replace ListItem iconImage with setArt
+
+v1.0.23 (2020-09-12)
+- Fix icon
+
+v1.0.22 (2020-09-07)
+- Replace xbmc.translatePath wiht xbmcvfs.translatePath for Kodi 19 compat
+
+v1.0.21 (2020-05-16)
+- Remove python requirement for Kodi 18/19 compat
+
+v1.0.20 (2020-01-02)
+- Kodi 19/Python 3 compatibility
+- default to configured backup folder in restore dialog
+- skip restore if no zip file selected
+
+v1.0.19 (2018-03-30)
+- last version from marcelveldt
+        </news>
+        <language />
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+        <platform>all</platform>
+        <license>GPL v2.0</license>
+        <forum>http://forum.kodi.tv/showthread.php?tid=235676</forum>
+        <website />
+        <source>https://github.com/AnonTester/script.skin.helper.skinbackup</source>
+    </extension>
 </addon><addon id="script.skin.helper.widgets" name="Skin Helper Service Widgets" version="1.20.1" provider-name="marcelveldt and others">
     <requires>
 		<import addon="xbmc.python" version="3.0.0" />
@@ -631,7 +769,7 @@ v1.20.0
 		</assets>
 		<news>Kodi Matrix/Nexus changes</news>
 	</extension>
-</addon><addon id="script.skinshortcuts" name="Skin Shortcuts" version="2.0.3" provider-name="BigNoid, marcelveldt, SiLVO, anxdpanic">
+</addon><addon id="script.skinshortcuts" name="Skin Shortcuts" version="2.0.4" provider-name="BigNoid, marcelveldt, SiLVO, anxdpanic">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.unidecode" version="1.1.1+matrix.2" />
@@ -862,7 +1000,7 @@ https://github.com/robwebset/script.videoextras/wiki</disclaimer>
 			<logo>resources/logo.png</logo>
 		</assets>
 	</extension>
-</addon><addon id="skin.titan.vanilla" version="20.24.02.24" name="Titan Vanilla" provider-name="malvinas2,marcelveldt">
+</addon><addon id="skin.titan.vanilla" version="20.24.05.04" name="Titan Vanilla" provider-name="malvinas2, marcelveldt, AchillesPunks, cartman.dos, fuchs2468, mardukL, mgonzales">
 	<requires>
 		<import version="5.16.0" addon="xbmc.gui" />	
 		<import addon="script.skinshortcuts" version="2.0.3" />
@@ -873,8 +1011,8 @@ https://github.com/robwebset/script.videoextras/wiki</disclaimer>
 		<import addon="resource.images.studios.white" version="0.0.15" />
 		<import addon="resource.images.languageflags.colour" version="0.0.4" />
         <import addon="resource.uisounds.titan.modern" version="1.0.0" />
-        <import addon="resource.images.skinbackgrounds.titanium2" version="1.0.1" />
-        <import addon="resource.images.skinicons.wide2" version="1.0.4" />
+        <import addon="resource.images.skinbackgrounds.titanium" version="1.0.0" />
+        <import addon="resource.images.skinicons.wide" version="1.0.3" />
         <import addon="resource.images.backgroundoverlays.basic" version="1.0.0" />
     </requires>
 	<extension point="xbmc.gui.skin" debugging="false">		
@@ -908,7 +1046,7 @@ https://github.com/robwebset/script.videoextras/wiki</disclaimer>
 		<forum>https://forum.kodi.tv/showthread.php?tid=344342</forum>
 		<website>https://forum.kodi.tv/showthread.php?tid=344342</website>
 		<email>malvinas2@gmx.de</email>
-		<source>https://github.com/malvinas2/skin.titan.vanilla20</source>
+		<source>https://github.com/malvinas2/repository.vanilla20</source>
 		<assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>

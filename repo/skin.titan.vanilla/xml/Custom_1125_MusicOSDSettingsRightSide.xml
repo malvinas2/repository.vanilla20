@@ -10,7 +10,6 @@
 			<include>DialogOverlayExtra</include>
 			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
         </control>
-
         <control type="group">
 			<animation effect="fade" end="0" time="0" reversible="false" condition="Window.IsVisible(yesnodialog) | Window.IsVisible(addonsettings)">Conditional</animation>
             <visible>!Window.IsActive(sliderdialog) + !Window.IsActive(subtitlesearch) + !Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
@@ -21,7 +20,6 @@
 			<animation type="WindowClose">
 				<effect type="slide" start="0" end="1200" time="250" tween="cubic" easing="inout" />
 			</animation>
-            <!--Panel-->
              <!--Panel-->
             <control type="image">
                 <posx>630</posx>
@@ -39,7 +37,6 @@
                 <posy>40</posy>
                 <include condition="Skin.HasSetting(EnableTouchSupport)">close_button</include>
             </control>
-			
            <!--Header-->
             <control type="label">
                 <description>Heading</description>
@@ -52,7 +49,6 @@
 				<height>100</height>
 				<label>$LOCALIZE[5]</label>
             </control>
-            
             <control type="image">
                 <posx>680</posx>
                 <posy>220</posy>
@@ -60,7 +56,6 @@
                 <height>670</height>
                 <texture border="5">dialogs/default/inner.png</texture>
             </control>
-             
 			<control type="group" id="11000">
                 <description>Control Area</description>
                 <posx>680</posx>
@@ -115,6 +110,7 @@
 						<onleft>8002</onleft>
 						<onright>8002</onright>
 						<label>$LOCALIZE[70005]</label>
+						<visible>Player.HasAudio + Visualisation.Enabled </visible>
 						<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
 					</control>
 					<control type="button" id="5006">
@@ -160,8 +156,6 @@
 						<visible>!String.IsEmpty(Skin.String(LyricScript_Path))</visible>
 					</control>
 				</control>
-
-
 		    </control>	
 			
             <!--Button Group-->
@@ -173,7 +167,7 @@
 				<onup>11000</onup>
 			<!--	<control type="button" id="28">
                     <description>OK</description>
-                    <label>186</label>
+                    <label>$LOCALIZE[186]</label>
                     <include>DialogButtonOther</include>
                     <animation effect="fade" start="100" end="75" time="0" condition="!Control.IsEnabled(28)">Conditional</animation>
                 </control>
@@ -190,9 +184,7 @@
                     <label>$LOCALIZE[31308]</label>
 					<include>DialogButtonOther</include>
 					<onclick>Action(close)</onclick>
-     
                 </control>
-
 			</control>
 		</control>
     </controls>

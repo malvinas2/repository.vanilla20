@@ -7,21 +7,20 @@
         <!--Dialog Overlay-->
 		<control type="group">
 			<visible>!Window.IsActive(fullscreenvideo)</visible>
-			<include>DialogOverlayExtra</include>
+			<!-- <include>DialogOverlayExtra</include> -->
 			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
         </control>
 
         <control type="group">
 			<animation effect="fade" end="0" time="0" reversible="false" condition="Window.IsVisible(yesnodialog) | Window.IsVisible(addonsettings)">Conditional</animation>
             <visible>!Window.IsActive(sliderdialog) + !Window.IsActive(subtitlesearch) + !Window.IsActive(script.pseudotv.TVOverlay.xml)</visible>
-			<visible>!Window.IsActive(DialogSettings.xml) + !Window.IsActive(DialogSlider.xml) + !Window.IsActive(GameVideoFilter) + !Window.IsActive(GameStretchMode) + !Window.IsActive(GameControllers) + !Window.IsActive(GameVideoRotation)</visible>
+			<visible>!Window.IsActive(DialogSettings.xml) + !Window.IsActive(DialogSlider.xml) + !Window.IsActive(PlayerProcessInfo) + !Window.IsActive(GameVideoFilter) + !Window.IsActive(GameStretchMode) + !Window.IsActive(GameControllers) + !Window.IsActive(GamePorts) + !Window.IsActive(GameVideoRotation) + !Window.IsActive(1110)</visible>
 			<animation type="WindowOpen">
 				<effect type="slide" start="1200" end="0" time="250" tween="cubic" easing="inout" />
 			</animation>
 			<animation type="WindowClose">
 				<effect type="slide" start="0" end="1200" time="250" tween="cubic" easing="inout" />
 			</animation>
-            <!--Panel-->
              <!--Panel-->
             <control type="image">
                 <posx>630</posx>
@@ -39,7 +38,6 @@
                 <posy>40</posy>
                 <include condition="Skin.HasSetting(EnableTouchSupport)">close_button</include>
             </control>
-			
            <!--Header-->
             <control type="label">
                 <description>Heading</description>
@@ -52,7 +50,6 @@
 				<height>100</height>
 				<label>$INFO[Window(home).Property(settingslist_Header)]</label>
             </control>
-            
             <control type="image">
                 <posx>680</posx>
                 <posy>220</posy>
@@ -60,7 +57,6 @@
                 <height>670</height>
                 <texture border="5">dialogs/default/inner.png</texture>
             </control>
-             
 			<control type="group" id="11000">
                 <description>Control Area</description>
                 <posx>680</posx>
@@ -76,7 +72,6 @@
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
 				<control type="grouplist" id="11100">
 					<visible>String.IsEqual(window(home).Property(settingslist_content),osd)</visible>
-
 					<control type="button" id="11111">
 						<description>button template</description>
 						<width>1200</width>
@@ -188,15 +183,39 @@
 						<onclick>PlayerResolutionSelect</onclick>
 						<visible>Player.HasResolutions</visible>
 					</control>
+					
+					<control type="button" id="7">
+						<description>button template</description>
+						<width>1200</width>
+						<height>60</height>
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<texturenofocus>dialogs/default/separator.png</texturenofocus>
+						<include>DialogButton</include>
+						<onleft>8002</onleft>
+						<onright>8002</onright>
+						<label>$LOCALIZE[70053]</label>
+						<!-- <onclick>Dialog.Close(1121)</onclick> -->
+						<onclick>ActivateWindow(1110)</onclick>
+						<visible>Player.TempoEnabled</visible>
+					</control>					
+					
+					<control type="button" id="11109">
+						<description>button template</description>
+						<width>1200</width>
+						<height>60</height>
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<texturenofocus>dialogs/default/separator.png</texturenofocus>
+						<include>DialogButton</include>
+						<onleft>8002</onleft>
+						<onright>8002</onright>
+						<label>$LOCALIZE[31786]</label>
+						<onclick>ActivateWindow(playerprocessinfo)</onclick>
+					</control>
 				</control>
 				<control type="grouplist" id="13100">
 					<visible>String.IsEqual(window(home).Property(settingslist_content),3d)</visible>
-					<width>700</width>
-					<height>360</height>
-					<itemgap>0</itemgap>
-					<onup>13100</onup>
-					<ondown>13100</ondown>
-					<orientation>vertical</orientation>
 					<control type="radiobutton" id="13101">
 						<description>radiobutton template</description>
 						<width>1200</width>
@@ -240,10 +259,103 @@
 						<selected>Integer.IsEqual(System.StereoscopicMode,9)</selected>
 					</control>
 				</control>
-
-
+				<control type="grouplist" id="14100">
+					<defaultcontrol always="true">14101</defaultcontrol>
+					<visible>String.IsEqual(window(home).Property(settingslist_content),games)</visible>
+					<control type="button" id="14101">
+						<description>Video filter button</description>
+						<width>1200</width>
+						<height>60</height>
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<texturenofocus>dialogs/default/separator.png</texturenofocus>
+						<include>DialogButton</include>
+						<label>$LOCALIZE[35225]</label>
+						<onleft>8002</onleft>
+						<onright>8002</onright>
+						<onclick>ActivateWindow(GameVideoFilter)</onclick>
+					</control>
+					<control type="button" id="14102">
+						<description>Stretch mode button</description>
+						<width>1200</width>
+						<height>60</height>
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<texturenofocus>dialogs/default/separator.png</texturenofocus>
+						<include>DialogButton</include>
+						<label>$LOCALIZE[35233]</label>
+						<onleft>8002</onleft>
+						<onright>8002</onright>
+						<onclick>ActivateWindow(GameStretchMode)</onclick>				
+					</control>
+					<control type="button" id="14106">
+						<description>Video rotation button</description>
+						<width>1200</width>
+						<height>60</height>
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<texturenofocus>dialogs/default/separator.png</texturenofocus>
+						<include>DialogButton</include>
+						<label>$LOCALIZE[35227]</label>
+						<onleft>8002</onleft>
+						<onright>8002</onright>
+						<onclick>ActivateWindow(GameVideoRotation)</onclick>				
+					</control>
+					<control type="button" id="14104">
+						<description>Volume button</description>
+						<width>1200</width>
+						<height>60</height>
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<texturenofocus>dialogs/default/separator.png</texturenofocus>
+						<include>DialogButton</include>
+						<label>$LOCALIZE[13376]</label>
+						<label2>Select + Right Stick</label2>
+						<onleft>8002</onleft>
+						<onright>8002</onright>
+						<onclick>ActivateWindow(GameVolume)</onclick>					
+					</control>
+					<control type="button" id="14103">
+						<description>Controller settings button</description>
+						<width>1200</width>
+						<height>60</height>
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<texturenofocus>dialogs/default/separator.png</texturenofocus>
+						<include>DialogButton</include>
+						<label>$LOCALIZE[35234]</label>
+						<onleft>8002</onleft>
+						<onright>8002</onright>
+						<onclick>ActivateWindow(GameControllers)</onclick>
+					</control>
+					<control type="button" id="14107">
+						<description>Controller port configuration</description>
+						<width>1200</width>
+						<height>60</height>
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<texturenofocus>dialogs/default/separator.png</texturenofocus>
+						<include>DialogButton</include>
+						<label>$LOCALIZE[35110]</label>
+						<onleft>8002</onleft>
+						<onright>8002</onright>
+						<onclick>ActivateWindow(GamePorts)</onclick>
+					</control>
+					<control type="button" id="14105">
+						<description>Advanced settings</description>
+						<width>1200</width>
+						<height>60</height>
+						<align>left</align>
+						<textoffsetx>20</textoffsetx>
+						<texturenofocus>dialogs/default/separator.png</texturenofocus>
+						<include>DialogButton</include>
+						<label>$LOCALIZE[35226]</label>
+						<onleft>8002</onleft>
+						<onright>8002</onright>
+						<onclick>ActivateWindow(GameAdvancedSettings)</onclick>
+					</control>
+				</control>
 		    </control>	
-			
             <!--Button Group-->
             <control type="grouplist" id="8002">
                 <posx>680</posx>
@@ -251,9 +363,13 @@
 				<orientation>horizontal</orientation>
 				<itemgap>20</itemgap>
 				<onup>11000</onup>
+                <ondown>11000</ondown>
+                <onleft>11000</onleft>
+                <onright>11000</onright>		
+
 			<!--	<control type="button" id="28">
                     <description>OK</description>
-                    <label>186</label>
+                    <label>$LOCALIZE[186]</label>
                     <include>DialogButtonOther</include>
                     <animation effect="fade" start="100" end="75" time="0" condition="!Control.IsEnabled(28)">Conditional</animation>
                 </control>
@@ -270,9 +386,7 @@
                     <label>$LOCALIZE[31308]</label>
 					<include>DialogButtonOther</include>
 					<onclick>Action(close)</onclick>
-     
-                </control>
-
+                 </control>
 			</control>
 		</control>
     </controls>

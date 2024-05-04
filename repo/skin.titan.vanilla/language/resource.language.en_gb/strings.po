@@ -16,6 +16,26 @@ msgstr ""
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgctxt "#10005"
+msgid "Music"
+msgstr ""
+
+msgctxt "#10006"
+msgid "Videos"
+msgstr ""
+
+msgctxt "#30035"
+msgid "Continue watching in $INFO[Window.Property(remaining)] seconds"
+msgstr ""
+
+msgctxt "#30036"
+msgid "Up next in $INFO[Window.Property(remaining)] seconds"
+msgstr ""
+
+msgctxt "#30037"
+msgid "Next episode in $INFO[Window.Property(remaining)] seconds"
+msgstr ""
+
 msgctxt "#31001"
 msgid "Other settings"
 msgstr ""
@@ -28,7 +48,9 @@ msgctxt "#31003"
 msgid "Bordersize for unfocused thumbs/tiles"
 msgstr ""
 
-# empty string with id 31004
+msgctxt "#31004"
+msgid "Change mode"
+msgstr ""
 
 msgctxt "#31005"
 msgid "General skin settings"
@@ -449,7 +471,7 @@ msgid "Auto show the submenu for the selected home tile"
 msgstr ""
 
 msgctxt "#31114"
-msgid "Show large thumbnail"
+msgid "Show large Fanart in Background"
 msgstr ""
 
 msgctxt "#31115"
@@ -2141,7 +2163,7 @@ msgid "Enable music wall background while playing music"
 msgstr ""
 
 msgctxt "#31616"
-msgid "Enable mini guide on fullscreen Live TV"
+msgid "Show Program overview in left panel or as mini guide"
 msgstr ""
 
 msgctxt "#31617"
@@ -2845,7 +2867,7 @@ msgid "Header panel color"
 msgstr ""
 
 msgctxt "#31792"
-msgid "Enable small PVR Channels OSD"
+msgid "Show PVR Channel overview in big format or in left panel"
 msgstr ""
 
 msgctxt "#31793"
@@ -2992,18 +3014,30 @@ msgctxt "#31828"
 msgid "External Artwork Dialog"
 msgstr ""
 
+msgctxt "#31829"
+msgid "Hide"
+msgstr ""
+
+msgctxt "#31830"
+msgid "by"
+msgstr ""
+
+msgctxt "#31831"
+msgid "Origin"
+msgstr ""
+
+msgctxt "#31954"
+msgid "Stop"
+msgstr ""
+
 # malvinas2
-
-msgctxt "#61112"
-msgid "Toggle audio stream"
-msgstr ""
-
-msgctxt "#31004"
-msgid "Change mode"
-msgstr ""
 
 msgctxt "#61005"
 msgid "Watch as 2D"
+msgstr ""
+
+msgctxt "#61112"
+msgid "Toggle audio stream"
 msgstr ""
 
 msgctxt "#71026"
@@ -3044,10 +3078,6 @@ msgstr ""
 
 msgctxt "#70009"
 msgid "Settings"
-msgstr ""
-
-msgctxt "#31954"
-msgid "Stop"
 msgstr ""
 
 msgctxt "#70010"
@@ -3126,14 +3156,6 @@ msgctxt "#70028"
 msgid "Next Channel"
 msgstr ""
 
-msgctxt "#10005"
-msgid "Music"
-msgstr ""
-
-msgctxt "#10006"
-msgid "Videos"
-msgstr ""
-
 msgctxt "#70029"
 msgid "Group"
 msgstr ""
@@ -3146,42 +3168,106 @@ msgctxt "#70031"
 msgid "Order"
 msgstr ""
 
-msgctxt "#30035"
-msgid "Continue watching in $INFO[Window.Property(remaining)] seconds"
-msgstr ""
-
-msgctxt "#30036"
-msgid "Up next in $INFO[Window.Property(remaining)] seconds"
-msgstr ""
-
-msgctxt "#30037"
-msgid "Next episode in $INFO[Window.Property(remaining)] seconds"
-msgstr ""
-
-msgctxt "#31829"
-msgid "Hide"
-msgstr ""
-
-msgctxt "#31830"
-msgid "by"
-msgstr ""
-
-msgctxt "#31831"
-msgid "Origin"
-msgstr ""
-
-msgctxt "#91831"
-msgid "Color"
-msgstr ""
-
-msgctxt "#91830"
-msgid "items"
-msgstr ""
-
 msgctxt "#70032"
 msgid "Search Wikipedia"
 msgstr ""
 
 msgctxt "#70033"
 msgid "Toggle subtitle"
+msgstr ""
+
+msgctxt "#70034"
+msgid "Show EDL (Edit decision list) Marker"
+msgstr ""
+
+msgctxt "#70035"
+msgid "Show Chapter Marker"
+msgstr ""
+
+msgctxt "#70036"
+msgid "Disable clock in Now Playing Info Bar"
+msgstr ""
+
+msgctxt "#70037"
+msgid "Show SceneMarker"
+msgstr ""
+
+msgctxt "#70038"
+msgid "Show CutMarker"
+msgstr ""
+
+msgctxt "#70039"
+msgid "EDL Marker Color"
+msgstr ""
+
+msgctxt "#70040"
+msgid "Chapter Marker Color"
+msgstr ""
+
+msgctxt "#70041"
+msgid "SceneMarker Color"
+msgstr ""
+
+msgctxt "#70042"
+msgid "CutMarker Color"
+msgstr ""
+
+msgctxt "#70043"
+msgid "Marker"
+msgstr ""
+
+msgctxt "#70044"
+msgid "Catch-up TV"
+msgstr "Mediathek"
+
+msgctxt "#70045"
+msgid "Search"
+msgstr "Suche"
+
+msgctxt "#70046"
+msgid "Weather"
+msgstr "Wetter"
+
+msgctxt "#70047"
+msgid "Favorites"
+msgstr "Favoriten"
+
+msgctxt "#70048"
+msgid "Show detailed plot in video infopanel (optional)"
+msgstr ""
+
+msgctxt "#70049"
+msgid "Detailed Information"
+msgstr ""
+
+msgctxt "#70050"
+msgid "Misc options"
+msgstr ""
+
+msgctxt "#70051"
+msgid "Channel Settings"
+msgstr ""
+
+msgctxt "#70052"
+msgid "Same director"
+msgstr ""
+
+msgctxt "#70053"
+msgid "Play speed"
+msgstr ""
+
+msgctxt "#70054"
+msgid "6 hours back"
+msgstr ""
+
+msgctxt "#70055"
+msgid "6 hours forward"
+msgstr ""
+
+msgctxt "#91830"
+msgid "items"
+msgstr ""
+
+msgctxt "#91831"
+msgid "Color"
 msgstr ""

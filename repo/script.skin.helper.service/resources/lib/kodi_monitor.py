@@ -141,7 +141,7 @@ class KodiMonitor(xbmc.Monitor):
         count = 0
         while not getCondVisibility("Player.HasVideo | Player.HasAudio"):
             xbmc.sleep(100)
-            if count == 50:
+            if count == 100:
                 return False
             count += 1
         return True
@@ -158,7 +158,7 @@ class KodiMonitor(xbmc.Monitor):
             log_msg("Show OSD Infopanel - number of seconds: %s" % sec_to_display)
             self.infopanelshown = True
             if self.win.getProperty("VideoScreensaverRunning") != "true":
-                while retries != 50 and getCondVisibility("!Player.ShowInfo"):
+                while retries != 100 and getCondVisibility("!Player.ShowInfo"):
                     xbmc.sleep(100)
                     if getCondVisibility("!Player.ShowInfo + Window.IsActive(fullscreenvideo)"):
                         xbmc.executebuiltin('Action(info)')

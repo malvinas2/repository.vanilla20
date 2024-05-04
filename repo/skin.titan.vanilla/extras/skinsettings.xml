@@ -12,7 +12,7 @@
         <onselect condition="True">Skin.Reset(CompactHeader)</onselect>
         <onselect condition="True">Skin.Reset(ShowAllWidgets)</onselect>
     </setting>
-    <setting id="HomeLayout_titantiles" value="2" label="$LOCALIZE[31031]" condition="" icon="special://skin/extras/viewthumbs/homelayout_2.jpg" description="$LOCALIZE[31031][CR][B]Skin default[/B]" default="true">
+    <setting id="HomeLayout_titantiles" value="2" label="$LOCALIZE[31031]" condition="" icon="special://skin/extras/viewthumbs/homelayout_2.jpg" description="$LOCALIZE[31031]">
         <onselect condition="True">Skin.SetBool(OpenSubMenuOnClick)</onselect>
         <onselect condition="True">Skin.SetString(widgetstyle,landscape)</onselect>
         <onselect condition="True">Skin.SetString(widgetstyle.label,Landscape)</onselect>
@@ -34,7 +34,7 @@
         <onselect condition="True">Skin.Reset(CompactHeader)</onselect>
         <onselect condition="True">Skin.Reset(ShowAllWidgets)</onselect>
     </setting>
-    <setting id="HomeLayout_titantiles" value="2small" label="$LOCALIZE[31650]" condition="" icon="special://skin/extras/viewthumbs/homelayout_2small.jpg" description="$LOCALIZE[31650]">
+    <setting id="HomeLayout_titantiles" value="2small" label="$LOCALIZE[31650]" condition="" icon="special://skin/extras/viewthumbs/homelayout_2small.jpg" description="$LOCALIZE[31650][CR][B]Skin default[/B]" default="true">
         <onselect condition="True">Skin.SetBool(OpenSubMenuOnClick)</onselect>
         <onselect condition="True">Skin.SetString(widgetstyle,landscape)</onselect>
         <onselect condition="True">Skin.SetString(widgetstyle.label,Landscape)</onselect>
@@ -248,6 +248,7 @@
     <!-- artist fanart -->
     <setting id="MusicArtistFanart" value="single" label="Single fanart image" condition="" icon="" description=""/>
     <setting id="MusicArtistFanart" value="slideshow" label="Extrafanart (slideshow)" condition="" icon="" description="" default="true"/>
+	<setting id="MusicArtistFanart" value="artistslideshow" label="Artist Slideshow" condition="System.HasAddon(script.artistslideshow)" icon="" description=""/>
     <setting id="MusicArtistFanart" value="disabled" label="$LOCALIZE[1223]" condition="" icon="" description=""/>
     
     <!-- artist logo -->
@@ -259,7 +260,7 @@
     <setting id="ClearLogoLocation" value="topleft" label="$LOCALIZE[31329]" condition="" icon="" description=""/>
     <setting id="ClearLogoLocation" value="topcenter" label="$LOCALIZE[31330]" condition="!Skin.HasSetting(ShowMovieTitleHeader)" icon="" description=""/>
     <setting id="ClearLogoLocation" value="topright" label="$LOCALIZE[31331]" condition="" icon="" description=""/>
-    <setting id="ClearLogoLocation" value="footer" label="$LOCALIZE[31328]" condition="!Skin.HasTheme(classic)" icon="" description="" default="true"/>
+    <setting id="ClearLogoLocation" value="footer" label="$LOCALIZE[31328]" condition="" icon="" description="" default="true"/>
     <setting id="ClearLogoLocation" value="disabled" label="$LOCALIZE[1223]" condition="" icon="" description=""/>
     
     <!-- default osd button -->
@@ -430,6 +431,7 @@
         <option id="videoinfo_button_youtubevideos" label="$LOCALIZE[31797]" condition="" default="true"/>
         <option id="videoinfo_button_cast" label="$LOCALIZE[206]" condition="" default="true"/>
         <option id="videoinfo_button_similar" label="$LOCALIZE[31622]" condition="" default="true"/>
+		<option id="videoinfo_button_director" label="$LOCALIZE[70052]" condition="" default="true"/>
         <option id="videoinfo_button_plot" label="$LOCALIZE[207]" condition="" default="true"/>
         <option id="videoinfo_button_extendedinfo" label="$LOCALIZE[31269]" condition="" default="true"/>
         <option id="videoinfo_button_cinemavision" label="CinemaVision" condition="System.HasAddon(script.cinemavision)" default="true"/>

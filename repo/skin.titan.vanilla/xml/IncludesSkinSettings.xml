@@ -10,28 +10,28 @@
             <itemgap>5</itemgap>
             <onup>23000</onup>
             <ondown>23000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright>311</onright>
             <pagecontrol>311</pagecontrol>
             <orientation>vertical</orientation>
             <visible>String.IsEqual(Window(Home).Property(SkinSettingSection),12)</visible>
             <control type="label" id="23001">
                 <include>SkinSettings_Header</include>
-                <label>31121</label>
+                <label>$LOCALIZE[31121]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             <!-- homemenu layout-->
             <control type="button" id="423003">
                 <include>SkinSettings_Button</include>
-                <label>31121</label>
+                <label>$LOCALIZE[31121]</label>
                 <label2>$INFO[Skin.String(HomeLayout.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=HomeLayout,header=$LOCALIZE[31124])</onclick>
             </control>
             <!-- height of the tiles-->
             <control type="button" id="31770">
                 <include>SkinSettings_Button</include>
-                <label>31770</label>
+                <label>$LOCALIZE[31770]</label>
                 <label2>$INFO[Skin.String(verthome_tiles_height)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinconstant,setting=verthome_tiles_height,header=$LOCALIZE[31770])</onclick>
                 <visible>Skin.String(HomeLayout,simplever_tiles)</visible>
@@ -44,7 +44,6 @@
                 <visible>Skin.String(HomeLayout,Win10)</visible>
                 <selected>Skin.HasSetting(Win10SubmenuRight)</selected>
             </control>
-
             <!--fixed focus home panel-->
             <control type="radiobutton" id="23018">
                 <include>SkinSettings_Button</include>
@@ -107,7 +106,7 @@
             <!-- default focus position-->
             <control type="button" id="31727">
                 <include>SkinSettings_Button</include>
-                <label>31727</label>
+                <label>$LOCALIZE[31727]</label>
                 <label2>$INFO[Skin.String(home.defaultfocus.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=home.defaultfocus,header=$LOCALIZE[31727])</onclick>
                 <visible>[!String.Contains(Skin.String(HomeLayout), netflix) + !Skin.String(HomeLayout, win10)] | Skin.HasSetting(AutoFocusHome)</visible>
@@ -115,7 +114,7 @@
             <!-- submenu layout-->
             <control type="button" id="23060">
                 <include>SkinSettings_Button</include>
-                <label>31312</label>
+                <label>$LOCALIZE[31312]</label>
                 <label2>$INFO[Skin.String(SubmenuLayout.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=SubmenuLayout,header=$LOCALIZE[31312])</onclick>
                 <visible>[Skin.String(HomeLayout,1) | Skin.String(HomeLayout,2) | Skin.String(HomeLayout,3) | Skin.String(HomeLayout,1small) | Skin.String(HomeLayout,2small) | Skin.String(HomeLayout,3small)]</visible>
@@ -123,7 +122,7 @@
             <!-- widget layout-->
             <control type="button" id="23719">
                 <include>SkinSettings_Button</include>
-                <label>31507</label>
+                <label>$LOCALIZE[31507]</label>
                 <label2>$INFO[Skin.String(widgetstyle.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=widgetstyle,header=$LOCALIZE[31507])</onclick>
                 <visible>!Skin.HasSetting(DisableAllWidgets) + !Skin.String(HomeLayout, 3) + !Skin.String(HomeLayout, 3small) + !Skin.String(HomeLayout, enhanced) + !Skin.String(HomeLayout, win10)</visible>
@@ -147,7 +146,7 @@
             <!-- widget rotate-->
             <control type="button" id="31672">
                 <include>SkinSettings_Button</include>
-                <label>31672</label>
+                <label>$LOCALIZE[31672]</label>
                 <label2>$INFO[Skin.String(widgets_rotate.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=widgets_rotate,header=$LOCALIZE[31672])</onclick>
                 <visible>!Skin.HasSetting(DisableAllWidgets)</visible>
@@ -155,7 +154,7 @@
             <!-- widget rotate delay-->
             <control type="button" id="31679">
                 <include>SkinSettings_Button</include>
-                <label>31679</label>
+                <label>$LOCALIZE[31679]</label>
                 <label2>$INFO[Skin.String(widgets_rotate_delay.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=widgets_rotate_delay,header=$LOCALIZE[31679])</onclick>
                 <visible>!Skin.HasSetting(DisableAllWidgets) + Skin.String(widgets_rotate) + !Skin.String(widgets_rotate,disabled)</visible>
@@ -163,7 +162,7 @@
             <!-- widget rotate pause-->
             <control type="radiobutton" id="31821">
                 <include>SkinSettings_Button</include>
-                <label>31821</label>
+                <label>$LOCALIZE[31821]</label>
                 <onclick>Skin.ToggleSetting(widgets_rotate_pause)</onclick>
                 <selected>Skin.HasSetting(widgets_rotate_pause)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets) + Skin.String(widgets_rotate) + !Skin.String(widgets_rotate,disabled) + !String.Contains(Skin.String(HomeLayout),netflix)</visible>
@@ -172,12 +171,12 @@
             <!-- HOMESCREEN OPTIONS -->
             <control type="label" id="23011">
                 <include>SkinSettings_Header</include>
-                <label>31122</label>
+                <label>$LOCALIZE[31122]</label>
             </control>
             <!--toggle rss feed-->
             <control type="radiobutton" id="23720">
                 <include>SkinSettings_Button</include>
-                <label>13305</label>
+                <label>$LOCALIZE[13305]</label>
                 <onclick>RunScript(script.skin.helper.service,action=togglekodisetting,setting=lookandfeel.enablerssfeeds)</onclick>
                 <selected>system.getbool(lookandfeel.enablerssfeeds)</selected>
                 <visible>!Skin.String(HomeLayout, win10)</visible>
@@ -185,7 +184,7 @@
             <!-- open submenu on click-->
             <control type="radiobutton" id="23012">
                 <include>SkinSettings_Button</include>
-                <label>31561</label>
+                <label>$LOCALIZE[31561]</label>
                 <onclick>Skin.ToggleSetting(OpenSubMenuOnClick)</onclick>
                 <selected>Skin.HasSetting(OpenSubMenuOnClick)</selected>
                 <visible>!String.Contains(Skin.String(HomeLayout),netflix)</visible>
@@ -193,7 +192,7 @@
             <!-- auto show widgets-->
             <control type="radiobutton" id="23013">
                 <include>SkinSettings_Button</include>
-                <label>31111</label>
+                <label>$LOCALIZE[31111]</label>
                 <onclick>Skin.ToggleSetting(AutoShowWidgets)</onclick>
                 <selected>Skin.HasSetting(AutoShowWidgets)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets)</visible>
@@ -202,7 +201,7 @@
             <!-- lower widgets-->
             <control type="radiobutton" id="31660">
                 <include>SkinSettings_Button</include>
-                <label>31660</label>
+                <label>$LOCALIZE[31660]</label>
                 <onclick>Skin.ToggleSetting(LowerWidgets)</onclick>
                 <selected>Skin.HasSetting(LowerWidgets)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets)</visible>
@@ -212,7 +211,7 @@
             <!--enable auto show submenus-->
             <control type="radiobutton" id="23014">
                 <include>SkinSettings_Button</include>
-                <label>31113</label>
+                <label>$LOCALIZE[31113]</label>
                 <onclick>Skin.ToggleSetting(AutoShowSubmenu)</onclick>
                 <selected>Skin.HasSetting(AutoShowSubmenu)</selected>
                 <visible>!Skin.String(HomeLayout, enhanced)</visible>
@@ -220,7 +219,7 @@
             <!--open submenu inline in vertical home-->
             <control type="radiobutton" id="23515">
                 <include>SkinSettings_Button</include>
-                <label>31522</label>
+                <label>$LOCALIZE[31522]</label>
                 <onclick>Skin.ToggleSetting(VerticalHomeInlineSubmenu)</onclick>
                 <selected>Skin.HasSetting(VerticalHomeInlineSubmenu)</selected>
                 <visible>[Skin.String(HomeLayout,simplever) | Skin.String(HomeLayout,simplever_tiles)]</visible>
@@ -230,7 +229,7 @@
             <!--disable all widgets-->
             <control type="radiobutton" id="23016">
                 <include>SkinSettings_Button</include>
-                <label>31264</label>
+                <label>$LOCALIZE[31264]</label>
                 <onclick>Skin.ToggleSetting(DisableAllWidgets)</onclick>
                 <selected>Skin.HasSetting(DisableAllWidgets)</selected>
                 <visible>!Skin.String(HomeLayout,enhanced) + !Skin.String(HomeLayout,3) + !String.Contains(Skin.String(HomeLayout),netflix)</visible>
@@ -238,7 +237,7 @@
             <!--disable all submenus-->
             <control type="radiobutton" id="23017">
                 <include>SkinSettings_Button</include>
-                <label>31265</label>
+                <label>$LOCALIZE[31265]</label>
                 <onclick>Skin.ToggleSetting(DisableAllSubmenus)</onclick>
                 <selected>Skin.HasSetting(DisableAllSubmenus)</selected>
                 <visible>!Skin.String(HomeLayout,enhanced) + !String.Contains(Skin.String(HomeLayout),netflix)</visible>
@@ -246,7 +245,7 @@
             <!--enable cicular navigation-->
             <control type="radiobutton" id="31619">
                 <include>SkinSettings_Button</include>
-                <label>31619</label>
+                <label>$LOCALIZE[31619]</label>
                 <onclick>Skin.ToggleSetting(EnhancedHome_Circular)</onclick>
                 <selected>Skin.HasSetting(EnhancedHome_Circular)</selected>
                 <visible>![Skin.HasSetting(UseSingleShortcut) + Skin.String(HomeLayout,simplehor)]</visible>
@@ -255,7 +254,7 @@
             <!--use large mainmenu on netflix home-->
             <control type="radiobutton" id="31805">
                 <include>SkinSettings_Button</include>
-                <label>31805</label>
+                <label>$LOCALIZE[31805]</label>
                 <onclick>Skin.ToggleSetting(NetFlixHome_LargeMenu)</onclick>
                 <selected>Skin.HasSetting(NetFlixHome_LargeMenu)</selected>
                 <visible>String.Contains(Skin.String(HomeLayout),netflix)</visible>
@@ -263,7 +262,7 @@
             <!--enable home menu animation-->
             <control type="radiobutton" id="31620">
                 <include>SkinSettings_Button</include>
-                <label>31620</label>
+                <label>$LOCALIZE[31620]</label>
                 <onclick>Skin.ToggleSetting(Vertical_Home_Animation)</onclick>
                 <selected>Skin.HasSetting(Vertical_Home_Animation)</selected>
                 <visible>[Skin.String(HomeLayout,simplever) | Skin.String(HomeLayout,simplever_tiles)]</visible>
@@ -271,7 +270,7 @@
             <!--enable widgets animation-->
             <control type="radiobutton" id="31621">
                 <include>SkinSettings_Button</include>
-                <label>31621</label>
+                <label>$LOCALIZE[31621]</label>
                 <onclick>Skin.ToggleSetting(Widgets_Animation)</onclick>
                 <selected>Skin.HasSetting(Widgets_Animation)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets) + !Skin.String(HomeLayout,3) + !Skin.String(HomeLayout,enhanced) + !String.Contains(Skin.String(HomeLayout),netflix) + !Skin.String(HomeLayout,win10)</visible>
@@ -279,7 +278,7 @@
             <!--enable widgets zoom effect-->
             <control type="radiobutton" id="31763">
                 <include>SkinSettings_Button</include>
-                <label>31763</label>
+                <label>$LOCALIZE[31763]</label>
                 <onclick>Skin.ToggleSetting(WidgetsZoomFocus)</onclick>
                 <selected>Skin.HasSetting(WidgetsZoomFocus)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets) + !Skin.String(HomeLayout,3) + !Skin.String(HomeLayout,enhanced) + !Skin.String(HomeLayout,win10)</visible>
@@ -295,14 +294,14 @@
             <!--disable power button-->
             <control type="radiobutton" id="23025">
                 <include>SkinSettings_Button</include>
-                <label>31198</label>
+                <label>$LOCALIZE[31198]</label>
                 <onclick>Skin.ToggleSetting(DisablePowerMenu)</onclick>
                 <selected>Skin.HasSetting(DisablePowerMenu)</selected>
             </control>
             <!--hide power button-->
             <control type="radiobutton" id="23027">
                 <include>SkinSettings_Button</include>
-                <label>31594</label>
+                <label>$LOCALIZE[31594]</label>
                 <onclick>Skin.ToggleSetting(HidePowerMenu)</onclick>
                 <selected>Skin.HasSetting(HidePowerMenu)</selected>
                 <visible>!Skin.HasSetting(DisablePowerMenu)</visible>
@@ -311,7 +310,7 @@
             <!--no titles on home tiles-->
             <control type="radiobutton" id="13014">
                 <include>SkinSettings_Button</include>
-                <label>31086</label>
+                <label>$LOCALIZE[31086]</label>
                 <visible>[Skin.String(HomeLayout,1) | Skin.String(HomeLayout,2) | Skin.String(HomeLayout,3) | Skin.String(HomeLayout,1small) | Skin.String(HomeLayout,2small) | Skin.String(HomeLayout,3small) | Skin.String(HomeLayout,enhanced)]</visible>
                 <onclick>Skin.ToggleSetting(NoTitleOnHomeMenuTiles)</onclick>
                 <selected>Skin.HasSetting(NoTitleOnHomeMenuTiles)</selected>
@@ -319,7 +318,7 @@
             <!--hide widget panel-->
             <control type="radiobutton" id="13004">
                 <include>SkinSettings_Button</include>
-                <label>31206</label>
+                <label>$LOCALIZE[31206]</label>
                 <onclick>Skin.ToggleSetting(HideWidgetPanelBackground)</onclick>
                 <selected>Skin.HasSetting(HideWidgetPanelBackground)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets) + !Skin.String(HomeLayout,3) + !Skin.String(HomeLayout,3small) + !Skin.String(HomeLayout,win10)</visible>
@@ -327,7 +326,7 @@
             <!--hide widget details-->
             <control type="radiobutton" id="31707">
                 <include>SkinSettings_Button</include>
-                <label>31707</label>
+                <label>$LOCALIZE[31707]</label>
                 <onclick>Skin.ToggleSetting(HideWidgetDetailsPanel)</onclick>
                 <selected>Skin.HasSetting(HideWidgetDetailsPanel)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets) + !Skin.String(HomeLayout,3) + !Skin.String(HomeLayout,3small) + !Skin.String(HomeLayout,win10) + !String.Contains(Skin.String(HomeLayout),netflix)</visible>
@@ -335,7 +334,7 @@
             <!--large widget details-->
             <control type="radiobutton" id="31741">
                 <include>SkinSettings_Button</include>
-                <label>31741</label>
+                <label>$LOCALIZE[31741]</label>
                 <onclick>Skin.ToggleSetting(LargeWidgetDetailsPanel)</onclick>
                 <selected>Skin.HasSetting(LargeWidgetDetailsPanel)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets) + !Skin.HasSetting(HideWidgetDetailsPanel) + String.Contains(Skin.String(HomeLayout),ver)</visible>
@@ -343,7 +342,7 @@
             <!--spotlight widget trailer-->
             <control type="radiobutton" id="31798">
                 <include>SkinSettings_Button</include>
-                <label>31798</label>
+                <label>$LOCALIZE[31798]</label>
                 <onclick>Skin.ToggleSetting(SpotLightTrailers)</onclick>
                 <selected>Skin.HasSetting(SpotLightTrailers)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets) + Skin.String(HomeLayout,enhanced)</visible>
@@ -351,7 +350,7 @@
             <!--prefer tv show art for episodes-->
             <control type="radiobutton" id="31304">
                 <include>SkinSettings_Button</include>
-                <label>31304</label>
+                <label>$LOCALIZE[31304]</label>
                 <onclick>Skin.ToggleSetting(PreferTvShowThumbWidget)</onclick>
                 <selected>Skin.HasSetting(PreferTvShowThumbWidget)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets) + !Skin.String(HomeLayout,3) + !Skin.String(HomeLayout,3small)</visible>
@@ -360,7 +359,7 @@
             <!--hide indicators on home tiles-->
             <control type="radiobutton" id="31529">
                 <include>SkinSettings_Button</include>
-                <label>31529</label>
+                <label>$LOCALIZE[31529]</label>
                 <onclick>Skin.ToggleSetting(HideHomeTileIndicators)</onclick>
                 <selected>Skin.HasSetting(HideHomeTileIndicators)</selected>
                 <visible>[Skin.String(HomeLayout,1) | Skin.String(HomeLayout,2) | Skin.String(HomeLayout,1small) | Skin.String(HomeLayout,2small) | Skin.String(HomeLayout,simplever)]</visible>
@@ -369,7 +368,7 @@
             <!-- display tags on widgets -->
             <control type="button" id="31675">
                 <include>SkinSettings_Button</include>
-                <label>31675</label>
+                <label>$LOCALIZE[31675]</label>
                 <label2>$INFO[Skin.String(Widgets_DisplayTags.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=Widgets_DisplayTags,header=$LOCALIZE[31675])</onclick>
                 <visible>!Skin.HasSetting(DisableAllWidgets)</visible>
@@ -377,7 +376,7 @@
             <!-- prefer plot outline -->
             <control type="radiobutton" id="31794">
                 <include>SkinSettings_Button</include>
-                <label>31794</label>
+                <label>$LOCALIZE[31794]</label>
                 <onclick>Skin.ToggleSetting(WidgetsPreferPlotOutline)</onclick>
                 <selected>Skin.HasSetting(WidgetsPreferPlotOutline)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets)</visible>
@@ -385,7 +384,7 @@
             <!-- auto right align widgets -->
             <control type="radiobutton" id="31712">
                 <include>SkinSettings_Button</include>
-                <label>31712</label>
+                <label>$LOCALIZE[31712]</label>
                 <onclick>Skin.ToggleSetting(WidgetAlignRight)</onclick>
                 <selected>Skin.HasSetting(WidgetAlignRight)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets)</visible>
@@ -393,7 +392,7 @@
             <!-- colorize custom home tiles -->
             <control type="radiobutton" id="31755">
                 <include>SkinSettings_Button</include>
-                <label>31755</label>
+                <label>$LOCALIZE[31755]</label>
                 <onclick>Skin.ToggleSetting(ColorizeHomeVerticalTiles)</onclick>
                 <selected>Skin.HasSetting(ColorizeHomeVerticalTiles)</selected>
                 <visible>Skin.String(HomeLayout,simplever_tiles)</visible>
@@ -401,7 +400,7 @@
             <!-- do not uppercase font in modern big home menu layout -->
             <control type="radiobutton" id="31810">
                 <include>SkinSettings_Button</include>
-                <label>31810</label>
+                <label>$LOCALIZE[31810]</label>
                 <onclick>Skin.ToggleSetting(homemenu_nouppercase)</onclick>
                 <selected>Skin.HasSetting(homemenu_nouppercase)</selected>
                 <visible>Skin.String(HomeLayout,verticalbig) | String.Contains(Skin.String(HomeLayout),hor)</visible>
@@ -415,7 +414,6 @@
             <showonepage>false</showonepage>
             <visible>String.IsEqual(Window(Home).Property(SkinSettingSection),12)</visible>
         </control>
-				
     </include>
     
     <include name="SkinSettings_SmartShortcuts">
@@ -427,8 +425,8 @@
             <itemgap>5</itemgap>
             <onup>19000</onup>
             <ondown>19000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright>313</onright>
             <orientation>vertical</orientation>
             <pagecontrol>313</pagecontrol>
@@ -437,14 +435,14 @@
             <!-- smart shortcuts -->
             <control type="label" id="19001">
                 <include>SkinSettings_Header</include>
-                <label>31323</label>
+                <label>$LOCALIZE[31323]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                 </control>
             <control type="textbox" id="19002">
                 <description></description>
                 <width>100%</width>
                 <align>justify</align>
-                <label>31322</label>
+                <label>$LOCALIZE[31322]</label>
                 <height>auto</height>
                 <font>Reg26</font>
             </control>
@@ -454,21 +452,21 @@
             </control>
             <control type="radiobutton" id="19010">
                 <include>SkinSettings_Button</include>
-                <label>31320</label>
+                <label>$LOCALIZE[31320]</label>
                 <onclick>Skin.ToggleSetting(SmartShortcuts.playlists)</onclick>
                 <selected>Skin.HasSetting(SmartShortcuts.playlists)</selected>
                 <onclick>Notification($LOCALIZE[24074],$LOCALIZE[31546])</onclick>
             </control>
             <control type="radiobutton" id="19011">
                 <include>SkinSettings_Button</include>
-                <label>31321</label>
+                <label>$LOCALIZE[31321]</label>
                 <onclick>Notification($LOCALIZE[24074],$LOCALIZE[31546])</onclick>
                 <onclick>Skin.ToggleSetting(SmartShortcuts.favorites)</onclick>
                 <selected>Skin.HasSetting(SmartShortcuts.favorites)</selected>
             </control>
             <control type="radiobutton" id="19012">
                 <include>SkinSettings_Button</include>
-                <label>31339</label>
+                <label>$LOCALIZE[31339]</label>
                 <onclick>Skin.ToggleSetting(SmartShortcuts.emby)</onclick>
                 <selected>Skin.HasSetting(SmartShortcuts.emby) + System.HasAddon(plugin.video.emby)</selected>
                 <enable>System.HasAddon(plugin.video.emby)</enable>
@@ -491,7 +489,7 @@
                 <description></description>
                 <width>1200</width>
                 <align>justify</align>
-                <label>31549</label>
+                <label>$LOCALIZE[31549]</label>
                 <height>auto</height>
                 <font>Reg26</font>
             </control>
@@ -507,8 +505,8 @@
             <itemgap>5</itemgap>
             <onup>14000</onup>
             <ondown>14000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright>314</onright>
             <pagecontrol>314</pagecontrol>
             <orientation>vertical</orientation>
@@ -516,27 +514,27 @@
             <!-- skin background -->
             <control type="label" id="14001">
                 <include>SkinSettings_Header</include>
-                <label>31142</label>
+                <label>$LOCALIZE[31142]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             <!-- set global background -->
             <control type="button" id="14002">
                 <include>SkinSettings_Button</include>
-                <label>31646</label>
+                <label>$LOCALIZE[31646]</label>
                 <label2>$INFO[Skin.String(CustomBackgroundSetting.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=selectimage,skinstring=CustomBackgroundSetting,header=$LOCALIZE[31646],allowmulti=true,resourceaddon=resource.images.skinbackgrounds,skinhelperbackgrounds=true)</onclick>
             </control>
             <!-- enable section backgrounds -->
             <control type="radiobutton" id="908">
                 <include>SkinSettings_Button</include>
-                <label>31647</label>
+                <label>$LOCALIZE[31647]</label>
                 <onclick>Skin.ToggleSetting(UseSectionBackground)</onclick>
                 <selected>Skin.HasSetting(UseSectionBackground)</selected>
             </control>
             <!-- do not copy section backgrounds -->
             <control type="radiobutton" id="31718">
                 <include>SkinSettings_Button</include>
-                <label>31718</label>
+                <label>$LOCALIZE[31718]</label>
                 <onclick>Skin.ToggleSetting(SectionBackgroundHomeOnly)</onclick>
                 <onclick>ClearProperty(SectionBackground,home)</onclick>
                 <selected>Skin.HasSetting(SectionBackgroundHomeOnly)</selected>
@@ -544,7 +542,7 @@
             <!--custom overlay texture -->
             <control type="button" id="14006">
                 <include>SkinSettings_Button</include>
-                <label>31470</label>
+                <label>$LOCALIZE[31470]</label>
                 <label2>$INFO[Skin.String(BackgroundOverlayTexture.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=OVERLAYTEXTURE)</onclick>
             </control>
@@ -563,7 +561,7 @@
             <!--overlay on media views only-->
             <control type="radiobutton" id="14010">
                 <include>SkinSettings_Button</include>
-                <label>31234</label>
+                <label>$LOCALIZE[31234]</label>
                 <onclick>Skin.ToggleSetting(BackgroundOverlayMediaViewOnly)</onclick>
                 <onclick condition="Skin.HasSetting(BackgroundOverlayHomeOnly)">Skin.Reset(BackgroundOverlayHomeOnly)</onclick>
                 <selected>Skin.HasSetting(BackgroundOverlayMediaViewOnly)</selected>
@@ -572,7 +570,7 @@
             <!--overlay on home only-->
             <control type="radiobutton" id="14011">
                 <include>SkinSettings_Button</include>
-                <label>31241</label>
+                <label>$LOCALIZE[31241]</label>
                 <onclick>Skin.ToggleSetting(BackgroundOverlayHomeOnly)</onclick>
                 <onclick condition="Skin.HasSetting(BackgroundOverlayMediaViewOnly)">Skin.Reset(BackgroundOverlayMediaViewOnly)</onclick>
                 <selected>Skin.HasSetting(BackgroundOverlayHomeOnly)</selected>
@@ -581,21 +579,21 @@
             <!-- multi-image Background transition time-->
             <control type="button" id="13019">
                 <include>SkinSettings_Button</include>
-                <label>31449</label>
+                <label>$LOCALIZE[31449]</label>
                 <label2>$INFO[skin.string(SkinHelper.RandomFanartDelay.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=SkinHelper.RandomFanartDelay,header=$LOCALIZE[31449])</onclick>
             </control>
             <!--background animation-->
             <control type="radiobutton" id="13018">
                 <include>SkinSettings_Button</include>
-                <label>31266</label>
+                <label>$LOCALIZE[31266]</label>
                 <onclick>Skin.ToggleSetting(BackgroundAnimation)</onclick>
                 <selected>Skin.HasSetting(BackgroundAnimation)</selected>
             </control>
             <!--enable wall backgrounds-->
             <control type="radiobutton" id="31812">
                 <include>SkinSettings_Button</include>
-                <label>31812</label>
+                <label>$LOCALIZE[31812]</label>
                 <onclick>Skin.ToggleSetting(SkinHelper.EnableWallBackgrounds)</onclick>
                 <selected>Skin.HasSetting(SkinHelper.EnableWallBackgrounds)</selected>
             </control>
@@ -607,7 +605,7 @@
             <!--background randomize-->
             <control type="radiobutton" id="31747">
                 <include>SkinSettings_Button</include>
-                <label>31747</label>
+                <label>$LOCALIZE[31747]</label>
                 <onclick>Skin.ToggleSetting(RandomizeBackground)</onclick>
                 <selected>Skin.HasSetting(RandomizeBackground)</selected>
             </control>
@@ -648,8 +646,8 @@
             <itemgap>5</itemgap>
             <onup>17000</onup>
             <ondown>17000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright>317</onright>
             <pagecontrol>317</pagecontrol>
             <orientation>vertical</orientation>
@@ -663,71 +661,81 @@
             <!--Show Fanart Background-->
             <control type="radiobutton" id="320">
                 <include>SkinSettings_Button</include>
-                <label>31141</label>
+                <label>$LOCALIZE[31141]</label>
                 <onclick>Skin.ToggleSetting(ShowFanartBackground)</onclick>
                 <selected>Skin.HasSetting(ShowFanartBackground)</selected>
             </control>
-             <!--Show extra Fanart Background-->
+             <!--Show extra Fanart Background using Skin Helper Service -->
             <control type="radiobutton" id="338">
                 <include>SkinSettings_Button</include>
-                <label>31207</label>
+                <label>$LOCALIZE[31207] (Skinhelper Service)</label>
                 <onclick>Skin.ToggleSetting(SkinHelper.EnableExtraFanart)</onclick>
+				<onclick condition="Skin.HasSetting(EnableNativeExtraFanart)">Skin.ToggleSetting(EnableNativeExtraFanart)</onclick>
                 <selected>Skin.HasSetting(SkinHelper.EnableExtraFanart)</selected>
+                <visible>Skin.HasSetting(ShowFanartBackground)</visible>
+            </control>
+             <!--Show extra Fanart Background using Kodi built-in function -->			
+			<control type="radiobutton" id="3381">
+                <include>SkinSettings_Button</include>
+                <label>$LOCALIZE[31207] (Kodi built-in)</label>
+                <onclick>Skin.ToggleSetting(EnableNativeExtraFanart)</onclick>
+				<onclick condition="Skin.HasSetting(SkinHelper.EnableExtraFanart)">Skin.ToggleSetting(SkinHelper.EnableExtraFanart)</onclick>
+                <selected>Skin.HasSetting(EnableNativeExtraFanart)</selected>
                 <visible>Skin.HasSetting(ShowFanartBackground)</visible>
             </control>
             <!-- extra Fanart Background transition time-->
             <control type="button" id="339">
                 <include>SkinSettings_Button</include>
-                <label>31296</label>
+                <label>$LOCALIZE[31296]</label>
                 <label2>$INFO[skin.string(extrafanartdelay.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=extrafanartdelay,header=$LOCALIZE[31296])</onclick>
-                <visible>Skin.HasSetting(ShowFanartBackground) + Skin.HasSetting(SkinHelper.EnableExtraFanart)</visible>
+                <visible>Skin.HasSetting(ShowFanartBackground) + [Skin.HasSetting(SkinHelper.EnableExtraFanart) + !Skin.HasSetting(EnableNativeExtraFanart)]</visible>
             </control>
             <!-- prefer fanart in landscaped views -->
             <control type="radiobutton" id="13026">
                 <include>SkinSettings_Button</include>
-                <label>31210</label>
+                <label>$LOCALIZE[31210]</label>
                 <onclick>Skin.ToggleSetting(DisableLandscapeThumbs)</onclick>
                 <selected>Skin.HasSetting(DisableLandscapeThumbs)</selected>
             </control>
             <!-- alternative logo location -->
             <control type="button" id="13027">
                 <include>SkinSettings_Button</include>
-                <label>31327</label>
+                <label>$LOCALIZE[31327]</label>
                 <label2>$INFO[Skin.String(ClearLogoLocation.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=ClearLogoLocation,header=$LOCALIZE[31327])</onclick>
             </control>
             <!-- show movie title -->
             <control type="radiobutton" id="13028">
                 <include>SkinSettings_Button</include>
-                <label>31235</label>
+                <label>$LOCALIZE[31235]</label>
                 <onclick>Skin.ToggleSetting(ShowMovieTitleHeader)</onclick>
                 <selected>Skin.HasSetting(ShowMovieTitleHeader)</selected>
             </control>
             <!-- style for codec info -->
             <control type="button" id="13029">
                 <include>SkinSettings_Button</include>
-                <label>31632</label>
+                <label>$LOCALIZE[31632]</label>
                 <label2>$INFO[Skin.String(mediaflagsstyle.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=mediaflagsstyle,header=$LOCALIZE[31632])</onclick>
             </control>
             <!-- animated posters -->
             <control type="radiobutton" id="31706">
                 <include>SkinSettings_Button</include>
-                <label>31706</label>
+                <label>$LOCALIZE[31706]</label>
                 <onclick>Skin.ToggleSetting(SkinHelper.EnableAnimatedPosters)</onclick>
                 <selected>Skin.HasSetting(SkinHelper.EnableAnimatedPosters)</selected>
             </control>
             <control type="radiobutton" id="31802">
                 <include>SkinSettings_Button</include>
-                <label>31802</label>
+                <label>$LOCALIZE[31802]</label>
                 <onclick>Skin.ToggleSetting(AnimatedPostersDisableList)</onclick>
                 <selected>Skin.HasSetting(AnimatedPostersDisableList)</selected>
                 <visible>Skin.HasSetting(SkinHelper.EnableAnimatedPosters)</visible>
             </control>
             <control type="radiobutton" id="31803">
                 <include>SkinSettings_Button</include>
-                <label>31803</label>
+                <label>$LOCALIZE[31803]</label>
                 <onclick>Skin.ToggleSetting(AnimatedFanart)</onclick>
                 <selected>Skin.HasSetting(AnimatedFanart)</selected>
                 <visible>Skin.HasSetting(SkinHelper.EnableAnimatedPosters)</visible>
@@ -747,43 +755,43 @@
             </include>
             <control type="radiobutton" id="17118">
                 <include>SkinSettings_Button</include>
-                <label>31498</label>
+                <label>$LOCALIZE[31498]</label>
                 <onclick>Skin.ToggleSetting(EnableFakeDiscArt)</onclick>
                 <selected>Skin.HasSetting(EnableFakeDiscArt)</selected>
             </control>
             <control type="radiobutton" id="17120">
                 <include>SkinSettings_Button</include>
-                <label>31509</label>
+                <label>$LOCALIZE[31509]</label>
                 <onclick>Skin.ToggleSetting(StudioInFooter)</onclick>
                 <selected>Skin.HasSetting(StudioInFooter)</selected>
             </control>
             <control type="radiobutton" id="17121">
                 <include>SkinSettings_Button</include>
-                <label>31607</label>
+                <label>$LOCALIZE[31607]</label>
                 <onclick>Skin.ToggleSetting(IMDBRatingInFooter)</onclick>
                 <selected>Skin.HasSetting(IMDBRatingInFooter)</selected>
             </control>
             <control type="radiobutton" id="31775">
                 <include>SkinSettings_Button</include>
-                <label>31775</label>
+                <label>$LOCALIZE[31775]</label>
                 <onclick>Skin.ToggleSetting(RTRatingInFooter)</onclick>
                 <selected>Skin.HasSetting(RTRatingInFooter)</selected>
             </control>
             <control type="radiobutton" id="17122">
                 <include>SkinSettings_Button</include>
-                <label>31613</label>
+                <label>$LOCALIZE[31613]</label>
                 <onclick>Skin.ToggleSetting(DisableSideBladeIndicator)</onclick>
                 <selected>Skin.HasSetting(DisableSideBladeIndicator)</selected>
             </control>
             <control type="radiobutton" id="31738">
                 <include>SkinSettings_Button</include>
-                <label>31738</label>
+                <label>$LOCALIZE[31738]</label>
                 <onclick>Skin.ToggleSetting(DisableScrollingLetters)</onclick>
                 <selected>Skin.HasSetting(DisableScrollingLetters)</selected>
             </control>
             <control type="radiobutton" id="31746">
                 <include>SkinSettings_Button</include>
-                <label>31746</label>
+                <label>$LOCALIZE[31746]</label>
                 <onclick>Skin.ToggleSetting(EnableQuickJump)</onclick>
                 <selected>Skin.HasSetting(EnableQuickJump)</selected>
             </control>
@@ -796,7 +804,7 @@
             </control>
             <control type="radiobutton" id="17119">
                 <include>SkinSettings_Button</include>
-                <label>31508</label>
+                <label>$LOCALIZE[31508]</label>
                 <onclick condition="System.HasAddon(script.extendedinfo)">Skin.ToggleSetting(UseExtendedInfoDialog)</onclick>
                 <onclick condition="!System.HasAddon(script.extendedinfo)">RunPlugin(plugin://script.extendedinfo)</onclick>
                 <selected>Skin.HasSetting(UseExtendedInfoDialog)</selected>
@@ -804,7 +812,7 @@
             <!-- actor list behaviour in videoinfo -->
             <control type="button" id="31689">
                 <include>SkinSettings_Button</include>
-                <label>31689</label>
+                <label>$LOCALIZE[31689]</label>
                 <label2>$INFO[Skin.String(videoinfo_castaction.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=videoinfo_castaction,header=$LOCALIZE[31689])</onclick>
                 <visible>!Skin.HasSetting(UseExtendedInfoDialog)</visible>
@@ -812,7 +820,7 @@
             <!-- missing actor thumbs lookup -->
             <control type="radiobutton" id="31633">
                 <include>SkinSettings_Button</include>
-                <label>31633</label>
+                <label>$LOCALIZE[31633]</label>
                 <onclick condition="Skin.String(actorthumbslookup, true)">Skin.SetString(actorthumbslookup,false)</onclick>
                 <onclick condition="!Skin.String(actorthumbslookup, true)">Skin.SetString(actorthumbslookup,true)</onclick>
                 <selected>Skin.String(actorthumbslookup,true)</selected>
@@ -821,7 +829,7 @@
             <!-- trailer behaviour in videoinfo -->
             <control type="button" id="31694">
                 <include>SkinSettings_Button</include>
-                <label>31694</label>
+                <label>$LOCALIZE[31694]</label>
                 <label2>$INFO[Skin.String(videoinfo_traileraction.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=videoinfo_traileraction,header=$LOCALIZE[31694])</onclick>
                 <visible>!Skin.HasSetting(UseExtendedInfoDialog)</visible>
@@ -830,7 +838,7 @@
                 <!-- hide filename in videoinfo -->
                 <description></description>
                 <include>SkinSettings_Button</include>
-                <label>31674</label>
+                <label>$LOCALIZE[31674]</label>
                 <onclick>Skin.ToggleSetting(DialogVideoInfo_HideFileName)</onclick>
                 <selected>Skin.HasSetting(DialogVideoInfo_HideFileName)</selected>
             </control>
@@ -858,7 +866,7 @@
             </control>
             <control type="radiobutton" id="17131">
                 <include>SkinSettings_Button</include>
-                <label>31513</label>
+                <label>$LOCALIZE[31513]</label>
                 <onclick>Skin.ToggleSetting(WatchedIndicator.Watched)</onclick>
                 <selected>Skin.HasSetting(WatchedIndicator.Watched)</selected>
             </control>
@@ -878,7 +886,7 @@
             </include>
                  <control type="radiobutton" id="17134">
                 <include>SkinSettings_Button</include>
-                <label>31514</label>
+                <label>$LOCALIZE[31514]</label>
                 <onclick>Skin.ToggleSetting(WatchedIndicator.Progress)</onclick>
                 <selected>Skin.HasSetting(WatchedIndicator.Progress)</selected>
             </control>
@@ -899,7 +907,7 @@
 
             <control type="radiobutton" id="17137">
                 <include>SkinSettings_Button</include>
-                <label>31515</label>
+                <label>$LOCALIZE[31515]</label>
                 <onclick>Skin.ToggleSetting(WatchedIndicator.Sets)</onclick>
                 <selected>Skin.HasSetting(WatchedIndicator.Sets)</selected>
             </control>
@@ -919,7 +927,7 @@
             </include>
             <control type="radiobutton" id="17140">
                 <include>SkinSettings_Button</include>
-                <label>31516</label>
+                <label>$LOCALIZE[31516]</label>
                 <onclick>Skin.ToggleSetting(WatchedIndicator.Episodes)</onclick>
                 <selected>Skin.HasSetting(WatchedIndicator.Episodes)</selected>
             </control>
@@ -939,7 +947,7 @@
             </include>
             <control type="radiobutton" id="17160">
                 <include>SkinSettings_Button</include>
-                <label>31568</label>
+                <label>$LOCALIZE[31568]</label>
                 <onclick>Skin.ToggleSetting(WatchedIndicator.UnWatched)</onclick>
                 <selected>Skin.HasSetting(WatchedIndicator.UnWatched)</selected>
             </control>
@@ -959,7 +967,7 @@
             </include>
             <control type="radiobutton" id="31789">
                 <include>SkinSettings_Button</include>
-                <label>31789</label>
+                <label>$LOCALIZE[31789]</label>
                 <onclick>Skin.ToggleSetting(WatchedIndicator.Playing)</onclick>
                 <selected>Skin.HasSetting(WatchedIndicator.Playing)</selected>
             </control>
@@ -986,7 +994,7 @@
             </control>
             <control type="radiobutton" id="17151">
                 <include>SkinSettings_Button</include>
-                <label>31525</label>
+                <label>$LOCALIZE[31525]</label>
                 <onclick>Skin.ToggleSetting(CaseOverlays)</onclick>
                 <selected>Skin.HasSetting(CaseOverlays)</selected>
             </control>
@@ -1036,14 +1044,12 @@
             <param name="label" value="$LOCALIZE[31472]" />
             <param name="skinsetting" value="ViewDetailsPanelColor" />
         </include>
-
         <!--viewdetails text color-->
         <include content="SkinSettings_ColorButton">
             <param name="id" value="31222" />
             <param name="label" value="$LOCALIZE[31222]" />
             <param name="skinsetting" value="ViewDetailsTextColor" />
         </include>
-
         <!--view details shadow color-->
         <include content="SkinSettings_ColorButton">
             <param name="id" value="31223" />
@@ -1081,7 +1087,6 @@
             <param name="label" value="$LOCALIZE[31571]" />
             <param name="skinsetting" value="ViewDetailsFocusColor" />
         </include>
-
     </include>
     
     <include name="SkinSettings_ForcedViews">
@@ -1093,8 +1098,8 @@
             <itemgap>5</itemgap>
             <onup>7000</onup>
             <ondown>7000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright>37</onright>
             <pagecontrol>37</pagecontrol>
             <orientation>vertical</orientation>
@@ -1121,105 +1126,105 @@
                 <include>SkinSettings_Button</include>
                 <onclick>Skin.ToggleSetting(SkinHelper.ForcedViews.Enabled)</onclick>
                 <selected>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</selected>
-                <label>31488</label>
+                <label>$LOCALIZE[31488]</label>
             </control>
 
             <control type="button" id="6010">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=movies)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31489</label>
+                <label>$LOCALIZE[31489]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.movies.label)]$INFO[Skin.String(SkinHelper.ForcedViews.movies), (,)]</label2>
             </control>
             <control type="button" id="6011">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=tvshows)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31490</label>
+                <label>$LOCALIZE[31490]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.tvshows.label)]$INFO[Skin.String(SkinHelper.ForcedViews.tvshows), (,)]</label2>
             </control>
             <control type="button" id="6012">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=seasons)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31491</label>
+                <label>$LOCALIZE[31491]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.seasons.label)]$INFO[Skin.String(SkinHelper.ForcedViews.seasons), (,)]</label2>
             </control>
             <control type="button" id="6013">
                <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=episodes)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31492</label>
+                <label>$LOCALIZE[31492]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.episodes.label)]$INFO[Skin.String(SkinHelper.ForcedViews.episodes), (,)]</label2>
             </control>
             <control type="button" id="6014">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=sets)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31502</label>
+                <label>$LOCALIZE[31502]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.sets.label)]$INFO[Skin.String(SkinHelper.ForcedViews.sets), (,)]</label2>
             </control>
             <control type="button" id="6015">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=setmovies)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31503</label>
+                <label>$LOCALIZE[31503]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.setmovies.label)]$INFO[Skin.String(SkinHelper.ForcedViews.setmovies), (,)]</label2>
             </control>
             <control type="button" id="6016">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=tvchannels)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31581</label>
+                <label>$LOCALIZE[31581]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.tvchannels.label)]$INFO[Skin.String(SkinHelper.ForcedViews.tvchannels), (,)]</label2>
             </control>
             <control type="button" id="6017">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=tvrecordings)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31582</label>
+                <label>$LOCALIZE[31582]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.tvrecordings.label)]$INFO[Skin.String(SkinHelper.ForcedViews.tvrecordings), (,)]</label2>
             </control>
              <control type="button" id="6018">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=addons)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31583</label>
+                <label>$LOCALIZE[31583]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.addons.label)]$INFO[Skin.String(SkinHelper.ForcedViews.addons), (,)]</label2>
             </control>
             <control type="button" id="6019">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=files)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31584</label>
+                <label>$LOCALIZE[31584]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.files.label)]$INFO[Skin.String(SkinHelper.ForcedViews.files), (,)]</label2>
             </control>
             <control type="button" id="6020">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=artists)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31585</label>
+                <label>$LOCALIZE[31585]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.artists.label)]$INFO[Skin.String(SkinHelper.ForcedViews.artists), (,)]</label2>
             </control>
             <control type="button" id="6021">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=albums)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31586</label>
+                <label>$LOCALIZE[31586]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.albums.label)]$INFO[Skin.String(SkinHelper.ForcedViews.albums), (,)]</label2>
             </control>
             <control type="button" id="6022">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=songs)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31587</label>
+                <label>$LOCALIZE[31587]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.songs.label)]$INFO[Skin.String(SkinHelper.ForcedViews.songs), (,)]</label2>
             </control>
             <control type="button" id="6023">
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.service,action=SETFORCEDVIEW,contenttype=pictures)</onclick>
                 <animation effect="fade" start="100" end="40" time="0" condition="!Skin.HasSetting(SkinHelper.ForcedViews.Enabled)">Conditional</animation>
-                <label>31588</label>
+                <label>$LOCALIZE[31588]</label>
                 <label2>$INFO[Skin.String(SkinHelper.ForcedViews.pictures.label)]$INFO[Skin.String(SkinHelper.ForcedViews.pictures), (,)]</label2>
             </control>
         </control>
@@ -1242,8 +1247,8 @@
             <itemgap>5</itemgap>
             <onup>16000</onup>
             <ondown>16000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright>316</onright>
             <pagecontrol>316</pagecontrol>
             <orientation>vertical</orientation>
@@ -1252,13 +1257,13 @@
             <!-- OSD generic -->
             <control type="label" id="478">
                 <include>SkinSettings_Header</include>
-                <label>478</label>
+                <label>$LOCALIZE[478]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             
             <control type="radiobutton" id="13060">
                 <include>SkinSettings_Button</include>
-                <label>31476</label>
+                <label>$LOCALIZE[31476]</label>
                 <onclick>Skin.ToggleSetting(UseSlimOSDPanel)</onclick>
                 <selected>Skin.HasSetting(UseSlimOSDPanel)</selected>
             </control>
@@ -1272,7 +1277,7 @@
             <!-- hide discart from osd - note: slim osd only has discart at music playback-->
             <control type="radiobutton" id="13062">
                 <include>SkinSettings_Button</include>
-                <label>31519</label>
+                <label>$LOCALIZE[31519]</label>
                 <onclick>Skin.ToggleSetting(HideOSDDisc)</onclick>
                 <selected>Skin.HasSetting(HideOSDDisc)</selected>
             </control>
@@ -1293,14 +1298,14 @@
             <!-- Video playback -->
             <control type="label" id="13050">
                 <include>SkinSettings_Header</include>
-                <label>31745</label>
+                <label>$LOCALIZE[31745]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
 
             <control type="radiobutton" id="13052">
                 <description>enable info on osd</description>
                 <include>SkinSettings_Button</include>
-                <label>31133</label>
+                <label>$LOCALIZE[31133]</label>
                 <onclick>Skin.ToggleSetting(EnableOSDInfo)</onclick>
                 <selected>Skin.HasSetting(EnableOSDInfo)</selected>
             </control>
@@ -1308,16 +1313,16 @@
                 <description>enable large info on osd</description>
                 <textoffsetx>100</textoffsetx>
                 <include>SkinSettings_Button</include>
-                <label>31701</label>
+                <label>$LOCALIZE[31701]</label>
                 <onclick>Skin.ToggleSetting(EnableOSDInfoLarge)</onclick>
                 <selected>Skin.HasSetting(EnableOSDInfoLarge)</selected>
                 <visible>Skin.HasSetting(EnableOSDInfo)</visible>
             </control>
             <control type="radiobutton" id="31748">
-                <description>enable mediaglags on plot panel</description>
+                <description>enable mediaflags on plot panel</description>
                 <textoffsetx>100</textoffsetx>
                 <include>SkinSettings_Button</include>
-                <label>31748</label>
+                <label>$LOCALIZE[31748]</label>
                 <onclick>Skin.ToggleSetting(EnableOSDInfoMediaFlags)</onclick>
                 <selected>Skin.HasSetting(EnableOSDInfoMediaFlags)</selected>
                 <visible>Skin.HasSetting(EnableOSDInfo) + !Skin.HasSetting(EnableOSDInfoLarge)</visible>
@@ -1330,13 +1335,13 @@
             </control>
             <control type="radiobutton" id="13058">
                 <include>SkinSettings_Button</include>
-                <label>31259</label>
+                <label>$LOCALIZE[31259]</label>
                 <onclick>Skin.ToggleSetting(OSDShowInfoOnPause)</onclick>
                 <selected>Skin.HasSetting(OSDShowInfoOnPause)</selected>
             </control>
             <control type="radiobutton" id="31795">
                 <include>SkinSettings_Button</include>
-                <label>31795</label>
+                <label>$LOCALIZE[31795]</label>
                 <onclick>Skin.ToggleSetting(SeekPanelOnPause)</onclick>
                 <selected>Skin.HasSetting(SeekPanelOnPause)</selected>
                 <visible>!Skin.HasSetting(OSDShowInfoOnPause)</visible>
@@ -1355,21 +1360,45 @@
                 <label2>$INFO[Skin.String(defaultosdbutton_livetv.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=defaultosdbutton_livetv,header=$LOCALIZE[31663])</onclick>
             </control>
+			<control type="radiobutton" id="13068">
+                <include>SkinSettings_Button</include>
+                <label>$LOCALIZE[70034]</label>
+                <onclick>Skin.ToggleSetting(ShowEDLMarker)</onclick>
+                <selected>Skin.HasSetting(ShowEDLMarker)</selected>
+            </control>
+			<control type="radiobutton" id="13069">
+                <include>SkinSettings_Button</include>
+                <label>$LOCALIZE[70035]</label>
+                <onclick>Skin.ToggleSetting(ShowChapterMarker)</onclick>
+                <selected>Skin.HasSetting(ShowChapterMarker)</selected>
+            </control>
+			<control type="radiobutton" id="13070">
+                <include>SkinSettings_Button</include>
+                <label>$LOCALIZE[70038]</label>
+                <onclick>Skin.ToggleSetting(ShowCutMarker)</onclick>
+                <selected>Skin.HasSetting(ShowCutMarker)</selected>
+            </control>
+			<control type="radiobutton" id="13071">
+                <include>SkinSettings_Button</include>
+                <label>$LOCALIZE[70037]</label>
+                <onclick>Skin.ToggleSetting(ShowSceneMarker)</onclick>
+                <selected>Skin.HasSetting(ShowSceneMarker)</selected>
+            </control>			
             <control type="radiobutton" id="13057">
                 <include>SkinSettings_Button</include>
-                <label>31256</label>
+                <label>$LOCALIZE[31256]</label>
                 <onclick>Skin.ToggleSetting(OSDLargeSeekingLabel)</onclick>
                 <selected>Skin.HasSetting(OSDLargeSeekingLabel)</selected>
             </control>
             <control type="radiobutton" id="13059">
                 <include>SkinSettings_Button</include>
-                <label>31325</label>
+                <label>$LOCALIZE[31325]</label>
                 <onclick>Skin.ToggleSetting(ShowWeatherVideoInfoOSD)</onclick>
                 <selected>Skin.HasSetting(ShowWeatherVideoInfoOSD)</selected>
             </control>
             <control type="radiobutton" id="13067">
                 <include>SkinSettings_Button</include>
-                <label>31807</label>
+                <label>$LOCALIZE[31807]</label>
                 <onclick>Skin.ToggleSetting(EnableBufferingProgressOSD)</onclick>
                 <selected>Skin.HasSetting(EnableBufferingProgressOSD)</selected>
             </control>
@@ -1389,20 +1418,20 @@
             <!--clearart on osd -->
             <control type="radiobutton" id="31733">
                 <include>SkinSettings_Button</include>
-                <label>31733</label>
+                <label>$LOCALIZE[31733]</label>
                 <onclick>Skin.ToggleSetting(OSDShowClearArt)</onclick>
                 <selected>Skin.HasSetting(OSDShowClearArt)</selected>
             </control>
             <control type="radiobutton" id="8012">
                 <include>SkinSettings_Button</include>
-                <label>31244</label>
+                <label>$LOCALIZE[31244]</label>
                 <onclick>Skin.ToggleSetting(DisableSubtitles)</onclick>
                 <selected>Skin.HasSetting(DisableSubtitles)</selected>
             </control>
             <!-- hide playback controls -->
             <control type="radiobutton" id="31819">
                 <include>SkinSettings_Button</include>
-                <label>31819</label>
+                <label>$LOCALIZE[31819]</label>
                 <onclick>Skin.ToggleSetting(OSDDisablePlaybackControls)</onclick>
                 <selected>Skin.HasSetting(OSDDisablePlaybackControls)</selected>
             </control>
@@ -1410,7 +1439,7 @@
             <!-- music playback -->
             <control type="label" id="31670">
                 <include>SkinSettings_Header</include>
-                <label>31670</label>
+                <label>$LOCALIZE[31670]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             <control type="button" id="31664">
@@ -1420,14 +1449,6 @@
                 <label2>$INFO[Skin.String(defaultosdbutton_music.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=defaultosdbutton_music,header=$LOCALIZE[31664])</onclick>
             </control>
-<!--           
-		   <control type="radiobutton" id="5143">
-                <include>SkinSettings_Button</include>
-                <label>$LOCALIZE[31179]</label>
-                <onclick>Skin.ToggleSetting(FullscreenMusic)</onclick>
-                <selected>Skin.HasSetting(FullscreenMusic)</selected>
-            </control>
--->
             <control type="radiobutton" id="13055">
                 <include>SkinSettings_Button</include>
                 <label>$LOCALIZE[31232]</label>
@@ -1437,7 +1458,7 @@
             <control type="button" id="5153">
                 <description></description>
                 <include>SkinSettings_Button</include>
-                <label>31087</label>
+                <label>$LOCALIZE[31087]</label>
                 <label2 fallback="None">$INFO[Skin.String(LyricScript_Path)]</label2>
                 <onclick condition="!Skin.String(LyricScript_Path)">Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
                 <onclick condition="Skin.String(LyricScript_Path)">Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
@@ -1445,7 +1466,7 @@
             <control type="radiobutton" id="5161">
                 <description>disable backgroundoverlay lyrics dialog</description>
                 <include>SkinSettings_Button</include>
-                <label>31332</label>
+                <label>$LOCALIZE[31332]</label>
                 <onclick>Skin.ToggleSetting(DisableLyricsOverlay)</onclick>
                 <selected>Skin.HasSetting(DisableLyricsOverlay)</selected>
                 <visible>System.HasAddon(script.cu.lrclyrics)</visible>
@@ -1453,49 +1474,49 @@
             <control type="button" id="5157">
                 <description>Artist Slideshow in musicplayer</description>
                 <include>SkinSettings_Button</include>
-                <label>31341</label>
+                <label>$LOCALIZE[31341]</label>
                 <label2>$INFO[Skin.String(MusicArtistFanart.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=MusicArtistFanart,header=$LOCALIZE[31341])</onclick>
             </control>
             <control type="button" id="31665">
                 <description>Artist Logo in musicplayer</description>
                 <include>SkinSettings_Button</include>
-                <label>31665</label>
+                <label>$LOCALIZE[31665]</label>
                 <label2>$INFO[Skin.String(MusicArtistLogo.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=MusicArtistLogo,header=$LOCALIZE[31665])</onclick>
             </control>
             <control type="radiobutton" id="31640">
                 <description>Artist Bio in musicplayer</description>
                 <include>SkinSettings_Button</include>
-                <label>31640</label>
+                <label>$LOCALIZE[31640]</label>
                 <onclick>Skin.ToggleSetting(enableArtistBio)</onclick>
                 <selected>Skin.HasSetting(enableArtistBio)</selected>
             </control>
             <control type="button" id="31824">
                 <description>Fallback image music playback</description>
                 <include>SkinSettings_Button</include>
-                <label>31824</label>
+                <label>$LOCALIZE[31824]</label>
                 <label2>$INFO[Skin.String(MusicBackground.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=selectimage,skinstring=MusicBackground,header=$LOCALIZE[31824],allowmulti=true,resourceaddon=resource.images.skinbackgrounds,skinhelperbackgrounds=true)</onclick>
             </control>
             <control type="radiobutton" id="5170">
                 <description>Animate Music background</description>
                 <include>SkinSettings_Button</include>
-                <label>31617</label>
+                <label>$LOCALIZE[31617]</label>
                 <onclick>Skin.ToggleSetting(animateMusicArt)</onclick>
                 <selected>Skin.HasSetting(animateMusicArt)</selected>
             </control>
             <control type="radiobutton" id="31732">
                 <description>scrolling music text</description>
                 <include>SkinSettings_Button</include>
-                <label>31732</label>
+                <label>$LOCALIZE[31732]</label>
                 <onclick>Skin.ToggleSetting(MusicOSDScrollingTitles)</onclick>
                 <selected>Skin.HasSetting(MusicOSDScrollingTitles)</selected>
             </control>
             <control type="radiobutton" id="31715">
                 <description>Disable screensaver on music playback</description>
                 <include>SkinSettings_Button</include>
-                <label>31715</label>
+                <label>$LOCALIZE[31715]</label>
                 <onclick>Skin.ToggleSetting(SkinHelper.DisableScreenSaverOnFullScreenMusic)</onclick>
                 <selected>Skin.HasSetting(SkinHelper.DisableScreenSaverOnFullScreenMusic)</selected>
             </control>
@@ -1509,43 +1530,50 @@
             <!-- Now playing options -->
             <control type="label" id="31669">
                 <include>SkinSettings_Header</include>
-                <label>31669</label>
+                <label>$LOCALIZE[31669]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             <control type="radiobutton" id="5141">
                 <include>SkinSettings_Button</include>
-                <label>31140</label>
+                <label>$LOCALIZE[31140]</label>
                 <onclick>Skin.ToggleSetting(DisableNowPlayingBackground)</onclick>
                 <selected>Skin.HasSetting(DisableNowPlayingBackground)</selected>
             </control>
             <control type="radiobutton" id="31734">
                 <include>SkinSettings_Button</include>
-                <label>31734</label>
+                <label>$LOCALIZE[31734]</label>
                 <onclick>Skin.ToggleSetting(DisableNowPlayingMusicBackground)</onclick>
                 <selected>Skin.HasSetting(DisableNowPlayingMusicBackground)</selected>
             </control>
             <control type="radiobutton" id="5142">
                 <include>SkinSettings_Button</include>
-                <label>31596</label>
+                <label>$LOCALIZE[31596]</label>
                 <onclick>Skin.ToggleSetting(DisableNowPlayingInfoBar)</onclick>
                 <selected>Skin.HasSetting(DisableNowPlayingInfoBar)</selected>
             </control>
             <control type="radiobutton" id="31634">
                 <include>SkinSettings_Button</include>
-                <label>31634</label>
+                <label>$LOCALIZE[31634]</label>
                 <onclick>Skin.ToggleSetting(DisableNowPlayingDiscArt)</onclick>
                 <selected>Skin.HasSetting(DisableNowPlayingDiscArt)</selected>
                 <visible>!Skin.HasSetting(DisableNowPlayingInfoBar)</visible>
             </control>
             <control type="radiobutton" id="31736">
                 <include>SkinSettings_Button</include>
-                <label>31736</label>
+                <label>$LOCALIZE[31736]</label>
                 <onclick>Skin.ToggleSetting(DisableNowPlayingClearArt)</onclick>
                 <selected>Skin.HasSetting(DisableNowPlayingClearArt)</selected>
                 <visible>!Skin.HasSetting(DisableNowPlayingInfoBar)</visible>
             </control>
-            
+ 			<control type="radiobutton" id="32569">
+                <include>SkinSettings_Button</include>
+                <label>$LOCALIZE[70036]</label>
+                <onclick>Skin.ToggleSetting(DisableNowPlayingClock)</onclick>
+                <selected>Skin.HasSetting(DisableNowPlayingClock)</selected>
+                <visible>!Skin.HasSetting(DisableNowPlayingInfoBar)</visible>
+            </control>           
          </control>
+		 
 		<!--scrollbar for osd settings-->
         <control type="scrollbar" id="316"> 
             <right>-45</right>
@@ -1675,8 +1703,6 @@
             <param name="skinsetting" value="LyricsFocusTextShadowColor" />
             <param name="visible" value="Skin.String(LyricScript_Path)" />
         </include>
-        
-
     </include>
     
     <include name="SkinSettings_PVR">
@@ -1688,8 +1714,8 @@
             <itemgap>5</itemgap>
             <onup>18000</onup>
             <ondown>18000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright>316</onright>
             <pagecontrol>316</pagecontrol>
             <orientation>vertical</orientation>
@@ -1704,13 +1730,13 @@
             <!-- number of rows guide -->
             <control type="button" id="13043">
                 <include>SkinSettings_Button</include>
-                <label>31245</label>
+                <label>$LOCALIZE[31245]</label>
                 <label2>$INFO[Skin.String(GuideRows.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=GuideRows,header=$LOCALIZE[31245])</onclick>
             </control>
             <control type="radiobutton" id="13045">
                 <include>SkinSettings_Button</include>
-                <label>31239</label>
+                <label>$LOCALIZE[31239]</label>
                 <onclick>Skin.ToggleSetting(UseAltEpgProgress)</onclick>
                 <onclick condition="Window.IsActive(tvguide)">ReloadSkin</onclick>
                 <selected>Skin.HasSetting(UseAltEpgProgress)</selected>
@@ -1718,7 +1744,7 @@
             <control type="radiobutton" id="13046">
                 <description>no channel names in guide</description>
                 <include>SkinSettings_Button</include>
-                <label>31333</label>
+                <label>$LOCALIZE[31333]</label>
                 <onclick>Skin.ToggleSetting(HideChannelNamesInGuide)</onclick>
                 <selected>Skin.HasSetting(HideChannelNamesInGuide)</selected>
                 <onclick condition="Window.IsActive(tvguide)">ReloadSkin</onclick>
@@ -1726,56 +1752,56 @@
             <control type="radiobutton" id="31642">
                 <description>no channel numbers in guide</description>
                 <include>SkinSettings_Button</include>
-                <label>31642</label>
+                <label>$LOCALIZE[31642]</label>
                 <onclick>Skin.ToggleSetting(HideChannelNumbersInGuide)</onclick>
                 <selected>Skin.HasSetting(HideChannelNumbersInGuide)</selected>
             </control>
             <control type="radiobutton" id="31673">
                 <description>no channel logos in guide</description>
                 <include>SkinSettings_Button</include>
-                <label>31673</label>
+                <label>$LOCALIZE[31673]</label>
                 <onclick>Skin.ToggleSetting(HideChannelLogosInGuide)</onclick>
                 <selected>Skin.HasSetting(HideChannelLogosInGuide)</selected>
             </control>
             <control type="radiobutton" id="13047">
                 <description>Show video preview in PVR section</description>
                 <include>SkinSettings_Button</include>
-                <label>31338</label>
+                <label>$LOCALIZE[31338]</label>
                 <onclick>Skin.ToggleSetting(PVRShowPreview)</onclick>
                 <selected>Skin.HasSetting(PVRShowPreview)</selected>
             </control>
             <control type="radiobutton" id="13048">
                 <description>Back button in guide opens sideblade menu</description>
                 <include>SkinSettings_Button</include>
-                <label>31560</label>
+                <label>$LOCALIZE[31560]</label>
                 <onclick>Skin.ToggleSetting(PVRGuideBackSideblade)</onclick>
                 <selected>Skin.HasSetting(PVRGuideBackSideblade)</selected>
             </control>
             <control type="radiobutton" id="13049">
                 <description>Enable mini guide on fullscreen live tv</description>
                 <include>SkinSettings_Button</include>
-                <label>31616</label>
+                <label>$LOCALIZE[31616]</label>
                 <onclick>Skin.ToggleSetting(pvrGuideOnFullscreenVideo)</onclick>
                 <selected>Skin.HasSetting(pvrGuideOnFullscreenVideo)</selected>
             </control>
             <control type="radiobutton" id="31792">
                 <description>Enable small PVR channels OSD</description>
                 <include>SkinSettings_Button</include>
-                <label>31792</label>
+                <label>$LOCALIZE[31792]</label>
                 <onclick>Skin.ToggleSetting(small_pvrchannelsosd)</onclick>
                 <selected>Skin.HasSetting(small_pvrchannelsosd)</selected>
             </control>
             <control type="radiobutton" id="31776">
                 <description>Highlight channel row in guide</description>
                 <include>SkinSettings_Button</include>
-                <label>31776</label>
+                <label>$LOCALIZE[31776]</label>
                 <onclick>Skin.ToggleSetting(pvrGuideHighlightChannel)</onclick>
                 <selected>Skin.HasSetting(pvrGuideHighlightChannel)</selected>
             </control>
             <control type="radiobutton" id="31708">
                 <description>Enable artwork lookups for PVR</description>
                 <include>SkinSettings_Button</include>
-                <label>31708</label>
+                <label>$LOCALIZE[31708]</label>
                 <onclick>Skin.ToggleSetting(SkinHelper.EnablePVRThumbs)</onclick>
                 <selected>Skin.HasSetting(SkinHelper.EnablePVRThumbs)</selected>
             </control>
@@ -1787,13 +1813,13 @@
             </include>
             <control type="radiobutton" id="13041">
                 <include>SkinSettings_Button</include>
-                <label>31237</label>
+                <label>$LOCALIZE[31237]</label>
                 <onclick>Skin.ToggleSetting(ShowEpgGenreColors)</onclick>
                 <selected>Skin.HasSetting(ShowEpgGenreColors)</selected>
             </control>
             <control type="radiobutton" id="31677">
                 <include>SkinSettings_Button</include>
-                <label>31677</label>
+                <label>$LOCALIZE[31677]</label>
                 <onclick>Skin.ToggleSetting(CustomEPGGenreImages)</onclick>
                 <onclick condition="!Skin.HasSetting(CustomEPGGenreImages)">RunScript(script.skin.helper.service,action=dialogok,header=$LOCALIZE[31677],message=$LOCALIZE[31678])</onclick>
                 <selected>Skin.HasSetting(CustomEPGGenreImages)</selected>
@@ -1801,21 +1827,19 @@
             </control>
             <control type="button" id="31676">
                 <include>SkinSettings_Button</include>
-                <label>31676</label>
+                <label>$LOCALIZE[31676]</label>
                 <label2>$INFO[Skin.String(pvrgenretype.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=pvrgenretype,header=$LOCALIZE[31676])</onclick>
                 <visible>Skin.HasSetting(ShowEpgGenreColors) + Skin.HasSetting(CustomEPGGenreImages)</visible>
             </control>
             <control type="radiobutton" id="31825">
                 <include>SkinSettings_Button</include>
-                <label>31825</label>
+                <label>$LOCALIZE[31825]</label>
                 <onclick>Skin.ToggleSetting(NoPvrArtOSD)</onclick>
                 <selected>Skin.HasSetting(NoPvrArtOSD)</selected>
                 <visible>Skin.HasSetting(SkinHelper.EnablePVRThumbs)</visible>
             </control>
-            
         </control>
-				
     </include>
     
     <include name="SkinSettings_PVR_Colors">
@@ -1845,10 +1869,37 @@
             <param name="label" value="$LOCALIZE[31780]" />
             <param name="skinsetting" value="PVRGuideItemTextColorFocus" />
         </include>
-         
-
     </include>
     
+	<include name="SkinSettings_Marker_Colors">
+	         <!-- Marker colors -->
+        <control type="label" id="69569">
+            <include>SkinSettings_Header</include>
+            <label>$LOCALIZE[70043] - $LOCALIZE[31667]</label>
+        </control>
+
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31781" />
+            <param name="label" value="$LOCALIZE[70039]" />
+            <param name="skinsetting" value="EDLMarkerColor" />
+        </include>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31782" />
+            <param name="label" value="$LOCALIZE[70040]" />
+            <param name="skinsetting" value="ChapterMarkerColor" />
+        </include>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31783" />
+            <param name="label" value="$LOCALIZE[70041]" />
+            <param name="skinsetting" value="SceneMarkerColor" />
+        </include>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31784" />
+            <param name="label" value="$LOCALIZE[70042]" />
+            <param name="skinsetting" value="CutMarkerColor" />
+        </include>
+    </include>
+	
     <include name="SkinSettings_Shortcuts">
         <!-- configure menu -->
         <control type="grouplist" id="6000">
@@ -1858,14 +1909,14 @@
             <itemgap>5</itemgap>
             <onup>6000</onup>
             <ondown>6000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright></onright>
             <orientation>vertical</orientation>
             <visible>String.IsEqual(Window(Home).Property(SkinSettingSection),9)</visible>
             <control type="label" id="6001">
                 <include>SkinSettings_Header</include>
-                <label>31167</label>
+                <label>$LOCALIZE[31167]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             <control type="textbox" id="6002">
@@ -1873,7 +1924,7 @@
                 <height min="160">auto</height>
                 <font>Reg25</font>
                 <posy>60</posy>
-                <label>31168</label>
+                <label>$LOCALIZE[31168]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <align>left</align>
@@ -1899,7 +1950,7 @@
             </control>
             <control type="label" id="6005">
                 <include>SkinSettings_Header</include>
-                <label>31170</label>
+                <label>$LOCALIZE[31170]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             <control type="textbox" id="6006">
@@ -1907,7 +1958,7 @@
                 <height min="220">auto</height>
                 <font>Reg25</font>
                 <posy>60</posy>
-                <label>31171</label>
+                <label>$LOCALIZE[31171]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <align>left</align>
@@ -1919,7 +1970,7 @@
                 <param name="action" value="RunScript(script.skinshortcuts,type=resetall)" />
                 <param name="visible" value="true" />
             </include>
-             </control>
+        </control>
     </include>
     
     <include name="SkinSettings_ColorThemes">
@@ -1931,22 +1982,22 @@
             <itemgap>5</itemgap>
             <onup>15000</onup>
             <ondown>15000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright>313</onright>
             <orientation>vertical</orientation>
             <visible>String.IsEqual(Window(Home).Property(SkinSettingSection),15)</visible>
 
             <control type="label" id="15001">
                 <include>SkinSettings_Header</include>
-                <label>31463</label>
+                <label>$LOCALIZE[31463]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             <control type="textbox" id="15002">
                 <description></description>
                 <width>1200</width>
                 <align>justify</align>
-                <label>31464</label>
+                <label>$LOCALIZE[31464]</label>
                 <height>auto</height>
                 <font>Reg26</font>
             </control>
@@ -1955,7 +2006,7 @@
             </control>
             <control type="button" id="15004">
                 <description>Select Theme</description>
-                <label>31800</label>
+                <label>$LOCALIZE[31800]</label>
                 <include>SkinSettings_Button</include>
                 <onclick>RunScript(script.skin.helper.skinbackup,action=colorthemes)</onclick>
                 <onclick condition="!System.HasAddon(script.skin.helper.skinbackup)">RunPlugin(plugin://script.skin.helper.skinbackup)</onclick>
@@ -1966,14 +2017,14 @@
             </control>
             <control type="label" id="15031">
                 <include>SkinSettings_Header</include>
-                <label>31589</label>
+                <label>$LOCALIZE[31589]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             <control type="textbox" id="15032">
                 <description></description>
                 <width>1200</width>
                 <align>justify</align>
-                <label>31590</label>
+                <label>$LOCALIZE[31590]</label>
                 <height>auto</height>
                 <font>Reg26</font>
             </control>
@@ -2010,14 +2061,14 @@
             </control>
             <control type="label" id="15006">
                 <include>SkinSettings_Header</include>
-                <label>31768</label>
+                <label>$LOCALIZE[31768]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             <control type="textbox" id="15007">
                 <description></description>
                 <width>1200</width>
                 <align>justify</align>
-                <label>31769</label>
+                <label>$LOCALIZE[31769]</label>
                 <height>auto</height>
                 <font>Reg26</font>
             </control>
@@ -2027,7 +2078,6 @@
                 <label2>$INFO[skin.string(defaultcolorpalette)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=defaultcolorpalette,header=$LOCALIZE[31767])</onclick>
             </control>
-			
         </control>
     </include>
     
@@ -2040,8 +2090,8 @@
             <itemgap>5</itemgap>
             <onup>20000</onup>
             <ondown>20000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright>326</onright>
             <pagecontrol>326</pagecontrol>
             <orientation>vertical</orientation>
@@ -2052,6 +2102,7 @@
             <include>SkinSettings_OSD_Colors</include>
             <include>SkinSettings_Library_Colors</include>
             <include condition="PVR.HasTVChannels">SkinSettings_PVR_Colors</include>
+			<include>SkinSettings_Marker_Colors</include>
      
         </control>
         <!--scrollbar -->
@@ -2073,8 +2124,8 @@
             <itemgap>5</itemgap>
             <onup>8000</onup>
             <ondown>8000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright>313</onright>
             <orientation>vertical</orientation>
             <pagecontrol>313</pagecontrol>
@@ -2082,7 +2133,7 @@
             <!-- backup and restore -->
             <control type="label" id="8001">
                 <include>SkinSettings_Header</include>
-                <label>31271</label>
+                <label>$LOCALIZE[31271]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             <include content="SkinSettings_ActionButton">
@@ -2097,7 +2148,6 @@
                 <param name="action" value="RunScript(script.skin.helper.skinbackup,action=backup)" />
                 <param name="visible" value="System.HasAddon(script.skin.helper.skinbackup)" />
             </include>
-
             <include content="SkinSettings_ActionButton">
                 <param name="id" value="8003" />
                 <param name="label" value="31273" />
@@ -2116,7 +2166,6 @@
                 <param name="action" value="RunPlugin(plugin://script.skin.helper.skinbackup)" />
                 <param name="visible" value="!System.HasAddon(script.skin.helper.skinbackup)" />
             </include>
-
         </control>
         <!--scrollbar for advanced settings-->
         <control type="scrollbar" id="313"> 
@@ -2137,8 +2186,8 @@
             <itemgap>5</itemgap>
             <onup>5000</onup>
             <ondown>5000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright>312</onright>
             <orientation>vertical</orientation>
             <pagecontrol>312</pagecontrol>
@@ -2147,7 +2196,7 @@
             <!-- general -->
             <control type="label" id="5136">
                 <include>SkinSettings_Header</include>
-                <label>31005</label>
+                <label>$LOCALIZE[31005]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             <control type="radiobutton" id="5147">
@@ -2178,18 +2227,17 @@
                 <onclick condition="Skin.String(AutoStartPlayList)">Skin.Reset(AutoStartPlayList)</onclick>
                 <selected>Skin.String(AutoStartPlayList)</selected>
             </control>
-
             <control type="radiobutton" id="5159">
                 <description>Kiosk mode</description>
                 <include>SkinSettings_Button</include>
-                <label>31318</label>
+                <label>$LOCALIZE[31318]</label>
                 <onclick>Skin.ToggleSetting(KioskMode.Enabled)</onclick>
                 <selected>Skin.HasSetting(KioskMode.Enabled)</selected>
             </control>
             <control type="radiobutton" id="5162">
                 <description>show scrollbars</description>
                 <include>SkinSettings_Button</include>
-                <label>31344</label>
+                <label>$LOCALIZE[31344]</label>
                 <onclick>Skin.ToggleSetting(alwaysShowScrollbars)</onclick>
                 <selected>Skin.HasSetting(alwaysShowScrollbars)</selected>
                 <visible>!Skin.HasSetting(DisableScrollbars)</visible>
@@ -2197,35 +2245,35 @@
             <control type="radiobutton" id="31764">
                 <description>show scrollbars</description>
                 <include>SkinSettings_Button</include>
-                <label>31764</label>
+                <label>$LOCALIZE[31764]</label>
                 <onclick>Skin.ToggleSetting(DisableScrollbars)</onclick>
                 <selected>Skin.HasSetting(DisableScrollbars)</selected>
             </control>
             <control type="radiobutton" id="31720">
                 <description>rounded panels</description>
                 <include>SkinSettings_Button</include>
-                <label>31720</label>
+                <label>$LOCALIZE[31720]</label>
                 <onclick>Skin.ToggleSetting(smallContextMenu)</onclick>
                 <selected>Skin.HasSetting(smallContextMenu)</selected>
             </control>
             <control type="radiobutton" id="5163">
                 <description>use extended weather screen</description>
                 <include>SkinSettings_Button</include>
-                <label>31451</label>
+                <label>$LOCALIZE[31451]</label>
                 <onclick>Skin.ToggleSetting(useExtendedWeatherScreen)</onclick>
                 <selected>Skin.HasSetting(useExtendedWeatherScreen)</selected>
             </control>
             <!--no footer-->
             <control type="radiobutton" id="13714">
                 <include>SkinSettings_Button</include>
-                <label>31029</label>
+                <label>$LOCALIZE[31029]</label>
                 <onclick>Skin.ToggleSetting(NoFooterBar)</onclick>
                 <selected>Skin.HasSetting(NoFooterBar)</selected>
             </control>
             <!--no footer on home -->
             <control type="radiobutton" id="5164">
                 <include>SkinSettings_Button</include>
-                <label>31494</label>
+                <label>$LOCALIZE[31494]</label>
                 <onclick>Skin.ToggleSetting(NoFooterBarOnHome)</onclick>
                 <selected>Skin.HasSetting(NoFooterBarOnHome)</selected>
                 <visible>!Skin.HasSetting(NoFooterBar)</visible>
@@ -2233,7 +2281,7 @@
             <!--LOADING SPINNER-->
             <control type="button" id="5165">
                 <include>SkinSettings_Button</include>
-                <label>31504</label>
+                <label>$LOCALIZE[31504]</label>
                 <label2>$INFO[Skin.String(SkinHelper.SpinnerTexture.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=BUSYTEXTURE)</onclick>
             </control>
@@ -2243,7 +2291,6 @@
                 <param name="label" value="$LOCALIZE[31505]" />
                 <param name="skinsetting" value="SpinnerTexture.Color" />
             </include>
-
             <!--LOADING SPINNER DIM-->
             <control type="radiobutton" id="5167">
                 <include>SkinSettings_Button</include>
@@ -2261,14 +2308,14 @@
             <!--thumbs border size unfocused-->
             <control type="button" id="31003">
                 <include>SkinSettings_Button</include>
-                <label>31003</label>
+                <label>$LOCALIZE[31003]</label>
                 <label2>$INFO[Skin.String(thumbsborder_unfocused.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=thumbsborder_unfocused,header=$LOCALIZE[31003])</onclick>
             </control>
             <!--thumbs border size focused-->
             <control type="button" id="31628">
                 <include>SkinSettings_Button</include>
-                <label>31628</label>
+                <label>$LOCALIZE[31628]</label>
                 <label2>$INFO[Skin.String(thumbsborder_focused.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=thumbsborder_focused,header=$LOCALIZE[31628])</onclick>
             </control>
@@ -2280,22 +2327,22 @@
                 <selected>Skin.HasSetting(Home_TransParentTiles)</selected>
                 <visible>Skin.String(HomeLayout,1) | Skin.String(HomeLayout,1small) | Skin.String(HomeLayout,2) | Skin.String(HomeLayout,2small) | Skin.String(HomeLayout,enhanced)</visible>
             </control>
-            
+
             <!-- header settings -->
             <control type="label" id="31704">
                 <include>SkinSettings_Header</include>
-                <label>31704</label>
+                <label>$LOCALIZE[31704]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             <control type="button" id="31702">
                 <include>SkinSettings_Button</include>
-                <label>31702</label>
+                <label>$LOCALIZE[31702]</label>
                 <label2>$INFO[Skin.String(general_header.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=general_header,header=$LOCALIZE[31702])</onclick>
             </control>
             <control type="button" id="31703">
                 <include>SkinSettings_Button</include>
-                <label>31703</label>
+                <label>$LOCALIZE[31703]</label>
                 <label2>$INFO[Skin.String(home_header.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=home_header,header=$LOCALIZE[31703])</onclick>
             </control>
@@ -2303,14 +2350,14 @@
             <!--compact header-->
             <control type="radiobutton" id="31671">
                 <include>SkinSettings_Button</include>
-                <label>31671</label>
+                <label>$LOCALIZE[31671]</label>
                 <onclick>Skin.ToggleSetting(CompactHeader)</onclick>
                 <selected>Skin.HasSetting(CompactHeader)</selected>
             </control>
             <!--set subheader infoline-->
             <control type="button" id="31688">
                 <include>SkinSettings_Button</include>
-                <label>31688</label>
+                <label>$LOCALIZE[31688]</label>
                 <label2>$INFO[Skin.String(infoline.label)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=infoline,header=$LOCALIZE[31688])</onclick>
                 <visible>String.Contains(Skin.String(general_header),title) | String.Contains(Skin.String(home_header),title)</visible>
@@ -2319,7 +2366,7 @@
             <!--custom logo-->
             <control type="radiobutton" id="23023">
                 <include>SkinSettings_Button</include>
-                <label>31337</label>
+                <label>$LOCALIZE[31337]</label>
                 <onclick condition="!Skin.String(CustomLogoImage)">RunScript(script.skin.helper.service,action=SAVESKINIMAGE,skinstring=CustomLogoImage)</onclick>
                 <onclick condition="Skin.String(CustomLogoImage)">Skin.Reset(CustomLogoImage)</onclick>
                 <selected>Skin.String(CustomLogoImage)</selected>
@@ -2328,7 +2375,7 @@
             <!-- logo alignment-->
             <control type="button" id="123023">
                 <include>SkinSettings_Button</include>
-                <label>31618</label>
+                <label>$LOCALIZE[31618]</label>
                 <label2>$INFO[Skin.String(LogoImageAlignment)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=LogoImageAlignment,header=$LOCALIZE[31618])</onclick>
                 <visible>String.Contains(Skin.String(home_header),logo) + String.Contains(Skin.String(HomeLayout),simplever)</visible>
@@ -2337,14 +2384,14 @@
             
             <control type="radiobutton" id="31700">
                 <include>SkinSettings_Button</include>
-                <label>31700</label>
+                <label>$LOCALIZE[31700]</label>
                 <onclick>Skin.ToggleSetting(Home_RecordingIndicator)</onclick>
                 <selected>Skin.HasSetting(Home_RecordingIndicator)</selected>
             </control>
             
             <control type="radiobutton" id="31740">
                 <include>SkinSettings_Button</include>
-                <label>31740</label>
+                <label>$LOCALIZE[31740]</label>
                 <onclick>Skin.ToggleSetting(Home_ShowBackgroundLogo)</onclick>
                 <selected>Skin.HasSetting(Home_ShowBackgroundLogo)</selected>
                 <visible>String.Contains(Skin.String(home_header),logo)</visible>
@@ -2353,14 +2400,14 @@
             <!-- advanced settings -->
             <control type="label" id="8010">
                 <include>SkinSettings_Header</include>
-                <label>31270</label>
+                <label>$LOCALIZE[31270]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             </control>
             
             <control type="button" id="17121">
                 <description>Weather Icons</description>
                 <include>SkinSettings_Button</include>
-                <label>31623</label>
+                <label>$LOCALIZE[31623]</label>
                 <label2>$INFO[Skin.String(WeatherIconPack.name)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setresourceaddon,skinstring=WeatherIconPack,addontype=resource.images.weathericons)</onclick>
             </control>
@@ -2368,7 +2415,7 @@
             <control type="button" id="17122">
                 <description>Weather FanArt</description>
                 <include>SkinSettings_Button</include>
-                <label>31624</label>
+                <label>$LOCALIZE[31624]</label>
                 <label2>$INFO[Skin.String(WeatherFanArtPack.name)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setresourceaddon,skinstring=WeatherFanArtPack,addontype=resource.images.weatherfanart)</onclick>
             </control>
@@ -2376,7 +2423,7 @@
             <control type="button" id="31625">
                 <description>Studio Icons</description>
                 <include>SkinSettings_Button</include>
-                <label>31625</label>
+                <label>$LOCALIZE[31625]</label>
                 <label2>$INFO[Skin.String(SkinHelper.StudioLogos.Name)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setresourceaddon,skinstring=SkinHelper.StudioLogos,addontype=resource.images.studios)</onclick>
             </control>
@@ -2384,7 +2431,7 @@
             <control type="button" id="17125">
                 <description>Movie Genre Icons</description>
                 <include>SkinSettings_Button</include>
-                <label>31626</label>
+                <label>$LOCALIZE[31626]</label>
                 <label2>$INFO[Skin.String(MovieGenreIconPack.name)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setresourceaddon,skinstring=MovieGenreIconPack,addontype=resource.images.moviegenreicons)</onclick>
             </control>
@@ -2392,7 +2439,7 @@
             <control type="button" id="17126">
                 <description>Music Genre Icons</description>
                 <include>SkinSettings_Button</include>
-                <label>31627</label>
+                <label>$LOCALIZE[31627]</label>
                 <label2>$INFO[Skin.String(MusicGenreIconPack.name)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setresourceaddon,skinstring=MusicGenreIconPack,addontype=resource.images.musicgenreicons)</onclick>
             </control>
@@ -2400,7 +2447,7 @@
             <control type="button" id="31772">
                 <description>Movie Genre Fanart</description>
                 <include>SkinSettings_Button</include>
-                <label>31772</label>
+                <label>$LOCALIZE[31772]</label>
                 <label2>$INFO[Skin.String(moviegenrefanart.name)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setresourceaddon,skinstring=moviegenrefanart,addontype=resource.images.moviegenrefanart)</onclick>
             </control>
@@ -2408,14 +2455,14 @@
             <control type="button" id="31826">
                 <description>Language Flags</description>
                 <include>SkinSettings_Button</include>
-                <label>31826</label>
+                <label>$LOCALIZE[31826]</label>
                 <label2>$INFO[Skin.String(LanguageFlags.name)]</label2>
                 <onclick>RunScript(script.skin.helper.service,action=setresourceaddon,skinstring=LanguageFlags,addontype=resource.images.languageflags)</onclick>
             </control>
 			
             <control type="radiobutton" id="8025">
                 <include>SkinSettings_Button</include>
-                <label>31808</label>
+                <label>$LOCALIZE[31808]</label>
                 <onclick>Skin.ToggleSetting(EnableWeatherAlertOverlay)</onclick>
                 <selected>Skin.HasSetting(EnableWeatherAlertOverlay)</selected>
             </control>	
@@ -2430,7 +2477,7 @@
                 <!-- enable splash image or movie -->
                 <description></description>
                 <include>SkinSettings_Button</include>
-                <label>31631</label>
+                <label>$LOCALIZE[31631]</label>
                 <onclick condition="!Skin.String(SplashScreen)">Skin.SetFile(SplashScreen)</onclick>
                 <onclick condition="Skin.String(SplashScreen)">Skin.Reset(SplashScreen)</onclick>
                 <selected>Skin.String(SplashScreen)</selected>
@@ -2439,7 +2486,7 @@
                 <!-- enable snow on home -->
                 <description></description>
                 <include>SkinSettings_Button</include>
-                <label>31644</label>
+                <label>$LOCALIZE[31644]</label>
                 <onclick>Skin.ToggleSetting(enablesnow)</onclick>
                 <selected>Skin.HasSetting(enablesnow)</selected>
             </control>
@@ -2456,7 +2503,7 @@
                 <!-- prefer clearart over landscapes -->
                 <description></description>
                 <include>SkinSettings_Button</include>
-                <label>31652</label>
+                <label>$LOCALIZE[31652]</label>
                 <onclick>Skin.ToggleSetting(PreferClearArtOverLandscape)</onclick>
                 <selected>Skin.HasSetting(PreferClearArtOverLandscape)</selected>
             </control>
@@ -2464,63 +2511,66 @@
                 <!-- dialog yesno default focus to NO -->
                 <description></description>
                 <include>SkinSettings_Button</include>
-                <label>31656</label>
+                <label>$LOCALIZE[31656]</label>
                 <onclick>Skin.ToggleSetting(DialogYesNo_FocusNO)</onclick>
                 <selected>Skin.HasSetting(DialogYesNo_FocusNO)</selected>
             </control>
             <control type="radiobutton" id="31710">
                 <description>Enable skin helper artwork lookups for addons</description>
                 <include>SkinSettings_Button</include>
-                <label>31710</label>
+                <label>$LOCALIZE[31710]</label>
                 <onclick>Skin.ToggleSetting(SkinHelper.EnableExtendedArt)</onclick>
                 <selected>Skin.HasSetting(SkinHelper.EnableExtendedArt)</selected>
             </control>
             <control type="radiobutton" id="31724">
                 <description>Do not display hour representation of the duration</description>
                 <include>SkinSettings_Button</include>
-                <label>31724</label>
+                <label>$LOCALIZE[31724]</label>
                 <onclick>Skin.ToggleSetting(SkinHelper.DisableHoursDuration)</onclick>
                 <selected>Skin.HasSetting(SkinHelper.DisableHoursDuration)</selected>
             </control>
             <control type="radiobutton" id="31762">
                 <description>Keep widget focused when starting playback from home widget</description>
                 <include>SkinSettings_Button</include>
-                <label>31762</label>
+                <label>$LOCALIZE[31762]</label>
                 <onclick>Skin.ToggleSetting(KeepWidgetFocus)</onclick>
                 <selected>Skin.HasSetting(KeepWidgetFocus)</selected>
             </control>
             <control type="radiobutton" id="31765">
                 <description>Emby CoverArt compatability</description>
                 <include>SkinSettings_Button</include>
-                <label>31765</label>
+                <label>$LOCALIZE[31765]</label>
                 <onclick>Skin.ToggleSetting(EmbyCovertArtEnabled)</onclick>
                 <selected>Skin.HasSetting(EmbyCovertArtEnabled)</selected>
             </control>
             <control type="radiobutton" id="31766">
                 <description>Disable auto scroll for plots/descriptions</description>
                 <include>SkinSettings_Button</include>
-                <label>31771</label>
+                <label>$LOCALIZE[31771]</label>
                 <onclick>Skin.ToggleSetting(DisablePlotAutoScroll)</onclick>
                 <selected>Skin.HasSetting(DisablePlotAutoScroll)</selected>
             </control>
             <control type="radiobutton" id="31796">
                 <description>Allow youtube lookup for trailers</description>
                 <include>SkinSettings_Button</include>
-                <label>31796</label>
+                <label>$LOCALIZE[31796]</label>
                 <onclick condition="!Skin.String(AutoYoutubeTrailer,true)">Skin.SetString(AutoYoutubeTrailer,true)</onclick>
                 <onclick condition="Skin.String(AutoYoutubeTrailer,true)">Skin.SetString(AutoYoutubeTrailer,false)</onclick>
                 <selected>Skin.String(AutoYoutubeTrailer,true)</selected>
+				<visible>false</visible>
+				<!-- hidden, because Searching and Playing of trailers by youtube does not seem to work with any addon: -->
+				<!-- skinhelper, embuaryhelper, bingiehelper, themoviedbhelper ????? -->
             </control>
             <control type="radiobutton" id="31818">
                 <description>No clearlogo in netflix home</description>
                 <include>SkinSettings_Button</include>
-                <label>31818</label>
+                <label>$LOCALIZE[31818]</label>
                 <onclick>Skin.ToggleSetting(NoClearLogoNetflix)</onclick>
                 <selected>Skin.HasSetting(NoClearLogoNetflix)</selected>
             </control>
             <control type="radiobutton" id="31648">
                 <include>SkinSettings_Button</include>
-                <label>31648</label>
+                <label>$LOCALIZE[31648]</label>
                 <onclick>Skin.ToggleSetting(ShowLabelsPosterEpisodes)</onclick>
                 <selected>Skin.HasSetting(ShowLabelsPosterEpisodes)</selected>
                 <visible>!Skin.HasSetting(DisableAllWidgets)</visible>
@@ -2568,7 +2618,6 @@
             <param name="label" value="$LOCALIZE[31455]" />
             <param name="skinsetting" value="FooterTextColor" />
         </include>
-
         <!--footer shadow text color-->
         <include content="SkinSettings_ColorButton">
             <param name="id" value="31477" />
@@ -2704,7 +2753,6 @@
             <param name="label" value="$LOCALIZE[31735]" />
             <param name="skinsetting" value="HomeWidgetsBorderColor" />
         </include>
-
     </include>
     
     <include name="SkinSettings_Addons">
@@ -2716,15 +2764,15 @@
             <itemgap>5</itemgap>
             <onup>31000</onup>
             <ondown>31000</ondown>
-            <onleft condition="!Window.IsActive(Custom_SkinSettings.xml)">100</onleft>
-            <onleft condition="Window.IsActive(Custom_SkinSettings.xml)">2000</onleft>
+            <onleft condition="!Window.IsActive(3016)">100</onleft>
+            <onleft condition="Window.IsActive(3016)">2000</onleft>
             <onright>3199</onright>
             <orientation>vertical</orientation>
             <pagecontrol>3199</pagecontrol>
             <visible>String.IsEqual(Window(Home).Property(SkinSettingSection),31)</visible>
             <control type="label" id="31696">
                 <include>SkinSettings_Header</include>
-                <label>31696</label>
+                <label>$LOCALIZE[31696]</label>
             </control>
 
             <include content="SkinSettings_AddonButton">
@@ -2823,7 +2871,6 @@
                 <param name="id" value="31018" />
                 <param name="addon" value="script.service.pip" />
             </include>
-
         </control>
         <control type="scrollbar" id="3199"> 
             <right>-45</right>
@@ -2838,7 +2885,8 @@
         <width>100%</width>
         <align>left</align>
         <height>50</height>
-        <font>arial26</font> <!-- always use arial for the skinsettings because we use some special characters -->
+        <font>arial26</font>
+		<!-- always use arial for the skinsettings because we use some special characters -->
         <textoffsetx>40</textoffsetx>
         <textwidth>950</textwidth>
     </include>
@@ -2854,119 +2902,119 @@
     <include name="SkinSettings_MenuOptions">
         <!--home menu layout-->
         <control type="togglebutton" id="12">
-            <label>31115</label>
-            <altlabel>31115</altlabel>
+            <label>$LOCALIZE[31115]</label>
+            <altlabel>$LOCALIZE[31115]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,12,home)</onfocus>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),12)</usealttexture>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
         </control>
         <!--tile settings-->
         <control type="togglebutton" id="9">
-            <label>31013</label>
-            <altlabel>31013</altlabel>
+            <label>$LOCALIZE[31013]</label>
+            <altlabel>$LOCALIZE[31013]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,9,home)</onfocus>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),9)</usealttexture>
         </control>
         <!--background settings-->
         <control type="togglebutton" id="8">
-            <label>31022</label>
-            <altlabel>31022</altlabel>
+            <label>$LOCALIZE[31022]</label>
+            <altlabel>$LOCALIZE[31022]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,8,home)</onfocus>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),8)</usealttexture>
         </control>	
          <control type="togglebutton" id="17">
             <!--media library-->
             <label>$LOCALIZE[31221]</label>
-            <altlabel>31221</altlabel>
+            <altlabel>$LOCALIZE[31221]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,17,home)</onfocus>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),17)</usealttexture>
         </control>
         <control type="togglebutton" id="7">
             <!--forced views-->
             <label>$LOCALIZE[31518]</label>
-            <altlabel>31518</altlabel>
+            <altlabel>$LOCALIZE[31518]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,7,home)</onfocus>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),7)</usealttexture>
         </control>
         <control type="togglebutton" id="16">
             <!--osd settings-->
             <label>$LOCALIZE[31668]</label>
-            <altlabel>31668</altlabel>
+            <altlabel>$LOCALIZE[31668]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,16,home)</onfocus>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),16)</usealttexture>
         </control>
         <control type="togglebutton" id="18">
             <!--PVR settings-->
             <label>$LOCALIZE[31088]</label>
-            <altlabel>31088</altlabel>
+            <altlabel>$LOCALIZE[31088]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,18,home)</onfocus>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),18)</usealttexture>
             <visible>PVR.HasTVChannels</visible>
         </control>
         <control type="togglebutton" id="6">
             <!--general-->
-            <label>31005</label>
-            <altlabel>31005</altlabel>
+            <label>$LOCALIZE[31005]</label>
+            <altlabel>$LOCALIZE[31005]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,6,home)</onfocus>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),6)</usealttexture>
         </control>
         <!-- color themes -->
         <control type="togglebutton" id="15">
-            <label>31462</label>
-            <altlabel>31462</altlabel>
+            <label>$LOCALIZE[31462]</label>
+            <altlabel>$LOCALIZE[31462]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,15,home)</onfocus>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),15)</usealttexture>
         </control>
         <!-- custom colors -->
         <control type="togglebutton" id="20">
-            <label>31667</label>
-            <altlabel>31667</altlabel>
+            <label>$LOCALIZE[31667]</label>
+            <altlabel>$LOCALIZE[31667]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,20,home)</onfocus>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),20)</usealttexture>
         </control>
         <!-- smart shortcuts -->
         <control type="togglebutton" id="19">
-            <label>31531</label>
-            <altlabel>31531</altlabel>
+            <label>$LOCALIZE[31531]</label>
+            <altlabel>$LOCALIZE[31531]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,19,home)</onfocus>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),19)</usealttexture>
         </control>
         <!-- back and restore -->
         <control type="togglebutton" id="14">
-            <label>31271</label>
-            <altlabel>31271</altlabel>
+            <label>$LOCALIZE[31271]</label>
+            <altlabel>$LOCALIZE[31271]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,14,home)</onfocus>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),14)</usealttexture>
         </control>
         <control type="togglebutton" id="31">
-            <label>31696</label>
-            <altlabel>31696</altlabel>
+            <label>$LOCALIZE[31696]</label>
+            <altlabel>$LOCALIZE[31696]</altlabel>
             <onfocus>SetProperty(SkinSettingSection,31,home)</onfocus>
-            <include condition="!Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
-            <include condition="Window.IsActive(Custom_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <include condition="!Window.IsActive(3016)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(3016)">SkinSettings_MenuButtonSmall</include>
             <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),31)</usealttexture>
         </control>
     </include>
@@ -3034,6 +3082,7 @@
             <animation effect="fade" start="100" end="40" time="0" condition="!System.HasAddon($PARAM[addon])">Conditional</animation>
         </control>
     </include>
+	
     <include name="SkinSettings_AddonButton_Label">
         <label>$PARAM[label]</label>
     </include>

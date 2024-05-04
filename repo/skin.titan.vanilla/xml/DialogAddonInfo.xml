@@ -37,7 +37,6 @@
                 <posy>40</posy>
                 <include condition="Skin.HasSetting(EnableTouchSupport)">close_button</include>
             </control>
-			
            <!--Header-->
             <control type="label">
                 <description>Heading</description>
@@ -49,9 +48,8 @@
 				<shadowcolor>black</shadowcolor>
                 <align>left</align>
 				<height>100</height>
-				<label>24003</label>
+				<label>$LOCALIZE[24003]</label>
             </control>
-			
 			<!-- broken text -->
 			<control type="label">
 				<posx>700</posx>
@@ -62,7 +60,6 @@
 				<label>$VAR[AddonLifecycleType]</label>
 				<visible>String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24170]) | String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24171])</visible>
             </control>			
-			
 			<!-- title -->
 			<control type="label">
 				<posx>700</posx>
@@ -72,7 +69,6 @@
 				<align>left</align>
 				<label>$INFO[ListItem.AddonName] $INFO[ListItem.AddonVersion] $LOCALIZE[31830] $INFO[ListItem.AddonCreator]</label>
             </control>
-		
 			<control type="image">
 				<posx>680</posx>
                 <posy>220</posy>
@@ -80,7 +76,6 @@
 				<height>250</height>
 				<texture border="5">dialogs/default/inner.png</texture>
 			</control>
-			
 			<!--Icon-->
             <control type="image">
                 <right>60</right>
@@ -91,11 +86,9 @@
 				<aspectratio align="right" aligny="center" scalediffuse="true">keep</aspectratio>
 				<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png" border="5">$INFO[ListItem.Icon]</texture>
             </control>
-			
             <control type="grouplist">
                 <posx>680</posx>
                 <posy>220</posy>
-
                 <control type="button">
                      <!--Addon Type-->
                     <width>800</width>
@@ -178,7 +171,6 @@
                 <label fallback="19055">$INFO[ListItem.AddonNews]</label>
                 <visible>String.IsEqual(Window.Property(showinfo),news)</visible>
             </control>
-            
             <!-- screenshots -->
             <control type="panel" id="50">
                 <posx>680</posx>
@@ -208,7 +200,6 @@
                     </control>
                 </focusedlayout>
             </control>
-      
 			<!--Button Group-->
             <control type="grouplist" id="9000">
                 <posx>680</posx>
@@ -222,7 +213,7 @@
                     <width>290</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>222</label>
+                    <label>$LOCALIZE[222]</label>
 					<include>DialogButtonOther</include>
                     <onclick>Close</onclick>
                     <visible>Control.IsEnabled(11111)</visible>
@@ -232,8 +223,8 @@
                     <width>300</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>20008</label>
-                    <altlabel>29915</altlabel>
+                    <label>$LOCALIZE[20008]</label>
+                    <altlabel>$LOCALIZE[29915]</altlabel>
 					<usealttexture>String.IsEqual(Window.Property(showinfo),screenshots)</usealttexture>
 					<include>DialogButtonOther</include>
                     <onclick condition="!String.IsEqual(Window.Property(showinfo),screenshots)">SetProperty(showinfo,screenshots)</onclick>
@@ -245,8 +236,8 @@
                     <width>300</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>29916</label>
-                    <altlabel>29915</altlabel>
+                    <label>$LOCALIZE[29916]</label>
+                    <altlabel>$LOCALIZE[29915]</altlabel>
 					<usealttexture>String.IsEqual(Window.Property(showinfo),news)</usealttexture>
                     <onclick condition="!String.IsEqual(Window.Property(showinfo),news)">SetProperty(showinfo,news)</onclick>
                     <onclick condition="String.IsEqual(Window.Property(showinfo),news)">ClearProperty(showinfo)</onclick>
@@ -257,7 +248,7 @@
                     <width>300</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>518</label>
+                    <label>$LOCALIZE[518]</label>
 					<include>DialogButtonOther</include>
 					<visible>Control.IsEnabled(12)</visible>
                 </control>
@@ -266,7 +257,7 @@
                     <width>300</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>24069</label>
+                    <label>$LOCALIZE[24069]</label>
 					<include>DialogButtonOther</include>
 					<visible>Control.IsEnabled(8)</visible>
                 </control>
@@ -275,7 +266,7 @@
                     <width>300</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>24022</label>
+                    <label>$LOCALIZE[24022]</label>
 					<include>DialogButtonOther</include>
 					<visible>Control.IsEnabled(6)</visible>
 					<selected>ListItem.Property(addon.isinstalled) | !Window.IsActive(addonbrowser)</selected>
@@ -285,7 +276,7 @@
                     <width>300</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>24021</label>
+                    <label>$LOCALIZE[24021]</label>
 					<include>DialogButtonOther</include>
 					<visible>Control.IsEnabled(7)</visible>
 					<selected>!String.StartsWith(Control.GetLabel(7),$LOCALIZE[24022]) | !Window.IsActive(addonbrowser)</selected>
@@ -295,7 +286,7 @@
                     <width>300</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>24020</label>
+                    <label>$LOCALIZE[24020]</label>
 					<include>DialogButtonOther</include>
 					<visible>Control.IsEnabled(9)</visible>
                 </control>
@@ -304,7 +295,7 @@
                     <width>300</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>39024</label>
+                    <label>$LOCALIZE[39024]</label>
 					<include>DialogButtonOther</include>
 					<visible>Control.IsEnabled(10)</visible>
                 </control>
@@ -315,7 +306,7 @@
                     <textwidth>270</textwidth>
 					<height>80</height>
                     <align>left</align>
-                    <label>21340</label>
+                    <label>$LOCALIZE[21340]</label>
 					<radioposx>280</radioposx>
 					<include>DialogButtonOther</include>
                     <visible>Control.IsEnabled(13)</visible>
@@ -325,12 +316,10 @@
                     <width>300</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>24069</label>
+                    <label>$LOCALIZE[24069]</label>
 					<include>DialogButtonOther</include>
                     <visible>Control.IsEnabled(14)</visible>
                 </control>
-
-				
             </control>
             <!--Arrows-->
             <control type="image">

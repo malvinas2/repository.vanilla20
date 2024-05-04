@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Titan-->
 <window>
+	<onload condition="Skin.String(MusicArtistFanart,artistslideshow)">RunScript(script.artistslideshow)</onload>
 	<defaultcontrol></defaultcontrol>
     <controls>
          <!--fallback background -->

@@ -57,7 +57,6 @@
                 <texture border="1">dialogs/default/separator.png</texture>
             </control>
 			
-			
             <!--Weather Today-->
             <control type="multiimage">
                 <!--Icon-->
@@ -166,7 +165,7 @@
                 </control>
                 <!-- Humidity -->
                 <control type="label">
-                    <label>406</label>
+                    <label>$LOCALIZE[406]</label>
                     <posx>0</posx>
                     <posy>120</posy>
                     <width>400</width>
@@ -188,7 +187,7 @@
                 </control>
                 <!-- Uv Index -->
                 <control type="label">
-                    <label>403</label>
+                    <label>$LOCALIZE[403]</label>
                     <posx>0</posx>
                     <posy>150</posy>
                     <width>400</width>
@@ -210,7 +209,7 @@
                 </control>
                 <!-- Dew Point -->
                 <control type="label">
-                    <label>405</label>
+                    <label>$LOCALIZE[405]</label>
                     <posx>0</posx>
                     <posy>180</posy>
                     <width>400</width>
@@ -437,7 +436,6 @@
      </include>
 
 	<include name="ExtendedWeather">
-
 		<control type="group">
 			<left>0</left>
 			<top>160</top>
@@ -509,30 +507,30 @@
 				</focusedlayout>
 				<content>
 					<item id="1">
-						<label>31285</label>
+						<label>$LOCALIZE[31285]</label>
 						<onclick></onclick>
 						<icon></icon>
 					</item>
 					<item id="2">
-						<label>31289</label>
+						<label>$LOCALIZE[31289]</label>
 						<onclick></onclick>
 						<icon></icon>
 						<visible>!String.IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
 					<item id="3">
-						<label>31286</label>
+						<label>$LOCALIZE[31286]</label>
 						<onclick></onclick>
 						<icon></icon>
 						<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched))</visible>
 					</item>
 					<item id="4">
-						<label>31288</label>
+						<label>$LOCALIZE[31288]</label>
 						<onclick></onclick>
 						<icon></icon>
 						<visible>!String.IsEmpty(Window.Property(Weekend.IsFetched))</visible>
 					</item>
 					<item id="5">
-						<label>31287</label>
+						<label>$LOCALIZE[31287]</label>
 						<onclick></onclick>
 						<icon></icon>
 						<visible>!String.IsEmpty(Window.Property(Hourly.IsFetched))</visible>
@@ -568,7 +566,7 @@
 						<visible>!String.IsEmpty(Window.Property(Map.5.Area)) + !String.IsEmpty(Window.Property(Map.IsFetched))</visible>
 					</item>
 					<item id="11">
-						<label>31636</label>
+						<label>$LOCALIZE[31636]</label>
 						<onclick></onclick>
 						<icon></icon>
 						<visible>!String.IsEmpty(Window.Property(Alerts.IsFetched))</visible>
@@ -1273,7 +1271,6 @@
 								<align>center</align>
 								<font>Reg26</font>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(TemperatureHeading),,: ]$INFO[ListItem.Property(Temperature)][CR]$INFO[ListItem.Property(FeelsLike),$LOCALIZE[402]: ][CR]$INFO[ListItem.Property(Precipitation),$LOCALIZE[1448]: ][CR]$INFO[ListItem.Property(Wind),$LOCALIZE[404]: ][CR]$INFO[ListItem.Property(Humidity),$LOCALIZE[406]: ]</label>
 							</control>
 						</itemlayout>
@@ -1300,7 +1297,6 @@
 								<font>Reg36</font>
 								<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
 								<align>center</align>
-								
 								<label>$INFO[ListItem.Label]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1312,7 +1308,6 @@
 								<align>center</align>
 								<font>Reg26</font>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(TemperatureHeading),,: ]$INFO[ListItem.Property(Temperature)][CR]$INFO[ListItem.Property(FeelsLike),$LOCALIZE[402]: ][CR]$INFO[ListItem.Property(Precipitation),$LOCALIZE[1448]: ][CR]$INFO[ListItem.Property(Wind),$LOCALIZE[404]: ][CR]$INFO[ListItem.Property(Humidity),$LOCALIZE[406]: ]</label>
 							</control>
 						</focusedlayout>
@@ -1417,7 +1412,6 @@
 								<font>Reg26</font>
 								<align>center</align>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Label2]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1428,7 +1422,6 @@
 								<font>Reg26</font>
 								<align>center</align>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>[B]$INFO[ListItem.Property(HighTemperature)][/B]$INFO[ListItem.Property(LowTemperature), | ]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1439,7 +1432,6 @@
 								<font>Reg26</font>
 								<align>center</align>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Property(WindSpeed),$LOCALIZE[383]: ]$INFO[ListItem.Property(WindDirection),  ]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1450,7 +1442,6 @@
 								<font>Reg26</font>
 								<align>center</align>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Property(Humidity),$LOCALIZE[406]: ]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1461,7 +1452,6 @@
 								<font>Reg26</font>
 								<align>center</align>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Property(ChancePrecipitation),$LOCALIZE[31290]: ]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1489,7 +1479,6 @@
 								<font>Reg36</font>
 								<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
 								<align>center</align>
-								
 								<label>$INFO[ListItem.Label]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1500,7 +1489,6 @@
 								<font>Reg26</font>
 								<align>center</align>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Label2]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1511,7 +1499,6 @@
 								<font>Reg26</font>
 								<align>center</align>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>[B]$INFO[ListItem.Property(HighTemperature)][/B]$INFO[ListItem.Property(LowTemperature), | ]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1522,7 +1509,6 @@
 								<font>Reg26</font>
 								<align>center</align>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Property(WindSpeed),$LOCALIZE[383]: ]$INFO[ListItem.Property(WindDirection),  ]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1533,7 +1519,6 @@
 								<font>Reg26</font>
 								<align>center</align>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Property(Humidity),$LOCALIZE[406]: ]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1544,7 +1529,6 @@
 								<font>Reg26</font>
 								<align>center</align>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Property(ChancePrecipitation),$LOCALIZE[31290]: ]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1630,7 +1614,6 @@
 								<height>70</height>
 								<font>Reg26</font>
 								<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor><shadowcolor>$INFO[Skin.String(ViewDetailsHighlightTextShadowColor)]</shadowcolor>
-								
 								<label>$INFO[ListItem.Label]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1641,7 +1624,6 @@
 								<height>56</height>
 								<font>Reg26</font>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Label2]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1652,7 +1634,6 @@
 								<font>Reg26</font>
 								<align>right</align>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Property(Temperature)]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1663,7 +1644,6 @@
 								<height>70</height>
 								<font>Reg26</font>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-								
 								<label>$INFO[ListItem.Property(FeelsLike),$LOCALIZE[402]: ]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -1675,7 +1655,6 @@
 								<font>Reg26</font>
 								<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 								<align>right</align>
-								
 								<label>$INFO[ListItem.Property(ChancePrecipitation)]</label>
 								<textoffsetx>15</textoffsetx>
 							</control>
@@ -2409,17 +2388,16 @@
 					<top>32</top>
 					<width>1316</width>
 					<height>838</height>
-				
-				<control type="label">
-					<width>1316</width>
-					<height>45</height>
-					<font>Reg36</font>
-					<textcolor>80ff0000</textcolor>
-					<shadowcolor>ff4c2626</shadowcolor>
-					<align>center</align>
-					<aligny>top</aligny>
-					<label>31636</label>
-				</control>
+					<control type="label">
+						<width>1316</width>
+						<height>45</height>
+						<font>Reg36</font>
+						<textcolor>80ff0000</textcolor>
+						<shadowcolor>ff4c2626</shadowcolor>
+						<align>center</align>
+						<aligny>top</aligny>
+						<label>$LOCALIZE[31636]</label>
+					</control>
 					<control type="image">
 						<description>separator image</description>
 						<top>52</top>
@@ -2449,7 +2427,7 @@
 						<shadowcolor>black</shadowcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>31637</label>
+						<label>$LOCALIZE[31637]</label>
 						<visible>String.IsEmpty(Window.Property(Alerts))</visible>
 					</control>
 					<control type="image">
@@ -2462,12 +2440,9 @@
 					</control>
 				</control>
 			</control>
-		
 		</control>
 		
 		<!-- touchscreen support -->
 		<include condition="Skin.HasSetting(EnableTouchSupport)">TouchControlsFooter</include>
-		
 	</include>
-	
-	</includes>
+</includes>

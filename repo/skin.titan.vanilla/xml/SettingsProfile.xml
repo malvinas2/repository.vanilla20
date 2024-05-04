@@ -49,7 +49,7 @@
                 <posx>80</posx>
                 <posy>41</posy>
                 <width>520</width>
-                <label>20096</label>
+                <label>$LOCALIZE[20096]</label>
                 <onup>2</onup>
 				<onright>2</onright>
 				<align>left</align>
@@ -59,7 +59,7 @@
                 <posx>80</posx>
                 <posy>105</posy>
                 <width>520</width>
-                <label>31147</label>
+                <label>$LOCALIZE[31147]</label>
                 <onup>4</onup>
                 <ondown>31692</ondown>
 				<onright>2</onright>
@@ -73,7 +73,7 @@
                 <posx>80</posx>
                 <posy>170</posy>
                 <width>520</width>
-                <label>31692</label>
+                <label>$LOCALIZE[31692]</label>
                 <onup>444</onup>
                 <ondown>31693</ondown>
 				<onright>2</onright>
@@ -86,7 +86,7 @@
                 <posx>80</posx>
                 <posy>235</posy>
                 <width>520</width>
-                <label>31693</label>
+                <label>$LOCALIZE[31693]</label>
                 <onup>31692</onup>
                 <ondown>4</ondown>
 				<onright>2</onright>

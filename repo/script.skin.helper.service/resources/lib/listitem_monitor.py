@@ -232,7 +232,7 @@ class ListItemMonitor(threading.Thread):
                 screensaver_setting = kodi_json('Settings.GetSettingValue', '{"setting":"screensaver.mode"}')
                 if screensaver_setting:
                     self.screensaver_setting = screensaver_setting
-                    kodi_json('Settings.SetSettingValue', {"setting": "screensaver.mode", "value": None})
+                    kodi_json('Settings.SetSettingValue', {"setting": "screensaver.mode", "value": ""})
                     log_msg(
                         "Disabled screensaver while fullscreen music playback - previous setting: %s" %
                         self.screensaver_setting, xbmc.LOGINFO)

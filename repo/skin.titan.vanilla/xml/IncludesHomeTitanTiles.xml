@@ -1,7 +1,6 @@
 <includes>
 
     <include name="HomeTitanTiles">
-
         <!-- Header -->
 		<include>Header</include>
         
@@ -52,19 +51,22 @@
 		<control type="wraplist" id="300">
             <include>HomeTitanTilesLayout</include>
         </control>
-
 	</include>
+	
 	<include name="HomeTitanTilesNormal">
 		<control type="panel" id="300">
             <include>HomeTitanTilesLayout</include>
         </control>
 	</include>
+	
 	<include name="HomeTitanTilesOrientationHorizontal">
 		<orientation>horizontal</orientation>
 	</include>
+	
 	<include name="HomeTitanTilesOrientationVertical">
 		<orientation>vertical</orientation>
 	</include>
+	
     <include name="HomeTitanTilesIndicators">
         <!--widget Arrow UP-->
         <control type="group">
@@ -110,8 +112,8 @@
                 <aspectratio>keep</aspectratio>
             </control>
         </control>
-				
     </include>
+	
 	<include name="HomeTitanTilesLayout">
 		<include condition="Skin.String(HomeLayout,1)">TitanTiles_1Row</include>
 		<include condition="Skin.String(HomeLayout,2)">TitanTiles_2Row</include>
@@ -164,9 +166,7 @@
             </control>
 		</itemlayout>
 		<focusedlayout width="612" height="290" condition="Skin.String(HomeLayout,1) | Skin.String(HomeLayout,2) | Skin.String(HomeLayout,3)">
-			
             <include condition="!Skin.HasSetting(HideHomeTileIndicators)">HomeTitanTilesIndicators</include>
-
             <control type="group">
                 <width>590</width>
                 <height>240</height>
@@ -179,9 +179,8 @@
                 </control>
                 <include>HiddenHomeMenuButton</include>
             </control>
-   
 		</focusedlayout>
-		
+
 		<itemlayout width="365" height="227" condition="Skin.String(HomeLayout,1small) | Skin.String(HomeLayout,2small) | Skin.String(HomeLayout,3small)">
 			<control type="group">
                 <width>337</width>
@@ -221,14 +220,17 @@
         <bottom>110</bottom>
 		<focusposition>1</focusposition>
     </include>
+	
     <include name="TitanTiles_2Row">
         <height>605</height>
         <bottom>90</bottom>
     </include>
+	
 	<include name="TitanTiles_3Row">
         <height>870</height>
         <bottom>90</bottom>
     </include>
+	
 	<include name="TitanTiles_1RowSmall">
         <height>227</height>
         <bottom>125</bottom>
@@ -236,12 +238,14 @@
         <posx>60</posx>
         <width>1825</width>
     </include>
+	
     <include name="TitanTiles_2RowSmall">
         <height>454</height>
         <bottom>125</bottom>
         <posx>60</posx>
         <width>1825</width>
     </include>
+	
 	<include name="TitanTiles_3RowSmall">
 		<orientation>vertical</orientation>
         <height>681</height>

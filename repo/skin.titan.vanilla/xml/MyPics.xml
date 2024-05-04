@@ -26,11 +26,11 @@
 			<include condition="![Skin.HasSetting(smallContextMenu)]">SideBladeModern</include>
             <control type="button" id="3">
 				<description>Viewtype Toggle</description>
-				<include>HiddenObject</include>
+				<include>HiddenButton</include>
 			</control>
 			<control type="togglebutton" id="4">
 				<description>Viewtype Toggle</description>
-				<include>HiddenObject</include>
+				<include>HiddenButton</include>
 			</control>
 			<!--Grouplist 9000-->
             <control type="grouplist" id="9000">
@@ -74,13 +74,13 @@
 					<!-- <textoffsetx>50</textoffsetx> -->
 					<!-- <textoffsety>13</textoffsety> -->
 					<onclick>right</onclick>
-					<label>587</label>
+					<label>$LOCALIZE[587]</label>
 				</control>
 				<control type="button" id="20">
 					<visible>Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
 					<include>SideBladeMenuButton</include>
-					<label>587</label>
+					<label>$LOCALIZE[587]</label>
 					<selected>Container.Filtered</selected>
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>
@@ -89,24 +89,24 @@
                     <!--Slideshow-->
                     <visible>!ListItem.IsFolder</visible>
                     <include>SideBladeMenuButton</include>
-                    <label>108</label>
+                    <label>$LOCALIZE[108]</label>
                 </control>
                 <control type="button" id="7">
                     <!--Recursive Slideshow-->
                     <visible>ListItem.IsFolder</visible>
                     <include>SideBladeMenuButton</include>
-                    <label>108</label>
+                    <label>$LOCALIZE[108]</label>
                 </control>
                 <control type="radiobutton" id="9">
                     <!--Randomise-->
                     <include>SideBladeMenuButton</include>
-                    <label>13319</label>
+                    <label>$LOCALIZE[13319]</label>
                 </control>
 				<include>SideBladeViewCommands</include>
                 <control type="radiobutton" id="31029">
                     <!--Disable footer-->
                     <include>SideBladeMenuButton</include>
-                    <label>31029</label>
+                    <label>$LOCALIZE[31029]</label>
                     <onclick>Skin.ToggleSetting(MyPicsDisableFooter)</onclick>
                     <selected>Skin.HasSetting(MyPicsDisableFooter)</selected>
                 </control>

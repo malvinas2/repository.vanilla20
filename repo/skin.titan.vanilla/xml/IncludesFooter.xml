@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Titan-->
 <includes>
-	
 	<!-- Footer -->
 	<include name="Footer">
 		<control type="group">
@@ -563,7 +562,7 @@
             <visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
             <visible>![Control.IsVisible(99123) + !Skin.HasSetting(HideBatteryStatus)]</visible>
             <visible>![[Control.IsVisible(4444) + Integer.IsGreater(Container(4444).NumItems,0)] + [Skin.String(SubmenuLayout, horizontal) | Skin.String(SubmenuLayout, tiles)]] | Skin.String(HomeLayout, simplehor)</visible>
-            <visible>!Window.IsVisible(shutdownmenu) + [String.IsEmpty(Container(300).ListItem.Property(infoline)) | String.IsEqual(Container(300).ListItem.Property(infoline),none)]</visible>
+            <visible>!Window.IsVisible(1107) + !Window.IsVisible(shutdownmenu) + [String.IsEmpty(Container(300).ListItem.Property(infoline)) | String.IsEqual(Container(300).ListItem.Property(infoline),none)]</visible>
             <animation effect="slide" start="0" end="400" time="0" condition="Control.IsVisible(99123)">Conditional</animation>
         </control>
         <control type="rss">	
@@ -581,10 +580,9 @@
             <visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
             <visible>Control.IsVisible(99123) + !Skin.HasSetting(HideBatteryStatus)</visible>
             <visible>![[Control.IsVisible(4444) + Integer.IsGreater(Container(4444).NumItems,0)] + [Skin.String(SubmenuLayout, horizontal) | Skin.String(SubmenuLayout, tiles)]] | Skin.String(HomeLayout, simplehor)</visible>
-            <visible>!Window.IsVisible(shutdownmenu) + [String.IsEmpty(Container(300).ListItem.Property(infoline)) | String.IsEqual(Container(300).ListItem.Property(infoline),none)]</visible>
+            <visible>!Window.IsVisible(1107) + !Window.IsVisible(shutdownmenu) + [String.IsEmpty(Container(300).ListItem.Property(infoline)) | String.IsEqual(Container(300).ListItem.Property(infoline),none)]</visible>
         </control>
 
-            
         <!--infoline-->
         <control type="label">	
             <description>InfoLine</description>
@@ -597,10 +595,9 @@
             <label>$VAR[infolinevar]</label>
             <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
             <shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
-            <visible>!Window.IsVisible(shutdownmenu)</visible>
+            <visible>!Window.IsVisible(1107) + !Window.IsVisible(shutdownmenu)</visible>
             <visible>![[Control.IsVisible(4444) + Integer.IsGreater(Container(4444).NumItems,0)] + [Skin.String(SubmenuLayout, horizontal) | Skin.String(SubmenuLayout, tiles)]] | Skin.String(HomeLayout, simplehor)</visible>
         </control>        
-        
     </include>
 
     <!-- Power button -->
@@ -708,6 +705,4 @@
             </control>
         </control>
     </include>
-    
-
 </includes>

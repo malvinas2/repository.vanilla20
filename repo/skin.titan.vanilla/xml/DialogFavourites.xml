@@ -5,9 +5,7 @@
 	<onunload>AlarmClock(pro1,SetProperty(favwidgetrefresh,refresh,home),00:00,silent)</onunload>
     <onunload>AlarmClock(prop2,ClearProperty(favwidgetrefresh,home),00:01,silent)</onunload>
     <controls>
-		
 		<include>DialogOverlayExtra</include>
-		
 			<control type="group">
                 <control type="image">
                     <posx>367</posx>
@@ -49,14 +47,13 @@
                     <texture background="true" fallback="DefaultAddon.png">$INFO[Container(450).ListItem.Icon]</texture>
                 </control>
             </control>
-			
 			 <!--Header-->
             <control type="label" id="20">
                 <description>Heading</description>
                 <posx>425</posx>
                 <posy>270</posy>
                 <width>800</width>
-                <label>1036</label>
+                <label>$LOCALIZE[1036]</label>
                 <align>left</align>
                 <include>DialogHeader</include>
             </control>
@@ -193,8 +190,8 @@
                     </control>
                 </focusedlayout>
             </control>
-            		
-			<control type="scrollbar" id="60"> <!--scrollbar-->
+			<control type="scrollbar" id="60">
+			<!--scrollbar-->
 				<left>1040</left>
 				<top>350</top>
 				<height>545</height>

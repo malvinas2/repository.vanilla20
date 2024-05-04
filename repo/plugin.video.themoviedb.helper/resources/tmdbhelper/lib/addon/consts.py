@@ -40,7 +40,7 @@ IMAGEPATH_NEGATE = 'https://image.tmdb.org/t/p/h100_filter(negate,000,666)'
 IMAGEPATH_ALL = [IMAGEPATH_ORIGINAL, IMAGEPATH_HIGH, IMAGEPATH_LOW, IMAGEPATH_POSTER, IMAGEPATH_SMALLPOSTER, IMAGEPATH_SMALLLOGO]
 IMAGEPATH_QUALITY_POSTER = [IMAGEPATH_POSTER, IMAGEPATH_POSTER, IMAGEPATH_POSTER, IMAGEPATH_SMALLPOSTER]
 IMAGEPATH_QUALITY_FANART = [IMAGEPATH_ORIGINAL, IMAGEPATH_HIGH, IMAGEPATH_HIGH, IMAGEPATH_LOW]
-IMAGEPATH_QUALITY_THUMBS = [IMAGEPATH_ORIGINAL, IMAGEPATH_HIGH, IMAGEPATH_HIGH, IMAGEPATH_LOW]
+IMAGEPATH_QUALITY_THUMBS = [IMAGEPATH_ORIGINAL, IMAGEPATH_HIGH, IMAGEPATH_LOW, IMAGEPATH_LOW]
 IMAGEPATH_QUALITY_CLOGOS = [IMAGEPATH_ORIGINAL, IMAGEPATH_POSTER, IMAGEPATH_POSTER, IMAGEPATH_SMALLLOGO]
 ARTWORK_BLACKLIST = [
     [],
@@ -497,6 +497,7 @@ TMDB_BASIC_LISTS = {
             'with_genres': '{tmdb_id}',
             'with_id': 'True'
         },
+        'icon_path': 'genre_icon_location',
         'route': TMDB_BASIC_LISTS_ROUTE,
         'plugin_category': '{plural}',
     },
@@ -512,6 +513,7 @@ TMDB_BASIC_LISTS = {
             'watch_region': '{iso_country}',
             'with_id': 'True'
         },
+        'icon_path': 'provider_icon_location',
         'route': TMDB_BASIC_LISTS_ROUTE,
         'plugin_category': '{plural}',
     },
@@ -786,6 +788,9 @@ ROUTE_NOID = {
     'trakt_comments': {'route': {
         'module_name': 'tmdbhelper.lib.api.trakt.lists',
         'import_attr': 'ListComments'}},
+    'trakt_genres': {'route': {
+        'module_name': 'tmdbhelper.lib.api.trakt.lists',
+        'import_attr': 'ListGenres'}},
     'mdblist_userlist': {'route': {
         'module_name': 'tmdbhelper.lib.api.mdblist.lists',
         'import_attr': 'ListCustom'}},

@@ -10,10 +10,7 @@
 			<animation type="WindowClose" reversible="false">
 				<effect type="slide" start="0,0" end="0,-400" tween="cubic" easing="out" time="500" />
 			</animation>
-			
             <visible>!Window.IsActive(notification) + !Window.IsActive(fullscreenvideo) + !Window.IsVisible(startup)</visible>
-			
-			
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -22,7 +19,6 @@
 				<texture border="5">diffuse/panel.png</texture>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
 			</control>
-			
             <control type="group">
 				<posx>60</posx>
 				<posy>20</posy>
@@ -84,6 +80,5 @@
 				</control>
 			</control>
         </control>
-	
 	</controls>
 </window>

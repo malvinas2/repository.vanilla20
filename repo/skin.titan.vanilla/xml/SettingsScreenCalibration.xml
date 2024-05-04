@@ -27,8 +27,6 @@
                 <description>right bottom mover</description>
 				<left>700</left>
 				<top>500</top>
-                <!-- <posx>700</posx>
-                <posy>500</posy>  -->
                 <texturefocus>calibrate/cal_br_fo.png</texturefocus>
                 <texturenofocus>calibrate/cal_br.png</texturenofocus>
                 <width>128</width>
@@ -44,8 +42,6 @@
                 <description>subtitle position mover</description>
 				<left>200</left>
 				<top>500</top>
-                <!-- <posx>200</posx>
-                <posy>500</posy>   -->
 				<!-- NOTE: The image must have 40px of transparent on top and bottom the bar -->
                 <texturefocus>calibrate/cal_sub_fo.png</texturefocus>
                 <texturenofocus>calibrate/cal_sub.png</texturenofocus>
@@ -54,7 +50,7 @@
 				<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
 					<eventconfig type="up" />
 					<eventconfig type="down" />
-			</movingspeed>
+				</movingspeed>
             </control>
 			<control type="mover" id="12">
 				<description>reset calibration</description>
@@ -69,8 +65,6 @@
                 <description>pixel aspect ratio</description>
 				<left>0</left>
 				<top>390</top>
-                <!-- <posx>0</posx>
-                <posy>390</posy>  -->
                 <width>500</width>
                 <height>500</height>
                 <texturefocus>calibrate/cal_ratio_fo.png</texturefocus>
@@ -84,8 +78,6 @@
                 <description>coordinates label</description>
 				<left>0</left>
 				<top>60</top>
-<!--				<posx>0</posx>
-                <posy>150</posy>  -->
                 <width>100%</width>
                 <align>center</align>
                 <label></label>
@@ -96,8 +88,6 @@
                 <description>help information</description>
                 <left>0</left>
 				<top>110</top>
-<!--				<posx>0</posx>
-                <posy>210</posy>   -->
                 <width>100%</width>
                 <align>center</align>
                 <label></label>
@@ -123,7 +113,7 @@
 				<label>$LOCALIZE[214]</label>
 				<font>Light40</font>
 				<shadowcolor>FF000000</shadowcolor>
-		</control>
+			</control>
         </control>
     </controls>
 </window>

@@ -6,21 +6,18 @@
     <!--Workaround since onunload seems not to work. See https://forum.kodi.tv/showthread.php?tid=348885-->
     <onload>ClearProperty(AdditionalMusicInfo)</onload>
     <controls>
-
         <!--Dialog Overlay-->
         <control type="group">
             <visible>!Window.IsActive(fullscreenvideo)</visible>
             <include>DialogOverlayExtra</include>
             <animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
         </control>
-
         <!--Dialog Info-->
         <control type="group">
             <include>GlobalBackground</include>
             <include condition="!Skin.HasSetting(DisableNowPlayingBackground)">NowPlayingBackground</include>
             <control type="group">
                 <include>animation_window_open_close</include>
-
                 <!-- Background Panel-->
                 <control type="image">
                     <posx>50</posx>
@@ -31,7 +28,6 @@
                     <visible>!Skin.HasSetting(DialogVideoInfoHidePanel)</visible>
                     <colordiffuse>$VAR[ViewDetailsPanelColor]</colordiffuse>
                 </control>
-
                 <!-- clearlogo at top left-->
                 <control type="image" id="887766">
                     <left>60</left>
@@ -43,7 +39,6 @@
                     <texture background="true">$VAR[ListItemClearLogo]</texture>
                     <visible>Container.Content(Artists)</visible>
                 </control>
-
                 <!-- Header (if no logo)-->
                 <control type="group">
                     <visible>String.IsEmpty(Control.GetLabel(887766)) | !Container.Content(Artists)</visible>
@@ -59,14 +54,12 @@
                         <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
                     </control>
                 </control>
-
                 <control type="group">
                     <control type="group">
                         <visible>String.IsEmpty(Window.Property(AdditionalMusicInfo))</visible>
                         <include>animation_window_open_close</include>
                         <!--Info-->
                         <control type="group">
-
                             <control type="image">
                                 <!--cdart image-->
                                 <left>1300</left>
@@ -82,7 +75,6 @@
                                 <animation effect="rotate" end="-360" center="auto" time="20000" delay="0" loop="true" reversible="false" condition="Skin.HasSetting(AnimateDiscArt)">Conditional</animation>
                                 <visible>!Container.Content(Artists)</visible>
                             </control>
-
                             <control type="image">
                                 <!--poster-->
                                 <left>1275</left>
@@ -92,7 +84,6 @@
                                 <aspectratio align="right" aligny="top" scalediffuse="true">keep</aspectratio>
                                 <texture background="true" diffuse="diffuse/poster.png" border="5">$INFO[ListItem.Icon]</texture>
                             </control>
-
                             <control type="grouplist">
                                 <!-- Rating -->
                                 <left>1300</left>
@@ -112,7 +103,6 @@
                                     <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                                     <scroll>false</scroll>
                                 </control>
-
                                 <control type="image">
                                     <!--Stars music-->
                                     <width>200</width>
@@ -121,11 +111,9 @@
                                     <colordiffuse>$INFO[Skin.String(GeneralTextColor)]</colordiffuse>
                                     <texture fallback="leftrating/rating0.png">$VAR[musicrating_stars]</texture>
                                 </control>
-
                                 <visible>!Container.Content(Artists)</visible>
                             </control>
                         </control>
-
                         <control type="grouplist">
                             <posx>70</posx>
                             <posy>235</posy>
@@ -137,7 +125,6 @@
                             <onright>50</onright>
                             <orientation>vertical</orientation>
                             <itemgap>20</itemgap>
-
                             <!-- Artist Information-->
                             <control type="textbox">
                                 <width>1150</width>
@@ -148,14 +135,12 @@
                                 <align>justify</align>
                                 <font>Reg26</font>
                             </control>
-
                             <control type="image">
                                 <width>1150</width>
                                 <height>1</height>
                                 <texture>colors/color_white.png</texture>
                                 <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
                             </control>
-
                             <control type="group">
                                 <!--Born or Year, died -->
                                 <height>30</height>
@@ -182,7 +167,6 @@
                                     <param name="id" value="3" />
                                 </include>
                             </control>
-
                             <control type="group">
                                 <!--genre style mood -->
                                 <height>30</height>
@@ -209,7 +193,6 @@
                                     <param name="id" value="6" />
                                 </include>
                             </control>
-
                             <control type="image">
                                 <visible>!String.IsEmpty(Control.GetLabel(3001)) | !String.IsEmpty(Control.GetLabel(3002)) | !String.IsEmpty(Control.GetLabel(3003)) | !String.IsEmpty(Control.GetLabel(3004)) | !String.IsEmpty(Control.GetLabel(3005)) | !String.IsEmpty(Control.GetLabel(3006))</visible>
                                 <width>1150</width>
@@ -217,7 +200,6 @@
                                 <texture>colors/color_white.png</texture>
                                 <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
                             </control>
-
                             <!--Album, Song and Additional Members-->
                             <control type="panel" id="50">
                                 <width>1150</width>
@@ -258,7 +240,6 @@
                                     </include>
                                 </focusedlayout>
                             </control>
-
                         </control>
                     </control>
 
@@ -305,7 +286,7 @@
 
                         <!--Play-->
                         <control type="button" id="8">
-                            <label>208</label>
+                            <label>$LOCALIZE[208]</label>
                             <width>285</width>
                             <height>60</height>
                             <align>center</align>
@@ -323,7 +304,7 @@
                             <height>60</height>
                             <align>center</align>
                             <textoffsetx>0</textoffsetx>
-                            <label>31797</label>
+                            <label>$LOCALIZE[31797]</label>
                             <onclick condition="System.HasAddon(plugin.video.youtube)">RunScript(script.skin.helper.service,action=searchyoutube,title=$VAR[music_info_header] $INFO[ListItem.Year],header=$LOCALIZE[31797])</onclick>
                             <onclick condition="!System.HasAddon(plugin.video.youtube)">ActivateWindow(Videos,plugin://plugin.video.youtube)</onclick>
                             <visible>Skin.HasSetting(musicinfo_button_youtubevideos)</visible>
@@ -336,7 +317,7 @@
                             <height>60</height>
                             <align>center</align>
                             <textoffsetx>0</textoffsetx>
-                            <label>10523</label>
+                            <label>$LOCALIZE[10523]</label>
                             <visible>Skin.HasSetting(musicinfo_button_information)</visible>
                         </control>
 
@@ -355,7 +336,7 @@
 
                         <control type="button" id="116">
                             <!--Info Button-->
-                            <label>19033</label>
+                            <label>$LOCALIZE[19033]</label>
                             <width>285</width>
                             <height>60</height>
                             <align>center</align>
@@ -379,7 +360,7 @@
                         <!-- Artwork -->
                         <control type="button" id="101">
                             <!--If AB is installed open Custom_MediaDialog, otherwise use build in Dialog-->
-                            <label>13511</label>
+                            <label>$LOCALIZE[13511]</label>
                             <width>285</width>
                             <height>60</height>
                             <align>center</align>
@@ -397,7 +378,7 @@
                             <height>60</height>
                             <align>center</align>
                             <textoffsetx>0</textoffsetx>
-                            <label>38023</label>
+                            <label>$LOCALIZE[38023]</label>
                             <enable>!Skin.HasSetting(KioskMode.Enabled)</enable>
                             <visible>Skin.HasSetting(musicinfo_button_myrating)</visible>
                         </control>
@@ -407,7 +388,7 @@
                             <height>60</height>
                             <align>center</align>
                             <textoffsetx>0</textoffsetx>
-                            <label>184</label>
+                            <label>$LOCALIZE[184]</label>
                             <enable>!Skin.HasSetting(KioskMode.Enabled)</enable>
                             <visible>Skin.HasSetting(musicinfo_button_refresh)</visible>
                         </control>
@@ -416,7 +397,7 @@
                             <!--discart-->
                             <width>340</width>
                             <height>60</height>
-                            <label>31200</label>
+                            <label>$LOCALIZE[31200]</label>
                             <align>left</align>
                             <textoffsetx>20</textoffsetx>
                             <onclick>Skin.ToggleSetting(MusicInfo_ShowCDart)</onclick>
@@ -426,7 +407,7 @@
                         </control>
                         <control type="radiobutton" id="3052">
                             <!--Hide panel behind details-->
-                            <label>31155</label>
+                            <label>$LOCALIZE[31155]</label>
                             <width>530</width>
                             <textoffsetx>20</textoffsetx>
                             <align>left</align>
@@ -464,7 +445,6 @@
                         <colordiffuse>white</colordiffuse>
                         <visible>Container(9000).HasPrevious</visible>
                     </control>
-
                 </control>
             </control>
         </control>

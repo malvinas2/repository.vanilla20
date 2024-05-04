@@ -2,18 +2,19 @@
 <!--Titan-->
 <window>
     <defaultcontrol always="true">3</defaultcontrol>
-	
     <controls>
-		<include>DialogOverlayExtra</include>
+		<!--Dialog Overlay-->
+		<control type="group">
+			<visible>!Window.IsActive(1121)</visible>
+			<include>DialogOverlayExtra</include>
+			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+        </control>
 		<include condition="Skin.HasSetting(EnableTouchSupport)">Footer</include>
-		
         <!--Dialog Addon Settings-->
         <control type="group">
             <include>animation_window_open_close</include>
 			<animation effect="fade" end="0" time="0" condition="Window.IsVisible">Conditional</animation>
             <visible>!Window.IsVisible(virtualkeyboard) + !Window.IsVisible(filebrowser) + !Window.IsVisible(selectdialog) + !Window.IsVisible(selectdialog) + !Window.IsVisible(progressdialog) + !Window.IsVisible(textviewer)</visible>
-            <!--Panel-->
-
             <!--Panel-->
             <control type="image">
                 <!--Panel-->
@@ -34,7 +35,6 @@
                 <texture border="15">diffuse/bgpanel.png</texture>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
             </control>
-			
             <!--Header-->
             <control type="label" id="2">
                 <description>Heading</description>
@@ -78,8 +78,6 @@
                         <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     </control>
                 </control>
-
-				
                 <!-- right group -->
                 <control type="group">
                     <posx>642</posx>
@@ -156,7 +154,6 @@
                 <height>1</height>
                 <visible>false</visible>
             </control>
-
 			<control type="scrollbar" id="60">
 				<posx>1589</posx>
                 <posy>305</posy>
@@ -167,7 +164,6 @@
 				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling  | Skin.HasSetting(alwaysShowScrollbars)">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling  | Skin.HasSetting(alwaysShowScrollbars)]">Conditional</animation>
 			</control>
-			
 			<control type="textbox" id="6">
 				<description>description area</description>
 				<posx>318</posx>
@@ -178,19 +174,6 @@
 				<align>justify</align>
 				<autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
 			</control>
-
-<!-- String: Settingslevel -->
-<!--			<control type="group">
-				<posy>850</posy>
-				<width>1600</width>
-				<control type="label" id="200">
-					<font>Reg28</font>
-					<label>31071</label>
-					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-					<align>right</align>
-				</control>
-			</control>
--->			
 			<control type="grouplist" id="8002">
                 <posx>318</posx>
                 <posy>900</posy>
@@ -200,7 +183,7 @@
 				<orientation>horizontal</orientation>
                 <control type="button" id="28">
                     <description>OK</description>
-                    <!-- <label>186</label> -->
+                    <!-- <label>$LOCALIZE[186]</label> -->
                     <align>center</align>
                     <width>320</width>
                     <include>DialogButtonOther</include>
@@ -221,19 +204,35 @@
                     <include>DialogButtonOther</include>
                     <description>Defaults</description>
                     <label>$LOCALIZE[409]</label>
+					<onright>111</onright>
                 </control>
-			    <control type="button" id="20">
-                    <align>center</align>
-                    <width>320</width>
-                    <include>DialogButtonOther</include>
-                    <description>Setting level button</description>
-                    <!-- <label>$LOCALIZE[10037]</label> -->
-					<label></label>
-					<onclick>SettingsLevelChange</onclick>
-                    <animation effect="fade" start="100" end="75" time="0" condition="!Control.IsEnabled(12)">Conditional</animation>
-                </control>	
-				
-			
+				<control type="group" id="111">
+					<top>20</top>
+					<left>290</left>
+					<right>20</right>
+					<control type="button" id="20">
+						<align>center</align>
+						<width>320</width>
+						<textoffsetx>55</textoffsetx>
+						<include>DialogButtonOther</include>
+						<description>Setting level button</description>
+						<!-- <label>$LOCALIZE[10037]</label> -->
+						<label></label>
+						<onleft>30</onleft>
+						<onright>28</onright>
+						<onclick>SettingsLevelChange</onclick>
+						<animation effect="fade" start="100" end="75" time="0" condition="!Control.IsEnabled(12)">Conditional</animation>
+					</control>	
+					<control type="image">
+						<top>25</top>
+						<left>5</left>
+						<width>40</width>
+						<height>40</height>
+						<aspect>keep</aspect>
+						<texture colordiffuse="$VAR[NextUpFontColor]">common/settings1.png</texture>
+						<animation effect="slide" end="13,-5" time="0" condition="true">Conditional</animation>
+					</control>
+				</control>
             </control>
         </control>
     </controls>

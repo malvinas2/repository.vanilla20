@@ -4,7 +4,12 @@ from tmdbhelper.lib.items.container import Container
 
 
 class ListBasic(Container):
-    def get_items(self, info, tmdb_type, page=None, randomise=False, limit=None, **kwargs):
+    def get_items(
+            self, info, tmdb_type, page=None, randomise=False, limit=None,
+            genres=None, years=None, query=None, languages=None, countries=None, runtimes=None, studio_ids=None,
+            **kwargs
+    ):
+
         from tmdbhelper.lib.addon.consts import TRAKT_BASIC_LISTS
 
         def _get_items_both():
@@ -13,7 +18,9 @@ class ListBasic(Container):
                 path=info_model.get('path', ''),
                 trakt_types=['movie', 'show'],
                 authorize=info_model.get('authorize', False),
-                extended=info_model.get('extended', None))
+                extended=info_model.get('extended', None),
+                genres=genres, years=years, query=query, languages=languages, countries=countries, runtimes=runtimes, studio_ids=studio_ids
+            )
             self.tmdb_cache_only = False
             self.library = 'video'
             self.container_content = 'movies'
@@ -37,7 +44,9 @@ class ListBasic(Container):
             sort_how=info_model.get('sort_how', None),
             extended=info_model.get('extended', None),
             randomise=randomise,
-            always_refresh=False)  # Basic lists don't need updating more than once per day
+            genres=genres, years=years, query=query, languages=languages, countries=countries, runtimes=runtimes, studio_ids=studio_ids,
+            always_refresh=False   # Basic lists don't need updating more than once per day
+        )
         self.tmdb_cache_only = False
         self.kodi_db = self.get_kodi_database(info_tmdb_type)
         self.library = convert_type(info_tmdb_type, 'library')
@@ -84,7 +93,7 @@ class ListToWatch(Container):
 
 
 class ListComments(Container):
-    def get_items(self, info, tmdb_type, tmdb_id, **kwargs):
+    def get_items(self, info, tmdb_type, tmdb_id, sort=None, **kwargs):
         """ Get a mix of watchlisted and inprogress """
         from tmdbhelper.lib.api.mapping import get_empty_item
 
@@ -92,7 +101,7 @@ class ListComments(Container):
             return
         trakt_type = convert_type(tmdb_type, 'trakt')
         slug = self.trakt_api.get_id(tmdb_id, 'tmdb', trakt_type, 'slug')
-        items = self.trakt_api.get_request_sc(f'{trakt_type}s', slug, 'comments', limit=50)
+        items = self.trakt_api.get_request_sc(f'{trakt_type}s', slug, 'comments', sort, limit=50)
 
         def _map_item(i):
             item = get_empty_item()
@@ -256,6 +265,14 @@ class ListUpNext(Container):
         return items
 
 
+class ListGenres(Container):
+    def get_items(self, info, tmdb_type, **kwargs):
+        items = self.trakt_api.get_list_of_genres(convert_type(tmdb_type, 'trakt'))
+        self.library = 'video'
+        self.plugin_category = get_localized(135)
+        return items
+
+
 class ListLists(Container):
     def get_items(self, info, page=None, **kwargs):
         from xbmcplugin import SORT_METHOD_UNSORTED
@@ -279,7 +296,11 @@ class ListLists(Container):
 
 
 class ListCustom(Container):
-    def get_items(self, list_slug, user_slug=None, page=None, **kwargs):
+    def get_items(
+            self, list_slug, user_slug=None, page=None,
+            **kwargs
+    ):
+        from jurialmunkey.parser import boolean
         response = self.trakt_api.get_custom_list(
             page=page or 1,
             list_slug=list_slug,
@@ -287,8 +308,8 @@ class ListCustom(Container):
             sort_by=kwargs.get('sort_by', None),
             sort_how=kwargs.get('sort_how', None),
             extended=kwargs.get('extended', None),
-            authorize=False if user_slug else True,
-            always_refresh=True if not get_setting('trakt_cacheownlists') and kwargs.get('owner', '').lower() == 'true' else False)
+            authorize=False if user_slug and not boolean(kwargs.get('owner', False)) else True,
+            always_refresh=True if not get_setting('trakt_cacheownlists') and boolean(kwargs.get('owner', False)) else False)
         if not response:
             return []
         self.tmdb_cache_only = False
@@ -304,19 +325,19 @@ class ListCustomSearch(Container):
             if not kwargs['query']:
                 return
             self.container_update = f'{encode_url(PLUGINPATH, **kwargs)},replace'
-        items = self.trakt_api.get_list_of_lists(path=f'search/list?query={query}&fields=name', sort_likes=True)
+        items = self.trakt_api.get_list_of_lists(path=f'search/list?query={query}&fields=name', sort_likes=True, authorize=False)
         self.library = 'video'
         return items
 
 
 class ListSortBy(Container):
     def get_items(self, info, **kwargs):
-        from tmdbhelper.lib.api.trakt.api import get_sort_methods
+        from tmdbhelper.lib.api.trakt.sorting import get_sort_methods
         from tmdbhelper.lib.api.mapping import get_empty_item
 
         def _listsortby_item(i, **params):
             item = get_empty_item()
-            item['label'] = item['infolabels']['title'] = f'{params.get("list_name")}[CR]{i["name"]}'
+            item['label'] = item['infolabels']['title'] = f'{params.get("list_name")} - {i["name"]}'
             item['params'] = params
             for k, v in i['params'].items():
                 item['params'][k] = v

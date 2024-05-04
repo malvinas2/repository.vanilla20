@@ -48,14 +48,14 @@
 					<orientation>vertical</orientation>
 					<include>animation_fade_visible_hidden</include>
 				</control>
-		
 			</control>
+			
 			<control type="grouplist" id="5">
 				<description>Control Area</description>
 				<posx>605</posx>
 				<posy>20</posy>
 				<width>1230</width>
-				<height>96%</height>
+				<height>80%</height>
 				<itemgap>5</itemgap>
 				<onleft>3</onleft>
 				<onright>3</onright>
@@ -132,29 +132,42 @@
 					<height>47</height>
 					<font>Reg28</font>
 					<font>Reg28</font>
-					<label>31071</label>
+					<label>$LOCALIZE[31071]</label>
 					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 					<align>left</align>
 				</control>
 				<control type="button" id="20">
 					<description>Setting level button</description>
-							 <font>Reg28</font>
+					<font>Reg28</font>
 					<align>left</align>
 					<height>47</height>
-					<label>10037</label>
+					<label>$LOCALIZE[10037]</label>
 					<width>450</width>
 					<onclick>SettingsLevelChange</onclick>
 				</control>
 				<control type="button" id="21">
 					<description>Reset button</description>
 					<font>Reg28</font>
-							 <align>left</align>
+					<align>left</align>
 					<height>47</height>
-					<label>10035</label>
+					<label>$LOCALIZE[10035]</label>
 					<width>450</width>
 					<onclick>SettingsReset</onclick>
 				</control>
 			</control>
+			<control type="textbox" id="6">
+				<description>description area</description>
+				<left>600</left>
+				<bottom>25</bottom>
+				<scroll>true</scroll>
+				<height>102</height>
+				<width>1230</width>
+				<textcolor>$INFO[Skin.String(GeneralHighlightTextColor)]</textcolor>
+				<font>Reg28</font>
+				<align>justify</align>
+				<visible>!Control.HasFocus(3003)</visible>
+			</control>
+			
 		</control>
 		<!--Footer-->
         <include condition="!Skin.HasSetting(nofooterbar)">Footer</include>

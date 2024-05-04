@@ -108,7 +108,7 @@
 							<height>60</height>
 							<align>left</align>
 							<textoffsetx>20</textoffsetx>
-							<label>208</label>
+							<label>$LOCALIZE[208]</label>
 						</control>
 						
 						<!-- trailer button -->
@@ -117,7 +117,7 @@
 							<height>60</height>
 							<align>left</align>
 							<textoffsetx>20</textoffsetx>
-							<label>20410</label>
+							<label>$LOCALIZE[20410]</label>
 							<visible>Control(3102).IsEnabled</visible>
 						</control>
 						
@@ -149,7 +149,7 @@
 							<height>60</height>
 							<align>left</align>
 							<textoffsetx>20</textoffsetx>
-							<label>16103</label>
+							<label>$LOCALIZE[16103]</label>
 						</control>
 						
 						<!-- Dislike button 
@@ -176,11 +176,8 @@
 							<height>60</height>
 							<align>left</align>
 							<textoffsetx>20</textoffsetx>
-							<label>14076</label>
+							<label>$LOCALIZE[14076]</label>
 						</control>
-
-						
-						
 					</control>
 					
 					<control type="image" id="3091">
@@ -234,7 +231,6 @@
 						<height>169</height>
 						<visible>false</visible>
 					</control>
-
 					
 					<!--Arrow-->
 					<control type="group">
@@ -295,7 +291,6 @@
 						<focusedlayout height="30">
 						</focusedlayout>
 					</control>
-					
 
 					<!--Info-->
 					<control type="grouplist">
@@ -428,7 +423,6 @@
 								<scroll>false</scroll>
 							</control>
 						</control>
-						
 
 						<control type="grouplist">
 							<!--video details-->
@@ -592,7 +586,6 @@
 							</control>
 						</control>
 					</control>
-						
 				</control>
 				<!--Cast Stuff-->
 				<control type="group" id="9002">
@@ -655,7 +648,6 @@
 								<height>50</height>
 								<label>[B]$INFO[ListItem.label][/B] $INFO[ListItem.label2]</label>
 								<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor><shadowcolor>$INFO[Skin.String(ViewDetailsHighlightTextShadowColor)]</shadowcolor>
-								
 								<font>Reg28</font>
 								<align>left</align>
 								<aligny>center</aligny>

@@ -16,16 +16,13 @@
 		<include condition="!Skin.HasSetting(useExtendedWeatherScreen)">SimpleWeather</include>
 		<include condition="Skin.HasSetting(useExtendedWeatherScreen)">ExtendedWeather</include>
 		
-		
         <!--Sub Menu Tab Left-->
         <include condition="!Skin.HasSetting(DisableSideBladeIndicator)">SideBladeMenuTabLeft</include>
         <!--Sub Menu-->
         <control type="group">
             <include condition="Skin.HasSetting(smallContextMenu)">SideBladeClassic</include>
 			<include condition="![Skin.HasSetting(smallContextMenu)]">SideBladeModern</include>
-			
-			
-			
+	
 			<control type="label">
                 <!--Location Label UnFocus-->
                 <visible>!ControlGroup(9000).HasFocus(3)</visible>
@@ -61,7 +58,6 @@
                 <textoffsetx>40</textoffsetx>
             </control>
 			
-			
             <!--Grouplist 9000-->
             <control type="grouplist" id="9000">
                 <posx>21</posx>
@@ -84,13 +80,13 @@
                 <control type="button" id="2">
                     <!--Refresh-->
                     <description>Refresh</description>
-                    <label>184</label>
+                    <label>$LOCALIZE[184]</label>
                     <include>SideBladeMenuButton</include>
                 </control>
                 <control type="button" id="4">
                     <!--Settings-->
                     <description>Settings</description>
-                    <label>5</label>
+                    <label>$LOCALIZE[5]</label>
                     <onclick>ActivateWindow(servicesettings,weather)</onclick>
                     <include>SideBladeMenuButton</include>
                 </control>
@@ -108,25 +104,22 @@
                     <texturenofocus></texturenofocus>
 					<textoffsety>50</textoffsety>
                 </control>
-				
 				<control type="button" id="1224">
                     <description>Weather Icons</description>
-                    <label>31623</label>
+                    <label>$LOCALIZE[31623]</label>
                     <onclick>RunScript(script.skin.helper.service,action=setresourceaddon,skinstring=WeatherIconPack,addontype=resource.images.weathericons)</onclick>
                     <include>SideBladeMenuButton</include>
                 </control>
-                
                 <control type="button" id="1225">
                     <!--Icons-->
                     <description>Weather FanArt</description>
-                    <label>31624</label>
+                    <label>$LOCALIZE[31624]</label>
                     <onclick>RunScript(script.skin.helper.service,action=setresourceaddon,skinstring=WeatherFanArtPack,addontype=resource.images.weatherfanart)</onclick>
                     <include>SideBladeMenuButton</include>
                 </control>
-				
 				<control type="radiobutton" id="5163">
                     <description>use extended weather screen</description>
-                    <label>31452</label>
+                    <label>$LOCALIZE[31452]</label>
                     <include>SideBladeMenuButton</include>
                     <onclick>Skin.ToggleSetting(useExtendedWeatherScreen)</onclick>
                     <selected>Skin.HasSetting(useExtendedWeatherScreen)</selected>
@@ -135,14 +128,14 @@
                 <control type="radiobutton" id="3052">
                     <!--Hide panel -->
                     <include>SideBladeMenuButton</include>
-                    <label>31155</label>
+                    <label>$LOCALIZE[31155]</label>
                     <onclick>Skin.ToggleSetting(MyWeatherHidepanel)</onclick>
                     <selected>Skin.HasSetting(MyWeatherHidepanel)</selected>
                 </control>
                 <control type="button" id="84403">
                     <!--Open Skin settings-->
                     <include>SideBladeMenuButton</include>
-                    <label>20077</label>
+                    <label>$LOCALIZE[20077]</label>
                     <onclick>ClearProperty(ShowViewSubMenu,home)</onclick>
                     <onclick>SetFocus(5000)</onclick>
                     <onclick>SetProperty(SkinSettingSection,6,home)</onclick>

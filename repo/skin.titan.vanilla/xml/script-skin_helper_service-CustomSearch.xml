@@ -20,7 +20,7 @@
                 <width min="80" max="1400">auto</width>
                 <height>100</height>
                 <font>Bold45</font>
-                <label>19140</label>
+                <label>$LOCALIZE[19140]</label>
                 <align>left</align>
                 <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
                 <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
@@ -451,7 +451,7 @@
                             <width>170</width>
                             <font>Reg24</font>
                             <include>ExtraSmallKey</include>
-                            <label>20181</label>
+                            <label>$LOCALIZE[20181]</label>
                             <onleft></onleft>
                             <onright>3057</onright>
                             <onup>3050</onup>
@@ -461,7 +461,7 @@
                             <width>170</width>
                             <font>Reg24</font>
                             <include>ExtraSmallKey</include>
-                            <label>20182</label>
+                            <label>$LOCALIZE[20182]</label>
                             <onleft>3056</onleft>
                             <onright>3058</onright>
                             <onup>3052</onup>
@@ -472,7 +472,7 @@
                             <width>170</width>
                             <font>Reg24</font>
                             <include>ExtraSmallKey</include>
-                            <label>192</label>
+                            <label>$LOCALIZE[192]</label>
                             <onleft>3057</onleft>
                             <onright>2900</onright>
                             <onup>3054</onup>
@@ -507,7 +507,7 @@
                     <top>80</top>
                     <height>20</height>
                     <width>190</width>
-                    <label>342</label>
+                    <label>$LOCALIZE[342]</label>
                     <font>Reg41</font>
                     <angle>-90</angle>
                 </control>   
@@ -528,14 +528,14 @@
                             <width>162</width>
                             <height>240</height>
                             <include>SmallPosterPanelLayout</include>
-                          </control>
+                        </control>
                     </itemlayout>
                     <focusedlayout height="245" width="182">
                         <control type="group">
                             <width>162</width>
                             <height>240</height>
                             <include>SmallPosterPanelLayoutFocus</include>
-                          </control>
+                        </control>
                     </focusedlayout>
                 </control>
 
@@ -545,7 +545,7 @@
                     <top>330</top>
                     <height>20</height>
                     <width>190</width>
-                    <label>20343</label>
+                    <label>$LOCALIZE[20343]</label>
                     <font>Reg41</font>
                     <angle>-90</angle>
                 </control>   
@@ -585,7 +585,7 @@
                     <top>580</top>
                     <height>20</height>
                     <width>300</width>
-                    <label>344</label>
+                    <label>$LOCALIZE[344]</label>
                     <font>Reg41</font>
                     <angle>-90</angle>
                 </control> 

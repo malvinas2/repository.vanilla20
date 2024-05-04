@@ -16,7 +16,7 @@
 					<height>240</height>
 					<texture border="15">diffuse/bgpanel.png</texture>
 					<colordiffuse>$VAR[ViewDetailsPanelColor]</colordiffuse>
-                    <visible>!Skin.HasSetting(View10_Hidepanel)</visible>
+                    <visible>!Skin.HasSetting(View109_Hidepanel)</visible>
 				</control>
 				<!-- Background Panel BOTTOM-->
 				<control type="image">
@@ -26,7 +26,7 @@
 					<height>510</height>
 					<texture border="15">diffuse/bgpanel.png</texture>
 					<colordiffuse>$VAR[ViewDetailsPanelColor]</colordiffuse>
-                    <visible>!Skin.HasSetting(View10_Hidepanel)</visible>
+                    <visible>!Skin.HasSetting(View109_Hidepanel)</visible>
 				</control>
 				<!-- Background Panel TITLEBAR-->
 				<control type="image">
@@ -203,7 +203,7 @@
                     <font>Reg30</font>
                     <textoffsetx>0</textoffsetx>
                     <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                    <label>19148</label>
+                    <label>$LOCALIZE[19148]</label>
                 </control>
                 <control type="label">
                     <!--Channle Title-->
@@ -214,7 +214,7 @@
                     <font>Reg30</font>
                     <textoffsetx>0</textoffsetx>
                     <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                    <label>369</label>
+                    <label>$LOCALIZE[369]</label>
                 </control>
                 <control type="label">
                     <!--Time-->
@@ -225,7 +225,7 @@
                     <font>Reg30</font>
                     <textoffsetx>0</textoffsetx>
                     <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                    <label>555</label>
+                    <label>$LOCALIZE[555]</label>
                 </control>
 
             </control>

@@ -8,7 +8,7 @@
 
 		<!-- common items -->
 		<node label="32029" condition="String.IsEmpty(Window(home).Property(netflixmenu))">
-			<shortcut label="32022" grouping="32029" icon="resource://resource.images.skinicons.wide2/livetv.png" condition="PVR.HasTVChannels">ActivateWindow(TVGuide)</shortcut>
+			<shortcut label="32022" grouping="32029" icon="resource://resource.images.skinicons.wide/livetv.png" condition="PVR.HasTVChannels">ActivateWindow(TVGuide)</shortcut>
 			<shortcut label="342" grouping="32029" icon="$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]">ActivateWindow(10025,videodb://movies/titles/,return)</shortcut>
 			<shortcut label="20343" grouping="32029" icon="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]">ActivateWindow(10025,videodb://tvshows/titles/,return)</shortcut>
             <shortcut label="TV-Shows HUB" grouping="32029" icon="$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]">ActivateWindow(3017,return)</shortcut>
@@ -17,17 +17,17 @@
 			<shortcut label="20389" grouping="32029" icon="$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground)]">ActivateWindow(10025,videodb://musicvideos/titles/,return)</shortcut>
 			<shortcut label="12600" grouping="32029" icon="$INFO[Skin.String(WeatherFanArtPack.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[WeatherFanArtExtension]">ActivateWindow(Weather)</shortcut>
 			<shortcut label="10002" grouping="32029" icon="$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]">ActivateWindow(pictures,return)</shortcut>
-			<shortcut label="10006" grouping="32029" icon="resource://resource.images.skinicons.wide2/videos.png">ActivateWindow(Videos,return)</shortcut>
-			<shortcut label="10004" grouping="32029" icon="resource://resource.images.skinicons.wide2/settings.png">ActivateWindow(Settings)</shortcut>
-			<shortcut label="1037" grouping="32029" icon="resource://resource.images.skinicons.wide2/videoaddons.png">ActivateWindow(Videos,addons://sources/video/,return)</shortcut>
-			<shortcut label="19163" grouping="32029" icon="resource://resource.images.skinicons.wide2/tvrecordings.png" condition="PVR.HasTVChannels">ActivateWindow(TVRecordings,return)</shortcut>
-			<shortcut label="19021" grouping="32029" icon="resource://resource.images.skinicons.wide2/radio.png">ActivateWindow(radiochannels,return)</shortcut>
-			<shortcut label="7" grouping="32029" icon="resource://resource.images.skinicons.wide2/filemanager.png">ActivateWindow(filemanager)</shortcut>
-			<shortcut label="10040" grouping="32029" icon="resource://resource.images.skinicons.wide2/addons.png">ActivateWindow(Programs,Addons,return)</shortcut>
-			<shortcut label="20244" grouping="32029" icon="resource://resource.images.skinicons.wide2/programs.png" condition="System.Platform.Android">ActivateWindow(10001,androidapp://sources/apps/,return)</shortcut>
-			<shortcut label="10134" grouping="32029" icon="resource://resource.images.skinicons.wide2/favourites.png">ActivateWindow(favourites)</shortcut>
-			<shortcut label="31062" grouping="32029" type="youtube" icon="resource://resource.images.skinicons.wide2/youtube.png" condition="System.HasAddon(plugin.video.youtube)">ActivateWindow(10025,plugin://plugin.video.youtube,return)</shortcut>
-			<shortcut label="32032" type="playdvd" grouping="32029" icon="resource://resource.images.skinicons.wide2/videos.png">PlayDVD()</shortcut>
+			<shortcut label="10006" grouping="32029" icon="resource://resource.images.skinicons.wide/videos.png">ActivateWindow(Videos,return)</shortcut>
+			<shortcut label="10004" grouping="32029" icon="resource://resource.images.skinicons.wide/settings.png">ActivateWindow(Settings)</shortcut>
+			<shortcut label="1037" grouping="32029" icon="resource://resource.images.skinicons.wide/videoaddons.png">ActivateWindow(Videos,addons://sources/video/,return)</shortcut>
+			<shortcut label="19163" grouping="32029" icon="resource://resource.images.skinicons.wide/tvrecordings.png" condition="PVR.HasTVChannels">ActivateWindow(TVRecordings,return)</shortcut>
+			<shortcut label="19021" grouping="32029" icon="resource://resource.images.skinicons.wide/radio.png">ActivateWindow(radiochannels,return)</shortcut>
+			<shortcut label="7" grouping="32029" icon="resource://resource.images.skinicons.wide/filemanager.png">ActivateWindow(filemanager)</shortcut>
+			<shortcut label="10040" grouping="32029" icon="resource://resource.images.skinicons.wide/addons.png">ActivateWindow(Programs,Addons,return)</shortcut>
+			<shortcut label="20244" grouping="32029" icon="resource://resource.images.skinicons.wide/programs.png" condition="System.Platform.Android">ActivateWindow(10001,androidapp://sources/apps/,return)</shortcut>
+			<shortcut label="10134" grouping="32029" icon="resource://resource.images.skinicons.wide/favourites.png">ActivateWindow(favourites)</shortcut>
+			<shortcut label="31062" grouping="32029" type="youtube" icon="resource://resource.images.skinicons.wide/youtube.png" condition="System.HasAddon(plugin.video.youtube)">ActivateWindow(10025,plugin://plugin.video.youtube,return)</shortcut>
+			<shortcut label="32032" type="playdvd" grouping="32029" icon="resource://resource.images.skinicons.wide/videos.png">PlayDVD()</shortcut>
 		</node>
 
 		<!-- video library-->
@@ -51,8 +51,8 @@
 		
 		<!-- music -->
 		<node label="32031">
-			<shortcut label="10005" grouping="32029" icon="resource://resource.images.skinicons.wide2/music.png">ActivateWindow(10502,musicdb://,return)</shortcut>
-			<shortcut label="19021" grouping="32029" icon="resource://resource.images.skinicons.wide2/radio.png" condition="String.IsEmpty(Window(home).Property(netflixmenu))">ActivateWindow(radiochannels,return)</shortcut>
+			<shortcut label="10005" grouping="32029" icon="resource://resource.images.skinicons.wide/music.png">ActivateWindow(10502,musicdb://,return)</shortcut>
+			<shortcut label="19021" grouping="32029" icon="resource://resource.images.skinicons.wide/radio.png" condition="String.IsEmpty(Window(home).Property(netflixmenu))">ActivateWindow(radiochannels,return)</shortcut>
             <shortcut label="19140" grouping="1211" type="1211" condition="String.IsEmpty(Window(home).Property(netflixmenu))">RunScript(script.skin.helper.service,action=MUSICSEARCH)</shortcut>
 			<shortcut label="589" grouping="1211" type="1211">PlayerControl(Partymode(music))</shortcut>
             <content>music</content>
@@ -71,9 +71,9 @@
 		
 		<!-- Live TV -->
 		<node label="32017" condition="PVR.HasTVChannels">
-			<shortcut label="32022" grouping="32029" icon="resource://resource.images.skinicons.wide2/livetv.png" condition="PVR.HasTVChannels">ActivateWindow(TVGuide)</shortcut>
-			<shortcut label="19163" grouping="32029" icon="resource://resource.images.skinicons.wide2/tvrecordings.png" condition="PVR.HasTVChannels">ActivateWindow(TVRecordings,return)</shortcut>
-			<shortcut label="19021" grouping="32029" icon="resource://resource.images.skinicons.wide2/radio.png" condition="PVR.HasTVChannels">ActivateWindow(radiochannels,return)</shortcut>
+			<shortcut label="32022" grouping="32029" icon="resource://resource.images.skinicons.wide/livetv.png" condition="PVR.HasTVChannels">ActivateWindow(TVGuide)</shortcut>
+			<shortcut label="19163" grouping="32029" icon="resource://resource.images.skinicons.wide/tvrecordings.png" condition="PVR.HasTVChannels">ActivateWindow(TVRecordings,return)</shortcut>
+			<shortcut label="19021" grouping="32029" icon="resource://resource.images.skinicons.wide/radio.png" condition="PVR.HasTVChannels">ActivateWindow(radiochannels,return)</shortcut>
 			<node label="32017" condition="PVR.HasTVChannels">
 				<content>pvr</content>
 				<node label="19023">
@@ -111,8 +111,8 @@
         <!-- addons -->
         <node label="32007">
 			<node label="32009">
-				<shortcut label="10001" type="32021" icon="resource://resource.images.skinicons.wide2/programs.png">ActivateWindow(Programs,addons://sources/executable/,return)</shortcut>
-                <shortcut label="20244" grouping="32029" icon="resource://resource.images.skinicons.wide2/programs.png" condition="System.Platform.Android">ActivateWindow(Programs,androidapp://sources/apps/,return)</shortcut>
+				<shortcut label="10001" type="32021" icon="resource://resource.images.skinicons.wide/programs.png">ActivateWindow(Programs,addons://sources/executable/,return)</shortcut>
+                <shortcut label="20244" grouping="32029" icon="resource://resource.images.skinicons.wide/programs.png" condition="System.Platform.Android">ActivateWindow(Programs,androidapp://sources/apps/,return)</shortcut>
 				<content>addon-program</content>
 			</node>
             <shortcut label="20244" type="32029" condition="System.Platform.Android">||BROWSE||androidapp://sources/apps/</shortcut>
@@ -132,14 +132,14 @@
 
 		<!-- favourites-->	
 		<node label="32006" condition="String.IsEmpty(Window(home).Property(netflixmenu))">
-			<shortcut label="10134" grouping="32029" icon="resource://resource.images.skinicons.wide2/favourites.png">ActivateWindow(favouritesbrowser)</shortcut>
+			<shortcut label="10134" grouping="32029" icon="resource://resource.images.skinicons.wide/favourites.png">ActivateWindow(favouritesbrowser)</shortcut>
 			<content>favourite</content>
 		</node>
 		
 		<!-- settings -->
 		<node label="10004" condition="String.IsEmpty(Window(home).Property(netflixmenu))">
-			<shortcut label="7" grouping="32029" icon="resource://resource.images.skinicons.wide2/filemanager.png">ActivateWindow(filemanager)</shortcut>
-            <shortcut label="130" grouping="32029" icon="resource://resource.images.skinbackgrounds.titanium2/systeminfo.jpg">ActivateWindow(systeminfo)</shortcut>
+			<shortcut label="7" grouping="32029" icon="resource://resource.images.skinicons.wide/filemanager.png">ActivateWindow(filemanager)</shortcut>
+            <shortcut label="130" grouping="32029" icon="resource://resource.images.skinbackgrounds.titanium/systeminfo.jpg">ActivateWindow(systeminfo)</shortcut>
 			<content>settings</content>
 		</node>
 		
@@ -228,38 +228,38 @@
 	</widget-groupings>
     
 	<!-- default backgrounds -->
-	<backgrounddefault defaultID="movies">resource://resource.images.skinbackgrounds.titanium2/hover_moving pictures.jpg</backgrounddefault>
+	<backgrounddefault defaultID="movies">resource://resource.images.skinbackgrounds.titanium/hover_moving pictures.jpg</backgrounddefault>
 	<propertydefault defaultID="movies" property="backgroundName">$ADDON[script.skin.helper.service 32039]</propertydefault>
-	<backgrounddefault defaultID="tvshows">resource://resource.images.skinbackgrounds.titanium2/hover_my tv series.jpg</backgrounddefault>
+	<backgrounddefault defaultID="tvshows">resource://resource.images.skinbackgrounds.titanium/hover_my tv series.jpg</backgrounddefault>
 	<propertydefault defaultID="tvshows" property="backgroundName">$ADDON[script.skin.helper.service 32043]</propertydefault>
-	<backgrounddefault defaultID="music">resource://resource.images.skinbackgrounds.titanium2/music.jpg</backgrounddefault>
+	<backgrounddefault defaultID="music">resource://resource.images.skinbackgrounds.titanium/music.jpg</backgrounddefault>
 	<propertydefault defaultID="music" property="backgroundName">$ADDON[script.skin.helper.service 32048]</propertydefault>
-	<backgrounddefault defaultID="musicvideos">resource://resource.images.skinbackgrounds.titanium2/hover_my music.jpg</backgrounddefault>
+	<backgrounddefault defaultID="musicvideos">resource://resource.images.skinbackgrounds.titanium/hover_my music.jpg</backgrounddefault>
 	<propertydefault defaultID="musicvideos" property="backgroundName">$ADDON[script.skin.helper.service 32047]</propertydefault>
-	<backgrounddefault defaultID="pictures">resource://resource.images.skinbackgrounds.titanium2/hover_my pictures.jpg</backgrounddefault>
+	<backgrounddefault defaultID="pictures">resource://resource.images.skinbackgrounds.titanium/hover_my pictures.jpg</backgrounddefault>
 	<propertydefault defaultID="pictures" property="backgroundName">$ADDON[script.skin.helper.service 32046]</propertydefault>
-	<backgrounddefault defaultID="videos">resource://resource.images.skinbackgrounds.titanium2/hover_my videos.jpg</backgrounddefault>
+	<backgrounddefault defaultID="videos">resource://resource.images.skinbackgrounds.titanium/hover_my videos.jpg</backgrounddefault>
 	<propertydefault defaultID="videos" property="backgroundName">$ADDON[script.skin.helper.service 32038]</propertydefault>
-	<backgrounddefault defaultID="weather">resource://resource.images.skinbackgrounds.titanium2/weather.jpg</backgrounddefault>
-	<backgrounddefault defaultID="livetv">resource://resource.images.skinbackgrounds.titanium2/hover_my tv.jpg</backgrounddefault>
+	<backgrounddefault defaultID="weather">resource://resource.images.skinbackgrounds.titanium/weather.jpg</backgrounddefault>
+	<backgrounddefault defaultID="livetv">resource://resource.images.skinbackgrounds.titanium/hover_my tv.jpg</backgrounddefault>
 	<propertydefault defaultID="livetv" property="backgroundName">TV</propertydefault>
-	<backgrounddefault defaultID="radio">resource://resource.images.skinbackgrounds.titanium2/hover_radiotime.jpg</backgrounddefault>
+	<backgrounddefault defaultID="radio">resource://resource.images.skinbackgrounds.titanium/hover_radiotime.jpg</backgrounddefault>
 	<propertydefault defaultID="radio" property="backgroundName">19021</propertydefault>
-	<backgrounddefault defaultID="search">resource://resource.images.skinbackgrounds.titanium2/hover_mynumberplace.jpg</backgrounddefault>
+	<backgrounddefault defaultID="search">resource://resource.images.skinbackgrounds.titanium/hover_mynumberplace.jpg</backgrounddefault>
 	<propertydefault defaultID="search" property="backgroundName">Search</propertydefault>
-	<backgrounddefault defaultID="mediathek">resource://resource.images.skinbackgrounds.titanium2/hover_OnlineVideos.jpg</backgrounddefault>
+	<backgrounddefault defaultID="mediathek">resource://resource.images.skinbackgrounds.titanium/hover_OnlineVideos.jpg</backgrounddefault>
 	<propertydefault defaultID="mediathek" property="backgroundName">Media</propertydefault>
-	<backgrounddefault defaultID="dvd">resource://resource.images.skinbackgrounds.titanium2/hover_play disc.jpg</backgrounddefault>
+	<backgrounddefault defaultID="dvd">resource://resource.images.skinbackgrounds.titanium/hover_play disc.jpg</backgrounddefault>
 	<propertydefault defaultID="dvd" property="backgroundName">$ADDON[script.skin.helper.service 32032]</propertydefault>
-	<backgrounddefault defaultID="games">resource://resource.images.skinbackgrounds.titanium2/hover_tetris.jpg</backgrounddefault>
+	<backgrounddefault defaultID="games">resource://resource.images.skinbackgrounds.titanium/hover_tetris.jpg</backgrounddefault>
 	<propertydefault defaultID="games" property="backgroundName">Games</propertydefault>
-	<backgrounddefault defaultID="favorites">resource://resource.images.skinbackgrounds.titanium2/videos.jpg</backgrounddefault>
+	<backgrounddefault defaultID="favorites">resource://resource.images.skinbackgrounds.titanium/videos.jpg</backgrounddefault>
 	<propertydefault defaultID="favorites" property="backgroundName">Favorites</propertydefault>
-	<backgrounddefault defaultID="plugin.video.youtube">resource://resource.images.skinbackgrounds.titanium2/hover_extensions.jpg</backgrounddefault>
+	<backgrounddefault defaultID="plugin.video.youtube">resource://resource.images.skinbackgrounds.titanium/hover_extensions.jpg</backgrounddefault>
 	<propertydefault defaultID="plugin.video.youtube" property="backgroundName">YouTube</propertydefault>
-	<backgrounddefault defaultID="addons">resource://resource.images.skinbackgrounds.titanium2/programs.jpg</backgrounddefault>
+	<backgrounddefault defaultID="addons">resource://resource.images.skinbackgrounds.titanium/programs.jpg</backgrounddefault>
 	<propertydefault defaultID="addons" property="backgroundName">$ADDON[script.skin.helper.service 10040]</propertydefault>
-	<backgrounddefault defaultID="settings">resource://resource.images.skinbackgrounds.titanium2/settings.jpg</backgrounddefault>
+	<backgrounddefault defaultID="settings">resource://resource.images.skinbackgrounds.titanium/settings.jpg</backgrounddefault>
 	<propertydefault defaultID="settings" property="backgroundName">$ADDON[script.skin.helper.service 10004]</propertydefault>
 
 	

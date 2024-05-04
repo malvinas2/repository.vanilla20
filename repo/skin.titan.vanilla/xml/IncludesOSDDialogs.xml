@@ -93,9 +93,9 @@
             <!--List ID=11-->
             <control type="list" id="11">
                 <posx>0</posx>
-                <posy>180</posy>
+                <posy>170</posy>
                 <width>530</width>
-                <height>875</height>
+                <height>905</height>
                 <onleft>PreviousChannelGroup</onleft>
                 <onright>back</onright>
                 <onup>11</onup>
@@ -306,13 +306,13 @@
                         <!--Channel Now Playing (LEFT)-->
                         <posx>110</posx>
                         <posy>45</posy>
-                        <width>630</width>
+						<scroll>true</scroll>
+                        <width>430</width>
                         <height>20</height>
                         <font>Reg25</font>
                         <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <scroll>true</scroll>
                         <label>$INFO[ListItem.Title]</label>
                     </control>
                     <control type="label">
@@ -381,7 +381,6 @@
                     </control>
                 </focusedlayout>
             </control>
-
         </control>
 	</include>
     
@@ -424,7 +423,7 @@
 				<ondown>11</ondown>
                 <onup>11</onup>
 				<textoffsetx>90</textoffsetx>
-				<label>1077$LOCALIZE[19023] - $INFO[VideoPlayer.ChannelGroup]</label>
+				<label>$LOCALIZE[19023] - $INFO[VideoPlayer.ChannelGroup]</label>
                 <altlabel>$LOCALIZE[19024] - $INFO[MusicPlayer.ChannelGroup]</altlabel>
                 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
                 <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
@@ -467,7 +466,6 @@
                 <posy>10</posy>
                 <include condition="Skin.HasSetting(EnableTouchSupport)">close_button</include>
             </control>
-			
             
             <!-- footer -->
             <control type="image">
@@ -510,7 +508,6 @@
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout height="60" width="1100">
-                    
                     <!--Channel Number-->
                     <control type="label">
                         <width>90</width>
@@ -568,7 +565,7 @@
                         <width>100</width>
                         <texture fallback="defaulttvshows.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
-                        <visible>![ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer]</visible>
+                        <visible>![ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer | ListItem.HasReminder]</visible>
                         <bordersize>8</bordersize>
                     </control>
                     
@@ -646,7 +643,7 @@
                         <width>100</width>
                         <texture fallback="defaulttvshows.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
-                        <visible>![ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer]</visible>
+                        <visible>![ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer | ListItem.HasReminder]</visible>
                         <bordersize>8</bordersize>
                     </control>
                 </focusedlayout>
@@ -689,7 +686,6 @@
                 <texture fallback="defaulttvshows.png">$INFO[Container(11).ListItem.Icon]</texture>
                 <aspectratio align="left">keep</aspectratio>
             </control>
-            
             
             <!-- progress -->
             <control type="progress">
@@ -794,10 +790,7 @@
                 <label>[COLOR=$INFO[Skin.String(OSDSecondaryTextColor)]]$LOCALIZE[19031]: [/COLOR]$INFO[Container(11).ListItem.NextTitle]</label>
                 <visible>!String.IsEmpty(Container(11).ListItem.NextTitle)</visible>
             </control>
-            
         </control>
-
     </include>
-
 
 </includes>

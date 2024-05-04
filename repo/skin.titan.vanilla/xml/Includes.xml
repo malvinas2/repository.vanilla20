@@ -73,6 +73,7 @@
     <include file="script-skin_helper_service-includes.xml"/>
     <include file="IncludesDebugInfo.xml" condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)" />
 	<include file="Includes_DialogSelect.xml" />
+	<include file="IncludesDialogPVRGuideControls.xml" />
 	
 	<!--Titan Version-->
     <include name="TitanVersion">
@@ -89,25 +90,15 @@
 
     <!--Common-->
     <include name="HiddenButton">
-        <posx>-20</posx>
-        <posy>-20</posy>
+        <posx>-1000</posx>
+        <posy>-1000</posy>
         <width>1</width>
         <height>1</height>
         <label></label>
+		<font></font>
         <texturenofocus></texturenofocus>
         <texturefocus></texturefocus>
     </include>
-	
-	<include name="HiddenObject">
-		<left>-3000</left>
-		<top>-3000</top>
-		<width>1</width>
-		<height>1</height>
-		<texturefocus />
-		<texturenofocus />
-		<label></label>
-		<font></font>
-	</include>
 	
     <include name="DimensionsFullscreen">
         <posx>0</posx>
@@ -178,14 +169,6 @@
         <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
     </include>
 
-    <include name ="textcolorworkaround">
-        <!--hardcoded colors for use in some controls (edit for example) that didn't support dynamic coloring pre Kodi 15.2 -->
-        <textcolor>white</textcolor>
-        <disabledcolor>grey</disabledcolor>
-        <focusedcolor>white</focusedcolor>
-        <shadowcolor>black</shadowcolor>
-    </include>
-	
 	<include name="DialogButtonOther">
         <!--Dialog Button OK Cancel-->
         <height>80</height>
@@ -407,69 +390,6 @@
         <aspectratio align="left">keep</aspectratio>
     </include>
     
-    <include name="SliderEx">
-        <!-- fake sliderex control -->
-        <control type="group" id="$PARAM[id]">
-            <width>$PARAM[width]</width>
-            <height>60</height>
-            <control type="image">
-                <texture border="5">diffuse/panel.png</texture>
-                <colordiffuse>$INFO[Skin.String(ButtonColor)]</colordiffuse>
-                <visible>!Control.HasFocus($PARAM[sliderid])</visible>
-            </control>
-            <control type="image">
-                <texture border="5">diffuse/panel.png</texture>
-                <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
-                <visible>Control.HasFocus($PARAM[sliderid])</visible>
-            </control>
-            <control type="slider" id="$PARAM[sliderid]">
-                <width>200</width>
-                <right>140</right>
-                <posy>20</posy>
-                <onup>$PARAM[upaction]</onup>
-                <ondown>$PARAM[downaction]</ondown>
-            </control>
-            <control type="label">
-                <description>Label 1 (left side)</description>
-                <label>$PARAM[label]</label>
-                <posx>20</posx>
-                <align>left</align>
-                <font>Light28</font>
-                <textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
-                <visible>!Control.HasFocus($PARAM[sliderid])</visible>
-            </control>
-            <control type="label">
-                <description>Label 2 (right side)</description>
-                <label>$PARAM[label2]</label>
-                <right>20</right>
-                <width>100</width>
-                <align>center</align>
-                <font>Light28</font>
-                <textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
-                <visible>!Control.HasFocus($PARAM[sliderid])</visible>
-            </control>
-            <control type="label">
-                <description>Label 1 (left side) FOCUS</description>
-                <label>$PARAM[label]</label>
-                <posx>20</posx>
-                <align>left</align>
-                <font>Light28</font>
-                <textcolor fallback="white">$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
-                <visible>Control.HasFocus($PARAM[sliderid])</visible>
-            </control>
-            <control type="label">
-                <description>Label 2 (right side) FOCUS</description>
-                <label>$PARAM[label2]</label>
-                <right>20</right>
-                <width>100</width>
-                <align>center</align>
-                <font>Light28</font>
-                <textcolor fallback="white">$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
-                <visible>Control.HasFocus($PARAM[sliderid])</visible>
-            </control>
-        </control>
-    </include>
-    
     <include name="skinshortcuts-widgetselect">
         <control type="label" id="900$PARAM[widgetpos]0">
             <width>500</width>
@@ -544,7 +464,7 @@
         <control type="radiobutton" id="900$PARAM[widgetpos]6"> 
             <description>widget force refresh</description>
             <width>500</width>
-            <label>31717</label>
+            <label>$LOCALIZE[31717]</label>
             <font>Reg22</font>
             <align>left</align>
             <textoffsetx>10</textoffsetx>
@@ -563,7 +483,7 @@
         <control type="radiobutton" id="900$PARAM[widgetpos]7">
             <description>widget auto rotate</description>
             <width>500</width>
-            <label>31723</label>
+            <label>$LOCALIZE[31723]</label>
             <font>Reg22</font>
             <align>left</align>
             <textoffsetx>10</textoffsetx>
@@ -582,7 +502,7 @@
         <control type="radiobutton" id="900$PARAM[widgetpos]8">
             <description>widget static focus</description>
             <width>500</width>
-            <label>31823</label>
+            <label>$LOCALIZE[31823]</label>
             <font>Reg22</font>
             <align>left</align>
             <textoffsetx>10</textoffsetx>
@@ -677,252 +597,77 @@
 		</definition>
 	</include>
 	
-	<include name="DialogBackgroundCommons">
-		<control type="image">
-			<left>-2000</left>
-			<top>-2000</top>
-			<width>6000</width>
-			<height>6000</height>
-			<animation effect="fade" time="300">VisibleChange</animation>
-			<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-			<!-- <texture colordiffuse="C2FFFFFF">colors/black.png</texture> -->
-			<visible>$PARAM[darken_bg]</visible>
-		</control>
-		<control type="button">
-			<left>-2000</left>
-			<top>-2000</top>
-			<width>6000</width>
-			<height>6000</height>
-			<texturefocus />
-			<texturenofocus />
-			<onclick>Action(close)</onclick>
-		</control>
-		<control type="group">
+	<include name="height20_posy160">
+		<height>20</height>
+		<posy>160</posy>
+	</include>
+
+	<include name="height10_posy160">
+		<height>10</height>
+		<posy>160</posy>
+	</include>
+
+	<include name="height10_posy170">
+		<height>10</height>
+		<posy>170</posy>
+	</include>
+
+	<include name="height33_posy150">
+		<height>33</height>
+		<posy>150</posy>
+	</include>
+
+	<include name="height16_posy150">
+		<height>16</height>
+		<posy>150</posy>
+	</include>
+
+	<include name="height17_posy160">
+		<height>17</height>
+		<posy>160</posy>
+	</include>
+
+	<include name="height0_posy0">
+		<height>0</height>
+		<posy>0</posy>
+	</include>
+
+	<include name="music_info_label">
+		<control type="grouplist">
 			<width>$PARAM[width]</width>
-			<height>$PARAM[height]</height>
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<right>0</right>
-				<bottom>0</bottom>
-				<texture border="15">diffuse/background.png</texture>
-				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+			<left>$PARAM[left]</left>
+			<top>-20</top>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<control type="label">
+				<width>auto</width>
+				<font>Reg26</font>
+				<align>left</align>
+				<label>$PARAM[label1]</label>
+				<textcolor>$INFO[Skin.String(GeneralHighlightTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+				<scroll>false</scroll>
+				<visible>!String.IsEmpty(Control.GetLabel(300$PARAM[id]))</visible>
 			</control>
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<right>0</right>
-				<bottom>0</bottom>
-				<bordersize>10</bordersize>
-				<texture border="15">diffuse/background.png</texture>
-				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+			<control type="label" id="300$PARAM[id]">
+				<width>auto</width>
+				<font>Reg26</font>
+				<align>left</align>
+				<label>$PARAM[label2]</label>
+				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+				<scroll>true</scroll>
+				<scrollsuffix> / </scrollsuffix>
 			</control>
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<right>0</right>
-				<height>70</height>
-				<texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="2">colors/white70.png</texture>
-			</control>
-			<control type="label" id="$PARAM[header_id]">
-				<include>DialogHeader</include>
-				<left>40</left>
-				<top>0</top>
-				<right>100</right>
-				<height>70</height>
-				<label>  $PARAM[header_label]</label>
-				<aligny>center</aligny>
-				<shadowcolor>black</shadowcolor>
-			</control>
-			<control type="button" id="22002">
-				<description>button overlay to avoid closing in dialog area</description>
-				<left>0</left>
-				<top>0</top>
-				<right>0</right>
-				<bottom>0</bottom>
-				<texturefocus />
-				<texturenofocus />
-				<onclick>noop</onclick>
-			</control>
-			<!-- <control type="radiobutton">
-				<right>10</right>
-				<top>11</top>
-				<width>48</width>
-				<height>48</height>
-				<radiowidth>48</radiowidth>
-				<radioheight>48</radioheight>
-				<texturefocus />
-				<texturenofocus />
-				<label></label>
-				<textureradioofffocus colordiffuse="$INFO[Skin.String(GeneralTextColor)]">dialogs/close.png</textureradioofffocus>
-				<textureradiooffnofocus colordiffuse="$INFO[Skin.String(GeneralTextColor)]">icons/logo.png</textureradiooffnofocus>
-				<textureradioonfocus colordiffuse="$INFO[Skin.String(GeneralTextColor)]">dialogs/close.png</textureradioonfocus>
-				<textureradioonnofocus colordiffuse="$INFO[Skin.String(GeneralTextColor)]">icons/logo.png</textureradioonnofocus>
-				<onclick>Action(close)</onclick>
-				<visible>!Skin.HasSetting(touchmode)</visible>
-			</control>
-			<control type="button">
-				<right>10</right>
-				<top>11</top>
-				<width>48</width>
-				<height>48</height>
-				<texturefocus>dialogs/close.png</texturefocus>
-				<texturenofocus>dialogs/close.png</texturenofocus>
-				<onclick>Action(close)</onclick>
-				<visible>Skin.HasSetting(touchmode)</visible>
-			</control>    -->
 		</control>
 	</include>
-	
-		<include name="ButtonMenuList">
-		<left>0</left>
-		<top>80</top>
-		<width>600</width>
-		<height>700</height>
-		<onleft>9000</onleft>
-		<onright>9000</onright>
-		<onup>9000</onup>
-		<ondown>9000</ondown>
-		<orientation>vertical</orientation>
-		<itemlayout height="70" width="600">
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>600</width>
-				<height>70</height>
-				<texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]">diffuse/banner.png</texture>
-			</control>
-			<control type="label">
-				<include>DialogListNF</include>
-				<left>0</left>
-				<textoffsetx>20</textoffsetx>
-				<top>0</top>
-				<width>600</width>
-				<height>70</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<textcolor>grey</textcolor>
-				<label>$INFO[ListItem.Label]</label>
-			</control>
-		</itemlayout>
-		<focusedlayout height="70" width="600">
-	 		<!-- <control type="image"> -->
-				<!-- <left>0</left> -->
-				<!-- <top>0</top> -->
-				<!-- <width>600</width> -->
-				<!-- <height>70</height> -->
-				<!-- <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]">diffuse/banner.png</texture> -->
-			<!-- </control>  -->
-			<control type="image">
-				<left>0</left>
-				<top>0</top>
-				<width>600</width>
-				<height>70</height>
-				<texture colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/banner.png</texture>
-			</control>
-			<control type="label">
-				<left>0</left>
-				<textoffsetx>20</textoffsetx>
-				<top>0</top>
-				<width>600</width>
-				<height>70</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<include>DialogListFO</include>
-				<label>$INFO[ListItem.Label]</label>
-			</control>
-		</focusedlayout>
-	</include>
 
-	
-<include name="DialogSettingButton">
-	<param name="height">65</param>
-	<param name="textoffsetx">40</param>
-	<definition>
-		 <include>DialogListNF</include>
-		<textoffsetx>$PARAM[textoffsetx]</textoffsetx>
-		<top>0</top>
-		<height>$PARAM[height]</height>
-		<aligny>center</aligny>
-		<invalidcolor>invalid</invalidcolor>
-		<selectedcolor>selected</selectedcolor>
-		<texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/banner.png</texturefocus>
-		 <texturenofocus colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]">diffuse/banner.png</texturenofocus>
-	</definition>
-</include>	
-
-<include name="height20_posy160">
-    <height>20</height>
-	<posy>160</posy>
-</include>
-
-<include name="height10_posy160">
-    <height>10</height>
-	<posy>160</posy>
-</include>
-
-<include name="height10_posy170">
-    <height>10</height>
-	<posy>170</posy>
-</include>
-
-<include name="height33_posy150">
-    <height>33</height>
-	<posy>150</posy>
-</include>
-
-<include name="height16_posy150">
-    <height>16</height>
-	<posy>150</posy>
-</include>
-
-<include name="height17_posy160">
-    <height>17</height>
-	<posy>160</posy>
-</include>
-
-<include name="height0_posy0">
-    <height>0</height>
-	<posy>0</posy>
-</include>
-
-<include name="music_info_label">
-    <control type="grouplist">
-        <width>$PARAM[width]</width>
-        <left>$PARAM[left]</left>
-        <top>-20</top>
-        <orientation>horizontal</orientation>
-        <align>left</align>
-        <control type="label">
-            <width>auto</width>
-            <font>Reg26</font>
-            <align>left</align>
-            <label>$PARAM[label1]</label>
-            <textcolor>$INFO[Skin.String(GeneralHighlightTextColor)]</textcolor>
-            <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-            <scroll>false</scroll>
-            <visible>!String.IsEmpty(Control.GetLabel(300$PARAM[id]))</visible>
-        </control>
-        <control type="label" id="300$PARAM[id]">
-            <width>auto</width>
-            <font>Reg26</font>
-            <align>left</align>
-            <label>$PARAM[label2]</label>
-            <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-            <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-            <scroll>true</scroll>
-            <scrollsuffix> / </scrollsuffix>
-        </control>
-    </control>
-</include>
-
-<expression name="IsMovieDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.Property(DBTYPE),movie)</expression>
-<expression name="IsTvShowDBType">String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.Property(DBTYPE),tvshow) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,tvshow)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),tvshow)</expression>
-<expression name="IsTvShowDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.Property(DBTYPE),tvshow)</expression>
-<expression name="IsMovieDBType">String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.Property(DBTYPE),movie) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,movie)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),movie)</expression>
-<expression name="IsMovieDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.Property(DBTYPE),movie)</expression>
-<expression name="IsEpisodeDBType">String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,episode)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),episode)</expression>
-<expression name="IsEpisodeDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)</expression>
+	<expression name="IsMovieDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.Property(DBTYPE),movie)</expression>
+	<expression name="IsTvShowDBType">String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.Property(DBTYPE),tvshow) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,tvshow)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),tvshow)</expression>
+	<expression name="IsTvShowDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.Property(DBTYPE),tvshow)</expression>
+	<expression name="IsMovieDBType">String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.Property(DBTYPE),movie) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,movie)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),movie)</expression>
+	<expression name="IsMovieDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.Property(DBTYPE),movie)</expression>
+	<expression name="IsEpisodeDBType">String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,episode)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),episode)</expression>
+	<expression name="IsEpisodeDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)</expression>
 
 </includes>

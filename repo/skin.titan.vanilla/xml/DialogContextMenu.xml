@@ -4,7 +4,6 @@
     <defaultcontrol always="true">1000</defaultcontrol>
     <onload condition="Window.IsActive(loginscreen) + Skin.HasSetting(LoginScreen_DisableContextMenu)">Close</onload>
     <controls>
-		
 		<!-- touchscreen support -->
 		<!-- hidden button to exit dialog in touchscreen mode -->
 		<control type="button">
@@ -24,9 +23,7 @@
 			<onclick>back</onclick>
 			<visible>Skin.HasSetting(EnableTouchSupport)</visible>
 		</control>
-		
 		<include condition="Skin.HasSetting(smallContextMenu)">DialogContextMenuClassic</include>
         <include condition="!Skin.HasSetting(smallContextMenu)">DialogContextMenuModern</include>
-
 	</controls>
 </window>

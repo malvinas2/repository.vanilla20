@@ -69,14 +69,14 @@
                         <width>190</width>
                         <height>260</height>
                         <include>PosterPanelLayout</include>
-                      </control>
+                    </control>
 				</itemlayout>
 				<focusedlayout height="260" width="201">
-				   <control type="group">
+				    <control type="group">
                         <width>190</width>
                         <height>260</height>
                         <include>PosterPanelLayoutFocus</include>
-                      </control>
+                    </control>
 				</focusedlayout>
 			</control>
      			
@@ -95,7 +95,6 @@
         </control>
 
         <control type="group">
-     			
 			<!-- side menu -->
 			<include condition="!Skin.HasSetting(DisableSideBladeIndicator)">SideBladeMenuTabLeft</include>
 			<control type="group">

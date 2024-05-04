@@ -12,7 +12,6 @@
     <controls>
 	
 	<include>DialogOverlayExtra</include>
-
 		
 	<!--NowPlaying-->
 	<include>NowPlayingModern</include>
@@ -510,8 +509,6 @@
 				<ondown>100</ondown>
 				<visible>system.getbool(input.enablemouse)</visible>
 			</control>
-		
 		</control>
-		
     </controls>
 </window>

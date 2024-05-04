@@ -156,7 +156,7 @@
 					</control>
 				</control>
 			</control>
-			</control>
+		</control>
 		<include condition="!Skin.HasSetting(nofooterbar)">Footer</include>
 		<!--Sub Menu Tab Left-->
         <include condition="!Skin.HasSetting(DisableSideBladeIndicator)">SideBladeMenuTabLeft</include>

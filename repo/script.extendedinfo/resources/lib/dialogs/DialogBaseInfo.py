@@ -1,23 +1,17 @@
-# -*- coding: utf8 -*-
-
 # Copyright (C) 2015 - Philipp Temminghoff <phil65@kodi.tv>
+# Modifications copyright (C) 2022 - Scott Smart <scott967@kodi.tv>
 # This program is Free Software see LICENSE file for details
+
+import traceback
 
 import xbmc
 import xbmcgui
+from resources.kutil131 import (ActionHandler, addon, kodijson, selectdialog, slideshow,
+                    windows)
 
-from resources.lib import TheMovieDB as tmdb
-from resources.lib.WindowManager import wm
-
-from kodi65 import youtube
-from kodi65 import addon
-from kodi65 import utils
-from kodi65 import kodijson
-from kodi65 import selectdialog
-from kodi65 import slideshow
-from kodi65 import VideoItem
-from kodi65 import ActionHandler
-from kodi65 import windows
+from resources.kutil131 import VideoItem, utils, youtube
+from resources.lib import themoviedb as tmdb
+from resources.lib.windowmanager import wm
 
 ch = ActionHandler()
 
@@ -28,40 +22,56 @@ ID_BUTTON_BOUNCEDOWN = 20001
 
 
 class DialogBaseInfo(windows.DialogXML):
+    """Class constructs a basic dialog xml window.   Subclasses augment for different
+    dialog types (eg actor info or movie info)
+
+    Args:
+        windows.DialogXML (DialogXML): a kutils class derived from xbmcgui.WindowXMLDialog
+        and kutils WindowMixin classes
+
+    Returns:
+        _type_: _description_
+    """
     ACTION_PREVIOUS_MENU = [92, 9]
     ACTION_EXIT_SCRIPT = [13, 10]
 
     def __init__(self, *args, **kwargs):
-        super(DialogBaseInfo, self).__init__(*args, **kwargs)
-        self.logged_in = tmdb.Login.check_login()
+        super().__init__(*args, **kwargs)
+        self.logged_in: bool = tmdb.Login.check_login()
         self.bouncing = False
         self.last_focus = None
         self.lists = None
         self.states = False
         self.yt_listitems = []
-        self.info = VideoItem()
+        self.info = VideoItem() # kutils listitem
         self.last_control = None
         self.last_position = None
 
     def onInit(self, *args, **kwargs):
-        super(DialogBaseInfo, self).onInit()
+        super().onInit()
         # self.set_buttons()
-        self.info.to_windowprops(window_id=self.window_id)
+        self.info.to_windowprops(window_id=self.window_id)  #kutils sets dialog window
+        #properties from the info VideoItem(listitem)
         for container_id, key in self.LISTS:
             try:
                 self.getControl(container_id).reset()
-                items = [i.get_listitem() for i in self.lists[key]]
+                items = [i.get_listitem() for i in self.lists[key]] # lists is a dict of ItemList get_listitem gets xbmc listitem from VideoItem
                 self.getControl(container_id).addItems(items)
-            except Exception:
-                utils.log("Notice: No container with id %i available" % container_id)
+            except (IndexError, KeyError) as err:
+                utils.log(f'Notice: No container with id {container_id} key {key} available due to {err}')
+            except Exception as err:
+                utils.log(f'Notice: No container with id {container_id} key {key} available due to {err}')
+                utils.log(f'traceback for this exception\n{traceback.format_exc()}')
         if self.last_control:
             self.setFocusId(self.last_control)
         if self.last_control and self.last_position:
             try:
-                self.getControl(self.last_control).selectItem(self.last_position)
+                self.getControl(self.last_control).selectItem(
+                    self.last_position)
             except Exception:
                 pass
         addon.set_global("ImageColor", self.info.get_property('ImageColor'))
+        addon.set_global("ImageFilter", self.info.get_property('ImageFilter'))
         addon.set_global("infobackground", self.info.get_art('fanart_small'))
         self.setProperty("type", self.TYPE)
         self.setProperty("tmdb_logged_in", "true" if self.logged_in else "")
@@ -69,8 +79,8 @@ class DialogBaseInfo(windows.DialogXML):
     def onAction(self, action):
         ch.serve_action(action, self.getFocusId(), self)
 
-    def onClick(self, control_id):
-        super(DialogBaseInfo, self).onClick(control_id)
+    def onClick(self, control_id: int):
+        super().onClick(control_id)
         ch.serve(control_id, self)
 
     def onFocus(self, control_id):
@@ -91,7 +101,7 @@ class DialogBaseInfo(windows.DialogXML):
             self.last_position = None
         addon.set_global("infobackground", "")
         self.last_control = self.getFocusId()
-        super(DialogBaseInfo, self).close()
+        super().close()
 
     @utils.run_async
     def bounce(self, identifier):
@@ -104,7 +114,8 @@ class DialogBaseInfo(windows.DialogXML):
     @ch.click_by_type("music")
     # hack: use "music" until "pictures" got added to core
     def open_image(self, control_id):
-        key = [key for container_id, key in self.LISTS if container_id == control_id][0]
+        key = [key for container_id,
+               key in self.LISTS if container_id == control_id][0]
         pos = slideshow.open(listitems=self.lists[key],
                              index=self.getControl(control_id).getSelectedPosition())
         self.getControl(control_id).selectItem(pos)
@@ -116,7 +127,8 @@ class DialogBaseInfo(windows.DialogXML):
 
     @ch.click_by_type("artist")
     def open_actor_info(self, control_id):
-        wm.open_actor_info(actor_id=self.FocusedItem(control_id).getProperty("id"))
+        wm.open_actor_info(actor_id=self.FocusedItem(control_id).getProperty("id"),
+                            name=self.FocusedItem(control_id).getLabel())
 
     @ch.click_by_type("movie")
     def open_movie_info(self, control_id):
@@ -163,7 +175,9 @@ class DialogBaseInfo(windows.DialogXML):
     def video_context_menu(self, control_id):
         index = xbmcgui.Dialog().contextmenu(list=[addon.LANG(33003)])
         if index == 0:
-            utils.download_video(self.FocusedItem(control_id).getProperty("youtube_id"))
+            #utils.download_video(self.FocusedItem(
+            #    control_id).getProperty("youtube_id"))
+            pass
 
     @ch.context("movie")
     def movie_context_menu(self, control_id):
@@ -188,7 +202,8 @@ class DialogBaseInfo(windows.DialogXML):
             account_lists = tmdb.get_account_lists()
             if not account_lists:
                 return False
-            listitems = ["%s (%i)" % (i["name"], i["item_count"]) for i in account_lists]
+            listitems = ["%s (%i)" % (i["name"], i["item_count"])
+                         for i in account_lists]
             i = xbmcgui.Dialog().select(addon.LANG(32136), listitems)
             if i > -1:
                 tmdb.change_list_status(list_id=account_lists[i]["id"],
@@ -246,23 +261,28 @@ class DialogBaseInfo(windows.DialogXML):
             self.close()
 
     @ch.action("previousmenu", "*")
-    def exit_script(self, control_id):
+    def exit_script(self, *args):
         self.exit()
 
-    @utils.run_async
+    # @utils.run_async
     def get_youtube_vids(self, search_str):
         try:
             youtube_list = self.getControl(ID_LIST_YOUTUBE)
-        except Exception:
+        except Exception as err:
+            utils.log(f'DialogBaseInfo.get_youtube_vids threw exception {err}')
             return None
         if not self.yt_listitems:
             user_key = addon.setting("Youtube API Key")
-            self.yt_listitems = youtube.search(search_str, limit=15, api_key=user_key)
+            search_str = search_str.replace('-', '')
+            self.yt_listitems = youtube.search(
+                search_str, limit=15, api_key=user_key)
         if not self.yt_listitems:
             return None
-        vid_ids = [item.get_property("key") for item in self.lists["videos"]] if "videos" in self.lists else []
+        vid_ids = [item.get_property(
+            "key") for item in self.lists["videos"]] if "videos" in self.lists else []
         youtube_list.reset()
-        youtube_list.addItems([i.get_listitem() for i in self.yt_listitems if i.get_property("youtube_id") not in vid_ids])
+        youtube_list.addItems(
+            [i.get_listitem() for i in self.yt_listitems if i.get_property("youtube_id") not in vid_ids])
 
     def open_credit_dialog(self, credit_id):
         info = tmdb.get_credit_info(credit_id)

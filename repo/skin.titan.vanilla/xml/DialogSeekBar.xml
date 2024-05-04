@@ -20,33 +20,26 @@
 	<!-- /malvinas2 -->
 	
 	<controls>
-		
 		<include>PVRChannelNumberInput</include>
-		
         <control type="group">
-            
             <!--Info Panel-->
             <include>OSDInfoPanel</include>
-			
 			<!-- malvinas2 -->
 			<visible>!Player.HasGame</visible>
 			<!-- /malvinas2 -->		
-            
             <!--clearart clearlogo-->
             <control type="image">
                 <posx>1520</posx>
                 <posy>20</posy>
                 <width>356</width>
                 <height>200</height>
-                <!-- <fadetime>200</fadetime> -->
                 <aspectratio align="left" aligny="top">keep</aspectratio>
                 <texture background="true">$VAR[VideoPlayerClearart]</texture>
-                <visible>[Skin.HasSetting(OSDShowInfoOnPause) | VideoPlayer.Content(livetv) | Window.IsActive(videoosd) | Player.ShowInfo] + !Control.IsVisible(552233) + !Control.IsVisible(662244) + !Window.IsActive(playerprocessinfo) + !Window.IsActive(1121) + !Window.IsActive(1125) + !Window.IsActive(osdaudiosettings) + !Window.IsActive(osdsubtitlesettings) + !Window.IsActive(osdvideosettings) + !Window.IsActive(osdcmssettings) + !Window.IsActive(videobookmarks) + Skin.HasSetting(OSDShowClearArt)</visible>
+                <visible>[Skin.HasSetting(OSDShowInfoOnPause) | VideoPlayer.Content(livetv) | Window.IsActive(videoosd) | Player.ShowInfo] + !Control.IsVisible(552233) + !Control.IsVisible(662244) + !Window.IsActive(playerprocessinfo) + !Window.IsActive(1121) + !Window.IsActive(1110) + !Window.IsActive(1125) + !Window.IsActive(osdaudiosettings) + !Window.IsActive(osdsubtitlesettings) + !Window.IsActive(osdvideosettings) + !Window.IsActive(osdcmssettings) + !Window.IsActive(videobookmarks) + Skin.HasSetting(OSDShowClearArt)</visible>
 				<visible>!Window.IsActive(sliderdialog) + !Window.IsActive(pvrosdchannels) + !Window.IsActive(DialogSettings.xml)</visible>
 				<!-- Control.IsVisible(552233) = include"OSDInfoPanel" -->
 				<!-- Control.IsVisible(662244) = Small_OSD_Seek_Panel -->
             </control>
-            
             <!--OSD Panel-->
             <control type="group">
                 <visible>Skin.HasSetting(OSDShowInfoOnPause) | VideoPlayer.Content(livetv) | Window.IsActive(videoosd) | Player.ShowInfo</visible>
@@ -56,12 +49,10 @@
                 <animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="300" time="250" reversible="false">Hidden</animation>
                 <include condition="!Skin.HasSetting(UseSlimOSDPanel)">OSDPanelModern</include>
                 <include condition="Skin.HasSetting(UseSlimOSDPanel)">OSDPanelModernSlim</include>
- 				
                 <!-- weather on OSD -->
                 <include condition="!Skin.HasSetting(UseSlimOSDPanel) + Skin.HasSetting(ShowWeatherVideoInfoOSD)  + !Window.IsActive(playerprocessinfo)">WeatherInfoOSD</include>
                 <include condition="Skin.HasSetting(UseSlimOSDPanel) + Skin.HasSetting(ShowWeatherVideoInfoOSD) + !Window.IsActive(playerprocessinfo)">WeatherInfoOSDSlim</include>
             </control>
-            
             <!-- large forward and rewind labels -->
             <control type="label">
                 <posx>0</posx>
@@ -77,7 +68,6 @@
                 <visible>![Player.Paused + Skin.HasSetting(EnableOSDInfo) + Skin.HasSetting(EnableOSDInfoLarge)]</visible>
                 <include>HideOsdConditions</include>
             </control>
-            
             <!-- small panel if OSD disabled on seek -->
             <control type="group" id="662244">
                 <visible>!VideoPlayer.Content(livetv) + !Control.IsVisible(552233)</visible>

@@ -1,44 +1,36 @@
-# -*- coding: utf8 -*-
-
 # Copyright (C) 2015 - Philipp Temminghoff <phil65@kodi.tv>
+# Modifications copyright (C) 2022 - Scott Smart <scott967@kodi.tv>
 # This program is Free Software see LICENSE file for details
 
-import sys
+"""Entry point when called as video plugin
+"""
+
 import os
+import sys
 
-import xbmcplugin
+import routing
 import xbmcgui
+import xbmcplugin
+from resources.kutil131 import addon
 
+from resources.kutil131 import utils
 from resources.lib import process
 
-from kodi65 import addon
-from kodi65 import utils
-import routing
-
-INDEX_MENU = {
-    'trakt': {
-        'name': 'Trakt',
-        'route': 'trakt',
-        'folder': True,
-    },
-    'tmdb': {
-        'name': 'TMDB',
-        'route': 'tmdb',
-        'folder': True,
-    }
-}
-
-DEFAULT_ART = {
-    'icon': 'DefaultFolder.png',
-    'thumb': 'special://home/addons/script.extendedinfo/resources/icon.png'
-}
+MOVIEDB_IMAGE = os.path.join(addon.MEDIA_PATH, "moviedb.png")
+TRAKT_IMAGE = os.path.join(addon.MEDIA_PATH, "trakt.png")
 
 plugin = routing.Plugin()
 
+
 class Main:
+    """Handles plugin list / listitem creation
+    """
 
     def __init__(self):
-        utils.log("version %s started" % addon.VERSION)
+        """Constructor gets actions from args to create the
+        plugin list
+        """
+        utils.log(f"plugin version {addon.VERSION} started")
         addon.set_global("extendedinfo_running", "true")
         self._parse_argv()
         for info in self.infos:
@@ -57,21 +49,28 @@ class Main:
         if args.startswith("---"):
             delimiter = "&"
             args = args[3:]
+        elif args.find("&---"):
+            delimiter = "&"
         else:
             delimiter = "&&"
         for arg in args.split(delimiter):
+            if arg.startswith("---"):
+                arg = arg[3:]
             param = arg.replace('"', '').replace("'", " ")
             if param.startswith('info='):
                 self.infos.append(param[5:])
             else:
                 try:
-                    self.params[param.split("=")[0].lower()] = "=".join(param.split("=")[1:]).strip()
+                    self.params[param.split("=")[0].lower()] = "=".join(
+                        param.split("=")[1:]).strip()
                 except Exception:
                     pass
 
 
 @plugin.route('/tmdb')
 def tmdb():
+    """_sets category options for tmdb
+    """
     xbmcplugin.setPluginCategory(plugin.handle, "TheMovieDB")
     items = [("incinemamovies", addon.LANG(32042)),
              ("upcomingmovies", addon.LANG(32043)),
@@ -91,8 +90,8 @@ def tmdb():
         items += login
     for key, value in items:
         li = xbmcgui.ListItem(label=value)
-        li.setArt({'thumb': 'special://home/addons/script.extendedinfo/resources/tmdb.png'})
-        url = 'plugin://script.extendedinfo?info=%s' % key
+        li.setArt({'thumb': 'DefaultFolder.png'})
+        url = f'plugin://script.extendedinfo?info={key}'
         xbmcplugin.addDirectoryItem(handle=plugin.handle,
                                     url=url,
                                     listitem=li,
@@ -103,6 +102,8 @@ def tmdb():
 
 @plugin.route('/trakt')
 def trakt():
+    """sets category options form trakt
+    """
     xbmcplugin.setPluginCategory(plugin.handle, "Trakt")
     items = [("trendingmovies", addon.LANG(32047)),
              ("traktpopularmovies", addon.LANG(32044)),
@@ -121,8 +122,8 @@ def trakt():
              ("premiereepisodes", addon.LANG(32029))]
     for key, value in items:
         li = xbmcgui.ListItem(label=value)
-        li.setArt({'thumb': 'special://home/addons/script.extendedinfo/resources/trakt.png'})
-        url = 'plugin://script.extendedinfo?info=%s' % key
+        li.setArt({'thumb': 'DefaultFolder.png'})
+        url = f'plugin://script.extendedinfo?info={key}'
         xbmcplugin.addDirectoryItem(handle=plugin.handle,
                                     url=url,
                                     listitem=li,
@@ -133,15 +134,20 @@ def trakt():
 
 @plugin.route('/')
 def root():
-    for i in ['trakt', 'tmdb']:
-        item = INDEX_MENU[i]
-        li_item = xbmcgui.ListItem(item['name'])
-        li_item.setArt(DEFAULT_ART)
-        xbmcplugin.addDirectoryItem(plugin.handle,
-                         plugin.url_for(eval(item['route'])),
-                         li_item, item['folder'])
+    """Sets root plugin folder for TMDB and Trakt
+    """
+    traktitem = xbmcgui.ListItem(label="Trakt")
+    traktitem.setArt({'thumb': TRAKT_IMAGE})
+    tmdbitem = xbmcgui.ListItem(label="TheMovieDB")
+    tmdbitem.setArt({'thumb': MOVIEDB_IMAGE})
+    items = [
+        (plugin.url_for(trakt), traktitem, True),
+        (plugin.url_for(tmdb), tmdbitem, True),
+    ]
     xbmcplugin.addSortMethod(plugin.handle, xbmcplugin.SORT_METHOD_LABEL)
+    xbmcplugin.addDirectoryItems(plugin.handle, items)
     xbmcplugin.endOfDirectory(plugin.handle)
+
 
 if (__name__ == "__main__"):
     Main()

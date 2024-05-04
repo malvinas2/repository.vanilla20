@@ -2,11 +2,9 @@
 <!--Titan-->
 <window>
     <defaultcontrol always="true">6</defaultcontrol>
-		
     <controls>
         <!--Dialog Overlay-->
         <include>DialogOverlayExtra</include>
-
         <!--Dialog Main -->
         <control type="group">
 			<include>animation_window_open_close</include>
@@ -14,9 +12,7 @@
 			<centerleft>50%</centerleft>
             <width>980</width>
             <height>920</height>
-			
             <visible>!Window.IsVisible(virtualkeyboard) + !Window.IsVisible(numericinput)</visible>
-
 			<control type="image">
                 <!--Panel-->
 				<left>0</left>
@@ -36,7 +32,6 @@
                 <texture border="15">diffuse/bgpanel.png</texture>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
             </control>
-
             <!--Header-->
             <control type="label" id="1">
                 <description>Heading</description>
@@ -57,7 +52,6 @@
 					<texture border="5">dialogs/default/inner.png</texture>
 				</control>
             </control>
-			
 			<!-- Color picker panel -->
 			<control type="panel" id="6">
 				<left>40</left>
@@ -124,7 +118,6 @@
 				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(61) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(61) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)]">Conditional</animation>
 			</control>			
-			
 			<!-- Informationen uber Farbe, links unten -->
 			<control type="label">
 				<left>28</left>
@@ -145,7 +138,6 @@
 				<include>DialogLabel</include>
 				<label>[COLOR=$INFO[Skin.String(GeneralHighlightTextColor)]]$INFO[Container(6).NumItems][/COLOR] $LOCALIZE[91830] - [COLOR=$INFO[Skin.String(GeneralHighlightTextColor)]]$INFO[Container(6).CurrentPage]/$INFO[Container(6).NumPages][/COLOR]</label>
 			</control>
-			
 			<!-- Abbrechen-Button, links unten -->
 			<control type="grouplist" id="9001">
 				<left>20</left>
@@ -160,7 +152,6 @@
                     <label>$LOCALIZE[222]</label>
                 </control>
 			</control>
-
         </control>
     </controls>
 </window>

@@ -13,7 +13,6 @@
         <include>Header</include>
  		<!--NowPlaying-->
 		<include>NowPlayingModern</include>
-		
 
         <!--PVR Views-->
         <include>allViews</include>

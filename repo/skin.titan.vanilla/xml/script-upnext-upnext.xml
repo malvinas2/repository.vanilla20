@@ -84,7 +84,7 @@
 						<width>auto</width>
 						<height>35</height>
 						<aligny>center</aligny>
-						<font>font25_title</font>
+						<font>Reg28</font>
 						<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 						<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 						<label>$LOCALIZE[30036]</label>
@@ -95,7 +95,7 @@
 						<width>auto</width>
 						<height>35</height>
 						<aligny>center</aligny>
-						<font>font25_title</font>
+						<font>Reg28</font>
 						<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 						<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 						<label>$ADDON[service.upnext 30008]</label>

@@ -16,7 +16,6 @@
  
 		<!-- all Views -->
         <include>allViews</include>
-	
 		
         <!--Sub Menu Tab Left-->
         <include condition="!Skin.HasSetting(DisableSideBladeIndicator)">SideBladeMenuTabLeft</include>
@@ -44,22 +43,20 @@
                 <ondown>9000</ondown>
                 <orientation>vertical</orientation>
                 <!--Buttons-->
-
                <control type="button" id="3">
 					<description>Sort by button</description>
 					<include>SideBladeMenuButton</include>
-					<label>103</label>
+					<label>$LOCALIZE[103]</label>
 				</control>
 				<control type="togglebutton" id="4">
 					<description>Sort asc</description>
 					<include>SideBladeMenuButton</include>
 					<alttexturefocus border="5" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">colors/color_white.png</alttexturefocus>
 					<alttexturenofocus></alttexturenofocus>
-					<label>585</label>
-					<altlabel>584</altlabel>
+					<label>$LOCALIZE[585]</label>
+					<altlabel>$LOCALIZE[584]</altlabel>
 					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
 				</control>
-
 				<control type="edit" id="19">
 					<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
@@ -67,13 +64,13 @@
 					<include>SideBladeMenuButton</include>
 					<textoffsetx>50</textoffsetx>
 					<textoffsety>13</textoffsety>
-					<label>587</label>
+					<label>$LOCALIZE[587]</label>
 				</control>
 				<control type="radiobutton" id="98">
 					<visible>Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
 					<include>SideBladeMenuButton</include>
-					<label>587</label>
+					<label>$LOCALIZE[587]</label>
 					<selected>Container.Filtered</selected>
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>

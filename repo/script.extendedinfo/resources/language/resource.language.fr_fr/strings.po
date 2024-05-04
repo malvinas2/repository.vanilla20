@@ -356,8 +356,8 @@ msgstr "Post-production"
 
 #: \resources\lib\TheMovieDB.py:872
 msgctxt "#32073"
-msgid "Upcoming"
-msgstr ""
+msgid "In production"
+msgstr "En production"
 
 #: \resources\lib\TheMovieDB.py:873
 msgctxt "#32074"
@@ -366,8 +366,8 @@ msgstr "Terminé"
 
 #: \resources\lib\TheMovieDB.py:874
 msgctxt "#32075"
-msgid "Returning"
-msgstr ""
+msgid "Returning series"
+msgstr "Séries de retour"
 
 #: \resources\lib\TheMovieDB.py:875
 msgctxt "#32076"
@@ -536,7 +536,7 @@ msgid "Crew"
 msgstr "Équipe"
 
 msgctxt "#32116"
-msgid "Recommended by TMDB"
+msgid "Recommended By TMDB"
 msgstr "Recommandé par TMDB"
 
 msgctxt "#32117"
@@ -764,3 +764,16 @@ msgstr ""
 msgctxt "#32172"
 msgid "Youtube API Key"
 msgstr ""
+
+msgctxt "#32173"
+msgid "TADB API Key"
+msgstr ""
+
+msgctxt "#32174"
+msgid "OMDb API Key"
+msgstr ""
+
+msgctxt "#32184"
+msgid "ExtendedInfo Script"
+msgstr ""
+

@@ -35,7 +35,6 @@
 		<visible>Control.IsVisible(300) + Container(300).HasPrevious + ![Control.IsVisible(77551) | String.IsEqual(Window(Home).Property(ShowWidget),show)]</visible>
 	</control>
 
-
 	<!-- page button right -->
 	<control type="button">
 		<right>0</right>
@@ -193,7 +192,6 @@
 			<visible>Window.IsActive(Home) + [Skin.String(HomeLayout,1) | Skin.String(HomeLayout,2) | Skin.String(HomeLayout,3) | Skin.String(HomeLayout,1small) | Skin.String(HomeLayout,2small) | Skin.String(HomeLayout,3small) | String.Contains(Skin.String(HomeLayout),hor)] </visible>
 			<visible>Integer.IsGreater(Container(4444).NumItems,0)</visible>
 		</control>
-	
 	</control>
 
 	<!-- battery status -->
@@ -223,7 +221,6 @@
 				<texturebg colordiffuse="$VAR[BatteryColorDiffuse]">touchcontrols/BatteryBack.png</texturebg>
 				<midtexture colordiffuse="$VAR[BatteryColorDiffuse]">touchcontrols/BatteryFront.png</midtexture>
 				<info>System.BatteryLevel</info>
-				
 			</control>
 			<control type="image">
 				<posx>52</posx>
@@ -233,7 +230,7 @@
 				<texture border="2,0,0,0">touchcontrols/BatteryBackCap.png</texture>
 				<colordiffuse>$VAR[BatteryColorDiffuse]</colordiffuse>
 			</control>
-			</control>
+		</control>
 			<control type="label">
 				<posx>120r</posx>
 				<posy>0</posy>
@@ -245,13 +242,13 @@
 				<aligny>center</aligny>
 				<label>$INFO[System.BatteryLevel]</label>
 			</control>
-		</control>
-	</include>
+	</control>
+</include>
     
-    <variable name="BatteryColorDiffuse">
-        <value condition="Window.IsActive(Home) + Skin.String(HomeLayout,lowhorizontal)">$INFO[Skin.String(MainMenuTextColor)]</value>
-        <value>$INFO[Skin.String(FooterTextColor)]</value>
-    </variable>
+<variable name="BatteryColorDiffuse">
+	<value condition="Window.IsActive(Home) + Skin.String(HomeLayout,lowhorizontal)">$INFO[Skin.String(MainMenuTextColor)]</value>
+	<value>$INFO[Skin.String(FooterTextColor)]</value>
+</variable>
 
 <include name="TouchScreenWorkaround">
 	<control type="group">

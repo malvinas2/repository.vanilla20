@@ -2,15 +2,13 @@
 <window>
 	<defaultcontrol always="true">1103</defaultcontrol>
 	<!-- <include>DialogOverlayExtra</include> -->
-	<!-- <depth>DepthOSD</depth> -->
 	<controls>
 		<include>DialogOverlayExtra</include>
-		
 		<control type="group" id="1">
-			<include>animation_window_open_close</include>
-			<visible>!Window.IsActive(1101) + !Window.IsActive(GameVideoFilter) + !Window.IsActive(GameStretchMode) + !Window.IsActive(GameControllers) + !Window.IsActive(GameVideoRotation) + !Window.IsActive(InGameSaves)</visible>
-			
+			<!-- <include>animation_window_open_close</include> -->
+			<visible>!Window.IsActive(1121) + !Window.IsActive(GameVideoFilter) + !Window.IsActive(GameStretchMode) + !Window.IsActive(GameControllers) + !Window.IsActive(GameVideoRotation) + !Window.IsActive(InGameSaves)</visible>
 			<control type="group" id="10">
+				<include>animation_window_open_close</include>
 				<visible>System.GetBool(gamesgeneral.showosdhelp)</visible>
 				<defaultcontrol always="true">1103</defaultcontrol>
 				<centerleft>50%</centerleft>
@@ -18,7 +16,6 @@
 				<centertop>50%</centertop>
 				<width>700</width>
 				<animation effect="fade" time="200">VisibleChange</animation>
-				
 				<control type="image">
                     <width>700</width>
                     <height>1040</height>
@@ -39,14 +36,12 @@
 				
 				<!-- Header-->
                 <control type="label" id="2">
-                    <!-- <posx>300</posx> -->
                     <posy>10</posy>
                     <width>700</width>
                     <include>DialogHeader</include>
                     <label>$LOCALIZE[35221]</label>
                     <align>center</align>
                 </control>
-				
 				<control type="group" id="1000">
 					<top>80</top>
 					<control type="group" id="1100">
@@ -86,58 +81,83 @@
 			</control>
 			<control type="group" id="20">
 				<visible>!System.GetBool(gamesgeneral.showosdhelp)</visible>
-				<centerleft>50%</centerleft>
-				<height>500</height>
-				<centertop>50%</centertop>
-				<width>700</width>
-				<animation effect="fade" time="200">VisibleChange</animation>
-				<control type="image" id="3">
-                    <width>700</width>
-                    <height>600</height>
-					<texture border="15">diffuse/bgpanel.png</texture>
-					<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
-<!-- 				<texture border="5">diffuse/panel.png</texture>
-					<colordiffuse>$VAR[ViewDetailsPanelColor]</colordiffuse> -->
-				</control>
+				<animation effect="fade" end="0" time="0" reversible="false" condition="Window.IsVisible(yesnodialog) | Window.IsVisible(addonsettings)">Conditional</animation>
+				<animation type="WindowOpen">
+					<effect type="slide" start="1200" end="0" time="250" tween="cubic" easing="inout" />
+				</animation>
+				<animation type="WindowClose">
+					<effect type="slide" start="0" end="1200" time="250" tween="cubic" easing="inout" />
+				</animation>
+				 <!--Panel-->
 				<control type="image">
-                    <width>700</width>
-                    <height>600</height>
-					<bordersize>10</bordersize>
+					<posx>630</posx>
+					<posy>0</posy>
+					<width>1340</width>
+					<height>100%</height>
 					<texture border="15">diffuse/bgpanel.png</texture>
 					<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
-<!-- 				<texture border="5">diffuse/panel.png</texture>
-					<colordiffuse>$VAR[ViewDetailsPanelColor]</colordiffuse> -->
 				</control>
-				
-				<!-- Header-->
-                <control type="label">
-                    <!-- <posx>100</posx> -->
-                    <posy>10</posy>
-                    <width>700</width>
-                    <include>DialogHeader</include>
-                    <label>$LOCALIZE[35221]</label>
-                    <align>center</align>
-                </control>
-				
-				<control type="group" id="2000">
-					<top>80</top>
-					<control type="list" id="1103">
+				<!-- close dialog -->
+				<control type="group">
+					<include>animation_fade_visible_hidden</include>
+					<right>60</right>
+					<width>60</width>
+					<posy>40</posy>
+					<include condition="Skin.HasSetting(EnableTouchSupport)">close_button</include>
+				</control>
+			    <!--Header-->
+				<control type="label">
+					<description>Heading</description>
+					<posx>700</posx>
+					<posy>10</posy>
+					<width>1200</width>
+					<font>Bold45</font>
+					<textcolor>$INFO[Skin.String(GeneralHighlightTextColor)]</textcolor>
+					<align>left</align>
+					<height>100</height>
+					<label>$LOCALIZE[35221]</label>
+				</control>
+	            <control type="image">
+					<posx>680</posx>
+					<posy>220</posy>
+					<width>1200</width>
+					<height>670</height>
+					<texture border="5">dialogs/default/inner.png</texture>
+				</control>
+				<control type="group" id="11000">
+					<description>Control Area</description>
+					<posx>680</posx>
+					<posy>230</posy>
+					<width>1200</width>
+					<height>660</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<top>230</top>
+					<control type="panel" id="1103">
+					<!-- it must be 'panel' not 'list' to loose the focus -->
+					<!-- https://forum.kodi.tv/showthread.php?tid=161703 -->
 						<scrolltime tween="quadratic">300</scrolltime>
-						<defaultcontrol always="true">2101</defaultcontrol>
+						<defaultcontrol always="false">2101</defaultcontrol>
 						<height max="550">auto</height>
 						<orientation>vertical</orientation>
-						<itemlayout condition="!Control.IsVisible(2200)" width="700" height="80">
+						<onup>1103</onup>
+						<ondown>1103</ondown>
+						<onleft>30</onleft>
+						<onright>30</onright>
+						<itemlayout  width="1200" height="64">
 							<control type="image">
 								<left>8</left>
-								<top>8</top>
-								<width>64</width>
-								<height>64</height>
+								<top>4</top>
+								<width>52</width>
+								<height>52</height>
 								<info>ListItem.Icon</info>
+								<colordiffuse>$INFO[Skin.String(ViewDetailsListItemTextColor)]</colordiffuse>
 							</control>
 							<control type="label">
 								<left>80</left>
-								<width>600</width>
-								<height>80</height>
+								<width>1200</width>
+								<height>64</height>
 								<info>ListItem.Label</info>
 								<font>Reg26</font>
 								<align>left</align>
@@ -147,68 +167,42 @@
 							</control>
 							<control type="label">
 								<right>20</right>
-								<width>600</width>
-								<height>80</height>
+								<width>1200</width>
+								<height>64</height>
 								<info>ListItem.Label2</info>
 								<font>Reg26</font>
 								<align>right</align>
-								<aligny>center</aligny>
-								<textcolor>grey</textcolor>
-<!-- 								<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
-								<selectedcolor>$VAR[ViewDetailsFocusColor]</selectedcolor> -->
-							</control>
-						</itemlayout>
-						<itemlayout condition="Control.IsVisible(2200)" width="688" height="80">
-							<control type="image">
-								<left>8</left>
-								<top>8</top>
-								<width>64</width>
-								<height>64</height>
-								<info>ListItem.Icon</info>
-							</control>
-							<control type="label">
-								<left>80</left>
-								<width>600</width>
-								<height>80</height>
-								<info>ListItem.Label</info>
-								<font>Reg26</font>
-								<align>left</align>
 								<aligny>center</aligny>
 								<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 								<selectedcolor>$VAR[ViewDetailsFocusColor]</selectedcolor>
 							</control>
-							<control type="label">
-								<right>20</right>
-								<width>600</width>
-								<height>80</height>
-								<info>ListItem.Label2</info>
-								<font>Reg26</font>
-								<align>right</align>
-								<aligny>center</aligny>
-								<textcolor>grey</textcolor>
-<!-- 								<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
-								<selectedcolor>$VAR[ViewDetailsFocusColor]</selectedcolor> -->
+							<control type="image">
+								<left>8</left>
+								<bottom>4</bottom>
+								<width>1200</width>
+								<texture>dialogs/default/separator.png</texture>
 							</control>
 						</itemlayout>
-						<focusedlayout condition="!Control.IsVisible(2200)" width="700" height="80">
+						<focusedlayout width="1200" height="64">
 							<control type="image">
-								<width>500</width>
-								<height>80</height>
+								<width>1200</width>
+								<height>60</height>
 								<colordiffuse>$VAR[ViewDetailsFocusColor]</colordiffuse>
 								<texture border="5">diffuse/panel.png</texture>
-								<!-- <visible>Control.HasFocus(1103)</visible> -->
+								<!-- <visible>!Control.HasFocus(30)</visible> -->
 							</control>
 							<control type="image">
 								<left>8</left>
-								<top>8</top>
-								<width>64</width>
-								<height>64</height>
+								<top>4</top>
+								<width>52</width>
+								<height>52</height>
+								<colordiffuse>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</colordiffuse>
 								<info>ListItem.Icon</info>
 							</control>
 							<control type="label">
 								<left>80</left>
-								<width>600</width>
-								<height>80</height>
+								<width>1200</width>
+								<height>64</height>
 								<info>ListItem.Label</info>
 								<font>Reg26</font>
 								<align>left</align>
@@ -217,107 +211,100 @@
 							</control>
 							<control type="label">
 								<right>20</right>
-								<width>600</width>
-								<height>80</height>
+								<width>1200</width>
+								<height>64</height>
 								<info>ListItem.Label2</info>
 								<font>Reg26</font>
 								<align>right</align>
-								<aligny>center</aligny>
-								<textcolor>grey</textcolor>
-							</control>
-
-						</focusedlayout>
-						<focusedlayout condition="Control.IsVisible(2200)" width="688" height="80">
-							<control type="image">
-								<width>500</width>
-								<height>80</height>
-								<colordiffuse>$VAR[ViewDetailsFocusColor]</colordiffuse>
-								<texture border="5">diffuse/panel.png</texture>
-								<!-- <visible>Control.HasFocus(1103)</visible> -->
-							</control>
-							<control type="image">
-								<left>8</left>
-								<top>8</top>
-								<width>64</width>
-								<height>64</height>
-								<info>ListItem.Icon</info>
-							</control>
-							<control type="label">
-								<left>80</left>
-								<width>600</width>
-								<height>80</height>
-								<info>ListItem.Label</info>
-								<font>Reg26</font>
-								<align>left</align>
 								<aligny>center</aligny>
 								<textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
 							</control>
-							<control type="label">
-								<right>20</right>
-								<width>600</width>
-								<height>80</height>
-								<info>ListItem.Label2</info>
-								<font>Reg26</font>
-								<align>right</align>
-								<aligny>center</aligny>
-								<textcolor>grey</textcolor>
+							<control type="image">
+								<left>8</left>
+								<bottom>4</bottom>
+								<width>1200</width>
+								<texture>dialogs/default/separator.png</texture>
 							</control>
 						</focusedlayout>
 						<content>
 							<item id="2101">
 								<description>Pause / Resume button</description>
+								<textoffsetx>20</textoffsetx>
+								<include>DialogButtonOther</include>
 								<label>$LOCALIZE[35224]</label>
 								<label2>Select + X</label2>
 								<icon>osd/fullscreen/buttons/play.png</icon>
 								<onclick>Play</onclick>
-								<include>DialogButtonOther</include>
 							</item>
 							<item id="2102">
 								<description>Save / Load button</description>
+								<textoffsetx>20</textoffsetx>
+								<include>DialogButtonOther</include>
 								<label>$LOCALIZE[35249]</label>
 								<icon>osd/fullscreen/buttons/saves.png</icon>
 								<onclick>ActivateWindow(InGameSaves)</onclick>
-								<include>DialogButtonOther</include>
 							</item>
 							<item id="2103">
 								<description>Reset button</description>
+								<textoffsetx>20</textoffsetx>
+								<include>DialogButtonOther</include>
 								<label>$LOCALIZE[13007]</label>
 								<icon>osd/fullscreen/buttons/reset.png</icon>
 								<onclick>PlayerControl(Reset)</onclick>
-								<include>DialogButtonOther</include>
 							</item>
 							<item id="2104">
 								<description>Stop button</description>
+								<textoffsetx>20</textoffsetx>
+								<include>DialogButtonOther</include>
 								<label>$LOCALIZE[35222]</label>
 								<label2>Select + Start</label2>
 								<icon>osd/fullscreen/buttons/stop.png</icon>
 								<onclick>Stop</onclick>
-								<include>DialogButtonOther</include>
 							</item>
 							<item id="2105">
 								<description>Settings button</description>
+								<textoffsetx>20</textoffsetx>
+								<include>DialogButtonOther</include>
 								<label>$LOCALIZE[5]</label>
 								<icon>osd/fullscreen/buttons/settings.png</icon>
 								<onclick>SetProperty(settingslist_content,games,home)</onclick>
 								<onclick>SetProperty(settingslist_header,$LOCALIZE[5],home)</onclick>
-								<onclick>ActivateWindow(1101)</onclick>
-								<include>DialogButtonOther</include>
-							</item>
-							<item id="2111">
-								<description>Close button</description>
-								<label>$LOCALIZE[31308]</label>
-								<icon>osd/fullscreen/buttons/close.png</icon>
-								<onclick>Action(close)</onclick>
-								<include>DialogButtonOther</include>
+								<onclick>ActivateWindow(1121)</onclick>
 							</item>
 						</content>
-						<pagecontrol>2200</pagecontrol>
 					</control>
-					<control type="scrollbar" id="2200">
-						<top>-10</top>
-						<right>0</right>
-						<width>12</width>
-						<orientation>vertical</orientation>
+				</control>
+			
+				<!--Button Group-->
+				<control type="grouplist" id="8002">
+					<posx>680</posx>
+					<posy>940</posy>
+					<orientation>horizontal</orientation>
+					<itemgap>20</itemgap>
+					<onup>11000</onup>
+					<ondown>11000</ondown>
+					<onleft>11000</onleft>
+                <onright>11000</onright>
+					<defaultcontrol always="true">30</defaultcontrol>
+				<!--	<control type="button" id="28">
+						<description>OK</description>
+						<label>$LOCALIZE[186]</label>
+						<include>DialogButtonOther</include>
+						<animation effect="fade" start="100" end="75" time="0" condition="!Control.IsEnabled(28)">Conditional</animation>
+					</control>
+					<control type="button" id="29">
+						<posx>200</posx>
+						<description>Cancel</description>
+						<label>$LOCALIZE[222]</label>
+						<include>DialogButtonOther</include>
+						<animation effect="fade" start="100" end="75" time="0" condition="!Control.IsEnabled(29)">Conditional</animation>
+					</control> -->
+					<control type="button" id="30">
+						<posx>740</posx>
+						<description>Clear</description>
+						<label>$LOCALIZE[31308]</label>
+						<include>DialogButtonOther</include>
+						<onclick>Action(close)</onclick>
 					</control>
 				</control>
 			</control>

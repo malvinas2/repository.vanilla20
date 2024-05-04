@@ -1,20 +1,14 @@
-# -*- coding: utf8 -*-
-
 # Copyright (C) 2015 - Philipp Temminghoff <phil65@kodi.tv>
+# Modifications copyright (C) 2022 - Scott Smart <scott967@kodi.tv>
 # This program is Free Software see LICENSE file for details
 
 import datetime
 
 import xbmcgui
+from resources.kutil131 import ActionHandler, DialogBaseList, addon, busy, windows
 
-from resources.lib.WindowManager import wm
-
-from kodi65 import youtube
-from kodi65 import addon
-from kodi65 import windows
-from kodi65 import busy
-from kodi65 import DialogBaseList
-from kodi65 import ActionHandler
+from resources.kutil131 import utils, youtube
+from resources.lib.windowmanager import wm
 
 ch = ActionHandler()
 
@@ -76,14 +70,14 @@ def get_window(window_type):
         @busy.set_busy
         def __init__(self, *args, **kwargs):
             self.type = kwargs.get('type', "video")
-            super(DialogYoutubeList, self).__init__(*args, **kwargs)
+            super().__init__(*args, **kwargs)
 
         def onClick(self, control_id):
-            super(DialogYoutubeList, self).onClick(control_id)
+            super().onClick(control_id)
             ch.serve(control_id, self)
 
         def onAction(self, action):
-            super(DialogYoutubeList, self).onAction(action)
+            super().onAction(action)
             ch.serve_action(action, self.getFocusId(), self)
 
         @ch.click_by_type("video")
@@ -179,7 +173,8 @@ def get_window(window_type):
             if self.type == "video":
                 more_vids = "{} [B]{}[/B]".format(addon.LANG(32081),
                                                   listitem.getProperty("channel_title"))
-                index = xbmcgui.Dialog().contextmenu(list=[addon.LANG(32069), more_vids])
+                index = xbmcgui.Dialog().contextmenu(
+                    list=[addon.LANG(32069), more_vids])
                 if index < 0:
                     return None
                 elif index == 0:
@@ -199,7 +194,7 @@ def get_window(window_type):
             self.getControl(ID_BUTTON_DURATIONFILTER).setVisible(is_video)
             self.getControl(ID_BUTTON_CAPTIONFILTER).setVisible(is_video)
             self.getControl(ID_BUTTON_DEFINITIONFILTER).setVisible(is_video)
-            super(DialogYoutubeList, self).update_ui()
+            super().update_ui()
 
         @property
         def default_sort(self):
@@ -207,18 +202,20 @@ def get_window(window_type):
 
         def add_filter(self, **kwargs):
             kwargs["typelabel"] = self.FILTERS[kwargs["key"]]
-            super(DialogYoutubeList, self).add_filter(force_overwrite=True,
+            super().add_filter(force_overwrite=True,
                                                       **kwargs)
 
         def fetch_data(self, force=False):
             self.set_filter_label()
             if self.search_str:
-                self.filter_label = addon.LANG(32146) % (self.search_str) + "  " + self.filter_label
+                self.filter_label = addon.LANG(32146) % (
+                    self.search_str) + "  " + self.filter_label
             user_key = addon.setting("Youtube API Key")
             return youtube.search(search_str=self.search_str,
                                   orderby=self.sort,
                                   extended=True,
-                                  filters={item["type"]: item["id"] for item in self.filters},
+                                  filters={item["type"]: item["id"]
+                                           for item in self.filters},
                                   media_type=self.type,
                                   page=self.page_token,
                                   api_key=user_key)

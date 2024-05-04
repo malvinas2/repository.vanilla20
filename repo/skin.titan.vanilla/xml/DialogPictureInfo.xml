@@ -2,7 +2,6 @@
 <!--Titan-->
 <window>
     <defaultcontrol always="true">6</defaultcontrol>
-	
     <controls>
         <control type="group">
             <!--Dialog Overlay-->
@@ -15,7 +14,7 @@
                     <texturefocus></texturefocus>
                     <texturenofocus></texturenofocus>
                 </control>
-                         <!-- background panel -->
+                <!-- background panel -->
                 <control type="image">
                     <posx>367</posx>
                     <posy>236</posy>
@@ -33,7 +32,6 @@
                     <bordersize>10</bordersize>
                     <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
                 </control>
-
                 <!--Header-->
                 <control type="label">
                     <description>Heading</description>

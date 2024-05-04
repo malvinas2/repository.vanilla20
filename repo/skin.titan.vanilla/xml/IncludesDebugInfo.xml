@@ -156,6 +156,16 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
+                <label>AddonBrowser.xml</label>
+                <visible>Window.IsVisible(AddonBrowser.xml)</visible>
+            </control>
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <font>Reg26</font>
+                <align>left</align>
                 <label>CustomSettings.xml</label>
                 <visible>Window.IsVisible(CustomSettings.xml)</visible>
             </control>
@@ -196,6 +206,26 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
+                <label>MyFavourites.xml</label>
+                <visible>Window.IsVisible(MyFavourites.xml)</visible>
+            </control>
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <font>Reg26</font>
+                <align>left</align>
+                <label>MyGames.xml</label>
+                <visible>Window.IsVisible(MyGames.xml)</visible>
+            </control>
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <font>Reg26</font>
+                <align>left</align>
                 <label>MyMusicNav.xml</label>
                 <visible>Window.IsVisible(MyMusicNav.xml)</visible>
             </control>
@@ -206,8 +236,8 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>MyMusicPlaylist.xml</label>
-                <visible>Window.IsVisible(MyMusicPlaylist.xml)</visible>
+                <label>MyPlaylist.xml</label>
+                <visible>Window.IsVisible(MyPlaylist.xml)</visible>
             </control>
             <control type="label">
                 <width>780</width>
@@ -256,9 +286,49 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>MyPVR.xml</label>
-                <visible>Window.IsVisible(MyPVR.xml)</visible>
+                <label>MyPVRChannels.xml</label>
+                <visible>Window.IsVisible(MyPVRChannels.xml)</visible>
             </control>
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <font>Reg26</font>
+                <align>left</align>
+                <label>MyPVRGuide.xml</label>
+                <visible>Window.IsVisible(MyPVRGuide.xml)</visible>
+            </control>			
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <font>Reg26</font>
+                <align>left</align>
+                <label>MyPVRRecordings.xml</label>
+                <visible>Window.IsVisible(MyPVRRecordings.xml)</visible>
+            </control>			
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <font>Reg26</font>
+                <align>left</align>
+                <label>MyPVRSearch.xml</label>
+                <visible>Window.IsVisible(MyPVRSearch.xml)</visible>
+            </control>			
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <font>Reg26</font>
+                <align>left</align>
+                <label>MyPVRTimers.xml</label>
+                <visible>Window.IsVisible(MyPVRTimers.xml)</visible>
+            </control>			
             <control type="label">
                 <width>780</width>
                 <height>21</height>
@@ -268,16 +338,6 @@
                 <align>left</align>
                 <label>MyVideoNav.xml</label>
                 <visible>Window.IsVisible(MyVideoNav.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
-                <label>MyVideoPlaylist.xml</label>
-                <visible>Window.IsVisible(MyVideoPlaylist.xml)</visible>
             </control>
             <control type="label">
                 <width>780</width>
@@ -367,16 +427,6 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogAlbumInfo.xml</label>
-                <visible>Window.IsVisible(DialogAlbumInfo.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
                 <label>DialogBusy.xml</label>
                 <visible>Window.IsVisible(DialogBusy.xml)</visible>
             </control>
@@ -397,9 +447,19 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogContentSettings.xml</label>
-                <visible>Window.IsVisible(DialogContentSettings.xml)</visible>
+                <label>DialogColorPicker.xml</label>
+                <visible>Window.IsVisible(DialogColorPicker.xml)</visible>
             </control>
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <font>Reg26</font>
+                <align>left</align>
+                <label>DialogConfirm.xml</label>
+                <visible>Window.IsVisible(DialogConfirm.xml)</visible>
+            </control>			
             <control type="label">
                 <width>780</width>
                 <height>21</height>
@@ -447,16 +507,6 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogFileStacking.xml</label>
-                <visible>Window.IsVisible(DialogFileStacking.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
                 <label>DialogFullScreenInfo.xml</label>
                 <visible>Window.IsVisible(DialogFullScreenInfo.xml)</visible>
             </control>
@@ -467,28 +517,8 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogKaiToast.xml</label>
-                <visible>Window.IsVisible(DialogKaiToast.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
-                <label>DialogKaraokeSongSelector.xml</label>
-                <visible>Window.IsVisible(DialogKaraokeSongSelector.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
-                <label>DialogKaraokeSongSelectorLarge.xml</label>
-                <visible>Window.IsVisible(DialogKaraokeSongSelectorLarge.xml)</visible>
+                <label>DialogGameControllers.xml</label>
+                <visible>Window.IsVisible(DialogGameControllers.xml)</visible>
             </control>
             <control type="label">
                 <width>780</width>
@@ -517,9 +547,9 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogMusicScan.xml</label>
-                <visible>Window.IsVisible(DialogMusicScan.xml)</visible>
-            </control>
+                <label>DialogMusicInfo.xml</label>
+                <visible>Window.IsVisible(DialogMusicInfo.xml)</visible>
+            </control>			
             <control type="label">
                 <width>780</width>
                 <height>21</height>
@@ -527,19 +557,9 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogMuteBug.xml</label>
-                <visible>Window.IsVisible(DialogMuteBug.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
-                <label>DialogNetworkSetup.xml</label>
-                <visible>Window.IsVisible(DialogNetworkSetup.xml)</visible>
-            </control>
+                <label>DialogNotification.xml</label>
+                <visible>Window.IsVisible(DialogNotification.xml)</visible>
+            </control>					
             <control type="label">
                 <width>780</width>
                 <height>21</height>
@@ -549,36 +569,6 @@
                 <align>left</align>
                 <label>DialogNumeric.xml</label>
                 <visible>Window.IsVisible(DialogNumeric.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
-                <label>DialogOK.xml</label>
-                <visible>Window.IsVisible(DialogOK.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
-                <label>DialogPeripheralManager.xml</label>
-                <visible>Window.IsVisible(DialogPeripheralManager.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
-                <label>DialogPeripheralSettings.xml</label>
-                <visible>Window.IsVisible(DialogPeripheralSettings.xml)</visible>
             </control>
             <control type="label">
                 <width>780</width>
@@ -597,9 +587,9 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogProgress.xml</label>
-                <visible>Window.IsVisible(DialogProgress.xml)</visible>
-            </control>
+                <label>DialogPlayerProcessInfo.xml</label>
+                <visible>Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
+            </control>			
             <control type="label">
                 <width>780</width>
                 <height>21</height>
@@ -637,16 +627,6 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogPVRGuideInfo.xml</label>
-                <visible>Window.IsVisible(DialogPVRGuideInfo.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
                 <label>DialogPVRChannelGuide.xml</label>
                 <visible>Window.IsVisible(DialogPVRChannelGuide.xml)</visible>
             </control>
@@ -667,9 +647,9 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogPVRRecordingInfo.xml</label>
-                <visible>Window.IsVisible(DialogPVRRecordingInfo.xml)</visible>
-            </control>
+                <label>DialogPlayerProcessInfo.xml</label>
+                <visible>Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
+            </control>			
             <control type="label">
                 <width>780</width>
                 <height>21</height>
@@ -677,9 +657,19 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogPVRTimerSettings.xml</label>
-                <visible>Window.IsVisible(DialogPVRTimerSettings.xml)</visible>
-            </control>
+                <label>DialogPVRInfo.xml</label>
+                <visible>Window.IsVisible(DialogPVRInfo.xml)</visible>
+            </control>			
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <font>Reg26</font>
+                <align>left</align>
+                <label>DialogPVRRadioRDSInfo.xml</label>
+                <visible>Window.IsVisible(DialogPVRRadioRDSInfo.xml)</visible>
+            </control>			
             <control type="label">
                 <width>780</width>
                 <height>21</height>
@@ -707,6 +697,16 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
+                <label>DialogSettings.xml</label>
+                <visible>Window.IsVisible(DialogSettings.xml)</visible>
+            </control>			
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <font>Reg26</font>
+                <align>left</align>
                 <label>DialogSlider.xml</label>
                 <visible>Window.IsVisible(DialogSlider.xml)</visible>
             </control>
@@ -717,9 +717,19 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogSongInfo.xml</label>
-                <visible>Window.IsVisible(DialogSongInfo.xml)</visible>
-            </control>
+                <label>DialogSubMenu.xml</label>
+                <visible>Window.IsVisible(DialogSubMenu.xml)</visible>
+            </control>			
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <font>Reg26</font>
+                <align>left</align>
+                <label>DialogSubtitles.xml</label>
+                <visible>Window.IsVisible(DialogSubtitles.xml)</visible>
+            </control>						
             <control type="label">
                 <width>780</width>
                 <height>21</height>
@@ -747,9 +757,9 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogVideoScan.xml</label>
-                <visible>Window.IsVisible(DialogVideoScan.xml)</visible>
-            </control>
+                <label>DialogVideoManager.xml</label>
+                <visible>Window.IsVisible(DialogVideoManager.xml)</visible>
+            </control>			
             <control type="label">
                 <width>780</width>
                 <height>21</height>
@@ -767,9 +777,9 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>DialogYesNo.xml</label>
-                <visible>Window.IsVisible(DialogYesNo.xml)</visible>
-            </control>
+                <label>EventLog.xml</label>
+                <visible>Window.IsVisible(EventLog.xml)</visible>
+            </control>			
             <control type="label">
                 <width>780</width>
                 <height>21</height>
@@ -787,9 +797,9 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>LockSettings.xml</label>
-                <visible>Window.IsVisible(LockSettings.xml)</visible>
-            </control>
+                <label>GameOSD.xml</label>
+                <visible>Window.IsVisible(GameOSD.xml)</visible>
+            </control>		
             <control type="label">
                 <width>780</width>
                 <height>21</height>
@@ -797,28 +807,8 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>MusicKaraokeLyrics.xml</label>
-                <visible>Window.IsVisible(MusicKaraokeLyrics.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
-                <label>script-XBMC_Lyrics-main.xml</label>
-                <visible>Window.IsVisible(script-XBMC_Lyrics-main.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
-                <label>script-XBMC-Subtitles-main.xml</label>
-                <visible>Window.IsVisible(script-XBMC-Subtitles-main.xml)</visible>
+                <label>script-cu-lrclyrics-main.xml</label>
+                <visible>Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
             </control>
             <control type="label">
                 <width>780</width>
@@ -829,16 +819,6 @@
                 <align>left</align>
                 <label>MusicOSD.xml</label>
                 <visible>Window.IsVisible(MusicOSD.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
-                <label>MusicOverlay.xml</label>
-                <visible>Window.IsVisible(MusicOverlay.xml)</visible>
             </control>
             <control type="label">
                 <width>780</width>
@@ -867,9 +847,9 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
-                <label>ProfileSettings.xml</label>
-                <visible>Window.IsVisible(ProfileSettings.xml)</visible>
-            </control>
+                <label>Pointer.xml</label>
+                <visible>Window.IsVisible(Pointer.xml)</visible>
+            </control>			
             <control type="label">
                 <width>780</width>
                 <height>60</height>
@@ -927,6 +907,16 @@
                 <shadowcolor>black</shadowcolor>
                 <font>Reg26</font>
                 <align>left</align>
+                <label>Startup.xml</label>
+                <visible>Window.IsVisible(Startup.xml)</visible>
+            </control>			
+            <control type="label">
+                <width>780</width>
+                <height>21</height>
+                <textcolor>white</textcolor>
+                <shadowcolor>black</shadowcolor>
+                <font>Reg26</font>
+                <align>left</align>
                 <label>VideoOSD.xml</label>
                 <visible>Window.IsVisible(VideoOSD.xml)</visible>
             </control>
@@ -939,26 +929,6 @@
                 <align>left</align>
                 <label>VideoOSDBookmarks.xml</label>
                 <visible>Window.IsVisible(VideoOSDBookmarks.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
-                <label>VideoOSDSettings.xml</label>
-                <visible>Window.IsVisible(VideoOSDSettings.xml)</visible>
-            </control>
-            <control type="label">
-                <width>780</width>
-                <height>21</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <font>Reg26</font>
-                <align>left</align>
-                <label>VideoOverlay.xml</label>
-                <visible>Window.IsVisible(VideoOverlay.xml)</visible>
             </control>
             <control type="label">
                 <width>780</width>

@@ -15,8 +15,6 @@
 		<include>animation_view_change</include>
 	<!-- <include>IncludesFooter</include> -->
 
-
-		
 		<control type="group">
 			<top>150</top>
 			<!-- <bottom>125</bottom> -->
@@ -30,7 +28,6 @@
 				<colordiffuse>$VAR[ViewDetailsPanelColor]</colordiffuse>
 				<bordersize>15</bordersize>
 			</control>
-			
 			
 			<control type="image">
 				<posx>480</posx>
@@ -101,7 +98,7 @@
 						<height>55</height>
 						<aligny>center</aligny>
 						<font>font13</font>
-						<label>32297</label>
+						<label>$LOCALIZE[32297]</label>
 						<visible>Control.IsVisible(991)</visible>
 					</control>
 					<control type="label" id="991">
@@ -117,7 +114,7 @@
 					<top>0</top>
 					<width>500</width>
 					<height>120</height>
-					<label>32299</label>
+					<label>$LOCALIZE[32299]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font14</font>
@@ -616,7 +613,6 @@
 						</control>
 					</control>
 				</focusedlayout>
-			
 			</control>
 
 			<control type="list" id="51">
@@ -667,7 +663,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Genre]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)</visible>
@@ -678,7 +674,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.TVShowTitle]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(seasons) | Container.Content(episodes)</visible>
@@ -689,7 +685,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Property(artist_genre)]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(artists)</visible>
@@ -700,7 +696,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Artist]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(musicvideos) | Container.Content(albums) | Container.Content(songs)</visible>
@@ -711,7 +707,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Property(Starttime)]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(livetv)</visible>
@@ -722,7 +718,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Label2]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(actors) | Container.Content(directors)</visible>
@@ -772,7 +768,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Genre]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
 						<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
@@ -795,7 +791,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Genre]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
@@ -807,7 +803,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.TVShowTitle]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
 						<visible>Container.Content(seasons) | Container.Content(episodes)</visible>
@@ -819,7 +815,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.TVShowTitle]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(seasons) | Container.Content(episodes)</visible>
@@ -831,7 +827,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Property(artist_genre)]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
 						<visible>Container.Content(artists)</visible>
@@ -843,7 +839,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Property(artist_genre)]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(artists)</visible>
@@ -855,7 +851,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Artist]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
 						<visible>Container.Content(musicvideos) | Container.Content(albums) | Container.Content(songs)</visible>
@@ -867,7 +863,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Artist]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(musicvideos) | Container.Content(albums) | Container.Content(songs)</visible>
@@ -879,7 +875,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Property(Starttime)]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
 						<visible>Container.Content(livetv)</visible>
@@ -891,7 +887,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Property(Starttime)]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(livetv)</visible>
@@ -903,7 +899,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Property(Starttime)]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(livetv)</visible>
@@ -916,7 +912,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Label2]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
 						<visible>Container.Content(actors) | Container.Content(directors)</visible>
@@ -928,7 +924,7 @@
 						<height>50</height>
 						<width>928</width>
 						<aligny>center</aligny>
-						<font>font27</font>
+						<font>Reg28</font>
 						<label>$INFO[ListItem.Label2]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 						<visible>Container.Content(actors) | Container.Content(directors)</visible>
@@ -1037,7 +1033,6 @@
 				</control>
 			</control>
 
-
 			<control type="label" id="999">
 				<left>436</left>
 				<top>0</top>
@@ -1068,7 +1063,6 @@
 				<texture>special://home/addons/script.globalsearch/resources/skins/default/media/globalsearch-logo-text.png</texture>
 			</control>
 		</control>
-		
 		
 		<!--vertical Scollbar right-->
 		<control type="scrollbar" id="60">

@@ -4,6 +4,18 @@
 		<category help="" id="general" label="128">
 <!--         <setting type="sep"/> -->
 			<group id="1">
+				<setting help="" id="tmdb_tok" label="32172" type="string">
+					<level>0</level>
+					<visible>false</visible>
+					<default>35704479108606</default>
+					<constraints>
+						<allowempty>false</allowempty>
+					</constraints>
+					<control format="string" type="edit">
+						<heading>32172</heading>
+						<hidden>true</hidden>
+					</control>
+				</setting>
 				<setting help="" id="infodialog_onclick" label="32163" type="boolean">
 					<level>0</level>
 					<default>true</default>
@@ -12,6 +24,12 @@
 				<setting help="" id="classic_search" label="32084" type="boolean">
 					<level>0</level>
 					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+				<setting help="" id="first_start_infodialog" label="29915" type="boolean">
+					<level>0</level>
+					<visible>false</visible>
+					<default>true</default>
 					<control type="toggle"/>
 				</setting>
 				<setting help="" id="delete cache" label="32164" type="action">
@@ -32,6 +50,48 @@
 						<heading>32172</heading>
 					</control>
 				</setting>
+				<setting help="" id="TADB API Key" label="32173" type="string">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control format="string" type="edit">
+						<heading>32173</heading>
+					</control>
+				</setting>
+				<setting help="" id="OMDb API Key" label="32174" type="string">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control format="string" type="edit">
+						<heading>32174</heading>
+					</control>
+				</setting>
+				<setting help="" id="viewtype_selection" label="582" type="string">
+					<level>0</level>
+					<visible>false</visible>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control format="string" type="edit">
+						<heading>582</heading>
+					</control>
+				</setting>
+				<setting help="" id="session_id" label="560" type="string">
+					<level>0</level>
+					<visible>false</visible>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control format="string" type="edit">
+						<heading>560</heading>
+					</control>
+				</setting>
 			</group>
 		</category>
 		<category help="" id="TheMovieDB" label="32171">
@@ -41,35 +101,39 @@
 					<default>false</default>
 					<control type="toggle"/>
 				</setting>
-				<setting help="" id="LanguageID" label="32159" type="integer">
+				<setting help="" id="LanguageID" label="32159" type="string">
 					<level>0</level>
-					<default>5</default>
+					<default>en</default>
 					<constraints>
 						<options>
-							<option label="bg">0</option>
-							<option label="cs">1</option>
-							<option label="da">2</option>
-							<option label="de">3</option>
-							<option label="el">4</option>
-							<option label="en">5</option>
-							<option label="es">6</option>
-							<option label="fi">7</option>
-							<option label="fr">8</option>
-							<option label="he">9</option>
-							<option label="hr">10</option>
-							<option label="hu">11</option>
-							<option label="it">12</option>
-							<option label="ja">13</option>
-							<option label="ko">14</option>
-							<option label="nl">15</option>
-							<option label="no">16</option>
-							<option label="pl">17</option>
-							<option label="pt">18</option>
-							<option label="ru">19</option>
-							<option label="sl">20</option>
-							<option label="sv">21</option>
-							<option label="tr">22</option>
-							<option label="zh">23</option>
+							<option label="Arabic">ar</option>
+							<option label="Bulgarian">bg</option>
+							<option label="Cantonese">cn</option>
+							<option label="Catalan">ca</option>
+							<option label="Croatian">hr</option>
+							<option label="Czech">cs</option>
+							<option label="Danish">da</option>
+							<option label="Dutch">nl</option>
+							<option label="English">en</option>
+							<option label="Finnish">fi</option>
+							<option label="French">fr</option>
+							<option label="German">de</option>
+							<option label="Greek">el</option>
+							<option label="Hebrew">he</option>
+							<option label="Hungarian">hu</option>
+							<option label="Irish">ga</option>
+							<option label="Italian">it</option>
+							<option label="Japanese">ja</option>
+							<option label="Korean">ko</option>
+							<option label="Mandarin">zh</option>
+							<option label="Norwegian">no</option>
+							<option label="Polish">pl</option>
+							<option label="Portuguese">pt</option>
+							<option label="Russian">ru</option>
+							<option label="Slovenian">sl</option>
+							<option label="Spanish">es</option>
+							<option label="Swedish">sv</option>
+							<option label="Turkish">tr</option>
 						</options>
 					</constraints>
 					<control format="string" type="list">

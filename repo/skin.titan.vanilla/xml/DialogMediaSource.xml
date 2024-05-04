@@ -2,17 +2,14 @@
 <!--Titan-->
 <window>
     <defaultcontrol always="true">9002</defaultcontrol>
-	
     <controls>
         <!--Dialog Overlay-->
         <include>DialogOverlayExtra</include>
 		<include condition="Skin.HasSetting(EnableTouchSupport)">Footer</include>
-		
         <!--Dialog Media Source-->
         <control type="group">
            <include>animation_window_open_close</include>
             <visible>!Window.IsVisible(virtualkeyboard) + !Window.IsVisible(filebrowser) + !Window.IsVisible(networksetup)</visible>
-
 			<control type="image">
                 <!--Panel-->
                  <posx>445</posx>
@@ -32,7 +29,6 @@
 				<bordersize>10</bordersize>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
             </control>
-			
             <control type="image">
                 <posx>479</posx>
                 <posy>413</posy>
@@ -74,7 +70,7 @@
                     <height>30</height>
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
-                    <label>1021</label>
+                    <label>$LOCALIZE[1021]</label>
                     <include>DialogLabel</include>
                 </control>
                 <control type="list" id="10">
@@ -244,7 +240,7 @@
                     <height>30</height>
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
-                    <label>1022</label>
+                    <label>$LOCALIZE[1022]</label>
                 </control>
 				<control type="edit" id="12">
                     <description>Name Button</description>
@@ -287,7 +283,7 @@
 				<width>980</width>
                 <control type="button" id="18">
                     <description>OK</description>
-                    <label>186</label>
+                    <label>$LOCALIZE[186]</label>
                     <include>DialogButtonOther</include>
                     <onleft>19</onleft>
                     <onright>19</onright>

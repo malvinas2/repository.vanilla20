@@ -7,16 +7,13 @@
 		<left>0</left>
 		<top>0</top>
 	</coordinates>
-	
     <controls>
-
 		<include>DialogOverlayExtra</include>
 		
         <!--File Browser-->
         <control type="group">
             <include>animation_window_open_close</include>
             <visible>!Window.IsActive(virtualkeyboard) + !Window.IsActive(locksettings)</visible>
-
 			<control type="image">
                 <!--Panel-->
                 <posx>445</posx>
@@ -36,7 +33,6 @@
 				<bordersize>10</bordersize>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
             </control>
-
             <control type="image">
                 <posx>479</posx>
                 <posy>300</posy>
@@ -44,7 +40,6 @@
                 <height>481</height>
                 <texture border="5">dialogs/default/inner.png</texture>
             </control>
-
             <control type="image">
                 <posx>1122</posx>
                 <posy>300</posy>
@@ -363,7 +358,6 @@
 				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)]">Conditional</animation>
 			</control>	
-			
 			<!--Buttons-->
             <control type="grouplist" id="8000">
                 <posx>472</posx>
@@ -375,7 +369,7 @@
 				<itemgap>15</itemgap>
                 <control type="button" id="413">
                     <description>OK</description>
-                    <label>186</label>
+                    <label>$LOCALIZE[186]</label>
 					<width>316</width>
                     <include>DialogButtonOther</include>
                     <pulseonselect>false</pulseonselect>

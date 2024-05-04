@@ -21,6 +21,7 @@ class ListBasic(Container):
             key=info_model.get('key', 'results'),
             params=info_model.get('params'),
             filters=self.filters,
+            icon_path=get_setting(info_model['icon_path'], 'str') if 'icon_path' in info_model else None,
             limit=limit or info_model.get('limit'),
             length=length or info_model.get('length'),
             page=page)
@@ -161,7 +162,7 @@ class ListNextRecommendation(Container):
                 item = _get_next_recommendation()
                 try:
                     item = self.tmdb_api.get_next_episode(item['infoproperties']['tmdb_id'], 1, 0)
-                except KeyError:
+                except (KeyError, TypeError):
                     return
             return item
 
@@ -214,7 +215,7 @@ class ListFlatSeasons(Container):
 
 class ListVideos(Container):
     def get_items(self, tmdb_id, tmdb_type, season=None, episode=None, **kwargs):
-        items = self.tmdb_api.get_videos(tmdb_id, tmdb_type, season, episode)
+        items = self.tmdb_api.get_videos_list(tmdb_id, tmdb_type, season, episode)
         self.tmdb_cache_only = True
         self.container_content = convert_type('video', 'container')
         return items

@@ -1,15 +1,12 @@
 <includes>
 	<include name="HomeNetflix">
-		
 		<!--NowPlaying-->
 		<include>NowPlayingModern</include>
         
         <control type="group" id="9000">
             <animation time="300" effect="fade" start="100" end="20" reversible="true" easing="inout" condition="[ControlGroup(9001).HasFocus() + Window.IsActive(home)] | ControlGroup(300).HasFocus() | String.IsEqual(Window(Home).Property(ShowViewSubMenu),show) | Control.HasFocus(300)">Conditional</animation>
-            
             <!-- spotlight -->
             <include condition="!Skin.HasSetting(NetflixHomeDisableFirstRow)">NetFlixHomeSpotLightWidget</include>
-                
             <!-- all widgets -->
             <control type="grouplist" id="77777">
                 <include condition="Skin.HasSetting(NetflixHomeDisableFirstRow)">NetFlixHome_AltHeight_NoSpotLight</include>
@@ -87,14 +84,13 @@
         <!-- Side Menu Small -->
         <include condition="!Skin.HasSetting(NetFlixHome_LargeMenu)">SideBladeMainMenu</include>
     </include>
-    <include name="HomeNetflix2">
-		        
+    
+	<include name="HomeNetflix2">
         <control type="image">
             <width>100%</width>
             <height>100%</height>
             <texture colordiffuse="$VAR[Netflix2_PanelColor]">colors/color_white.png</texture>
         </control>
-        
         <!-- netflix content -->
         <control type="group" id="9000">
             <animation time="300" effect="fade" start="100" end="20" reversible="true" easing="inout" condition="[ControlGroup(9001).HasFocus() + Window.IsActive(home)] | ControlGroup(300).HasFocus() | String.IsEqual(Window(Home).Property(ShowViewSubMenu),show) | Control.HasFocus(300)">Conditional</animation>
@@ -342,12 +338,13 @@
         </control>
         <!-- Side Menu Small -->
         <include condition="!Skin.HasSetting(NetFlixHome_LargeMenu)">SideBladeMainMenu</include>
-        
     </include>
+	
     <variable name="Netflix2_PanelColor">
         <value condition="Skin.String(ViewDetailsPanelColor.base)">$INFO[Skin.String(ViewDetailsPanelColor.base)]</value>
         <value>ff000000</value>
     </variable>
+	
     <variable name="Netflix2_PanelDiffuse">
         <value condition="Skin.String(ViewDetailsPanelColor.base)">$INFO[Skin.String(ViewDetailsPanelColor)]</value>
         <value>ee181818</value>
@@ -371,7 +368,6 @@
                 <aspectratio>stretch</aspectratio>
                 <visible>!Skin.HasSetting(HideWidgetPanelBackground)</visible>
             </control>
-
             <control type="grouplist">
                 <width>47%</width>
                 <left>10</left>
@@ -432,7 +428,7 @@
                     <description>Play</description>
                     <width>320</width>
                     <height>100%</height>
-                    <label>208</label>
+                    <label>$LOCALIZE[208]</label>
                     <onright>52</onright>
                     <onleft>300</onleft>
                     <ondown>77777</ondown>
@@ -447,7 +443,7 @@
                     <description>Info</description>
                     <width>320</width>
                     <height>100%</height>
-                    <label>19033</label>
+                    <label>$LOCALIZE[19033]</label>
                     <onleft>51</onleft>
                     <onright>53</onright>
                     <ondown>77777</ondown>
@@ -552,8 +548,8 @@
                 <visible>Control.IsVisible(1508) + Container(1508).IsUpdating</visible>
             </control>
         </control>
-			
     </include>
+	
 	<variable name="NetFlixHomeSpotLightWidgetContent">
         <value condition="Skin.HasSetting(ShowAllWidgets) + !String.IsEmpty(Container(300).ListItem.Property(widgetPath.99)) + !String.Contains(Container(300).ListItem.Property(widgetPath.99),INCLUDE)">$INFO[Container(300).ListItem.Property(widgetPath.99)]</value>
         <value condition="Skin.HasSetting(ShowAllWidgets) + !String.IsEmpty(Container(300).ListItemAbsolute(0).Property(widgetPath.99)) + !String.Contains(Container(300).ListItemAbsolute(0).Property(widgetPath.99),INCLUDE)">$INFO[Container(300).ListItemAbsolute(0).Property(widgetPath.99)]</value>
@@ -591,7 +587,7 @@
             <align>left</align>
             <font>Reg32</font>
             <textoffsetx>5</textoffsetx>
-            <label>31822</label>
+            <label>$LOCALIZE[31822]</label>
             <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
             <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
             <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetName=$PARAM[skinsetting].label&amp;skinWidgetTarget=$PARAM[skinsetting].target&amp;skinWidgetPath=$PARAM[skinsetting].path)</onclick>
@@ -627,6 +623,7 @@
             <visible>Skin.String($PARAM[skinsetting].path)</visible>
         </control>
     </include>
+	
     <include name="netflix_items_movies">
         <include condition="true" content="netflix_customhub_item" name="netflix_customhub_item">
 			<param name="widgetid" value="510" />
@@ -654,6 +651,7 @@
 			<param name="skinsetting" value="netflixhub-movies-550" />
 		</include>        
     </include>
+	
     <include name="netflix_items_tvshows">
         <include condition="true" content="netflix_customhub_item" name="netflix_customhub_item">
 			<param name="widgetid" value="510" />
@@ -681,12 +679,15 @@
 			<param name="skinsetting" value="netflixhub-tvshows-550" />
 		</include>
     </include>
+	
     <include name="netflix_mainmenu_movies">
         <content target="videos">library://video/movies</content>
     </include>
+	
     <include name="netflix_mainmenu_tvshows">
         <content target="videos">library://video/tvshows</content>
     </include>
+	
     <variable name="netflix2_SubTitle">
         <value condition="String.IsEqual(Window(Home).Property(ListItem.dbtype,episode))">$INFO[Window(Home).Property(ListItem.Label)]</value>
         <value>$INFO[Window(Home).Property(ListItem.TagLine)]</value>

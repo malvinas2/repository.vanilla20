@@ -6,7 +6,6 @@
         <control type="group" id="250">
 			<posy>50</posy>
 			<include>animation_window_open_close</include>
-
 			<control type="image">
                 <!--Panel-->
                 <posx>230</posx>
@@ -26,7 +25,6 @@
 				<bordersize>10</bordersize>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
             </control>
-
             <!--Top Label-->
             <control type="group">
                 <control type="label" id="100">
@@ -84,7 +82,6 @@
                     <pagecontrol>121</pagecontrol>
                     <scrolltime>200</scrolltime>
                     <itemlayout width="950" height="50">
-							
 						<!--Language Flag -->
 						<control type="image">
 							<left>30</left>
@@ -97,7 +94,6 @@
 							<!-- https://forum.kodi.tv/showthread.php?tid=223987 -->
 							<aspectratio>keep</aspectratio>
 						</control>
-							
 						<!--Rating-->
 						<control type="label">
 							<posx>120</posx>
@@ -111,7 +107,6 @@
 							<align>left</align>
 							<label>$INFO[ListItem.ActualIcon]</label>
 						</control>
-							
 						<control type="label">
 							<!--Label 2-->
 							<posx>200</posx>
@@ -157,7 +152,6 @@
                                 <texture background="true">$VAR[LanguageFlagIconPath]$INFO[ListItem.Art(thumb)].png</texture>
                                 <aspectratio>keep</aspectratio>
                             </control>
-                            
                             <!--Rating-->
                             <control type="label">
                                 <posx>120</posx>
@@ -207,7 +201,6 @@
                                 <texture background="true">$VAR[LanguageFlagIconPath]$INFO[ListItem.Art(thumb)].png</texture>
                                 <aspectratio>keep</aspectratio>
                             </control>
-                            
                             <!--Rating-->
                             <control type="label">
                                 <posx>120</posx>
@@ -247,7 +240,6 @@
                         </control>
                     </focusedlayout>
                 </control>
-                
                 <control type="scrollbar" id="121">
                     <posx>1235</posx>
                     <posy>240</posy>
@@ -258,7 +250,6 @@
                     <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)">Conditional</animation>
                     <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)]">Conditional</animation>
                 </control>
-                
 				<control type="label">
                     <!--filename-->
                     <posx>295</posx>
@@ -273,7 +264,6 @@
                     <scroll>true</scroll>
                 </control>
             </control>
-
             <!--Right Menu-->
             <control type="group">
                 <control type="image">
@@ -438,7 +428,6 @@
                     <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)">Conditional</animation>
                     <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)]">Conditional</animation>
                 </control>
-                
             </control>
         </control>
     </controls>

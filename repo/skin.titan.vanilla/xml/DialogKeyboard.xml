@@ -3,14 +3,12 @@
 <window>
     <defaultcontrol always="true">300</defaultcontrol>
     <controls>
-    
         <!--Dialog Overlay-->
 		<control type="group">
 			<visible>!Window.IsActive(Videos) | Window.IsActive(script-skin_helper_service-CustomSearch.xml)</visible>
 			<include>DialogOverlayExtra</include>
 			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
         </control>
-        
         <!--autocompletion -->
         <control type="panel" id="8000">
 		<!-- <control type="panel" id="8000">  List oder Panel als Typ ? -->
@@ -75,8 +73,6 @@
 						<scroll>false</scroll>
 						<textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
 						<selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor>
-						<!-- <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor> -->
-						<!-- <selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor> -->
 						<visible>Control.HasFocus(4444)</visible>
 					</control>
 					<control type="label"> <!--label-->
@@ -87,8 +83,6 @@
 						<scroll>false</scroll>
 						<textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
 						<selectedcolor>$INFO[Skin.String(ButtonTextColor)]</selectedcolor>
-						<!-- <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor> -->
-						<!-- <selectedcolor>$INFO[Skin.String(ButtonTextColor)]</selectedcolor> -->
 						<visible>!Control.HasFocus(4444)</visible>
 					</control>
                     <control type="button">
@@ -100,7 +94,6 @@
 			</focusedlayout>
 			<content>$VAR[DialogKeyboardAutoComplete]</content>
 		</control>
-
         <control type="group">
             <height>530</height>
             <visible>!Window.IsVisible(numericinput)</visible>
@@ -129,9 +122,8 @@
             <!-- Heading -->
             <control type="label" id="311">
                 <animation effect="fade" end="0" time="0" condition="true">Conditional</animation>
-                <label>13406</label>
+                <label>$LOCALIZE[13406]</label>
             </control>
-
             <!-- keyboard commands/options -->
             <control type="grouplist" id="9000">
                 <left>60</left>
@@ -143,7 +135,6 @@
                 <ondown>312</ondown>
                 <orientation>vertical</orientation>
                 <scrolltime tween="sine" easing="out">240</scrolltime>
-
                 <!-- Layout -->
                 <control type="button" id="309">
                     <width>100%</width>
@@ -151,9 +142,8 @@
                     <onleft>111</onleft>
                     <onright>100</onright>
                     <include>KeyBoardKeyRadio</include>
-                    <label>20177</label>
+                    <label>$LOCALIZE[20177]</label>
                 </control>
-
                 <!-- Shift -->
                 <control type="radiobutton" id="302">
                     <width>100%</width>
@@ -161,9 +151,8 @@
                     <onleft>131</onleft>
                     <onright>120</onright>
                     <include>KeyBoardKeyRadio</include>
-                    <label>20178</label>
+                    <label>$LOCALIZE[20178]</label>
                 </control>
-
                 <!-- Caps lock -->
                 <control type="radiobutton" id="303">
                     <width>100%</width>
@@ -171,9 +160,8 @@
                     <onleft>151</onleft>
                     <onright>140</onright>
                     <include>KeyBoardKeyRadio</include>
-                    <label>20179</label>
+                    <label>$LOCALIZE[20179]</label>
                 </control>
-
                 <!-- Symbols -->
                 <control type="radiobutton" id="304">
                     <width>100%</width>
@@ -181,9 +169,8 @@
                     <onleft>171</onleft>
                     <onright>160</onright>
                     <include>KeyBoardKeyRadio</include>
-                    <label>20180</label>
+                    <label>$LOCALIZE[20180]</label>
                 </control>
-
                 <!-- IP address -->
                 <control type="button" id="307">
                     <width>100%</width>
@@ -191,10 +178,9 @@
                     <onleft>306</onleft>
                     <onright>32</onright>
                     <include>KeyBoardKeyRadio</include>
-                    <label>1006</label>
+                    <label>$LOCALIZE[1006]</label>
 					<visible>!Control.IsVisible(310)</visible>
                 </control>
-
 				<!-- Password -->
                 <control type="button" id="310">
                     <width>100%</width>
@@ -203,9 +189,7 @@
                     <onright>100</onright>
                     <include>KeyBoardKeyRadio</include>
                 </control>
-
 			</control>
-
             <!-- Keyboard Edit -->
             <control type="edit" id="312">
                 <top>20</top>
@@ -228,7 +212,6 @@
                 <right>60</right>
                 <top>120</top>
                 <width>1400</width>
-
                 <!-- First row -->
                 <control type="grouplist" id="1000">
                     <right>0</right>
@@ -240,7 +223,6 @@
                     <onright>309</onright>
                     <onup>312</onup>
                     <orientation>horizontal</orientation>
-
                     <control type="button" id="100">
                         <!-- (0,0) key button -->
                         <ondown>120</ondown>
@@ -302,7 +284,6 @@
                         <include>KeyBoardKey</include>
                     </control>
                 </control>
-
                 <!-- Second row -->
                 <control type="grouplist" id="2000">
                     <right>0</right>
@@ -313,7 +294,6 @@
                     <onleft>302</onleft>
                     <onright>302</onright>
                     <orientation>horizontal</orientation>
-
                     <control type="button" id="120">
                         <!-- (1,0) key button -->
                         <onup>100</onup>
@@ -387,7 +367,6 @@
                         <include>KeyBoardKey</include>
                     </control>
                 </control>
-
                 <!-- Third row -->
                 <control type="grouplist" id="3000">
                     <right>0</right>
@@ -398,7 +377,6 @@
                     <onleft>303</onleft>
                     <onright>303</onright>
                     <orientation>horizontal</orientation>
-
                     <control type="button" id="140">
                         <!-- (2,0) key button -->
                         <onup>120</onup>
@@ -472,7 +450,6 @@
                         <include>KeyBoardKey</include>
                     </control>
                 </control>
-
                 <!-- Forth row -->
                 <control type="grouplist" id="4000">
                     <right>0</right>
@@ -483,7 +460,6 @@
                     <onleft>304</onleft>
                     <onright>304</onright>
                     <orientation>horizontal</orientation>
-
                     <control type="button" id="160">
                         <!-- (3,0) key button -->
                         <onup>140</onup>
@@ -557,7 +533,6 @@
                         <include>KeyBoardKey</include>
                     </control>
                 </control>
-
                 <!-- Fifth row -->
                 <control type="grouplist" id="5000">
                     <right>0</right>
@@ -569,19 +544,18 @@
                     <onright>307</onright>
                     <ondown>312</ondown>
                     <orientation>horizontal</orientation>
-
                     <!-- SPACE -->
                     <control type="button" id="32">
                         <onup>4000</onup>
                         <width>690</width>
-                        <label>20182</label>
+                        <label>$LOCALIZE[20182]</label>
                         <include>KeyBoardKey</include>
                     </control>
                     <!-- BACKSPACE -->
                     <control type="button" id="8">
                         <onup>4000</onup>
                         <width>410</width>
-                        <label>20181</label>
+                        <label>$LOCALIZE[20181]</label>
                         <include>KeyBoardKey</include>
                     </control>
                     <!-- Previous -->
@@ -597,9 +571,7 @@
                         <include>KeyBoardKey</include>
                     </control>
                 </control>
-
             </control>
-
             <!-- Button grouplist -->
             <control type="grouplist" id="9001">
                 <right>60</right>
@@ -614,7 +586,7 @@
                 <!-- Done -->
                 <control type="button" id="300">
                     <align>center</align>
-                    <label>186</label>
+                    <label>$LOCALIZE[186]</label>
                     <width>200</width>
                     <include>KeyBoardKey</include>
                     <onclick>SetFocus(100)</onclick>
@@ -628,8 +600,6 @@
                 </control>
             </control>
         </control>
-    
         <include condition="Skin.HasSetting(EnableTouchSupport)">Footer</include>
     </controls>
-
 </window>

@@ -9,7 +9,6 @@
 			<include>DialogOverlayExtra</include>
 			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
         </control>
-		
         <!--Dialog PVR Guid Info-->
         <control type="group">
             <visible>!Window.IsVisible(yesnodialog)</visible>
@@ -19,7 +18,6 @@
 			<animation type="WindowClose">
 				<effect type="slide" start="0" end="1200" time="250" tween="cubic" easing="inout" />
 			</animation>
-            
             <!--Panel-->
             <control type="image">
                 <posx>640</posx>
@@ -46,7 +44,6 @@
                 <visible>Window.IsActive(VideoFullScreen.xml)</visible>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
             </control>
-            
             <!-- pvr info image -->
 			<control type="image">
 				<width>300</width>
@@ -58,7 +55,6 @@
                 <aspectratio align="right" aligny="top">keep</aspectratio>
 				<visible>!Skin.HasSetting(EnableTouchSupport)</visible>
 			</control>
-            
             <!-- close dialog -->
             <control type="group">
                 <include>animation_fade_visible_hidden</include>
@@ -75,7 +71,7 @@
                 <width>1200</width>
 				<font>Bold45</font>
 				<textcolor>$INFO[Skin.String(GeneralHighlightTextColor)]</textcolor>
-                <label>19047</label>
+                <label>$LOCALIZE[19047]</label>
                 <align>left</align>
 				<height>100</height>
             </control>
@@ -233,7 +229,6 @@
                 <ondown>60</ondown>
 				<width>1210</width>
                 <defaultcontrol>7</defaultcontrol>
-				
 				<control type="button" id="7">
                     <!--Cancel-->
                     <width>290</width>
@@ -263,7 +258,7 @@
                     <!--Add timer-->
                     <width>290</width>
 					<textwidth>260</textwidth>
-                    <label>19061</label>
+                    <label>$LOCALIZE[19061]</label>
                     <include>DialogButtonOther</include>
                     <visible>Window.IsActive(PVRGuideInfo)</visible> 
                 </control>
@@ -271,7 +266,7 @@
                     <!--play Recording-->
                     <width>290</width>
 					<textwidth>260</textwidth>
-                    <label>19687</label>
+                    <label>$LOCALIZE[19687]</label>
                     <include>DialogButtonOther</include>
                     <visible>Window.IsActive(PVRRecordingInfo)</visible> 
                 </control>
@@ -280,7 +275,7 @@
 					<textwidth>260</textwidth>
 					<description>Trailer</description>
 					<include>DialogButtonOther</include>
-					<label>20410</label>
+					<label>$LOCALIZE[20410]</label>
                     <onclick>Close</onclick>
                     <onclick>Playmedia($ESCINFO[Window(Home).Property(SkinHelper.ListItem.Trailer)])</onclick> 
                     <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Trailer))</visible>
@@ -293,7 +288,7 @@
                     <onclick>RunScript(service.kn.switchtimer,action=add,channel=$INFO[ListItem.ChannelName],icon=$INFO[ListItem.Icon],date=$INFO[ListItem.Date],title=$INFO[ListItem.Title])</onclick>
                     <onclick>Action(Close,10600)</onclick>
                     <include>DialogButtonOther</include>
-                    <visible>System.HasAddon(service.kn.switchtimer)</visible>
+                    <visible>System.AddonIsEnabled(service.kn.switchtimer)</visible>
                     <visible>Window.IsActive(PVRGuideInfo)</visible>
                 </control>
 				<!-- Switch Timer Button Official Kodi-->
@@ -303,6 +298,7 @@
 					<description>pvr reminder</description>
                     <label>$LOCALIZE[826]</label>
                     <include>DialogButtonOther</include>
+					<visible>!System.AddonIsEnabled(service.kn.switchtimer)</visible>
                     <visible>Window.IsActive(PVRGuideInfo)</visible>
 				</control>
 				<control type="button" id="4">
@@ -310,7 +306,7 @@
 					<textwidth>260</textwidth>
 					<description>Find similar</description>
 					<include>DialogButtonOther</include>
-					<label>19003</label>
+					<label>$LOCALIZE[19003]</label>
                     <visible>Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo)</visible> 
 				</control>
                 <control type="button" id="445">
@@ -318,13 +314,22 @@
 					<textwidth>260</textwidth>
 					<description>Youtube</description>
 					<include>DialogButtonOther</include>
-					<label>31797</label>
+					<label>$LOCALIZE[31797]</label>
                     <onclick condition="System.HasAddon(plugin.video.youtube)">RunScript(script.skin.helper.service,action=searchyoutube,title=$INFO[ListItem.Title] $INFO[ListItem.Year],header=$LOCALIZE[31797])</onclick>
                     <onclick condition="!System.HasAddon(plugin.video.youtube)">ActivateWindow(Videos,plugin://plugin.video.youtube)</onclick>
                     <visible>Skin.HasSetting(videoinfo_button_youtubevideos)</visible>
-                </control>				
+                </control>		
+				<control type="button" id="119">
+					<!--Wikipedia Button-->
+					<label>Wikipedia</label>
+					<width>290</width>
+					<textwidth>260</textwidth>
+					<include>DialogButtonOther</include>
+					<visible>Skin.HasSetting(videoinfo_button_wikipedia)</visible>
+					<onclick>RunScript(script.wikipedia,wikipedia=$INFO[ListItem.Title],language=$VAR[language_iso639-1])</onclick>
+					<visible>System.AddonIsEnabled(script.wikipedia)</visible>
+				</control>		
             </control>
-			
 			<!--Arrows-->
             <control type="image">
                 <animation effect="fade" start="100" end="50" tween="sine" easing="inout" time="800" pulse="true" reversible="false" condition="true">Conditional</animation>

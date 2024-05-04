@@ -8,11 +8,9 @@
         <!--Dialog Overlay-->
         <include>DialogOverlayExtra</include>
 		<include condition="Skin.HasSetting(EnableTouchSupport)">Footer</include>
-		
         <!--Dialog PVR Channel Manager-->
         <control type="group">
             <visible>!Window.IsVisible(virtualkeyboard) + !Window.IsVisible(pvrgroupmanager) + !Window.IsVisible(filebrowser) + !Window.IsVisible(yesnodialog) + !Window.IsVisible(okdialog) + !Window.IsVisible(progressdialog)</visible>
-			
 			<control type="image">
                 <!--Panel-->
                 <posx>319</posx>
@@ -32,7 +30,6 @@
                 <texture border="15">diffuse/bgpanel.png</texture>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
             </control>
-
             <!--Header-->
             <control type="label">
                 <description>Heading</description>
@@ -40,7 +37,18 @@
                 <posy>135</posy>
                 <width>1214</width>
                 <include>DialogHeader</include>
+                <label>$LOCALIZE[19199] • $LOCALIZE[19024]</label>
+				<visible>!String.IsEmpty(Window.Property(IsRadio))</visible>
+                <align>center</align>
+            </control>
+            <control type="label">
+                <description>Heading</description>
+                <posx>353</posx>
+                <posy>135</posy>
+                <width>1214</width>
+                <include>DialogHeader</include>
                 <label>$LOCALIZE[19199] • $LOCALIZE[19023]</label>
+				<visible>String.IsEmpty(Window.Property(IsRadio))</visible>
                 <align>center</align>
             </control>
             <control type="group" id="8000">
@@ -63,7 +71,8 @@
                         <height>630</height>
                         <onup>20</onup>
                         <ondown>20</ondown>
-                        <onright>8002</onright>
+						<onleft>8003</onleft>
+                        <onright>60</onright>
                         <pagecontrol>60</pagecontrol>
                         <scrolltime>0</scrolltime>
                         <visible>!Window.IsActive(contextmenu)</visible>
@@ -180,7 +189,7 @@
                                     <height>90</height>
                                     <texture colordiffuse="$INFO[Skin.String(ButtonColor)]" border="5">diffuse/panel_trans.png</texture>
 									<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
-                                    <visible>!ListItem.IsSelected</visible>
+                                    <visible>ListItem.IsSelected</visible>
                                 </control>
                                 <control type="image">
                                     <posx>0</posx>
@@ -189,7 +198,7 @@
                                     <height>90</height>
                                     <texture border="5">diffuse/panel.png</texture>
 									<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
-                                    <visible>ListItem.IsSelected</visible>
+                                    <visible>!ListItem.IsSelected</visible>
                                 </control>
                                 <control type="group">
                                     <animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
@@ -270,14 +279,40 @@
                         <visible>!Control.HasFocus(60) + [Container(20).Scrolling | Container(20).OnScrollNext | Container(20).OnScrollPrevious]</visible>
                     </control>
                 </control>
+
+				<control type="scrollbar" id="60"> 
+					<posx>595</posx>
+					<posy>45</posy>
+					<width>20</width>
+					<height>620</height>
+					<onleft>8001</onleft>
+					<onright>8002</onright>
+					<onup>60</onup>
+					<ondown>60</ondown>
+					<showonepage>false</showonepage>
+					<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling(20) | Skin.HasSetting(alwaysShowScrollbars)">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling(20) | Skin.HasSetting(alwaysShowScrollbars)]">Conditional</animation>
+				</control>	
+				
                 <control type="group" id="8002">
                     <!--Group Right-->
                     <control type="group" id="80021">
                         <posx>614</posx>
                         <posy>0</posy>
+						<control type="label">
+                            <description>Misc Options Header</description>
+                            <posx>0</posx>
+                            <posy>30</posy>
+                            <width>600</width>
+                            <height>34</height>
+                            <align>left</align>
+                            <textoffsetx>20</textoffsetx>
+                            <label>[B]$LOCALIZE[70051][/B]</label>
+                            <include>DialogButtonBig</include>
+                        </control>
                         <control type="image">
                             <posx>0</posx>
-                            <posy>40</posy>
+                            <posy>80</posy>
                             <width>600</width>
                             <height>356</height>
                             <texture border="5">dialogs/default/inner.png</texture>
@@ -285,18 +320,19 @@
                         <control type="radiobutton" id="7">
                             <description>Channel activated</description>
                             <posx>0</posx>
-                            <posy>40</posy>
+                            <posy>80</posy>
                             <width>600</width>
                             <height>60</height>
                             <align>left</align>
                             <textoffsetx>20</textoffsetx>
                             <textwidth>484</textwidth>
                             <radioposx>492</radioposx>
-                            <include>DialogButton</include>
+                            <!-- <include>DialogButton</include> -->
                             <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">colors/color_white.png</texturefocus>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
-                            <label>19074</label>
-                            <onleft>20</onleft>
+							<include>DialogButton</include>
+                            <label>$LOCALIZE[19074]</label>
+                            <onleft>60</onleft>
                             <onright>8003</onright>
                             <onup>SetProperty(Focus,1)</onup>
                             <onup>8003</onup>
@@ -305,7 +341,7 @@
                         <control type="edit" id="8">
                             <description>Channel name</description>
                             <posx>0</posx>
-                            <posy>99</posy>
+                            <posy>139</posy>
                             <width>600</width>
                             <height>60</height>
                             <align>left</align>
@@ -313,16 +349,16 @@
                             <textoffsetx>20</textoffsetx>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButton</include>
-                            <label>19201</label>
+                            <label>$LOCALIZE[19201]</label>
                             <onright>8003</onright>
-                            <onleft>20</onleft>
+                            <onleft>60</onleft>
                             <onup>7</onup>
                             <ondown>9</ondown>
                         </control>
                         <control type="button" id="9">
                             <description>Channel logo Button</description>
                             <posx>0</posx>
-                            <posy>158</posy>
+                            <posy>198</posy>
                             <width>600</width>
                             <height>60</height>
                             <align>left</align>
@@ -330,8 +366,8 @@
                             <textwidth>540</textwidth>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButton</include>
-                            <label>19202</label>
-                            <onleft>20</onleft>
+                            <label>$LOCALIZE[19202]</label>
+                            <onleft>60</onleft>
                             <onright>8003</onright>
                             <onup>8</onup>
                             <ondown>12</ondown>
@@ -339,7 +375,7 @@
                         <control type="image" id="108">
                             <description>Current Channel Icon</description>
                             <posx>540</posx>
-                            <posy>168</posy>
+                            <posy>208</posy>
                             <width>40</width>
                             <height>40</height>
                             <aspectratio>scale</aspectratio>
@@ -348,7 +384,7 @@
                         <control type="radiobutton" id="12">
                             <description>EPG activated</description>
                             <posx>0</posx>
-                            <posy>217</posy>
+                            <posy>257</posy>
                             <width>600</width>
                             <height>60</height>
                             <align>left</align>
@@ -357,8 +393,8 @@
                             <radioposx>492</radioposx>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButton</include>
-                            <label>19206</label>
-                            <onleft>20</onleft>
+                            <label>$LOCALIZE[19206]</label>
+                            <onleft>60</onleft>
                             <onright>8003</onright>
                             <onup>9</onup>
                             <ondown>13</ondown>
@@ -366,7 +402,7 @@
                         <control type="spincontrolex" id="13">
                             <description>EPG source</description>
                             <posx>0</posx>
-                            <posy>276</posy>
+                            <posy>316</posy>
                             <width>600</width>
                             <height>60</height>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
@@ -374,16 +410,16 @@
                             <textoffsetx>20</textoffsetx>
                             <align>left</align>
                             <spinposx>1</spinposx>
-                            <label>19200</label>
+                            <label>$LOCALIZE[19200]</label>
                             <onright>8003</onright>
-                            <onleft>20</onleft>
+                            <onleft>60</onleft>
                             <onup>12</onup>
                             <ondown>14</ondown>
                         </control>
                         <control type="radiobutton" id="14">
                             <description>Parental locked</description>
                             <posx>0</posx>
-                            <posy>335</posy>
+                            <posy>375</posy>
                             <width>600</width>
                             <height>60</height>
                             <align>left</align>
@@ -392,7 +428,7 @@
                             <radioposx>492</radioposx>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButton</include>
-                            <label>19267</label>
+                            <label>$LOCALIZE[19267]</label>
                             <onleft>20</onleft>
                             <onright>8003</onright>
                             <onup>13</onup>
@@ -401,7 +437,7 @@
                     </control>
                     <control type="group" id="80022">
                         <posx>614</posx>
-                        <posy>418</posy>
+                        <posy>500</posy>
                         <control type="label">
                             <description>Misc Options Header</description>
                             <posx>0</posx>
@@ -410,51 +446,60 @@
                             <height>34</height>
                             <align>left</align>
                             <textoffsetx>20</textoffsetx>
-                            <label>$LOCALIZE[42185]</label>
+                            <label>[B]$LOCALIZE[70050][/B]</label>
                             <include>DialogButtonBig</include>
                         </control>
                         <control type="image">
                             <posx>0</posx>
-                            <posy>40</posy>
+                            <posy>55</posy>
                             <width>293</width>
                             <height>51</height>
                             <texture border="5">dialogs/default/inner.png</texture>
                         </control>
                         <control type="image">
                             <posx>307</posx>
-                            <posy>40</posy>
+                            <posy>55</posy>
                             <width>293</width>
                             <height>51</height>
                             <texture border="5">dialogs/default/inner.png</texture>
                         </control>
                         <control type="image">
                             <posx>0</posx>
-                            <posy>104</posy>
-                            <width>600</width>
-                            <height>149</height>
+                            <posy>119</posy>
+                            <width>293</width>
+                            <height>51</height>
                             <texture border="5">dialogs/default/inner.png</texture>
                         </control>
+                        <control type="image">
+                            <posx>307</posx>
+                            <posy>119</posy>
+                            <width>293</width>
+                            <height>51</height>
+                            <texture border="5">dialogs/default/inner.png</texture>
+                        </control>
+						
                         <control type="button" id="30">
                             <description>Group Manager Button</description>
-                            <posx>0</posx>
-                            <posy>40</posy>
+                            <posx>307</posx>
+                            <posy>55</posy>
                             <width>293</width>
                             <height>50</height>
                             <align>left</align>
                             <textoffsetx>20</textoffsetx>
-                            <textwidth>540</textwidth>
+                            <textwidth>280</textwidth>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButtonSmall</include>
-                            <label>19205</label>
-                            <onleft>20</onleft>
-                            <onright>34</onright>
+                            <label>$LOCALIZE[19205]</label>
+                            <onleft>34</onleft>
+                            <onright>8003</onright>
                             <onup>14</onup>
-                            <ondown>31</ondown>
+                            <ondown>35</ondown>
+							<scroll>true</scroll>
                         </control>
                         <control type="button" id="34">
                             <description>TV/Radio Button</description>
-                            <posx>307</posx>
-                            <posy>40</posy>
+                            <posx>0</posx>
+                            <posy>55</posy>
                             <width>293</width>
                             <height>50</height>
                             <align>left</align>
@@ -462,27 +507,27 @@
                             <textwidth>540</textwidth>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButtonSmall</include>
-                            <label>19024</label>
-                            <onleft>30</onleft>
-                            <onright>8003</onright>
+                            <label>$LOCALIZE[19024]</label>
+                            <onleft>60</onleft>
+                            <onright>30</onright>
                             <onup>14</onup>
                             <ondown>31</ondown>
                             <visible>String.IsEmpty(Window.Property(IsRadio))</visible>
                         </control>
                         <control type="button" id="34">
                             <description>TV/Radio Button</description>
-                            <posx>307</posx>
-                            <posy>40</posy>
+                            <posx>0</posx>
+                            <posy>55</posy>
                             <width>293</width>
                             <height>50</height>
                             <align>left</align>
                             <textoffsetx>20</textoffsetx>
-                            <textwidth>540</textwidth>
+                            <textwidth>280</textwidth>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButtonSmall</include>
-                            <label>19023</label>
-                            <onleft>30</onleft>
-                            <onright>8003</onright>
+                            <label>$LOCALIZE[19023]</label>
+                            <onleft>60</onleft>
+                            <onright>30</onright>
                             <onup>14</onup>
                             <ondown>31</ondown>
                             <visible>!String.IsEmpty(Window.Property(IsRadio))</visible>
@@ -490,28 +535,47 @@
 						<control type="button" id="31">
                             <description>New channel Button</description>
                             <posx>0</posx>
-                            <posy>202</posy>
-                            <width>600</width>
+                            <posy>119</posy>
+                            <width>293</width>
                             <height>50</height>
                             <align>left</align>
                             <textoffsetx>20</textoffsetx>
-                            <textwidth>540</textwidth>
+                            <textwidth>280</textwidth>
                             <include>DialogButtonSmall</include>
                             <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">colors/color_white.png</texturefocus>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
-                            <label>19205</label>
-                            <onleft>34</onleft>
-                            <onright>8003</onright>
-                            <onup>32</onup>
+                            <label>$LOCALIZE[19204]</label>
+                            <onleft>60</onleft>
+                            <onright>35</onright>
+                            <onup>34</onup>
                             <ondown>SetProperty(Focus,1)</ondown>
                             <ondown>8003</ondown>
                         </control>
+						<control type="button" id="35">
+                            <description>Refresh channel logos Button</description>
+                            <posx>307</posx>
+                            <posy>119</posy>
+                            <width>293</width>
+                            <height>50</height>
+                            <align>left</align>
+                            <textoffsetx>20</textoffsetx>
+                            <textwidth>280</textwidth>
+                            <include>DialogButtonSmall</include>
+                            <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">colors/color_white.png</texturefocus>
+                            <texturenofocus>dialogs/default/separator.png</texturenofocus>
+                            <label>$LOCALIZE[19041]</label>
+                            <onleft>31</onleft>
+                            <onright>8003</onright>
+                            <onup>30</onup>
+                            <ondown>SetProperty(Focus,1)</ondown>
+                            <ondown>8003</ondown>
+							<scroll>true</scroll>
+                        </control>						
                     </control>
                 </control>
             </control>
-			
 			<control type="grouplist" id="8003">
-               <posx>350</posx>
+				<posx>350</posx>
                 <posy>900</posy>
 				<onup condition="!String.IsEmpty(Window.Property(Focus))">33</onup>
 				<onup condition="String.IsEmpty(Window.Property(Focus))">8000</onup>
@@ -520,11 +584,11 @@
 				<ondown condition="String.IsEmpty(Window.Property(Focus))">8000</ondown>
 				<itemgap>15</itemgap>
 				<orientation>horizontal</orientation>
-
                 <control type="button" id="4">
                     <!--Select-->
                     <include>DialogButtonOther</include>
-                    <label>$LOCALIZE[424]</label>
+                    <label>$LOCALIZE[186]</label>
+					<!-- <label>$LOCALIZE[424]</label> -->
                 </control>
                 <control type="button" id="6">
                     <!--Close-->

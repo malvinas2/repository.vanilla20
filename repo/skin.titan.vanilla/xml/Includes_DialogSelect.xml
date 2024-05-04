@@ -12,7 +12,7 @@
 				<posx>367</posx>
 				<posy>236</posy>
 				<width>1190</width>
-				<height>690</height>
+				<height>720</height>
 				<texture border="15">diffuse/bgpanel.png</texture>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
 			</control>
@@ -20,7 +20,7 @@
 				<posx>367</posx>
 				<posy>236</posy>
 				<width>1190</width>
-				<height>690</height>
+				<height>720</height>
 				<texture border="15">diffuse/bgpanel.png</texture>
 				<bordersize>10</bordersize>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
@@ -385,7 +385,7 @@
             <control type="grouplist" id="8000">
 				<posx>410</posx>
 				<posy>830</posy>
-				<width>1104</width>
+				<width>820</width>
 				<height>690</height>
 				<orientation>horizontal</orientation>
 				<onup condition="Control.IsVisible(6)">6</onup>
@@ -395,19 +395,20 @@
                 <control type="button" id="5">
                     <description>OK</description>
 					<left>0</left>
-					<label>186</label>
-                    <!-- <label>186</label>   -->
-                    <width>364</width>
+					<label>$LOCALIZE[186]</label>
+                    <!-- <label>$LOCALIZE[186]</label>   -->
+                    <width>260</width>
                     <include>DialogButtonOther</include>
+					<textwidth>240</textwidth>
                     <height>80</height>
 					<!-- <onright>7</onright> -->
                 </control>
                 <control type="button" id="7">
-                    <!-- <visible>!Window.IsVisible(Custom_MediaDialog.xml)</visible> -->
+                    <!-- <visible>!Window.IsVisible(Custom_3004_MediaDialog.xml)</visible> -->
                     <right>0</right>
                     <description>Close</description>
                    <!-- <label>$LOCALIZE[222]</label>  -->
-                    <width>364</width>
+                    <width>260</width>
                     <include>DialogButtonOther</include>
                     <height>80</height>
                     <visible>!String.IsEmpty(Control.GetLabel(7))</visible>
@@ -416,13 +417,35 @@
                     <description>3rd button</description>
 					<left>0</left>
                     <label></label>
-                    <width>364</width>
+                    <width>260</width>
                     <include>DialogButtonOther</include>
                     <height>80</height>
 					<!-- <onright>7</onright>  -->
 					<visible>!String.IsEmpty(Control.GetLabel(8))</visible>
                 </control>
             </control>
+			
+			<!-- Anzahl der Eintrage, rechts unten -->
+			<control type="label">
+				<right>400</right>
+				<top>860</top>
+				<width>280</width>
+				<height>35</height>
+				<align>right</align>
+				<include>DialogLabel</include>
+				<visible>Control.IsVisible(3)</visible>
+				<label>[COLOR=$INFO[Skin.String(GeneralHighlightTextColor)]]$INFO[Container(3).NumItems][/COLOR] $LOCALIZE[91830] - [COLOR=$INFO[Skin.String(GeneralHighlightTextColor)]]$INFO[Container(3).CurrentPage]/$INFO[Container(3).NumPages][/COLOR]</label>
+			</control>			
+			<control type="label">
+				<right>400</right>
+				<top>860</top>
+				<width>280</width>
+				<height>35</height>
+				<align>right</align>
+				<include>DialogLabel</include>
+				<visible>Control.IsVisible(6)</visible>
+				<label>[COLOR=$INFO[Skin.String(GeneralHighlightTextColor)]]$INFO[Container(6).NumItems][/COLOR] $LOCALIZE[91830] - [COLOR=$INFO[Skin.String(GeneralHighlightTextColor)]]$INFO[Container(6).CurrentPage]/$INFO[Container(6).NumPages][/COLOR]</label>
+			</control>				
         </control>
 	</include>
 	
@@ -443,14 +466,21 @@
 			<bottom>0</bottom>
 			<height>540</height>
 			<width>100%</width>
+			<animation type="WindowOpen">
+				<effect type="slide" start="0,1000,0" end="0,0" time="250" tween="cubic" easing="inout" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="0,1000" time="250" tween="cubic" easing="inout" />
+			</animation>
 			<control type="image">
-				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-				<texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]">diffuse/wide.png</texture>
-			</control>
+				<texture border="15">diffuse/bgpanel.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+            </control>
 			
 			<control type="panel" id="10811">
 				<top>30</top>
+				<onup>119</onup>
+				<ondown>119</ondown>
 				<scrolltime tween="sine">200</scrolltime>
 				<orientation>horizontal</orientation>
 				<itemlayout width="480" height="340">
@@ -459,7 +489,7 @@
 						<right>18</right>
 						<top>5</top>
 						<control type="image">
-						<!-- malvians2: What's the purpose of this 'image'-entry ???? -->
+						<!-- malvinas2: What's the purpose of this 'image'-entry ???? -->
 							<width>444</width>
 							<height>250</height>
 							<aspectratio>scale</aspectratio>
@@ -490,7 +520,8 @@
 						<left>18</left>
 						<right>18</right>
 						<top>5</top>
-						<control type="image">		<!-- malvians2: What's the purpose of this 'image'-entry ???? -->
+						<control type="image">
+						<!-- malvians2: What's the purpose of this 'image'-entry ???? -->
 							<width>444</width>
 							<height>250</height>
 							<aspectratio>scale</aspectratio>
@@ -534,6 +565,20 @@
 				<align>justify</align>
 				<autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
 			</control>
+			<control type="button" id="119">
+				<description>Close</description>
+				<width>330</width>
+				<bottom>30</bottom>
+				<left>30</left>
+				<onup>10811</onup>
+				<ondown>10811</ondown>
+				<onleft>10811</onleft>
+				<onright>10811</onright>
+				<include>DialogButtonOther</include>
+				<label>$LOCALIZE[222]</label>
+				<onclick>Action(close)</onclick>
+				<height>80</height>
+			</control>			
 		</control>
 	</include>
 	
@@ -552,15 +597,23 @@
 		</control>
 		<control type="group">
 			<bottom>0</bottom>
-			<height>410</height>
+			<height>450</height>
 			<width>100%</width>
+			<animation type="WindowOpen">
+				<effect type="slide" start="0,1000,0" end="0,0" time="250" tween="cubic" easing="inout" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="0,1000" time="250" tween="cubic" easing="inout" />
+			</animation>
 			<control type="image">
-				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-				<texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]">diffuse/wide.png</texture>
-			</control>
+				<texture border="15">diffuse/bgpanel.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+            </control>
+
 			<control type="panel" id="10811">
 				<top>30</top>
+				<onup>119</onup>
+				<ondown>119</ondown>
 				<scrolltime tween="sine">200</scrolltime>
 				<orientation>horizontal</orientation>
 				<itemlayout width="480" height="340">
@@ -569,7 +622,7 @@
 						<right>18</right>
 						<top>5</top>
 						<control type="image">     
-						<!-- malvians2: What's the purpose of this 'image'-entry ???? -->
+						<!-- malvinas2: What's the purpose of this 'image'-entry ???? -->
 							<width>444</width>
 							<height>250</height>
 							<aspectratio>scale</aspectratio>
@@ -601,7 +654,7 @@
 						<right>18</right>
 						<top>5</top>
 						<control type="image"> 
-						<!-- malvians2: What's the purpose of this 'image'-entry ???? -->
+						<!-- malvinas2: What's the purpose of this 'image'-entry ???? -->
 							<width>444</width>
 							<height>250</height>
 							<aspectratio>scale</aspectratio>
@@ -634,137 +687,164 @@
 					</control>
 				</focusedlayout>
 			</control>
+			<control type="button" id="119">
+				<description>Close</description>
+				<width>330</width>
+				<bottom>15</bottom>
+				<left>30</left>
+				<onup>10811</onup>
+				<ondown>10811</ondown>
+				<onleft>10811</onleft>
+				<onright>10811</onright>
+				<include>DialogButtonOther</include>
+				<label>$LOCALIZE[222]</label>
+				<onclick>Action(close)</onclick>
+				<height>80</height>
+			</control>		
 		</control>
 	</include>
 	
 	
 	<include name="GameDialogSelectSaveInGameLayout">
-	<control type="button">
-		<description>background close area</description>
-		<left>0</left>
-		<top>0</top>
-		<width>100%</width>
-		<bottom>540</bottom>
-		<height>540</height>
-		<texturefocus />
-		<texturenofocus />
-		<onclick>Action(close)</onclick>
-	</control>
-	<control type="group">
-		<bottom>0</bottom>
-		<height>540</height>
-		<width>100%</width>
-		<control type="image">
-			<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-			<texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]">diffuse/wide.png</texture>
+		<control type="button">
+			<description>background close area</description>
+			<left>0</left>
+			<top>0</top>
+			<width>100%</width>
+			<bottom>540</bottom>
+			<height>540</height>
+			<texturefocus />
+			<texturenofocus />
+			<onclick>Action(close)</onclick>
 		</control>
-		
-		<control type="panel" id="10811">
-			<top>30</top>
-			<scrolltime tween="sine">200</scrolltime>
-			<orientation>horizontal</orientation>
-			<itemlayout width="480" height="340">
-				<control type="group">
-					<left>18</left>
-					<right>18</right>
-					<top>5</top>
-					<control type="image">
-						<width>444</width>
-						<height>250</height>
-						<aspectratio>scale</aspectratio>
-						<texture border="4">$INFO[ListItem.Icon]</texture>  <!--  XXXXX   -->
-						<bordertexture colordiffuse="E6FFFFFF">colors/color_black.png</bordertexture>
-						<bordersize>4</bordersize>
+		<control type="group">
+			<bottom>0</bottom>
+			<height>540</height>
+			<width>100%</width>
+			<control type="image">
+				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]">diffuse/wide.png</texture>
+			</control>
+			
+			<control type="panel" id="10811">
+				<top>30</top>
+				<onup>119</onup>
+				<ondown>119</ondown>
+				<scrolltime tween="sine">200</scrolltime>
+				<orientation>horizontal</orientation>
+				<itemlayout width="480" height="340">
+					<control type="group">
+						<left>18</left>
+						<right>18</right>
+						<top>5</top>
+						<control type="image">
+							<width>444</width>
+							<height>250</height>
+							<aspectratio>scale</aspectratio>
+							<texture border="4">$INFO[ListItem.Icon]</texture>  <!--  XXXXX   -->
+							<bordertexture colordiffuse="E6FFFFFF">colors/color_black.png</bordertexture>
+							<bordersize>4</bordersize>
+						</control>
+						<control type="image">
+							<width>444</width>
+							<height>250</height>
+							<aspectratio>scale</aspectratio>
+							<texture border="4">$INFO[ListItem.Art(screenshot)]</texture>   <!--  XXXXX   -->
+							<bordertexture colordiffuse="E6FFFFFF">colors/color_black.png</bordertexture>
+							<bordersize>4</bordersize>
+						</control>
+						<control type="gamewindow">
+							<width>444</width>
+							<height>250</height>
+							<pixels>$INFO[ListItem.FilenameAndPath]</pixels>
+						</control>
+						<control type="label">
+							<top>250</top>
+							<width>444</width>
+							<height>80</height>
+							<label>$INFO[ListItem.Label][CR][COLOR grey]$INFO[ListItem.Label2][/COLOR]</label>
+							<font>Reg28</font>
+							<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+							<align>center</align>
+						</control>
 					</control>
-					<control type="image">
-						<width>444</width>
-						<height>250</height>
-						<aspectratio>scale</aspectratio>
-						<texture border="4">$INFO[ListItem.Art(screenshot)]</texture>   <!--  XXXXX   -->
-						<bordertexture colordiffuse="E6FFFFFF">colors/color_black.png</bordertexture>
-						<bordersize>4</bordersize>
+				</itemlayout>
+				<focusedlayout width="480" height="340">
+					<control type="group">
+						<left>18</left>
+						<right>18</right>
+						<top>5</top>
+						<control type="image">
+							<width>444</width>
+							<height>250</height>
+							<aspectratio>scale</aspectratio>
+							<texture border="4">$INFO[ListItem.Icon]</texture>
+							<!-- <texture border="4">DefaultVideo.png</texture> -->
+							<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
+							<bordersize>4</bordersize>
+						</control>
+						<control type="image">
+							<width>444</width>
+							<height>250</height>
+							<aspectratio>scale</aspectratio>
+							<texture border="4">$INFO[ListItem.Art(screenshot)]</texture>
+							<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
+							<bordersize>4</bordersize>
+						</control>
+						<control type="gamewindow">
+							<width>444</width>
+							<height>250</height>
+							<pixels>$INFO[ListItem.FilenameAndPath]</pixels>
+						</control>
+						<control type="label">
+							<top>250</top>
+							<width>444</width>
+							<height>80</height>
+							<label>$INFO[ListItem.Label][CR][COLOR grey]$INFO[ListItem.Label2][/COLOR]</label>
+							<font>Reg28</font>
+							<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+							<align>center</align>
+						</control>
+						<control type="image">
+							<width>444</width>
+							<height>250</height>
+							<texture border="8" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/bgborder.png</texture>
+							<visible>Control.HasFocus(10811)</visible>
+						</control>
 					</control>
-					<control type="gamewindow">
-						<width>444</width>
-						<height>250</height>
-						<pixels>$INFO[ListItem.FilenameAndPath]</pixels>
-					</control>
-					<control type="label">
-						<top>250</top>
-						<width>444</width>
-						<height>80</height>
-						<label>$INFO[ListItem.Label][CR][COLOR grey]$INFO[ListItem.Label2][/COLOR]</label>
-						<font>Reg28</font>
-						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-						<align>center</align>
-					</control>
-				</control>
-			</itemlayout>
-			<focusedlayout width="480" height="340">
-				<control type="group">
-					<left>18</left>
-					<right>18</right>
-					<top>5</top>
-					<control type="image">
-						<width>444</width>
-						<height>250</height>
-						<aspectratio>scale</aspectratio>
-						<texture border="4">$INFO[ListItem.Icon]</texture>
-						<!-- <texture border="4">DefaultVideo.png</texture> -->
-						<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
-						<bordersize>4</bordersize>
-					</control>
-					<control type="image">
-						<width>444</width>
-						<height>250</height>
-						<aspectratio>scale</aspectratio>
-						<texture border="4">$INFO[ListItem.Art(screenshot)]</texture>
-						<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
-						<bordersize>4</bordersize>
-					</control>
-					<control type="gamewindow">
-						<width>444</width>
-						<height>250</height>
-						<pixels>$INFO[ListItem.FilenameAndPath]</pixels>
-					</control>
-					<control type="label">
-						<top>250</top>
-						<width>444</width>
-						<height>80</height>
-						<label>$INFO[ListItem.Label][CR][COLOR grey]$INFO[ListItem.Label2][/COLOR]</label>
-						<font>Reg28</font>
-						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-						<align>center</align>
-					</control>
-					<control type="image">
-						<width>444</width>
-						<height>250</height>
-						<texture border="8" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/bgborder.png</texture>
-						<visible>Control.HasFocus(10811)</visible>
-					</control>
-				</control>
-			</focusedlayout>
+				</focusedlayout>
+			</control>
+			<control type="textbox" id="10812">
+				<description>Description Area</description>
+				<top>390</top>
+				<left>100</left>
+				<right>100</right>
+				<height>200</height>
+				<font>Light28</font>
+				<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+				<align>justify</align>
+				<autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
+				<label>$INFO[ListItem.Property(savestate.caption)]</label>
+			</control>
+			
+			<control type="button" id="119">
+				<description>Close</description>
+				<width>330</width>
+				<bottom>30</bottom>
+				<left>30</left>
+				<onup>10811</onup>
+				<ondown>10811</ondown>
+				<onleft>10811</onleft>
+				<onright>10811</onright>
+				<include>DialogButtonOther</include>
+				<label>$LOCALIZE[222]</label>
+				<onclick>Action(close)</onclick>
+				<height>80</height>
+			</control>	
+			
 		</control>
-		<control type="textbox" id="10812">
-			<description>Description Area</description>
-			<top>410</top>
-			<left>100</left>
-			<right>100</right>
-			<height>200</height>
-			<font>Light28</font>
-			<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-			<align>justify</align>
-			<autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
-			<label>$INFO[ListItem.Property(savestate.caption)]</label>
-		</control>
-	</control>
 	</include>
-
-
-
-
-
 
 	<include name="GameDialogSelectSaveLayout">
 		<control type="group">
@@ -780,16 +860,12 @@
 				<visible>!Window.IsVisible(yesnodialog) + !Window.IsVisible(virtualkeyboard) + !Window.IsVisible(numericinput) + ![Window.IsVisible(script-LibraryEditor-genre.xml) + String.IsEmpty(Window.Property(ShowDialog))] + !Window.IsVisible(script-LibraryEditor-dialogs.xml)</visible>
      			<!-- background panel -->
 				<control type="image">
-				<!--	<posx>367</posx>
-					<posy>236</posy>   -->
 					<width>1639</width>
 					<height>985</height>
 					<texture border="15">diffuse/bgpanel.png</texture>
 					<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
 				</control>
 				<control type="image">
-				<!--	<posx>367</posx>
-					<posy>236</posy>  -->
 					<width>1639</width>
 					<height>985</height>
 					<texture border="15">diffuse/bgpanel.png</texture>
@@ -799,12 +875,10 @@
 				<!--Header-->
 				<control type="label" id="10820">
 					<description>Heading</description>
-					<!-- <posx>415</posx>
-					<posy>225</posy> -->
 					<top>10</top>
 					<width>1639</width>
 					<height>100</height>
-					<label>35260</label>
+					<label>$LOCALIZE[35260]</label>
 					<include>DialogHeader_Alt</include>
 					<align>center</align>
 					<wrapmultiline>true</wrapmultiline>
@@ -870,8 +944,6 @@
 								<control type="group">
 								<animation effect="fade" start="100" end="30" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(3)">Conditional</animation>
 									<control type="image">
-										<!--    <width>610</width>
-										<height>120</height> -->
 										<texture border="5">diffuse/panel.png</texture>
 										<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
 									</control>
@@ -932,7 +1004,7 @@
 							<description>OK</description>
 							<!-- <left>0</left> -->
 							<label>$LOCALIZE[35261]</label>
-							<!-- <label>186</label>   -->
+							<!-- <label>$LOCALIZE[186]</label>   -->
 							<width>280</width>
 							<include>DialogButtonOther</include>
 							<height>80</height>
@@ -942,7 +1014,7 @@
 							<description>OK</description>
 							<!-- <left>0</left>  -->
 							<label>$LOCALIZE[222]</label>
-							<!-- <label>186</label>   -->
+							<!-- <label>$LOCALIZE[186]</label>   -->
 							<width>280</width>
 							<include>DialogButtonOther</include>
 							<height>80</height>
@@ -972,7 +1044,7 @@
 								<height>20</height>
 								<font>Reg22</font>
 								<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-								<label>35255</label>
+								<label>$LOCALIZE[35255]</label>
 								<align>center</align>
 							</control>
 							<control type="label" id="10823">
@@ -1020,6 +1092,4 @@
 			</control>
 		</control>
 	</include>
- 
-
 </includes>

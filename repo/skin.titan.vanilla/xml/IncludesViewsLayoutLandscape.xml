@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
-
     <!-- THUMBS LAYOUT (SMALL LANDSCAPE) -->
     <include name="ThumbsViewLayout">
         <control type="image">
@@ -15,6 +14,7 @@
         </control>
         <include>ThumbsViewItemLayout</include>
      </include>
+	 
     <include name="ThumbsViewLayoutFocus">
         <control type="image">
             <!--Panel Normal-->
@@ -35,6 +35,7 @@
         </control>
         <include>ThumbsViewItemLayout</include>
     </include>
+	
     <include name="ThumbsViewItemLayout">
         <control type="image">
             <!--thumb image-->
@@ -103,6 +104,7 @@
         </control>
         <include>LandscapeItemLayout</include>
     </include>
+	
     <include name="LandscapeLayoutFocus">
         <control type="image">
             <!--focus image-->
@@ -124,6 +126,7 @@
         </control>
         <include>LandscapeItemLayout</include>
     </include>
+	
     <include name="LandscapeItemLayout">
         <control type="image">
             <!--Panel icon image-->
@@ -198,6 +201,7 @@
             !String.IsEmpty(ListItem.Property(defaultID))
         </visible>
 	</include>
+	
 	<include name="ThumbsTagOverlay">
         <control type="image">
             <!--Panel Ovelay-->
@@ -221,6 +225,7 @@
             <include condition="!Window.IsActive(Home)">LandscapeTagOverlayVisibility</include>
         </control>
     </include>
+	
     <include name="ThumbsTagOverlaySmall">
         <control type="image">
             <!--Panel Ovelay-->
@@ -244,6 +249,7 @@
             <include condition="!Window.IsActive(Home)">LandscapeTagOverlayVisibility</include>
         </control>
     </include>
+	
     <include name="LandscapeTagOverlay">
         <control type="image">
             <!--Panel Overlay-->

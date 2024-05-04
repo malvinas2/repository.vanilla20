@@ -1,15 +1,13 @@
-# -*- coding: utf8 -*-
-
 # Copyright (C) 2015 - Philipp Temminghoff <phil65@kodi.tv>
+# Modifications copyright (C) 2022 - Scott Smart <scott967@kodi.tv>
 # This program is Free Software see LICENSE file for details
 
-from resources.lib import TheMovieDB as tmdb
-from .DialogVideoInfo import DialogVideoInfo
+from resources.kutil131 import ActionHandler, addon
 
-from kodi65 import imagetools
-from kodi65 import utils
-from kodi65 import addon
-from kodi65 import ActionHandler
+from resources.kutil131 import imagetools, utils
+from resources.lib import themoviedb as tmdb
+
+from .dialogvideoinfo import DialogVideoInfo
 
 ch = ActionHandler()
 
@@ -24,7 +22,7 @@ class DialogSeasonInfo(DialogVideoInfo):
              (1350, "backdrops")]
 
     def __init__(self, *args, **kwargs):
-        super(DialogSeasonInfo, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.tvshow_id = kwargs.get('id')
         data = tmdb.extended_season_info(tvshow_id=self.tvshow_id,
                                          season_number=kwargs.get('season'))
@@ -34,14 +32,16 @@ class DialogSeasonInfo(DialogVideoInfo):
         if not self.info.get_info("dbid"):  # need to add comparing for seasons
             poster = utils.get_file(url=self.info.get_art("poster"))
             self.info.set_art("poster", poster)
-        self.info.update_properties(imagetools.blur(self.info.get_art("poster")))
+        self.info.update_properties(
+            imagetools.blur(self.info.get_art("poster")))
 
     def onInit(self):
-        self.get_youtube_vids("%s %s tv" % (self.info.get_info("tvshowtitle"), self.info.get_info('title')))
-        super(DialogSeasonInfo, self).onInit()
+        self.get_youtube_vids("%s %s tv" % (self.info.get_info(
+            "tvshowtitle"), self.info.get_info('title')))
+        super().onInit()
 
     def onClick(self, control_id):
-        super(DialogSeasonInfo, self).onClick(control_id)
+        super().onClick(control_id)
         ch.serve(control_id, self)
 
     def get_manage_options(self):

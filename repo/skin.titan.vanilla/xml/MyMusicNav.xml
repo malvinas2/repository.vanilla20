@@ -8,13 +8,11 @@
     <controls>
         <!--Music Background-->
         <include>GlobalBackground</include>
-		
 
 		 <!--Header-->
         <include>Header</include>
  		<!--NowPlaying-->
 		<include>NowPlayingModern</include>
-		
 		
 		<!-- all Views -->
         <include>allViews</include>
@@ -29,11 +27,11 @@
 			<include condition="![Skin.HasSetting(smallContextMenu)]">SideBladeModern</include>
             <control type="button" id="3">
 				<description>Viewtype Toggle</description>
-				<include>HiddenObject</include>
+				<include>HiddenButton</include>
 			</control>
 			<control type="togglebutton" id="4">
 				<description>Viewtype Toggle</description>
-				<include>HiddenObject</include>
+				<include>HiddenButton</include>
 			</control>
 			<!--Grouplist 9000-->
             <control type="grouplist" id="9000">
@@ -77,14 +75,14 @@
 					<include>SideBladeMenuButton</include>
 					<!-- <textoffsetx>50</textoffsetx> -->
 					<!-- <textoffsety>13</textoffsety> -->
-					<label>587</label>
+					<label>$LOCALIZE[587]</label>
 					<onclick>right</onclick>
 				</control>
 				<control type="button" id="98">
 					<visible>Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
 					<include>SideBladeMenuButton</include>
-					<label>587</label>
+					<label>$LOCALIZE[587]</label>
 					<!-- <selected>Container.Filtered</selected> -->
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>
@@ -92,12 +90,12 @@
                 <!-- <control type="button" id="8"> -->
                     <!--Button Search-->
                     <!-- <include>SideBladeMenuButton</include> -->
-                    <!-- <label>137</label> -->
+                    <!-- <label>$LOCALIZE[137]</label> -->
                 <!-- </control> -->
 				<control type="button" id="388">
                     <!--Button Search-->
                     <include>SideBladeMenuButton</include>
-                    <label>137</label>
+                    <label>$LOCALIZE[137]</label>
 					<!-- <onclick>RunScript(script.skin.helper.service,action=VIDEOSEARCH)</onclick> -->
 					<!-- <label>$LOCALIZE[70001]</label> -->
 					<onclick condition="System.HasAddon(script.globalsearch)">RunScript(script.globalsearch)</onclick>
@@ -107,7 +105,7 @@
                 <control type="button" id="4401">
                     <!--current playlist-->
                     <include>SideBladeMenuButton</include>
-                    <label>13350</label>
+                    <label>$LOCALIZE[13350]</label>
 					<onclick>ActivateWindow(musicplaylist)</onclick>
 					<visible>!String.IsEqual(Playlist.Length(music),0)</visible>
                 </control>
@@ -115,20 +113,20 @@
                     <!--Button Party Mode-->
                     <description>PartyMode</description>
                     <include>SideBladeMenuButton</include>
-                    <label>589</label>
+                    <label>$LOCALIZE[589]</label>
                 </control>
                 <control type="button" id="5">
                     <!--Button Files-->
                     <description>Files</description>
                     <include>SideBladeMenuButton</include>
-                    <label>1214</label>
+                    <label>$LOCALIZE[1214]</label>
                     <onclick>SetFocus(50)</onclick>
                 </control>
 				<control type="togglebutton" id="20">
 					<description>Update library</description>
 					<include>SideBladeMenuButton</include>
-					<label>653</label>
-					<altlabel>13353</altlabel>
+					<label>$LOCALIZE[653]</label>
+					<altlabel>$LOCALIZE[13353]</altlabel>
 					<alttexturefocus border="5" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">colors/color_white.png</alttexturefocus>
 					<alttexturenofocus></alttexturenofocus>
 					<usealttexture>library.isscanningmusic</usealttexture>

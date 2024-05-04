@@ -5,9 +5,7 @@
 	<onunload>ClearProperty(AdditionalInfo)</onunload>
 	
     <controls>
-
 		<control type="group">
-	
 			<include>GlobalBackground</include>
 			
 			<control type="label">
@@ -127,7 +125,7 @@
                         <include condition="Skin.HasSetting(EnableTouchSupport)">home_button</include>
                         <control type="button" id="220">
 							<!--Info Button-->
-							<label>19033</label>
+							<label>$LOCALIZE[19033]</label>
 							<width>285</width>
 							<height>60</height>
 							<align>center</align>
@@ -138,7 +136,7 @@
 						</control>
                         <control type="button" id="113">
 							<!--local media-->
-							<label>31657</label>
+							<label>$LOCALIZE[31657]</label>
 							<width>285</width>
 							<height>60</height>
 							<align>center</align>
@@ -217,7 +215,7 @@
 						</control>
                         <control type="button" id="119">
 							<!--fanart-->
-							<label>20445</label>
+							<label>$LOCALIZE[20445]</label>
 							<width>285</width>
 							<height>60</height>
 							<align>center</align>
@@ -241,11 +239,10 @@
                             <onclick>SetProperty(subtitle, $ADDON[script.extendedinfo 32119])</onclick>
                             <visible>Integer.IsGreater(Container(450).NumItems,0)</visible>
 						</control>
-                 						
 						
                         <control type="radiobutton" id="3052">
                             <!--Hide panel behind moviedetails-->
-                            <label>31155</label>
+                            <label>$LOCALIZE[31155]</label>
                             <width>530</width>
                             <textoffsetx>20</textoffsetx>
                             <align>left</align>
@@ -682,9 +679,8 @@
                                   </control>
                             </focusedlayout>
                         </control>
-                                     </control>
-
-                                 				</control>
+                    </control>
+                </control>
 			</control>
 		</control>
 	</controls>

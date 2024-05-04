@@ -47,7 +47,7 @@ class DialogSelect(xbmcgui.WindowXMLDialog):
         if self.autofocus:
             try:
                 for count, item in enumerate(self.listing):
-                    if item.getLabel() == self.autofocus:
+                    if try_decode(item.getLabel()) == self.autofocus:
                         self.list_control.selectItem(count)
             except Exception:
                 self.list_control.selectItem(0)

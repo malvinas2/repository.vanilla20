@@ -19,7 +19,6 @@
 
 		<!-- Aspect Ratio / Zoom Info Overlay -->
 		<control type="group" id="0">
-	
 			<left>0</left>
 			<top>300</top>
 			<width>100%</width>
@@ -153,7 +152,5 @@
 				<shadowcolor>black</shadowcolor>
 			</control>
 		</control>
-
-		
     </controls>
 </window>

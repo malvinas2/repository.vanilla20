@@ -15,9 +15,86 @@
     
 	<include name="DefaultSkinSettingsValues">
 		
-		<!-- various default settings  -->
+		<!-- notwendig fuer Skin-Shortcuts -->
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(IsTitanSkin)</onload>
+		
+		<!-- Layout des Startbildschirms -->
+		<onload condition="!Skin.String(SubmenuLayout)">Skin.SetString(SubmenuLayout, horizontal)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(OpenSubMenuOnClick)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(AutoShowSubmenu)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(DisableAllWidgets)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(DisablePowerMenu)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(HideHomeTileIndicators)</onload>
+		
+		<!-- Hintergrundeinstellungen -->
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(UseSectionBackground)</onload>
+		<onload condition="!Skin.String(BackgroundOverlayTexture.label)">Skin.SetString(BackgroundOverlayTexture.label,Default)</onload>
+        <onload condition="!Skin.String(BackgroundOverlayTexture.label)">Skin.SetString(BackgroundOverlayTexture,diffuse/background.png)</onload>
+		<onload condition="!Skin.String(BackgroundOverlayColor)">Skin.SetString(BackgroundOverlayColor,d84d86a6)</onload>
+        <onload condition="!Skin.String(BackgroundOverlayColor.name)">Skin.SetString(BackgroundOverlayColor.name,Custom)</onload>
+        <onload condition="!Skin.String(BackgroundOverlayColor.base)">Skin.SetString(BackgroundOverlayColor.base,ff4d86a6)</onload>
+        <onload condition="!Skin.String(BackgroundDiffuseColor)">Skin.SetString(BackgroundDiffuseColor,None)</onload>
+        <onload condition="!Skin.String(BackgroundDiffuseColor.name)">Skin.SetString(BackgroundDiffuseColor.name,None)</onload>
+
+		<!-- Medienbibliothekansichten -->
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ShowFanartBackground)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(EnableNativeExtraFanart)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(DisableLandscapeThumbs)</onload>
+		<onload condition="!Skin.String(mediaflagsstyle)">Skin.SetString(mediaflagsstyle, textbased - full info)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(IMDBRatingInFooter)</onload>
+		<onload condition="!Skin.String(actorthumbslookup,true)">Skin.SetString(actorthumbslookup,true)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(DialogVideoInfo_HideFileName)</onload>
+		<onload condition="!Skin.String(WatchedIndicator.Watched.Color)">Skin.SetBool(WatchedIndicator.Watched)</onload>
+        <onload condition="!Skin.String(WatchedIndicator.Progress.Color)">Skin.SetBool(WatchedIndicator.Progress)</onload>
+        <onload condition="!Skin.String(WatchedIndicator.Sets.Color)">Skin.SetBool(WatchedIndicator.Sets)</onload>
+        <onload condition="!Skin.String(WatchedIndicator.Episodes.Color)">Skin.SetBool(WatchedIndicator.Episodes)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(WatchedIndicator.Playing)</onload>
+
+		<!-- Erzwungene Ansichten -->
+        <onload condition="!Skin.String(SkinHelper.ForcedViews.movies)">Skin.SetString(SkinHelper.ForcedViews.movies,50)</onload>
+		<onload condition="!Skin.String(SkinHelper.ForcedViews.tvshows)">Skin.SetString(SkinHelper.ForcedViews.tvshows,50)</onload>
+		<onload condition="!Skin.String(SkinHelper.ForcedViews.seasons)">Skin.SetString(SkinHelper.ForcedViews.seasons,50)</onload>
+		<onload condition="!Skin.String(SkinHelper.ForcedViews.episodes)">Skin.SetString(SkinHelper.ForcedViews.episodes,50)</onload>
+		<onload condition="!Skin.String(SkinHelper.ForcedViews.sets)">Skin.SetString(SkinHelper.ForcedViews.sets,50)</onload>
+		<onload condition="!Skin.String(SkinHelper.ForcedViews.setmovies)">Skin.SetString(SkinHelper.ForcedViews.setmovies,50)</onload>
+
+		<!-- Wiedergabe und OSD -->
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(EnableOSDInfo)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetString(SkinHelper.ShowInfoAtPlaybackStart, 4)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(OSDShowInfoOnPause)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ShowWeatherVideoInfoOSD)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(EnableBufferingProgressOSD)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetNumeric(SkinHelper.AutoCloseVideoOSD, 5)</onload>
+		<onload condition="!Skin.String(osdmediaflagsstyle)">Skin.SetString(osdmediaflagsstyle, textbased - full info)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(AlwaysShowMusicInfo)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SkinHelper.DisableScreenSaverOnFullScreenMusic)</onload>
+		
+		<!-- Live-Fernsehen -->
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetString(GuideRows, 9)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(PVRShowPreview)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(PVRGuideBackSideblade)</onload>
+        <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(pvrGuideOnFullscreenVideo)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(small_pvrchannelsosd)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(pvrGuideHighlightChannel)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ShowEpgGenreColors)</onload>
+		
+		<!-- Allgemeine Skin-Einstellungen -->
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(alwaysShowScrollbars)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(useExtendedWeatherScreen)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(DialogYesNo_FocusNO)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ShowLabelsPosterEpisodes)</onload>
+		<onload>Skin.SetString(AutoYoutubeTrailer,false)</onload>
+			<!-- false, because Searching and Playing of trailers by YouTube does not seem to work with any addon: -->
+			<!-- skinhelper, embuaryhelper, bingiehelper, themoviedbhelper ????? -->
+		
+		<!-- Intelligente Verknuepfungen -->
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SmartShortcuts.playlists)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SmartShortcuts.plex)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SmartShortcuts.netflix)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SmartShortcuts.emby)</onload>
+		
+		<!-- wahrscheinlich fuer Kontextmenu -->
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(DetailsShowFanart)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View502_ShowCDart)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View514_ShowCDart)</onload>
@@ -25,47 +102,24 @@
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View508_ShowCDart)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View58_ShowCDart)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(PanelViewShowInfo)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ShowlabelsLandscape)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(AnimateDiscArt)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetString(SkinHelper.ShowInfoAtPlaybackStart, 4)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetString(GuideRows, 9)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(AnimateDiscArt)</onload>		
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(GuideShowInfo)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ShowWeatherVideoInfoOSD)</onload>
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View523_DetailsShowFanart)</onload>
+		
+		<!-- wahrscheinlich uberflussig -->
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ShowlabelsLandscape)</onload>
+		<!-- wahrscheinlich uberflussig -->
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(HideWatchedRecentlyAdded)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(IsTitanSkin)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SmartShortcuts.playlists)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(OSDShowInfoOnPause)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(PVRShowPreview)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SmartShortcuts.emby)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(useExtendedWeatherScreen)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SmartShortcuts.plex)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SmartShortcuts.netflix)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(PVRGuideBackSideblade)</onload>
-        <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SkinHelper.EnablePVRThumbs)</onload>
-        <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(pvrGuideOnFullscreenVideo)</onload>
-        <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(enableArtistBio)</onload>
-        <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ShowLabelsPosterEpisodes)</onload>
-        <onload condition="!Skin.String(BackgroundOverlayTexture.label)">Skin.SetString(BackgroundOverlayTexture.label,Default)</onload>
-        <onload condition="!Skin.String(BackgroundOverlayTexture.label)">Skin.SetString(BackgroundOverlayTexture,diffuse/background.png)</onload>
-        <onload condition="!Skin.String(WatchedIndicator.Watched.Color)">Skin.SetBool(WatchedIndicator.Watched)</onload>
-        <onload condition="!Skin.String(WatchedIndicator.Progress.Color)">Skin.SetBool(WatchedIndicator.Progress)</onload>
-        <onload condition="!Skin.String(WatchedIndicator.Sets.Color)">Skin.SetBool(WatchedIndicator.Sets)</onload>
-        <onload condition="!Skin.String(WatchedIndicator.Episodes.Color)">Skin.SetBool(WatchedIndicator.Episodes)</onload>
-        <onload condition="!Skin.String(SkinHelper.ForcedViews.movies)">Skin.SetString(SkinHelper.ForcedViews.movies,50)</onload>
-		<onload condition="!Skin.String(SkinHelper.ForcedViews.tvshows)">Skin.SetString(SkinHelper.ForcedViews.tvshows,50)</onload>
-		<onload condition="!Skin.String(SkinHelper.ForcedViews.seasons)">Skin.SetString(SkinHelper.ForcedViews.seasons,50)</onload>
-		<onload condition="!Skin.String(SkinHelper.ForcedViews.episodes)">Skin.SetString(SkinHelper.ForcedViews.episodes,50)</onload>
-		<onload condition="!Skin.String(SkinHelper.ForcedViews.sets)">Skin.SetString(SkinHelper.ForcedViews.sets,50)</onload>
-		<onload condition="!Skin.String(SkinHelper.ForcedViews.setmovies)">Skin.SetString(SkinHelper.ForcedViews.setmovies,50)</onload>
+		<!-- wahrscheinlich uberflussig -->
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(NetflixHomeShowLargeThumb)</onload>
+		
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SkinHelper.EnableMusicArt)</onload>
+		
+
 		<onload condition="!Skin.String(SkinHelper.SpinnerTexture.label)">Skin.SetString(SkinHelper.SpinnerTexture.Path, busy_spinner/)</onload>
         <onload condition="!Skin.String(SkinHelper.SpinnerTexture.label)">Skin.SetString(SkinHelper.SpinnerTexture.Label,Default)</onload>
 		<onload condition="!Skin.String(SpinnerTexture.Color)">Skin.SetString(SpinnerTexture.Color, FF00b8ff)</onload>
-        <onload condition="!Skin.String(mediaflagsstyle)">Skin.SetString(mediaflagsstyle, textbased - full info)</onload>
-        <onload condition="!Skin.String(osdmediaflagsstyle)">Skin.SetString(osdmediaflagsstyle, textbased - full info)</onload>
-        <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(NetflixHomeShowLargeThumb)</onload>
-        <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View523_DetailsShowFanart)</onload>
-        <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(WatchedIndicator.Playing)</onload>
-        <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SkinHelper.EnableMusicArt)</onload>
+       
 
 		<!-- default color settings (titan default theme blue) -->
  		<onload condition="!Skin.String(HomeViewDetailsFocusColor)">Skin.SetString(HomeViewDetailsFocusColor, FF00b8ff)</onload>
@@ -104,11 +158,6 @@
         <onload condition="!Skin.String(GeneralHighlightTextColor)">Skin.SetString(GeneralHighlightTextColor,FF00b8ff)</onload>
         <onload condition="!Skin.String(GeneralHighlightTextColor.name)">Skin.SetString(GeneralHighlightTextColor.name,mainblue)</onload>
         	
-		<onload condition="!Skin.String(BackgroundOverlayColor)">Skin.SetString(BackgroundOverlayColor,d84d86a6)</onload>
-        <onload condition="!Skin.String(BackgroundOverlayColor.name)">Skin.SetString(BackgroundOverlayColor.name,Custom)</onload>
-        <onload condition="!Skin.String(BackgroundOverlayColor.base)">Skin.SetString(BackgroundOverlayColor.base,ff4d86a6)</onload>
-        <onload condition="!Skin.String(BackgroundDiffuseColor)">Skin.SetString(BackgroundDiffuseColor,None)</onload>
-        <onload condition="!Skin.String(BackgroundDiffuseColor.name)">Skin.SetString(BackgroundDiffuseColor.name,None)</onload>
  		<onload condition="!Skin.String(FooterPanelColor)">Skin.SetString(FooterPanelColor,cc011222)</onload>
         <onload condition="!Skin.String(FooterPanelColor.name)">Skin.SetString(FooterPanelColor.name,darkblue)</onload>
  		<onload condition="!Skin.String(GeneralPanelsColor)">Skin.SetString(GeneralPanelsColor,cc011222)</onload>
@@ -229,6 +278,15 @@
         <onload condition="!Skin.String(PVRGuideItemTextColorUnfocus.name)">Skin.SetString(PVRGuideItemTextColorUnfocus.name,$INFO[Skin.String(ButtonTextColor.name)])</onload>
         <onload condition="!Skin.String(PVRGuideItemTextColorFocus)">Skin.SetString(PVRGuideItemTextColorFocus,$INFO[Skin.String(ButtonFocusTextColor)])</onload>
         <onload condition="!Skin.String(PVRGuideItemTextColorFocus.name)">Skin.SetString(PVRGuideItemTextColorFocus.name,$INFO[Skin.String(ButtonFocusTextColor.name)])</onload>
+
+        <onload condition="!Skin.String(EDLMarkerColor)">Skin.SetString(EDLMarkerColor,ffff0000)</onload>
+        <onload condition="!Skin.String(EDLMarkerColor.name)">Skin.SetString(EDLMarkerColor.name,red)</onload>
+		<onload condition="!Skin.String(ChapterMarkerColor)">Skin.SetString(ChapterMarkerColor,ffffffff)</onload>
+        <onload condition="!Skin.String(ChapterMarkerColor.name)">Skin.SetString(ChapterMarkerColor.name,white)</onload>
+		<onload condition="!Skin.String(SceneMarkerColor)">Skin.SetString(SceneMarkerColor,ffffffff)</onload>
+        <onload condition="!Skin.String(SceneMarkerColor.name)">Skin.SetString(SceneMarkerColor.name,white)</onload>
+        <onload condition="!Skin.String(CutMarkerColor)">Skin.SetString(CutMarkerColor,ffffffff)</onload>
+        <onload condition="!Skin.String(CutMarkerColor.name)">Skin.SetString(CutMarkerColor.name,white)</onload>
         
         <onload condition="!Skin.String(defaultcolorpalette.label)">Skin.SetString(defaultcolorpalette.label,basic)</onload>
         <onload condition="!Skin.String(defaultcolorpalette)">Skin.SetString(defaultcolorpalette,basic)</onload>

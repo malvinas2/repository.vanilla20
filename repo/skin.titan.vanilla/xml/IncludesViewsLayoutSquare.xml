@@ -28,6 +28,7 @@
         <!--Label Overlay-->
         <include condition="!Window.IsActive(Home)">SquarePosterTagOverlay</include>
     </include>
+	
     <include name="SquarePosterPanelLayoutFocus">
         <control type="image">
             <include>SquareThumbFO</include>
@@ -52,7 +53,6 @@
         </control>
         <!--Label Overlay-->
         <include condition="!Window.IsActive(Home)">SquarePosterTagOverlay</include>
-
     </include>
 
     <include name="SquareThumb">
@@ -89,6 +89,7 @@
             Window.IsActive(settings) | Window.IsActive(musicinformation)
         </visible>
     </include>
+	
     <include name="SquarePosterTagOverlay">
         <control type="group">
             <include condition="!Window.IsActive(Home)">SquarePosterTagOverlayVisibility</include>

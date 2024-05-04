@@ -149,7 +149,7 @@
 					
 					<control type="button" id="244">
                         <!--Go Fullscreen-->
-                        <label>244</label>
+                        <label>$LOCALIZE[244]</label>
                         <width>285</width>
                         <height>60</height>
                         <align>center</align>
@@ -186,7 +186,7 @@
                     
                     <control type="button" id="101">
                         <!--Get Thumb Artwork Beef -->
-                        <label>13511</label>
+                        <label>$LOCALIZE[13511]</label>
                         <width>285</width>
                         <height>60</height>
                         <align>center</align>
@@ -198,18 +198,16 @@
                     
                     <control type="radiobutton" id="3052">
                         <!--Hide panel behind moviedetails-->
-                        <label>31155</label>
+                        <label>$LOCALIZE[31155]</label>
                         <width>450</width>
                         <textoffsetx>20</textoffsetx>
                         <align>left</align>
                         <onclick>Skin.ToggleSetting(ExtendedInfoHidePanel)</onclick>
                         <selected>Skin.HasSetting(ExtendedInfoHidePanel)</selected>
                     </control>
-
 				</control>
      
 			<control type="group">
-
                 <control type="grouplist" id="4000">
                     <orientation>vertical</orientation>
                     <scrolltime tween="sine">400</scrolltime>
@@ -222,7 +220,7 @@
                     <width>2100</width>
                     <height>800</height>
 					<pagecontrol>999</pagecontrol>
-                                					<!-- rating stuff -->
+                    <!-- rating stuff -->
 					<control type="group">
 						<height>130</height>
 						<animation effect="fade" time="250">VisibleChange</animation>
@@ -474,7 +472,7 @@
 							<aspectratio align="right" aligny="top" scalediffuse="true">keep</aspectratio>
 							<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png" border="5">$INFO[Window.Property(Poster)]</texture>
 						</control>
-                                  					</control>
+                    </control>
                     				
 					<!-- cast panel -->
                     <control type="group" id="50111">
@@ -541,7 +539,6 @@
 						</control>
 					</control>
 					
-					
 					<!-- crew panel -->
 					<control type="group" id="54111">
                         <visible>Integer.IsGreater(Container(750).NumItems,0)</visible>
@@ -554,8 +551,6 @@
                             <aligny>center</aligny>
                           <font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
-                            <!-- <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>  -->
-						<!--	<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>    -->
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>$ADDON[script.extendedinfo 32115]$INFO[Container(750).NumItems, (,)]</label>
                         </control>
@@ -608,7 +603,6 @@
                           <font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                             <!-- <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>     -->
-					<!--		<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>$ADDON[script.extendedinfo 32116]$INFO[Container(150).NumItems, (,)]</label>
                         </control>
@@ -661,7 +655,6 @@
                           <font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                             <!-- <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>    -->
-						<!-- 	<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>  -->
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>$INFO[Window.Property(set.label)]$INFO[Container(250).NumItems, (,)]</label>
 							<visible>!Integer.IsGreater(Container(250).NumItems,0)</visible>
@@ -675,7 +668,6 @@
                           <font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                            <!--  <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
-					<!-- 		<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>  -->
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>$LOCALIZE[33054] $INFO[Container(250).NumItems, (,)]</label>
 							<visible>Integer.IsGreater(Container(250).NumItems,0)</visible>
@@ -715,7 +707,7 @@
                             </focusedlayout>
 						</control>
                     </control>
-             					<!-- official movies -->
+             		<!-- official movies -->
 					<control type="group">
                         <visible>Integer.IsGreater(Container(1150).NumItems,0)</visible>
                         <height>270</height>
@@ -728,7 +720,6 @@
                           <font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                             <!-- <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
-					<!-- 		<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>    -->
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>$ADDON[script.extendedinfo 32117]</label>
                         </control>
@@ -770,7 +761,7 @@
 							</focusedlayout>
 						</control>
                     </control>
-             					<!-- youtube movies -->
+             		<!-- youtube movies -->
 					<control type="group">
                         <visible>Integer.IsGreater(Container(350).NumItems,0)</visible>
                         <height>270</height>
@@ -783,7 +774,7 @@
                           <font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                            <!--  <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
-						<!-- 	<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
+
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>$ADDON[script.extendedinfo 32118]</label>
                         </control>
@@ -823,7 +814,6 @@
                                     <include>ThumbsViewLayoutFocus</include>
                                 </control>
 							</focusedlayout>
-
 						</control>
                     </control>
              					<!-- studios -->
@@ -839,7 +829,6 @@
                           <font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                             <!-- <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>    -->
-						<!-- 	<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>$LOCALIZE[20388]</label>
                         </control>
@@ -873,7 +862,6 @@
                                         <width>340</width>
                                         <height>200</height>
                                         <texture border="5" colordiffuse="black">diffuse/panel.png</texture>
-										
                                     </control>
                                     <control type="image">
                                         <posy>5</posy>
@@ -936,9 +924,9 @@
 									</control>
                                 </control>
                             </focusedlayout>
-                 						</control>
+                 		</control>
                     </control>
-             					<!-- networks -->
+             		<!-- networks -->
 					<control type="group">
                         <visible>Integer.IsGreater(Container(1450).NumItems,0)</visible>
                         <height>290</height>
@@ -951,7 +939,6 @@
                           <font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                             <!-- <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>    -->
-					<!-- 		<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>    -->
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>$ADDON[script.extendedinfo 32152]</label>
                         </control>
@@ -985,7 +972,6 @@
                                         <width>340</width>
                                         <height>200</height>
                                         <texture border="5" colordiffuse="black">diffuse/panel.png</texture>
-										
                                     </control>
                                     <control type="image">
                                         <posy>5</posy>
@@ -1050,7 +1036,7 @@
                             </focusedlayout>
                         </control>
                     </control>
-             					<!-- releases -->
+             		<!-- releases -->
 					<control type="group">
                         <visible>Integer.IsGreater(Container(650).NumItems,0)</visible>
                         <height>400</height>
@@ -1063,7 +1049,6 @@
                           <font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                             <!-- <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>    -->
-						<!-- 	<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>$ADDON[script.extendedinfo 32168]</label>
                         </control>
@@ -1106,7 +1091,6 @@
                                         <width>340</width>
                                         <height>200</height>
                                         <texture border="5" colordiffuse="black">diffuse/panel.png</texture>
-										
                                     </control>
                                     <control type="image">
                                         <posy>5</posy>
@@ -1185,7 +1169,6 @@
                           <font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                            <!--  <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>    -->
-					<!-- 		<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>Genres</label>
                         </control>
@@ -1260,7 +1243,7 @@
                             </focusedlayout>
                         </control>
                     </control>
-             					<!-- reviews -->
+             		<!-- reviews -->
 					<control type="group">
                         <visible>Integer.IsGreater(Container(1050).NumItems,0)</visible>
                         <height>365</height>
@@ -1315,7 +1298,6 @@
 										<width>820</width>
 										<height>260</height>
 										<align>justify</align>
-										
 										<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 										<font>Reg26</font>
 										<label>$INFO[ListItem.Property(Author),[B],[/B][CR]]$INFO[ListItem.Property(Content)]</label>
@@ -1339,7 +1321,6 @@
 										<width>820</width>
 										<height>260</height>
 										<align>justify</align>
-										
 										<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
 										<font>Reg26</font>
 										<label>$INFO[ListItem.Property(Author),[B],[/B][CR]]$INFO[ListItem.Property(Content)]</label>
@@ -1348,7 +1329,7 @@
                             </focusedlayout>
 						</control>
                     </control>
-             					<!-- keywords -->
+             		<!-- keywords -->
 					<control type="group">
                         <visible>Integer.IsGreater(Container(950).NumItems,0)</visible>
                         <height>310</height>
@@ -1392,7 +1373,6 @@
                                         <width>340</width>
                                         <height>100</height>
                                         <texture border="5" colordiffuse="black">diffuse/panel.png</texture>
-										
                                     </control>
                                     <control type="image">
                                         <posy>5</posy>
@@ -1443,7 +1423,7 @@
                             </focusedlayout>
                         </control>
                     </control>
-             					<!-- artwork (posters) -->
+             		<!-- artwork (posters) -->
 					<control type="group">
                         <height>350</height>
                         <visible>Integer.IsGreater(Container(1250).NumItems,0)</visible>
@@ -1455,7 +1435,6 @@
                           <font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                             <!-- <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>    -->
-						<!-- 	<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>$ADDON[script.extendedinfo 32119]</label>
                         </control>
@@ -1484,18 +1463,17 @@
 									<height>252</height>
 									<posy>10</posy>
 									<posx>10</posx>
-									
                                     <control type="image">
 										<width>176</width>
 										<height>252</height>
 										<include>PosterThumbBG</include>
-									  </control>
-									  <control type="image">
+									</control>
+									<control type="image">
 										<width>176</width>
 										<height>252</height>
 										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="defaultactorposter.png">$INFO[ListItem.Art(thumb)]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio><bordersize>8</bordersize>
-									  </control>
+									</control>
                                 </control>
                             </itemlayout>
                             <focusedlayout height="260" width="201">
@@ -1508,13 +1486,13 @@
 										<width>176</width>
 										<height>252</height>
 										<include>PosterThumbFO</include>
-									  </control>
-									  <control type="image">
+									</control>
+									<control type="image">
 										<width>176</width>
 										<height>252</height>
 										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="defaultactorposter.png">$INFO[ListItem.Art(thumb)]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio><bordersize>8</bordersize>
-									  </control>
+									</control>
                                 </control>
                             </focusedlayout>
 						</control>
@@ -1528,10 +1506,9 @@
                             <width>500</width>
                             <height>25</height>
                             <aligny>center</aligny>
-                          <font>Bold32</font>
+							<font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>    
                             <!-- <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
-						<!-- 	<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>$LOCALIZE[20445]</label>
                         </control>
@@ -1561,7 +1538,7 @@
 									<control type="image">
 										<texture>home/home_matte2.png</texture>
 										<colordiffuse>black</colordiffuse>
-									  </control>
+									</control>
 									<control type="image">
 										<!--Panel Normal-->
 										<bordersize>5</bordersize>
@@ -1577,7 +1554,7 @@
 									<control type="image">
 										<texture>home/home_matte2.png</texture>
 										<colordiffuse>$VAR[ViewDetailsFocusColor]</colordiffuse>
-									  </control>
+									</control>
 									<control type="image">
 										<!--Panel Normal-->
 										<bordersize>5</bordersize>
@@ -1586,10 +1563,9 @@
 									</control>
 								</control>
 							</focusedlayout>
-
 						</control>
                     </control>
-             					<!-- related tmdb lists -->
+             		<!-- related tmdb lists -->
 					<control type="group" id="50215">
                         <height>350</height>
                         <visible>Integer.IsGreater(Container(450).NumItems,0)</visible>
@@ -1599,10 +1575,9 @@
                             <width>500</width>
                             <height>25</height>
                             <aligny>center</aligny>
-                          <font>Bold32</font>
+							<font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                             <!-- <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>    -->
-						<!-- 	<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>Related TMDB Lists$INFO[Container(450).NumItems, (,)]</label>
                         </control>
@@ -1637,20 +1612,19 @@
 										<width>176</width>
 										<height>252</height>
 										<include>PosterThumbBG</include>
-									  </control>
-									  <control type="image">
+									</control>
+									<control type="image">
 										<width>176</width>
 										<height>252</height>
 										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="defaultactorposter.png">$INFO[ListItem.Art(thumb)]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio><bordersize>8</bordersize>
-									  </control>
+									</control>
 									<control type="image">
 										<bottom>8</bottom>
 										<left>8</left>
 										<width>160</width>
 										<height>65</height>
 										<include>PosterThumbBG</include>
-										
 									</control>
 									<control type="textbox">
 										<bottom>0</bottom>
@@ -1673,20 +1647,19 @@
 										<width>176</width>
 										<height>252</height>
 										<include>PosterThumbFO</include>
-									  </control>
-									  <control type="image">
+									</control>
+									<control type="image">
 										<width>176</width>
 										<height>252</height>
 										<texture border="0" background="true" diffuse="diffuse/poster.png" fallback="defaultactorposter.png">$INFO[ListItem.Art(thumb)]</texture>
 										<aspectratio scalediffuse="false" aligny="center" align="center">stretch</aspectratio><bordersize>8</bordersize>
-									  </control>
+									</control>
 									<control type="image">
 										<bottom>8</bottom>
 										<left>8</left>
 										<width>160</width>
 										<height>65</height>
 										<include>PosterThumbBG</include>
-										
 									</control>
 									<control type="textbox">
 										<bottom>0</bottom>
@@ -1701,7 +1674,7 @@
                             </focusedlayout>
 						</control>
                     </control>
-             					<!-- episode index -->
+             		<!-- episode index -->
 					<control type="group">
                         <visible>Integer.IsGreater(Container(2000).NumItems,0)</visible>
                         <height>270</height>
@@ -1711,14 +1684,14 @@
                             <width>500</width>
                             <height>25</height>
                             <aligny>center</aligny>
-                          <font>Bold32</font>
+							<font>Bold32</font>
                             <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                            <!--  <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>    -->
-					<!-- 		<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>   -->
+
 							<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                             <label>Episode Index</label>
                         </control>
-						 <control type="image">
+						<control type="image">
                             <posx>1810</posx>
                             <posy>60</posy>
                             <width>35</width>
@@ -1743,12 +1716,11 @@
 							<itemlayout width="362" height="200">
 								<control type="group">
 									<posx>5</posx>
-									
 									<control type="image">
 										<width>340</width>
 										<height>200</height>
 										<include>PosterThumbBG</include>
-									  </control>
+									</control>
 									<control type="image">
 										<!--Panel Normal-->
 										<posx>4</posx>
@@ -1783,7 +1755,7 @@
 										<width>340</width>
 										<height>200</height>
 										<include>PosterThumbFO</include>
-									  </control>
+									</control>
 									<control type="image">
 										<!--Panel Normal-->
 										<posx>4</posx>
@@ -1799,7 +1771,6 @@
 										<width>320</width>
 										<height>53</height>
 										<include>PosterThumbBG</include>
-										
 									</control>
 									<control type="textbox">
 										<bottom>2</bottom>
@@ -1865,9 +1836,6 @@
                     <visible>false</visible>
                     <animation effect="fade" time="250">VisibleChange</animation>
                 </control>
-				
-				
-				
 				
 			</control>
         </control>

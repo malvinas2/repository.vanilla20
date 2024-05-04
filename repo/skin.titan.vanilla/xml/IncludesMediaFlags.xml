@@ -71,21 +71,16 @@
                 <visible>!String.IsEmpty(ListItem.SubtitleLanguage) + !Skin.String(mediaflagsstyle,large_color)</visible>
             </control>
             <control type="image" >
-                <!-- <height>95</height> -->
                 <include>mediaflags_large_layout</include>
-                <!-- <texture background="true">$INFO[ListItem.AudioLanguage,$VAR[LanguageFlagIconPath],.png]</texture> -->
 				<texture background="true">$VAR[LanguageFlagIconPath]$INFO[ListItem.AudioLanguage].png</texture>
                 <visible>!String.IsEmpty(ListItem.AudioLanguage) + Skin.String(mediaflagsstyle,large_color)</visible>
             </control>
             <control type="image">
-                <!-- <height>95</height> -->
                 <include>mediaflags_large_layout</include>
-                <!-- <texture background="true">$INFO[ListItem.SubtitlesLanguage,$VAR[LanguageFlagIconPath],.png]</texture> -->
 				<texture background="true">$VAR[LanguageFlagIconPath]$INFO[ListItem.SubtitleLanguage].png</texture>
                 <visible>!String.IsEmpty(ListItem.SubtitleLanguage) + Skin.String(mediaflagsstyle,large_color)</visible>
             </control>
             <control type="image">
-				<!-- <height>95</height> -->
                 <include>mediaflags_large_layout</include>
                 <texture fallback="flags/flags_large/mpaa/nr.png">$VAR[mediaflags_large_rating]</texture>
                 <visible>!String.IsEmpty(ListItem.MPAA) + ![Skin.HasSetting(EnableTouchSupport) + Skin.String(mediaflagsstyle,large_color) + !Skin.HasSetting(CompactHeader)]</visible>
@@ -113,44 +108,44 @@
             <include>mediaflags_sets</include>
 			
 	        <control type="grouplist">
-			<itemgap>0</itemgap>
-			<orientation>horizontal</orientation>		
-            <!-- next aired info-->
-            <control type="group">
-                <visible>!String.IsEmpty(Control.GetLabel(44228))</visible>
-                <visible>Container.content(tvshows) | Container.content(seasons)</visible>
-                <width>40</width>
-                <height>80</height>
-                <control type="image">
-                    <width>40</width>
-                    <height>40</height>
-                    <posy>22</posy>
-                    <colordiffuse>$VAR[mediaFlagsFontColor]</colordiffuse>
-                    <texture>dialogs/videoinfo/time-icon.png</texture>
-                </control>
-            </control>
-            <control type="label" id="44227">
-                <font>flags</font>
-                <width>auto</width>
-				<posx>100</posx>
-                <height>80</height>
-                <aligny>center</aligny>
-                <textcolor>$VAR[mediaFlagsFontColor]</textcolor>
-                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.nextepisode.airdate)]</label>
-                <visible>Container.content(tvshows) | Container.content(seasons)</visible>
-                <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.nextepisode.airdate))</visible>
-            </control>
-            <control type="label" id="44228">
-                <font>flags</font>
-                <width>auto</width>
-				<posx>100</posx>
-                <height>80</height>
-                <aligny>center</aligny>
-                <textcolor>$VAR[mediaFlagsFontColor]</textcolor>
-                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</label>
-                <visible>Container.content(tvshows) | Container.content(seasons)</visible>
-                <visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.nextepisode.airdate)) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status))</visible>
-            </control>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>		
+				<!-- next aired info-->
+				<control type="group">
+					<visible>!String.IsEmpty(Control.GetLabel(44228))</visible>
+					<visible>Container.content(tvshows) | Container.content(seasons)</visible>
+					<width>40</width>
+					<height>80</height>
+					<control type="image">
+						<width>40</width>
+						<height>40</height>
+						<posy>22</posy>
+						<colordiffuse>$VAR[mediaFlagsFontColor]</colordiffuse>
+						<texture>dialogs/videoinfo/time-icon.png</texture>
+					</control>
+				</control>
+				<control type="label" id="44227">
+					<font>flags</font>
+					<width>auto</width>
+					<posx>100</posx>
+					<height>80</height>
+					<aligny>center</aligny>
+					<textcolor>$VAR[mediaFlagsFontColor]</textcolor>
+					<label>$INFO[Window(Home).Property(SkinHelper.ListItem.nextepisode.airdate)]</label>
+					<visible>Container.content(tvshows) | Container.content(seasons)</visible>
+					<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.nextepisode.airdate))</visible>
+				</control>
+				<control type="label" id="44228">
+					<font>flags</font>
+					<width>auto</width>
+					<posx>100</posx>
+					<height>80</height>
+					<aligny>center</aligny>
+					<textcolor>$VAR[mediaFlagsFontColor]</textcolor>
+					<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</label>
+					<visible>Container.content(tvshows) | Container.content(seasons)</visible>
+					<visible>String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.nextepisode.airdate)) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Status))</visible>
+				</control>
             </control>
         </control>
     </include>
@@ -194,14 +189,12 @@
             <control type="image" >
                 <height>95</height>
                 <include>mediaflags_large_layout</include>
-                <!-- <texture background="true">$INFO[Window(Home).Property(ListItem.AudioLanguage),$VAR[LanguageFlagIconPath],.png]</texture> -->
 				<texture background="true">$VAR[LanguageFlagIconPath]$INFO[Window(Home).Property(ListItem.AudioLanguage).png</texture>
                 <visible>!String.IsEmpty(Window(Home).Property(ListItem.AudioLanguage)) + Skin.String(mediaflagsstyle,large_color)</visible>
             </control>
             <control type="image">
                 <height>95</height>
                 <include>mediaflags_large_layout</include>
-                <!-- <texture background="true">$INFO[Window(Home).Property(ListItem.SubtitlesLanguage),$VAR[LanguageFlagIconPath],.png]</texture> -->
 				<texture background="true">$VAR[LanguageFlagIconPath]$INFO[Window(Home).Property(ListItem.SubtitlesLanguage).png</texture>
                 <visible>!String.IsEmpty(Window(Home).Property(ListItem.SubtitlesLanguage)) + Skin.String(mediaflagsstyle,large_color)</visible>
             </control>
@@ -632,7 +625,6 @@
 				</control>
 			</control>
 			
-			
 			<!-- nextaired info -->
 			<control type="group">
 				<visible>!String.IsEmpty(Control.GetLabel(44240))</visible>
@@ -998,7 +990,6 @@
 			<visible>!String.IsEmpty(Control.GetLabel(54329))</visible>
 		</control>
 		
-		
 		<!-- star rating (widgets only) -->
 		<control type="group">
 			<width>110</width>
@@ -1057,11 +1048,7 @@
 				<height>36</height>
 			</control>
 		</control>
-  	
     </control>
-		
-		
-		
     </include>
  
     <include name="mediaflags_text">
@@ -1194,7 +1181,6 @@
                 <label></label>
                 <visible>!String.IsEmpty(Control.GetLabel(44225))</visible>
             </control>
-            
 			
 			<control type="image">
                 <width>36</width>
@@ -1942,7 +1928,6 @@
                     <texture>flags/discsets/diskadd_u.png</texture>
                 </control>
             </control>
-
         </control>
      </include>
     
@@ -1977,7 +1962,6 @@
             </control>
 		</control>
     </include>
-	
 	
 	<include name="hiddenobjectextras">
 		<control type="image" id="44444">
@@ -2087,8 +2071,6 @@
 		<value condition="String.Contains(VideoPlayer.mpaa,Brazil:18) | String.Contains(VideoPlayer.mpaa,18 anos)">18</value>
 		<value condition="!String.IsEmpty(VideoPlayer.mpaa) + !String.Contains(VideoPlayer.mpaa,not rated) + !String.Contains(VideoPlayer.mpaa,n/a)">$INFO[VideoPlayer.MPAA]</value>
 		
-		
-		
         <!-- home widgets -->
         <value condition="[String.Contains(Window(Home).Property(ListItem.mpaa),US:G) | String.Contains(Window(Home).Property(ListItem.mpaa),USA:G) | String.Contains(Window(Home).Property(ListItem.mpaa),Rated G)]">G</value>
 		<value condition="String.Contains(Window(Home).Property(ListItem.mpaa),PG-13)">PG-13</value>
@@ -2123,9 +2105,7 @@
 		<value condition="[String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:16) | String.Contains(Window(Home).Property(ListItem.mpaa),16 anos)]">16</value>
 		<value condition="[String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:18) | String.Contains(Window(Home).Property(ListItem.mpaa),18 anos)]">18</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(ListItem.mpaa)) + !String.Contains(Window(Home).Property(ListItem.mpaa),not rated)">$INFO[Window(Home).Property(ListItem.MPAA)]</value>
-                <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MPAA)) + !String.Contains(Window(Home).Property(SkinHelper.ListItem.MPAA),not rated)">$INFO[Window(Home).Property(SkinHelper.ListItem.MPAA)]</value>
-
-	
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.MPAA)) + !String.Contains(Window(Home).Property(SkinHelper.ListItem.MPAA),not rated)">$INFO[Window(Home).Property(SkinHelper.ListItem.MPAA)]</value>
 	</variable>
 	
 	<variable name="VideoAspectVar">
@@ -2150,7 +2130,6 @@
 		<value condition="Window.IsActive(fullscreenvideo) + String.IsEqual(VideoPlayer.VideoAspect,1.78)">16:9</value>
 		<value condition="Window.IsActive(fullscreenvideo) + String.IsEqual(VideoPlayer.VideoAspect,1.85)">16:9</value>
 		<value condition="Window.IsActive(fullscreenvideo) + !String.IsEmpty(VideoPlayer.VideoAspect)">$INFO[VideoPlayer.VideoAspect]</value>
-
 	</variable>
     
     <variable name="VideoResolutionVar">
@@ -2182,7 +2161,6 @@
 		<value condition="String.Contains(Window(Home).Property(ListItem.VideoCodec),H265)">H.265</value>
 		<value condition="String.Contains(Window(Home).Property(ListItem.VideoCodec),MPEG2)">MPEG2</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(ListItem.VideoCodec))">$INFO[Window(Home).Property(ListItem.VideoCodec)]</value>
-
 	</variable>
 
 	<variable name="VideoFileTypeVar">
@@ -2217,7 +2195,6 @@
         <value condition="!String.IsEmpty(Window(Home).Property(ListItem.VideoCodec)) + [Integer.IsGreater(Window(Home).Property(ListItem.VideoResolution),719) + !String.IsEmpty(Window(Home).Property(ListItem.VideoResolution))]">HD</value>
         <value condition="!String.IsEmpty(Window(Home).Property(ListItem.VideoCodec)) + [!Integer.IsGreater(Window(Home).Property(ListItem.VideoResolution),719) + !String.IsEmpty(Window(Home).Property(ListItem.VideoResolution))]">SD</value>
         <value condition="!String.IsEmpty(Window(Home).Property(ListItem.VideoCodec)) + !String.IsEmpty(Window(Home).Property(ListItem.FileExtension))">$INFO[Window(Home).Property(ListItem.FileExtension)]</value>
-        
 	</variable>
 	
 	<variable name="AudioCodecVar">
@@ -2315,7 +2292,6 @@
 		<value condition="Window.IsActive(fullscreenvideo) + String.IsEqual(VideoPlayer.AudioChannels,9)">9.0</value>
         <value condition="Window.IsActive(fullscreenvideo) + String.IsEqual(VideoPlayer.AudioChannels,10)">9.1</value>
 		<value condition="Window.IsActive(fullscreenvideo) + !String.IsEmpty(VideoPlayer.AudioChannels)">$INFO[VideoPlayer.AudioChannels]</value>
-
 	</variable>
 	
 </includes>

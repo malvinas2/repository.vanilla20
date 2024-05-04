@@ -29,11 +29,11 @@
 			<include condition="![Skin.HasSetting(smallContextMenu)]">SideBladeModern</include>
             <control type="button" id="3">
 				<description>Viewtype Toggle</description>
-				<include>HiddenObject</include>
+				<include>HiddenButton</include>
 			</control>
 			<control type="togglebutton" id="4">
 				<description>Viewtype Toggle</description>
-				<include>HiddenObject</include>
+				<include>HiddenButton</include>
 			</control>
 			<!--Grouplist 9000-->
             <control type="grouplist" id="9000">
@@ -56,7 +56,7 @@
                 <control type="radiobutton" id="14">
                     <!--Button Watched Toggle-->
                     <include>SideBladeMenuButton</include>
-                    <label>20367</label>
+                    <label>$LOCALIZE[20367]</label>
                 </control>
                <control type="button" id="6053">
 					<description>Sort by button</description>
@@ -82,13 +82,13 @@
 					<!-- <textoffsetx>50</textoffsetx> -->
 					<!-- <textoffsety>13</textoffsety> -->
 					<onclick>right</onclick>
-					<label>587</label>
+					<label>$LOCALIZE[587]</label>
 				</control>
 				<control type="button" id="98">
 					<visible>Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
 					<include>SideBladeMenuButton</include>
-					<label>587</label>
+					<label>$LOCALIZE[587]</label>
 					<!-- <selected>Container.Filtered</selected> -->
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>
@@ -96,8 +96,8 @@
 				<control type="togglebutton" id="20">
 					<description>Update library</description>
 					<include>SideBladeMenuButton</include>
-					<label>653</label>
-					<altlabel>13353</altlabel>
+					<label>$LOCALIZE[653]</label>
+					<altlabel>$LOCALIZE[13353]</altlabel>
 					<alttexturefocus border="5" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">colors/color_white.png</alttexturefocus>
 					<alttexturenofocus></alttexturenofocus>
 					<usealttexture>library.isscanningvideo</usealttexture>
@@ -106,7 +106,7 @@
                 <control type="button" id="388">
                     <!--Button Search-->
                     <include>SideBladeMenuButton</include>
-                    <label>137</label>
+                    <label>$LOCALIZE[137]</label>
 					<!-- <onclick>RunScript(script.skin.helper.service,action=VIDEOSEARCH)</onclick> -->
 					<!-- <label>$LOCALIZE[70001]</label> -->
 					<onclick condition="System.HasAddon(script.globalsearch)">RunScript(script.globalsearch)</onclick>
@@ -116,14 +116,14 @@
 				<control type="button" id="4401">
                     <!--current playlist-->
                     <include>SideBladeMenuButton</include>
-                    <label>13350</label>
+                    <label>$LOCALIZE[13350]</label>
 					<onclick>ActivateWindow(videoplaylist)</onclick>
 					<visible>!String.IsEqual(Playlist.Length(video),0)</visible>
                 </control>
 				<control type="button" id="4402">
                     <!--Playlists-->
                     <include>SideBladeMenuButton</include>
-                    <label>20012</label>
+                    <label>$LOCALIZE[20012]</label>
 					<onclick>ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
                 </control>
 				
@@ -132,7 +132,7 @@
 				<control type="radiobutton" id="4406">
 					<description>Unlock Shares</description>
 					<include>SideBladeMenuButton</include>
-					<label>20336</label>
+					<label>$LOCALIZE[20336]</label>
 					<onclick>mastermode</onclick>
 					<selected>system.ismaster</selected>
 					<visible>system.haslocks</visible>
@@ -186,9 +186,6 @@
                 <label>$VAR[Plots]</label>
                 <autoscroll delay="15000" time="6000" repeat="20000">Control.IsVisible(77999)</autoscroll>
             </control>
-            
         </control>
-        
-	
 	</controls>
 </window>

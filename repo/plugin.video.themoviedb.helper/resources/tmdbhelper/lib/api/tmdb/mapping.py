@@ -329,7 +329,7 @@ class ItemMapper(_ItemMapper):
         self.mpaa_prefix = mpaa_prefix or get_mpaa_prefix()
         self.iso_language = language[:2]
         self.iso_country = language[-2:]
-        self.genres = genres
+        self.genres = genres or {}
         self.imagepath_quality = 'IMAGEPATH_ORIGINAL'
         self.provider_allowlist = get_setting('provider_allowlist', 'str')
         self.provider_allowlist = self.provider_allowlist.split(' | ') if self.provider_allowlist else []
@@ -718,7 +718,8 @@ class ItemMapper(_ItemMapper):
             'deathday': ('infoproperties', 'deathday'),
             'width': ('infoproperties', 'width'),
             'height': ('infoproperties', 'height'),
-            'aspect_ratio': ('infoproperties', 'aspect_ratio')
+            'aspect_ratio': ('infoproperties', 'aspect_ratio'),
+            'original_language': ('infoproperties', 'original_language')
         }
 
     def get_genres_by_id(self, v):

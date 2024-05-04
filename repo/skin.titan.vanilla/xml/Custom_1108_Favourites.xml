@@ -4,42 +4,21 @@
 	<include>allViewIds</include>
 	<onload>ClearProperty(ShowViewSubMenu,home)</onload>
 	<onunload>ClearProperty(ShowViewSubMenu,home)</onunload>
-	<!-- <include>Animation_DialogPopupOpenClose</include> -->
 	<include>animation_window_open_close</include>
 	<controls>
-	
-	<!-- Video Background -->
-	       <!-- Video Background -->
         <include>GlobalBackground</include>
 		<!--Header-->
         <include>Header</include>
- 
-		<!--NowPlaying-->
+ 		<!--NowPlaying-->
 		<include>NowPlayingModern</include>
-
-		<!-- all Views -->
-        <!-- <include>allViews</include> -->
-		
-		
-			<control type="group">
-			<!-- <centerleft>50%</centerleft> -->
-			<!-- <width>600</width> -->
-			<!-- <centertop>60%</centertop> -->
-			<!-- <height>700</height> -->
-
-			<!-- <include>animation_window_open_close</include> -->
-            <!-- <visible>!Window.IsVisible(filebrowser) + !Window.IsVisible(selectdialog) + !Window.IsVisible(selectdialog) + !Window.IsVisible(progressdialog) + !Window.IsVisible(virtualkeyboard) + !Window.IsVisible(yesnodialog) + !Window.IsVisible(okdialog) + !Window.IsVisible(addonsettings)</visible> -->
-
-<include>animation_view_change</include>
-<visible>Control.IsVisible(50)</visible>
-
+		<control type="group">
+			<include>animation_view_change</include>
+			<visible>Control.IsVisible(50)</visible>
 			<control type="panel" id="50">
 				<posx>60</posx>
 				<bottom>13%</bottom>
 				<width>1820</width>
 				<height>765</height>
-				<!-- <orientation>vertical</orientation>  -->
-				<!-- <onleft>9000</onleft> -->
 				<onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
 				<onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
 				<onup>50</onup>
@@ -47,7 +26,6 @@
 				<viewtype label="536">icon</viewtype> 
 				<preloaditems>4</preloaditems>
 				<pagecontrol>60</pagecontrol>
-				<!-- <animation effect="fade" time="200">VisibleChange</animation> -->
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 				<itemlayout height="255" width="260">
 					<control type="image">
@@ -115,14 +93,11 @@
 						</control>
 					</control>
 				</focusedlayout>
-	
 				<content>
 					<include>custom_content</include>
 				</content>
-
 			</control>
-				
-		<!--vertical Scollbar-->
+			<!--vertical Scollbar-->
 			<control type="scrollbar" id="60">
 				<visible>Control.IsVisible(50) + Integer.IsGreater(Container(50).NumItems,0)</visible>
 				<right>15</right>
@@ -135,12 +110,11 @@
 				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)] | Control.IsVisible(6002)">Conditional</animation>
 			</control>
 
-<!-- was ist Control.IsVisible(6002) Alphabet Scrollbar -->
-<!-- was ist <ondown>6000</ondown> ? -->
+	<!-- was ist Control.IsVisible(6002) Alphabet Scrollbar -->
+	<!-- was ist <ondown>6000</ondown> ? -->
 			
 		</control>
 		
-		<!--NowPlaying-->
         <include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
 	
 		<!-- <include>DialogOverlayExtra</include> -->

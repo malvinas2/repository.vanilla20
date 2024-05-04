@@ -113,7 +113,7 @@
             <aligny>center</aligny>
             <label>[UPPERCASE]$VAR[infolinevar][/UPPERCASE]</label>
             <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
-            <visible>!Window.IsVisible(shutdownmenu)</visible>
+            <visible>!Window.IsVisible(1107) + !Window.IsVisible(shutdownmenu)</visible>
         </control>
         
     </include>
@@ -231,7 +231,6 @@
                 <focusedlayout height="80" width="370" condition="[String.IsEqual(Container(4445).NumItems,0) | String.IsEmpty(Container(4445).NumItems) | !String.IsEqual(Window(Home).Property(submenu),show) | !Skin.HasSetting(VerticalHomeInlineSubmenu) | String.IsEqual(Container(300).ListItem.Property(squaresubmenu),enable)] + !Skin.String(HomeLayout, simplever_tiles)">
                     <include>HomeSimpleVertical_FocusedMainMenuItem</include>
                 </focusedlayout>
-                
                 <focusedlayout height="140" width="370" condition="String.IsEqual(Window(Home).Property(submenu),show) + String.IsEqual(Container(4445).NumItems,1) + Skin.HasSetting(VerticalHomeInlineSubmenu) + !Skin.String(HomeLayout, simplever_tiles) + !String.IsEqual(Container(300).ListItem.Property(squaresubmenu),enable)">
                     <include>HomeSimpleVertical_FocusedMainMenuItem</include>
                 </focusedlayout>
@@ -288,9 +287,9 @@
             </control>
             <!-- touchscreen support -->
             <include condition="Skin.HasSetting(EnableTouchSupport)">TouchControlsFooter</include>
-        
         </control>
     </include>
+	
 	<include name="HomeSimpleVertical_FocusedMainMenuItem">
 		<!-- menu label -->
 		<control type="label">
@@ -309,6 +308,7 @@
 		</control>
         <include>HiddenHomeMenuButton</include>
 	</include>
+	
 	<include name="HomeSimpleVertical_FocusedMainMenuItem_tile">
 		<control type="group">
 			<width>375</width>
@@ -338,9 +338,11 @@
 			<include>HiddenHomeMenuButton</include>
 		</control>
 	</include>
+	
     <include name="HomeSimpleVertical_AltHeight">
         <height>850</height>
     </include>
+	
     <include name="HomeSimpleVerticalSubMenuNormal">
 		<!-- submenu -->
 		<control type="group">
@@ -482,6 +484,7 @@
 			</control>
 		</control>
 	</include>
+	
 	<include name="HomeSimpleVerticalSubMenuInline">
 		<control type="group">
 			<posx>25</posx>
@@ -599,7 +602,6 @@
     
     <!-- Big Vertical Home -->
     <include name="HomeBigVertical">
-		
         <!-- Header -->
 		<include>Header</include>
         
@@ -614,9 +616,9 @@
             <include>HomeBigVertical_submenu</include>
             <!-- MainMenu -->
             <include>HomeBigVertical_mainmenu</include>
-			
         </control>
     </include>
+	
     <include name="HomeBigVertical_submenu">
         <control type="group" id="9001">
             <control type="list" id="4444">
@@ -684,7 +686,6 @@
                 <animation effect="slide" time="150" tween="cubic" easing="inout" start="0" end="0,216" condition="Container(300).Position(8) + [String.IsEqual(Container(4444).NumItems,12)]">Conditional</animation>
                 <animation effect="slide" time="150" tween="cubic" easing="inout" start="0" end="0,144" condition="Container(300).Position(8) + [String.IsEqual(Container(4444).NumItems,13)]">Conditional</animation>
                 <animation effect="slide" time="150" tween="cubic" easing="inout" start="0" end="0,72" condition="Container(300).Position(8) + [String.IsEqual(Container(4444).NumItems,14)]">Conditional</animation>
-                
                 <animation effect="slide" time="150" tween="cubic" easing="inout" start="0" end="0,1080" condition="Container(300).Position(9) + [String.IsEqual(Container(4444).NumItems,1)]">Conditional</animation>
                 <animation effect="slide" time="150" tween="cubic" easing="inout" start="0" end="0,1056" condition="Container(300).Position(9) + [String.IsEqual(Container(4444).NumItems,2)]">Conditional</animation>
                 <animation effect="slide" time="150" tween="cubic" easing="inout" start="0" end="0,984" condition="Container(300).Position(9) + [String.IsEqual(Container(4444).NumItems,3)]">Conditional</animation>
@@ -786,8 +787,8 @@
                 </content>
             </control>
         </control>
-			
     </include>
+	
     <include name="HomeBigVertical_mainmenu">
         <control type="image">
             <!-- Panel -->
@@ -864,7 +865,6 @@
             </focusedlayout>
             <content><include>skinshortcuts-mainmenu</include></content>
         </control>
-		
     </include>
 
     <!--  includes for widgets -->
@@ -919,6 +919,7 @@
         </control>
             
     </include>
+	
     <include name="VerticalWidgetsLarge">
         <control type="grouplist" id="77777">
             <left>470</left>
@@ -967,11 +968,12 @@
             <showonepage>false</showonepage>
             <visible>[Skin.HasSetting(EnableTouchSupport) | Skin.HasSetting(alwaysShowScrollbars) | Control.HasFocus(317)]</visible>
         </control>
-            
     </include>
+	
     <include name="VerticalWidgetsExtraLarge">
         <top>10</top>
     </include>
+	
     <include name="VerticalHomeSquareSubMenu">
         <control type="group" id="14446">
             <width>100%</width>

@@ -18,8 +18,11 @@ import xbmcvfs
 SCRIPT_ID = "script.module.autocompletion"
 SCRIPT_ADDON = xbmcaddon.Addon(SCRIPT_ID)
 PLUGIN_ID = "plugin.program.autocompletion"
-PLUGIN_ADDON = xbmcaddon.Addon(PLUGIN_ID)
-SETTING = PLUGIN_ADDON.getSetting
+try:
+    PLUGIN_ADDON = xbmcaddon.Addon(PLUGIN_ID)
+    SETTING = PLUGIN_ADDON.getSetting
+except RuntimeError:
+    SETTING = SCRIPT_ADDON.getSetting
 ADDON_PATH = xbmcvfs.translatePath(SCRIPT_ADDON.getAddonInfo("path"))
 ADDON_ID = SCRIPT_ADDON.getAddonInfo("id")
 ADDON_DATA_PATH = xbmcvfs.translatePath(SCRIPT_ADDON.getAddonInfo("profile"))
@@ -73,10 +76,21 @@ class BaseProvider(ABC):
         items = []
         result = self.fetch_data(search_str)
         for i, item in enumerate(result):
+
+            # https://github.com/phil65/script.module.autocompletion/issues/3
+            if not isinstance(item, str):  # important
+                try:
+                    item = item.get("original_title")  # for TMDB
+                except:
+                    item = ""
+            if not item or not isinstance(item, str):
+                continue
+
             li = {"label": item, "search_string": prep_search_str(item)}
             items.append(li)
             if i > int(self.limit):
                 break
+        items = list({i["label"]: i for i in items}.values())  # duplicates out
         return items
 
     def get_prediction_listitems(self, search_str):

@@ -87,8 +87,6 @@
 			
 			<!-- spotlight widget -->
 			<include>skinshortcuts-template-spotlightwidget</include>
-		
-		
 		</control>
 		
 		<!-- sub menu -->
@@ -173,7 +171,6 @@
 					<include>skinshortcuts-submenu</include>
 				</content>
 			</control>
-		
 		</control>
 	
 		<!-- alternative lowlist sub menu -->
@@ -234,7 +231,6 @@
 						<disabledcolor>midgrey</disabledcolor>
 						<visible>!Control.HasFocus(4445)</visible>
 					</control>
-					
 					<control type="image">
 						<width>337</width>
 						<height>60</height>
@@ -253,8 +249,9 @@
 						<visible>Control.HasFocus(4445)</visible>
 					</control>
 				</focusedlayout>
-
-				<content><include>skinshortcuts-submenu</include></content>
+				<content>
+					<include>skinshortcuts-submenu</include>
+				</content>
 			</control>
 		</control>
 		
@@ -271,7 +268,7 @@
 			<headlinecolor>$INFO[Skin.String(ViewDetailsTextColor)]</headlinecolor>
 			<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
 			<scrollspeed>40</scrollspeed>
-			<visible>!Window.IsVisible(shutdownmenu) + !Skin.HasSetting(EnableTouchSupport)</visible>
+			<visible>!Window.IsVisible(1107) + !Window.IsVisible(shutdownmenu) + !Skin.HasSetting(EnableTouchSupport)</visible>
             <visible>[String.IsEmpty(Container(300).ListItem.Property(infoline)) | String.IsEqual(Container(300).ListItem.Property(infoline),none)]</visible>
             <visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
 		</control>
@@ -288,7 +285,7 @@
 			<headlinecolor>$INFO[Skin.String(ViewDetailsTextColor)]</headlinecolor>
 			<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
 			<scrollspeed>40</scrollspeed>
-			<visible>!Window.IsVisible(shutdownmenu) + Skin.HasSetting(EnableTouchSupport)</visible>
+			<visible>!Window.IsVisible(1107) + !Window.IsVisible(shutdownmenu) + Skin.HasSetting(EnableTouchSupport)</visible>
             <visible>[String.IsEmpty(Container(300).ListItem.Property(infoline)) | String.IsEqual(Container(300).ListItem.Property(infoline),none)]</visible>
             <visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
 		</control>
@@ -304,7 +301,7 @@
             <label>$VAR[infolinevar]</label>
             <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
             <shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
-            <visible>!Window.IsVisible(shutdownmenu)</visible>
+            <visible>!Window.IsVisible(1107) + !Window.IsVisible(shutdownmenu)</visible>
         </control>     
 		
 		<!-- touchscreen support -->
@@ -320,7 +317,6 @@
                 <param name="visibility" value="![!String.IsEmpty(Container(300).ListItem.Property(infoline)) + !String.IsEqual(Container(300).ListItem.Property(infoline),none)] + !system.getbool(lookandfeel.enablerssfeeds) + !Skin.HasSetting(HidePowerMenu)" />
             </include>
         </control>
-		
 	</include>
 	    
     <include name="EnhancedHomeMainMenuNormal">
@@ -492,7 +488,6 @@
 			<aspectratio align="right" aligny="center">keep</aspectratio>
 			<texture background="true">$VAR[SpotLightWidgetInfoThumb]</texture>
 		</control>
-        
 	</include>
 
     <variable name="EnhancedHomeSpotLightWidgetButtonText">
@@ -538,6 +533,5 @@
 		<value condition="!Integer.IsGreater(Container(4444).NumItems,0) + !String.IsEmpty(Container(300).ListItem.Property(widget))">SetFocus(77777)</value>
 		<value>SetFocus(4444,0)</value>
    </variable>
-	
     
 </includes>
