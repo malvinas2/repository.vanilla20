@@ -1216,7 +1216,7 @@
                                 <width>93%</width>
                                 <height>120</height>
                                 <align>left</align>
-                                <label>blabla$INFO[Container(351).ListItem.Label2,[B],[/B][CR]]$INFO[Container(351).ListItem.Label]</label>
+                                <label>$INFO[Container(351).ListItem.Label2,[B],[/B][CR]]$INFO[Container(351).ListItem.Label]</label>
                                 <font>Reg32</font>
                                 <textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
                             </control>
