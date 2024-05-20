@@ -1440,7 +1440,8 @@
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]epg.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]epg.png</texturenofocus>
 				<visible>!skin.string(GuideRows, 5)</visible>
-				<visible>[VideoPlayer.Content(livetv) + VideoPlayer.HasEPG] | [MusicPlayer.Content(LiveTV) + VideoPlayer.HasEPG]</visible>
+				<!-- <visible>[VideoPlayer.Content(livetv) + VideoPlayer.HasEPG] | [MusicPlayer.Content(LiveTV) + VideoPlayer.HasEPG]</visible> -->
+				<visible>VideoPlayer.Content(livetv) | MusicPlayer.Content(LiveTV)</visible>
 				<onclick>Dialog.Close(VideoOSD)</onclick>
 				<onclick>Dialog.Close(MusicOSD)</onclick>
                 <onclick>ActivateWindow(PVRChannelGuide)</onclick>
